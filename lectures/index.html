@@ -12,7 +12,7 @@
       
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-8.5.10">
             
 
@@ -20,14 +20,14 @@
 
     
       
-        <title>A02: Kinematics - Flexible Robotics</title>
+        <title>Lectures - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.472b142f.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.472b142f.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.08040f6c.min.css">
+        <link rel="stylesheet" href="../assets/stylesheets/palette.08040f6c.min.css">
         
       
       
@@ -44,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#class-welcome-and-introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -91,7 +91,7 @@
 
 <header class="md-header md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href=".." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              A02: Kinematics
+              Lectures
             
           </span>
         </div>
@@ -179,7 +179,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="../.." class="md-tabs__link">
+    <a href=".." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -188,15 +188,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../assignment-01/" class="md-tabs__link md-tabs__link--active">
+      <a href="../assignments/assignment-01/" class="md-tabs__link">
         Assignments
       </a>
     </li>
@@ -212,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../course-info/01-syllabus/" class="md-tabs__link">
+      <a href="../course-info/01-syllabus/" class="md-tabs__link">
         Course info
       </a>
     </li>
@@ -222,13 +220,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../../lectures/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Lectures
       </a>
     </li>
@@ -262,7 +262,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href=".." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -293,7 +293,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href=".." class="md-nav__link">
         Home
       </a>
     </li>
@@ -306,14 +306,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
       
       
       
@@ -354,7 +352,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignment-01/" class="md-nav__link">
+      <a href="../assignments/assignment-01/" class="md-nav__link">
         A01: Mechanism Prototyping
       </a>
     </li>
@@ -366,55 +364,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          A02: Kinematics
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../assignments/assignment-02/" class="md-nav__link">
         A02: Kinematics
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    Instructions
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -426,7 +380,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignment-03/" class="md-nav__link">
+      <a href="../assignments/assignment-03/" class="md-nav__link">
         A03: Dynamics
       </a>
     </li>
@@ -440,7 +394,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignment-04/" class="md-nav__link">
+      <a href="../assignments/assignment-04/" class="md-nav__link">
         A04: System Identification
       </a>
     </li>
@@ -454,7 +408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignment-05/" class="md-nav__link">
+      <a href="../assignments/assignment-05/" class="md-nav__link">
         A05: Design Optimization
       </a>
     </li>
@@ -468,7 +422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../assignment-06/" class="md-nav__link">
+      <a href="../assignments/assignment-06/" class="md-nav__link">
         A06: System Prototyping & Validation
       </a>
     </li>
@@ -482,7 +436,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-01/" class="md-nav__link">
+      <a href="../assignments/project-01/" class="md-nav__link">
         Project 1
       </a>
     </li>
@@ -496,7 +450,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-02/" class="md-nav__link">
+      <a href="../assignments/project-02/" class="md-nav__link">
         Project 2
       </a>
     </li>
@@ -548,7 +502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../course-info/01-syllabus/" class="md-nav__link">
         Syllabus
       </a>
     </li>
@@ -568,12 +522,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
       
       
       
@@ -586,8 +542,8 @@
       
         
         
-        <div class="md-nav__link md-nav__link--index ">
-          <a href="../../lectures/">Lectures</a>
+        <div class="md-nav__link md-nav__link--index md-nav__link--active">
+          <a href="./">Lectures</a>
           
         </div>
       
@@ -631,15 +587,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
+  <a href="#class-welcome-and-introduction" class="md-nav__link">
+    Class: Welcome and Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#instructions" class="md-nav__link">
-    Instructions
+  <a href="#class-kinematics-i" class="md-nav__link">
+    Class: Kinematics I
   </a>
   
 </li>
@@ -658,18 +614,65 @@
                 
                   
 
-  <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/assignments/assignment-02.md" title="Edit this page" class="md-content__button md-icon">
+  <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/lectures/index.md" title="Edit this page" class="md-content__button md-icon">
     
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
   </a>
 
 
-  <h1>A02: Kinematics</h1>
+  <h1>Lectures</h1>
 
-<h2 id="introduction">Introduction</h2>
-<p>The purpose of this assignment is...</p>
-<h2 id="instructions">Instructions</h2>
-<p>This assignment has not yet been published...</p>
+<h2 id="class-welcome-and-introduction">Class: Welcome and Introduction</h2>
+<ul>
+<li>Welcome to Flexible Robotics</li>
+<li>Go over syllabus<ul>
+<li>Discuss Course topics</li>
+</ul>
+</li>
+<li>Discuss course logistics<ul>
+<li>Discuss software-based tools<ul>
+<li>python</li>
+<li>solidworks or autodesk fusion?</li>
+</ul>
+</li>
+<li>Discuss parts and materials</li>
+</ul>
+</li>
+<li>Go over course websites</li>
+<li>Lecture: Introduction to course.</li>
+<li>Lecture: Robotics Background.  </li>
+</ul>
+<p>After:</p>
+<ul>
+<li>Prior course projects</li>
+<li>Release Survey</li>
+</ul>
+<h2 id="class-kinematics-i">Class: Kinematics I</h2>
+<ul>
+<li>Minutae<ul>
+<li>Discuss assignment 1</li>
+<li>Installing Python tutorial / task</li>
+<li>ffmpeg</li>
+<li>Discuss Survey</li>
+</ul>
+</li>
+<li>Lecture: Kinematics I<ul>
+<li>Mechanisms</li>
+<li>Linkages</li>
+<li>Joints<ul>
+<li>types</li>
+<li>Degrees of Freedom</li>
+</ul>
+</li>
+<li>System Degrees of Freedom<ul>
+<li>counting</li>
+</ul>
+</li>
+<li>Origami and Kirigami equivalents</li>
+</ul>
+</li>
+<li>Activity: Prototyping Exercise I</li>
+</ul>
 
 
 
@@ -695,7 +698,7 @@
     <nav class="md-footer__inner md-grid" aria-label="Footer" >
       
         
-        <a href="../assignment-01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: A01: Mechanism Prototyping" rel="prev">
+        <a href="../course-info/01-syllabus/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Syllabus" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
           </div>
@@ -704,26 +707,11 @@
               <span class="md-footer__direction">
                 Previous
               </span>
-              A01: Mechanism Prototyping
+              Syllabus
             </div>
           </div>
         </a>
       
-      
-        
-        <a href="../assignment-03/" class="md-footer__link md-footer__link--next" aria-label="Next: A03: Dynamics" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              A03: Dynamics
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
-          </div>
-        </a>
       
     </nav>
   
@@ -747,12 +735,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../assets/javascripts/workers/search.16e2a7d4.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d6c3db9e.min.js"></script>
+      <script src="../assets/javascripts/bundle.d6c3db9e.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
