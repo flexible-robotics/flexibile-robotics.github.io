@@ -1327,51 +1327,49 @@
 <ol>
 <li>
 <p>Install standard packages...</p>
-<pre><code>!pip install meshio pygmsh ezdxf pandoc-fignos pandoc-eqnos pypdf4 service_identity ftd2xx pygithub twine paho-mqtt
-!pip install ntplib pygame pysftp pyserial
-</code></pre>
+<p>!pip install meshio pygmsh ezdxf pandoc-fignos pandoc-eqnos pypdf4 service_identity ftd2xx pygithub twine paho-mqtt
+!pip install ntplib pygame pysftp pyserial</p>
 </li>
 <li>
 <p>Install foldable-robotics-specific packages.</p>
-<pre><code>!pip install pypoly2tri idealab_tools foldable_robotics pynamics
-</code></pre>
+<p>!pip install pypoly2tri idealab_tools foldable_robotics pynamics</p>
 </li>
 </ol>
 <h3 id="manual-install">Manual Install</h3>
 <p>A package can be manually installed by adding the .whl file to Google Drive and using the pip command on this file. For convenience, it is probably best to add it to the same directory as the Google Colab file in your drive. To pip install a .whl file we just have to run the pip command and referencing the path to that file.</p>
 <p><strong>Note:</strong> To access a file stored in your Google Drive, your google drive must be mounted to the google Colab notebook. For details regarding mounting our drive see the "<em>Mounting Drive to Google Colab</em>" section.</p>
 <p>DO NOT RUN IF ALREADY RAN COD IN PIP INSTALL SECTION</p>
-<pre><code>    from google.colab import drive
+<pre><code>from google.colab import drive
 </code></pre>
 <p>Where the drive will be mounted in the Colab notebook</p>
-<pre><code>    ROOT = '/content/drive'
+<pre><code>ROOT = '/content/drive'
 </code></pre>
 <p>Path to the file in YOUR DRIVE.  Will be different for you</p>
-<pre><code>    FILE_PATH = '/MyDrive/GoogleColabExample/pynamics-0.0.8-py2.py3-none-any.whl'
+<pre><code>FILE_PATH = '/MyDrive/GoogleColabExample/pynamics-0.0.8-py2.py3-none-any.whl'
 </code></pre>
 <p>Accessing a file on your drive</p>
-<pre><code>    drive.mount(ROOT, force_remount=True) # Mount the drive to this notebook
-    with open(ROOT+FILE_PATH,'w') as f: # Open the file in the drive
-    !pip install f  # Run the pip install command for the file
+<pre><code>drive.mount(ROOT, force_remount=True) # Mount the drive to this notebook
+with open(ROOT+FILE_PATH,'w') as f: # Open the file in the drive
+!pip install f  # Run the pip install command for the file
 </code></pre>
 <p>This next command is to unmount my drive from th notebook so that it my personal files will not be made available if this Google Colab File is shared</p>
-<pre><code>    drive.flush_and_unmount()
+<pre><code>drive.flush_and_unmount()
 </code></pre>
 <h3 id="verifying-imported-packages">Verifying Imported Packages</h3>
 <p>RUN THIS CODE BLOCK TO ENSURE ALL PACKAGES ARE INSTALLED</p>
-<pre><code>    import pynamics
-    from pynamics.frame import Frame
-    from pynamics.variable_types import Differentiable,Constant
-    from pynamics.system import System
-    from pynamics.constraint import Constraint
-    from pynamics.output import PointsOutput
+<pre><code>import pynamics
+from pynamics.frame import Frame
+from pynamics.variable_types import Differentiable,Constant
+from pynamics.system import System
+from pynamics.constraint import Constraint
+from pynamics.output import PointsOutput
 
-    import sympy
-    import numpy as np
-    import matplotlib.pyplot as plt
-    import scipy.optimize
+import sympy
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.optimize
 
-    from math import pi
+from math import pi
 </code></pre>
 <p>If there are no errors in the output, the packages have been properly installed</p>
 <p><strong>Note:</strong> Packages that do not come installed by default will have to be reinstalled using the pip command for each new notebook.</p>
@@ -1381,37 +1379,37 @@
 <p><strong>Note:</strong> When running the "drive.mount(ROOT, force_remount=True)" mount command, it will ask for authorization to mount the drive associated with the selected google acount.  The output of the code cell will provide instructions to complete this process.</p>
 <p><strong>Disclaimer:</strong> Your drive will remain mounted to the Google Colab notebook until you unmount it.  That means people with access to the notebook will be able to access your drive until it is unmounted. Once unmounted, another party will not be able to access your drive since they would need to perform the authorization process which requires a sign in from your google account.</p>
 <h3 id="mounting-and-unmounting-a-drive-using-a-code-block-reccomended">Mounting and Unmounting a Drive Using a Code Block (Reccomended)</h3>
-<pre><code>    from google.colab import drive
+<pre><code>from google.colab import drive
 </code></pre>
 <p>Where the drive will be mounted in the Colab notebook</p>
-<pre><code>    ROOT = '/content/drive'
+<pre><code>ROOT = '/content/drive'
 </code></pre>
 <p>Path to the file in your drive.  Will be different for you</p>
-<pre><code>    FILE_PATH = '/MyDrive/Folder1/Folder2/file' 
-    #FILE_PATH = '/Shareddrives/Folder1/Folder2/file'
+<pre><code>FILE_PATH = '/MyDrive/Folder1/Folder2/file' 
+#FILE_PATH = '/Shareddrives/Folder1/Folder2/file'
 </code></pre>
 <p>Mount the drive to this notebook</p>
-<pre><code>    drive.mount(ROOT, force_remount=True)
+<pre><code>drive.mount(ROOT, force_remount=True)
 </code></pre>
 <p>Append full path</p>
-<pre><code>    full_path_to_file = ROOT+FILE_PATH
+<pre><code>full_path_to_file = ROOT+FILE_PATH
 </code></pre>
 <p>Example:</p>
-<pre><code>    ############################################
-    #### INSERT CODE TO PROCESS/IMPORT FILE ####
-    # EX1
-    import csv
-    data = csv.reader(full_path_to_file, delimiter=',')
+<pre><code>############################################
+#### INSERT CODE TO PROCESS/IMPORT FILE ####
+# EX1
+import csv
+data = csv.reader(full_path_to_file, delimiter=',')
 </code></pre>
 <p>Example Code</p>
-<pre><code>    # EX2
-    import cv2
-    img = cv2.imread(full_path_to_file)   
-    #### INSERT CODE TO PROCESS/IMPORT FILE ####
-    ############################################
+<pre><code># EX2
+import cv2
+img = cv2.imread(full_path_to_file)   
+#### INSERT CODE TO PROCESS/IMPORT FILE ####
+############################################
 </code></pre>
 <p>Unmount Drive</p>
-<pre><code>    drive.flush_and_unmount()
+<pre><code>drive.flush_and_unmount()
 </code></pre>
 <p>As long as the variable used to import the file (data/img) is not overwritten or deleted, the variable can be used later in the code with an unmounted drive</p>
 <h3 id="mounting-and-unmounting-a-drive-using-the-ui">Mounting and Unmounting a Drive Using the UI</h3>
@@ -1495,10 +1493,13 @@ or follow the steps below to find the direct link manually
 </li>
 <li>
 <p>Use markdown to display this image</p>
-<pre><code>    ![Image Example](https://drive.google.com/uc?export=view&amp;id=1jh9A3LRK8e3i982GhgzmRb4kYrvdTJti)
+<pre><code>![Image Example](https://drive.google.com/uc?export=view&amp;id=1jh9A3LRK8e3i982GhgzmRb4kYrvdTJti)
 </code></pre>
 </li>
 </ol>
+<blockquote>
+<p>Thanks to Mason Smith for this tutorial.  It has since been modified to fit the needs of this class</p>
+</blockquote>
 
 
 
