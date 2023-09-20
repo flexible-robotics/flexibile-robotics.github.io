@@ -11,17 +11,15 @@
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
-        <meta name="author" content="Dan Aukes">
       
       
-      
-        <link rel="prev" href="../../lectures/01/">
-      
-      
-        <link rel="next" href="../vscode-setup/">
+        <link rel="prev" href="../installing-anaconda-python/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+        <link rel="next" href="../../vscode-setup/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -29,11 +27,11 @@
 
     
       
-        <title>Miniconda/Anaconda (Python) Installation Tutorial - Flexible Robotics</title>
+        <title>Installing Packages in Python - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -52,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -79,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#introduction" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -96,7 +89,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -116,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Miniconda/Anaconda (Python) Installation Tutorial
+              Installing Packages in Python
             
           </span>
         </div>
@@ -188,7 +181,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -207,7 +200,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../assignments/assignment-01/" class="md-tabs__link">
+        <a href="../../../assignments/" class="md-tabs__link">
           
   
     
@@ -227,7 +220,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -247,7 +240,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../lectures/" class="md-tabs__link">
+        <a href="../../../lectures/" class="md-tabs__link">
           
   
     
@@ -268,8 +261,16 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../installing-anaconda-python/" class="md-tabs__link">
           
   
     
@@ -278,6 +279,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -310,7 +314,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -339,7 +343,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -361,19 +365,7 @@
     
       
         
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
+          
         
       
     
@@ -386,16 +378,20 @@
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
-            
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../assignments/" class="md-nav__link ">
+              
   
   <span class="md-ellipsis">
     Assignments
   </span>
   
 
-            <span class="md-nav__icon md-icon"></span>
-          </label>
+            </a>
+            
+          </div>
         
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
@@ -404,164 +400,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-01/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A01: Mechanism Prototyping
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-02/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A02: Kinematics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-03/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A03: Dynamics
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-04/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A04: System Identification
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-05/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A05: Design Optimization
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/assignment-06/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    A06: System Prototyping & Validation
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/project-01/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Project 1
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../assignments/project-02/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Project 2
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
           </ul>
@@ -615,7 +453,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -663,7 +501,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/" class="md-nav__link ">
+            <a href="../../../lectures/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -713,11 +551,11 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/01/" class="md-nav__link ">
+            <a href="../../../lectures/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    01
+    Lecture 01
   </span>
   
 
@@ -728,7 +566,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
-            01
+            Lecture 01
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -798,24 +636,48 @@
     
   
   
-    <li class="md-nav__item md-nav__item--active">
+    
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+        
       
+        
       
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    Miniconda/Anaconda (Python) Installation Tutorial
+    Python
   </span>
   
 
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -824,50 +686,41 @@
   
 
       </a>
-      
-        
+    </li>
+  
 
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+              
+            
+              
+                
   
   
+    
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+    <li class="md-nav__item md-nav__item--active">
       
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
-        <li class="md-nav__item">
-  <a href="#windows-installation" class="md-nav__link">
-    Windows Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows Installation">
-      <ul class="md-nav__list">
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
-          <li class="md-nav__item">
-  <a href="#anaconda-instructions" class="md-nav__link">
-    Anaconda Instructions
-  </a>
   
-</li>
-        
-      </ul>
-    </nav>
+  <span class="md-ellipsis">
+    Installing Packages in Python
+  </span>
   
-</li>
+
+      </a>
       
-    </ul>
+    </li>
   
-</nav>
+
+              
+            
+          </ul>
+        </nav>
       
     </li>
   
@@ -899,7 +752,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../vscode-setup/" class="md-nav__link ">
+            <a href="../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -953,41 +806,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#introduction" class="md-nav__link">
-    Introduction
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows-installation" class="md-nav__link">
-    Windows Installation
-  </a>
-  
-    <nav class="md-nav" aria-label="Windows Installation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#anaconda-instructions" class="md-nav__link">
-    Anaconda Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1001,7 +819,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/installing-anaconda-python.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/python/installing-packages.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1009,35 +827,23 @@
   
 
 
-  <h1>Miniconda/Anaconda (Python) Installation Tutorial</h1>
+  <h1>Installing Packages in Python</h1>
 
-<h2 id="introduction">Introduction</h2>
-<p>This tutorial is for installing the anaconda python distribution on windows.</p>
-<h2 id="windows-installation">Windows Installation</h2>
-<p>These installation instructions are for computers that <strong>do</strong> <strong>not</strong> have Python or Anaconda installed already. Python and Anaconda do not come installed by default on most computers so if you haven't installed them intentionally, these instructions likely apply to you. If you <strong>do</strong> have another version of Python installed, then please ask Dr. Aukes for further details.</p>
-<h3 id="anaconda-instructions">Anaconda Instructions</h3>
-<p><strong>Note:</strong> These instructions are for the smaller "Miniconda" distribution, that includes only the <code>conda</code> package manager that you can use to install only the packages that you want.  You can also install the full <a href="https://www.anaconda.com/products/individual#Downloads">Anaconda</a> distribution, and follow the same basic instructions.</p>
 <ol>
 <li>
-<p>Download and install <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> (<a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">win64 quick link</a>) with the following options:</p>
-<ul>
-<li>Install for "Just for Me" to the default directory (e.g., C:\ProgramData\Miniconda3 )</li>
-</ul>
-<blockquote>
-<p>the "install for everyone" option no longer permits you to add python to the system PATH</p>
-</blockquote>
-<ul>
-<li>Check the "Add Miniconda3 to the system PATH environment variable" box</li>
-<li>Check the "Register Miniconda3 as the system Python" box</li>
-<li>set other options as you like.</li>
-<li>Install additional software packages</li>
-<li>In Windows, go to the search bar and type "cmd". Once you see the Command Prompt app in the list, right click on it and choose "Run as administrator" from the contextual menu.</li>
-<li>Paste each of the following lines (one at a time) at the command prompt and press enter:</li>
-</ul>
+<p><strong>Install additional software packages.</strong> In Windows, go to the search bar and type "cmd". Once you see the Command Prompt app in the list, right click on it and choose "Run as administrator" from the contextual menu.</p>
+<p><img src="../image08.png" style="height:400px;"></p>
+</li>
+<li>
+<p>When the terminal opens, paste each of the following lines (one at a time) at the command prompt and press enter:</p>
+<pre><code>conda install -y anaconda
+conda install -y pyqtgraph pyopengl pycairo shapely pyserial ffmpeg
+conda update -y --all
+python -m pip install --upgrade pip
+pip install meshio pygmsh ezdxf pypdf4 pypoly2tri idealab_tools foldable_robotics
+</code></pre>
 </li>
 </ol>
-<pre><code class="language-bash">conda update --all
-</code></pre>
 
 
 
@@ -1080,12 +886,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
