@@ -476,8 +476,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-vocab" class="md-nav__link">
-    Step 1 - Vocab
+  <a href="#part-1-vocab" class="md-nav__link">
+    Part 1: Vocab
   </a>
   
 </li>
@@ -488,11 +488,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-prototyping" class="md-nav__link">
-    Step 2: Prototyping
+  <a href="#part-2-prototyping" class="md-nav__link">
+    Part 2: Prototyping
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Prototyping">
+    <nav class="md-nav" aria-label="Part 2: Prototyping">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -503,8 +503,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
+  <a href="#part-4-discussion" class="md-nav__link">
+    Part 4: Discussion
   </a>
   
 </li>
@@ -523,8 +523,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#submission-notes" class="md-nav__link">
-    Submission Notes
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
   </a>
   
 </li>
@@ -658,6 +658,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -737,6 +739,60 @@
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             Lecture 01
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../lectures/lecture-02/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 02
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 02
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1008,8 +1064,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#step-1-vocab" class="md-nav__link">
-    Step 1 - Vocab
+  <a href="#part-1-vocab" class="md-nav__link">
+    Part 1: Vocab
   </a>
   
 </li>
@@ -1020,11 +1076,11 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#step-2-prototyping" class="md-nav__link">
-    Step 2: Prototyping
+  <a href="#part-2-prototyping" class="md-nav__link">
+    Part 2: Prototyping
   </a>
   
-    <nav class="md-nav" aria-label="Step 2: Prototyping">
+    <nav class="md-nav" aria-label="Part 2: Prototyping">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1035,8 +1091,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
+  <a href="#part-4-discussion" class="md-nav__link">
+    Part 4: Discussion
   </a>
   
 </li>
@@ -1055,8 +1111,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#submission-notes" class="md-nav__link">
-    Submission Notes
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
   </a>
   
 </li>
@@ -1101,7 +1157,7 @@
 <h2 id="introduction">Introduction</h2>
 <p>The purpose of this assignment is to develop your knowledge and understanding of rapid prototyping techniques and the kinematics of folded systems</p>
 <h2 id="instructions">Instructions</h2>
-<h3 id="step-1-vocab">Step 1 - Vocab</h3>
+<h3 id="part-1-vocab">Part 1: Vocab</h3>
 <ol>
 <li>Please select two of the vocabulary words introduced in the first lecture (either in the slides or on the board).  </li>
 <li>Provide your own (initial) definition for the word, <em><strong>in your own words</strong></em>.  </li>
@@ -1165,7 +1221,7 @@
 <p>Rework your initial definitions to factor in the perspectives of the sources you found, and discuss how those papers influenced the new definition.</p>
 </li>
 </ol>
-<h2 id="step-2-prototyping">Step 2: Prototyping</h2>
+<h2 id="part-2-prototyping">Part 2: Prototyping</h2>
 <p>Prototype a unique, planar, four-bar linkage.  Using stiff paper, cardstock, or cardboard, prototype a four-bar linkage using the techniques discussed in class.  <strong>None of the sides of this linkage should be the same length</strong></p>
 <ol>
 <li>Label each of the physical links as link A, link B, link C, and link D.</li>
@@ -1213,36 +1269,45 @@
 <h3 id="part-3-code-implementation">Part 3: Code Implementation</h3>
 <p>In this section you will compose the transforms and kinematics for your mechanism and plot it using the resulting vectors</p>
 <ol>
-<li>Create a new jupyter/colab notebook.  In the first cell, paste in the kinematics code you began in class for defining rotations and quaternions.</li>
-<li>Define (using a function to create quaternions or rotation matrices given an axis and angle) the appropriate 3D <em>local</em> rotational transform describing a frame in terms of its <em>proximal</em> frame components.  Use the defined axis and the measured angle from above steps to fully define this rotation.</li>
-<li>Compose the 3D global rotational transform for each frame from the <em>base</em> frame.</li>
-<li>Define a local, 3D vector that describes the vector beetween two points on each link, the first point being a point located on / along the proximal joint axis, the second being a point located on / along the distal joint axis.</li>
-<li>
-<p>Define a global 3D vector that describes the position of each joint axis from the origin (0,0,0), <em>using only base frame unit vectors</em>.</p>
-<ul>
-<li>you are not expected to "close the loop" in this assignment.  It is reasonable to describe two separate chains to the same point, and to supply two successive rotations to each.</li>
+<li><strong>Create a new jupyter/colab notebook.</strong>  In the first cell, paste in the kinematics code you began in class for defining rotations and quaternions.</li>
+<li><strong>Define the appropriate 3D <em>local</em> rotational transform</strong> for each link, describing the rotation between the closest proximal reference frame and its own.<ul>
+<li>Use a Python function to create quaternions or rotation matrices with a rotation axis and joint angle you supply.</li>
+<li>For the joint axis and joint angle, use the axis you defined earlier, and the angle you measured in previous steps, to ensure consistency between your description and your math.</li>
 </ul>
 </li>
+<li><strong>Compose the 3D <em>global</em> rotational transform</strong> for each link's reference frame from the <em>base</em> frame you previously defined.</li>
 <li>
-<p>compute the "error" between your two calculations of the same joint location.</p>
+<p><strong>Define the 3D vectors</strong> that describe the vector beetween two points on each link, the first point being a point located on / along the proximal joint axis, the second being a point located on / along the distal joint axis, <em>using the unit vectors of the local reference frame that are attached to that link.</em>  For the output link, create the local vector that points to <span class="arithmatex">\(p_out\)</span></p>
+<p><img src="../PXL_20230922_113943876.jpg" style="height:2in;">
+<img src="../PXL_20230922_113938841.jpg" style="height:2in;"></p>
 </li>
-<li>using matplotlib, plot the position of each successive joint from proximal to distal. do not plot the gap between the same point via separate open loop chains</li>
-</ol>
+<li>
+<p><strong>Define the two <em>global</em> 3D vectors</strong> that describe the position of the end effector position (<span class="arithmatex">\(p_{out_1}\)</span> and <span class="arithmatex">\(p_{out_2}\)</span> in my drawing) from the origin (0,0,0) along each of the two possible paths, <em>using only base frame unit vectors</em>.</p>
+<p><img src="../PXL_20230922_113943876.jpg" style="height:2in;">
+<img src="../PXL_20230922_113439995.jpg" style="height:2in;"></p>
+<blockquote>
+<p>It is reasonable to describe two separate chains to the same point, and to supply successive rotations to each.  These two points may not actually touch due to measurement or computer precision.</p>
+</blockquote>
+</li>
+<li>
+<p>Compute the "error" between your two calculations of the same joint location, using the equation for the length of a vector.</p>
+</li>
+<li>
+<p>Using matplotlib, plot the mechansim in its computed position along both paths, from proximal to distal. Do not plot the gap between the same point via separate open loop chains.</p>
 <blockquote>
 <p>You may either use a 2D or 3D plot, but the computations leading up to this should be in 3D, and consistent with the device prototyped above.</p>
 </blockquote>
+</li>
+</ol>
 <!-- 1. Following the [solidworks tutorial](/modules/kinematics/solidworks-kinematics-tutorial) for creating 2D or 3D kinematic models, create a 2D or 3D representation of your system kinematics.  Include a **rendering** or **screenshot** of the model in several positions in your writeup.
 
     ***Remember:** Make sure you fully "ground" one link.* -->
 
-<h3 id="discussion">Discussion</h3>
+<h3 id="part-4-discussion">Part 4: Discussion</h3>
 <p>Please discuss each of the following points.</p>
 <ol>
-<li>Comment on whether your mechanism, as plotted in part 3, matched the device you prototyped in part 2.</li>
-<li>Identify potential pitfalls or sources of error that could lead to differences between the two.<ul>
-<li>brainstorm </li>
-</ul>
-</li>
+<li>Comment on how well your mechanism as plotted in part 3 matched the device you prototyped in part 2.</li>
+<li>Identify potential pitfalls or sources of error that could lead to differences between the two.</li>
 </ol>
 <h2 id="submission">Submission</h2>
 <p>Please include a Jupyter notebook and pdf of the following:</p>
@@ -1257,7 +1322,7 @@
 </li>
 <li>Detailed answers to the discussion questions asked alongside all steps, as well as the explicit discussion questions at the bottom.</li>
 </ol>
-<h3 id="submission-notes">Submission Notes</h3>
+<h3 id="other-notes">Other Notes</h3>
 <ul>
 <li>Please follow the "Submission Best Practices" document posted on the course website.  </li>
 <li>This assignment should be submitted to moodle as a jupyter notebook (.ipynb) file and pdf.  <ul>
@@ -1281,11 +1346,19 @@
 </tr>
 <tr>
 <td>Part 2</td>
-<td>60</td>
+<td>30</td>
 </tr>
 <tr>
-<td>Discussion</td>
+<td>Part 3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Part 4</td>
 <td>20</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
 </tr>
 </tbody>
 </table>
