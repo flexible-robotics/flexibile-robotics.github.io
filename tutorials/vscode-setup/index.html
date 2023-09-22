@@ -61,7 +61,18 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -120,43 +131,6 @@
     </div>
     
     
-    
-      <label class="md-header__button md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-      </label>
-      <div class="md-search" data-md-component="search" role="dialog">
-  <label class="md-search__overlay" for="__search"></label>
-  <div class="md-search__inner" role="search">
-    <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
-      <label class="md-search__icon md-icon" for="__search">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
-      </label>
-      <nav class="md-search__options" aria-label="Search">
-        
-        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
-          
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
-        </button>
-      </nav>
-      
-    </form>
-    <div class="md-search__output">
-      <div class="md-search__scrollwrap" data-md-scrollfix>
-        <div class="md-search-result" data-md-component="search-result">
-          <div class="md-search-result__meta">
-            Initializing search
-          </div>
-          <ol class="md-search-result__list" role="presentation"></ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
     
     
       <div class="md-header__source">
@@ -1228,28 +1202,28 @@ code --install-extension Pycom.pymakr-preview</code></p>
 <ol>
 <li>
 <p>select "create project".  Select the same code folder as above and specify a project name (like "hello-world").  Select the option to create a subdirectory with the micropython folder.</p>
-<p><img alt="Define the name" src="project-name.png" /></p>
-<p><img alt="create the project in a subfolder" src="project-structure.png" /></p>
-<p><img alt="specify empty project" src="empty-project.png" /></p>
+<p><a class="glightbox" href="project-name.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Define the name" src="project-name.png" /></a></p>
+<p><a class="glightbox" href="project-structure.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="create the project in a subfolder" src="project-structure.png" /></a></p>
+<p><a class="glightbox" href="empty-project.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="specify empty project" src="empty-project.png" /></a></p>
 </li>
 <li>
 <p>Connect your device via usb to your computer</p>
 </li>
 <li>
 <p>Within the "hello-world" project that is created within the "Pymakr: Projects" tab, add a new device. Follow the prompts to select the appropriate com port</p>
-<p><img alt="Select your device" src="select-port.png" /></p>
+<p><a class="glightbox" href="select-port.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Select your device" src="select-port.png" /></a></p>
 </li>
 <li>
 <p>Connect to the device by selecting the lightning bolt icon</p>
-<p><img alt="Connect to Device" src="connect-device.png" /></p>
+<p><a class="glightbox" href="connect-device.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Connect to Device" src="connect-device.png" /></a></p>
 </li>
 <li>
 <p>Open up a terminal window by selecting the box with an arrow in it</p>
-<p><img alt="Open up a Terminal Window" src="terminal-button.png" /></p>
+<p><a class="glightbox" href="terminal-button.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Open up a Terminal Window" src="terminal-button.png" /></a></p>
 </li>
 <li>
 <p>A terminal window should open and look like this:</p>
-<p><img alt="Example of terminal window" src="terminal-output.png" /></p>
+<p><a class="glightbox" href="terminal-output.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Example of terminal window" src="terminal-output.png" /></a></p>
 <p>```python
 MicroPython v1.19.1 on 2022-06-18; ESP32 module with ESP32
 Type "help()" for more information.</p>
@@ -1271,7 +1245,7 @@ hello world</code></p>
 </li>
 <li>
 <p>If you wish to disconnect, you can use:</p>
-<p><img alt="Figure" src="disconnect-button.png" /></p>
+<p><a class="glightbox" href="disconnect-button.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Figure" src="disconnect-button.png" /></a></p>
 </li>
 </ol>
 </li>
@@ -1366,5 +1340,5 @@ hello world</code></p>
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
