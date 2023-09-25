@@ -926,8 +926,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#complex-operations" class="md-nav__link">
-    Complex Operations
+  <a href="#operations-between-i-j-and-k" class="md-nav__link">
+    Operations between \(i\), \(j\), and \(k\)
   </a>
   
 </li>
@@ -1268,8 +1268,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#complex-operations" class="md-nav__link">
-    Complex Operations
+  <a href="#operations-between-i-j-and-k" class="md-nav__link">
+    Operations between \(i\), \(j\), and \(k\)
   </a>
   
 </li>
@@ -1413,16 +1413,19 @@
 <h2 id="quaternion-structure">Quaternion Structure</h2>
 <div class="arithmatex">\[q = a+bi+cj+dj\]</div>
 <p>where <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>, and <span class="arithmatex">\(k\)</span> represent an orthogonal set of complex numbers.</p>
-<h2 id="complex-operations">Complex Operations</h2>
-<div class="arithmatex">\[ii=jj=kk-1\]</div>
+<div class="arithmatex">\[ii=jj=kk=-1\]</div>
+<h2 id="operations-between-i-j-and-k">Operations between <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>, and <span class="arithmatex">\(k\)</span></h2>
+<p><a class="glightbox" href="../ijk.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../ijk.jpg" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <div class="arithmatex">\[ij=-ji=k\]</div>
 <div class="arithmatex">\[jk=-kj=i\]</div>
 <div class="arithmatex">\[ki=-ik=j\]</div>
 <div class="arithmatex">\[ijk=-1\]</div>
 <div class="arithmatex">\[\text{proof: } ijk=(ij)k=(k)k = -1\]</div>
-<p>Note that this means that quaternion compex compoents are non-commutative, eg $ ij\neq ji$, $ jk\neq kj$, $ ki\neq ik$.</p>
+<blockquote>
+<p><strong>Note:</strong>  This means that quaternion complex components are non-commutative, eg $ ij\neq ji$, $ jk\neq kj$, $ ki\neq ik$.</p>
+</blockquote>
 <h2 id="pure-quaternion">Pure Quaternion</h2>
-<p>quaternion with no real component, eg <span class="arithmatex">\(bi+cj+dk\)</span></p>
+<p>A pure quaternion is a quaternion with no real component, eg <span class="arithmatex">\(bi+cj+dk\)</span></p>
 <!-- ## Dot product
 
 $$i \cdot i = j \cdot j = k \cdot k = 1$$
@@ -1453,6 +1456,9 @@ $$i \times j = $$ -->
 =&amp;(ae-bf-cg-dh)+(af+be+ch-dg)i\\
  &amp;+(ag-bh+ce+df)j+(ah+bg-cf+de)k\\
 \end{align}\]</div>
+<blockquote>
+<p><strong>Note:</strong> quaternion multiplication is non-commutative, ie $q_1 q_2 \neq q_2 q_1 $</p>
+</blockquote>
 <h2 id="complex-conjugate">Complex Conjugate</h2>
 <p>for <span class="arithmatex">\(q=a+bi+cj+dk\)</span>, its conjugate <span class="arithmatex">\(q^*\)</span> may be represented by</p>
 <div class="arithmatex">\[q^*=a-bi-cj-dk\]</div>
