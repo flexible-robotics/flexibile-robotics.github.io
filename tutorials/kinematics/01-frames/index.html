@@ -818,6 +818,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inertial-reference-newtonian-frames" class="md-nav__link">
+    Inertial Reference (Newtonian) Frames
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -949,6 +956,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1028,6 +1037,26 @@
   
   <span class="md-ellipsis">
     Google Colab Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/sympy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sympy
   </span>
   
 
@@ -1137,6 +1166,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#inertial-reference-newtonian-frames" class="md-nav__link">
+    Inertial Reference (Newtonian) Frames
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1166,7 +1202,29 @@
 <p>When analyzing a system, sometimes it's convenient or simple to represent a system in a specific way.  We all know of the Cartesian system of coordinates which span a three dimensional space, but did you know that there are an infinte number of ways to describe that same space?  Just as we are familiar with the x,y, and z directions, we can use different reference frames to navigate and represent the same coordinates and vectors in different ways.</p>
 <p>Take the example of your professor standing in front of you, giving a lecture.  If both of you were to stretch your right hand out to your right, you wouldn't be pointing in the same direction.  To get to the door <em>behind you</em>, your professor would need to go <em>forward</em>.  Direction is relative to each of you, based on your frame of reference.</p>
 <p>Sometimes the ability to select your directional representation is useful in kinematics and dynamics, because depending on the representation, it may take many more or far fewer variables to do so.  For example, when discussing the motion of a vehicle such as a plane or car, it can be useful to describe the forces acting on that vehicle from the perspective of the vehicle, even if you're more interested where the vehicle goes relative to your own perspective standing on the ground.  The vehicle's perspective and the ground's perspective, in terms of their directional components, would be considered separate reference frames.</p>
-<p>In three-dimensional space, frames provide three orthogonal unit basis vectors, which can be used to construct vectors.  </p>
+<p>In three-dimensional space, frames provide three orthogonal unit basis vectors, which can be used to construct vectors.  <strong>There are infinite ways to describe the same 3D space.</strong></p>
+<ul>
+<li>Frames Are<ul>
+<li>Containers for holding basis vectors</li>
+</ul>
+</li>
+<li>Frames Are Not<ul>
+<li>Attached to a point in space.  <strong>Only hold rotation information</strong></li>
+</ul>
+</li>
+<li>Frames Do Not<ul>
+<li>Translate.  <strong>Only rotate.</strong></li>
+<li>Have mass.</li>
+<li>Flex or stretch</li>
+<li>Have dimensions</li>
+</ul>
+</li>
+</ul>
+<h2 id="inertial-reference-newtonian-frames">Inertial Reference (Newtonian) Frames</h2>
+<p>Newtonian frames are reference frames that are not accelerating.</p>
+<p>Newtonian reference frames are useful because many algorithms / expressions (such as the equations for vector derivatives) assume a non-accelerating reference frame.</p>
+<p><a href="https://en.wikipedia.org/wiki/Inertial_frame_of_reference">https://en.wikipedia.org/wiki/Inertial_frame_of_reference</a></p>
+<blockquote></blockquote>
 <!-- > Frames can be implemented in Python as a class, holding three *orthonormal* (orthogonal and normal) vectors.   -->
 
 

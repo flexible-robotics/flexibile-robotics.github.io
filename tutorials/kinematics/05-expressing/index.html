@@ -899,6 +899,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#expressing-vectors-in-other-frames" class="md-nav__link">
     Expressing vectors in other frames
   </a>
@@ -956,6 +963,8 @@
   
     
     
+      
+        
       
         
       
@@ -1042,6 +1051,26 @@
   
   <span class="md-ellipsis">
     Google Colab Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/sympy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sympy
   </span>
   
 
@@ -1152,6 +1181,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#sequence" class="md-nav__link">
+    Sequence
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#expressing-vectors-in-other-frames" class="md-nav__link">
     Expressing vectors in other frames
   </a>
@@ -1194,6 +1230,19 @@
 <p>You cannot combine the coefficients of two vectors together if those coefficients are attached to different sets of basis vectors.</p>
 <div class="arithmatex">\[u_1\hat{a}_x + u_2\hat{b}_y  \neq (u_1+u_2)\hat{a}_x \neq (u_1+u_2)\hat{b}_y \]</div>
 <p>They must instead, be <em>expressed</em> in terms of one or the other basis vectors before you can combine them.  Vectors can be expressed in other reference frames using rotations, which define the length and angle-preserving transformation that describes one set of basis vectors in a different frame's basis vectors.</p>
+<h2 id="sequence">Sequence</h2>
+<ol>
+<li>First, define your frames<ol>
+<li>Define at least one Fixed (Newtonian) frame</li>
+</ol>
+</li>
+<li>Create Rotations between frames</li>
+<li>Use frames' basis vectors to compose vectors</li>
+<li>Operate on them.<ul>
+<li><code>dot()</code>, <code>cross()</code>, <code>+</code>, <code>-</code>, <code>*</code></li>
+</ul>
+</li>
+</ol>
 <h2 id="expressing-vectors-in-other-frames">Expressing vectors in other frames</h2>
 <p>Let's say that </p>
 <div class="arithmatex">\[p = u_1 \hat{b}_x + u_2 \hat{b}_y + u_3 \hat{b}_z\]</div>
