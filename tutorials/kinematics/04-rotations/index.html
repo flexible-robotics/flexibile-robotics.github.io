@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../01-syllabus/">
+        <link rel="prev" href="../03-vectors/">
       
       
-        <link rel="next" href="../../lectures/">
+        <link rel="next" href="../05-expressing/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Submission Best Practices - Flexible Robotics</title>
+        <title>Rotations - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#general-document-preparation" class="md-skip">
+        <a href="#introduction" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Submission Best Practices
+              Rotations
             
           </span>
         </div>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -179,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../assignments/" class="md-tabs__link">
+        <a href="../../../assignments/" class="md-tabs__link">
           
   
     
@@ -195,13 +195,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01-syllabus/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -221,7 +219,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../lectures/" class="md-tabs__link">
+        <a href="../../../lectures/" class="md-tabs__link">
           
   
     
@@ -237,17 +235,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tutorials/kinematics/01-frames/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-frames/" class="md-tabs__link">
           
   
     
@@ -291,7 +293,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -320,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -360,7 +362,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../assignments/" class="md-nav__link ">
+            <a href="../../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -391,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/assignment-01/" class="md-nav__link">
+      <a href="../../../assignments/assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -416,8 +418,6 @@
       
   
   
-    
-  
   
     
     
@@ -428,13 +428,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
@@ -447,7 +447,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Course info
@@ -460,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-syllabus/" class="md-nav__link">
+      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -478,29 +478,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Submission Best Practices
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,61 +489,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#figures-tables" class="md-nav__link">
-    Figures &amp; Tables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cad-renderings-or-screenshots" class="md-nav__link">
-    CAD renderings or screenshots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-snippets" class="md-nav__link">
-    Code Snippets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hyperlinks" class="md-nav__link">
-    Hyperlinks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -605,7 +530,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/" class="md-nav__link ">
+            <a href="../../../lectures/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -655,7 +580,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/lecture-01/" class="md-nav__link ">
+            <a href="../../../lectures/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -709,7 +634,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/lecture-02/" class="md-nav__link ">
+            <a href="../../../lectures/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -749,6 +674,8 @@
       
   
   
+    
+  
   
     
     
@@ -761,13 +688,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
@@ -780,7 +707,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -791,6 +718,8 @@
                 
   
   
+    
+  
   
     
     
@@ -809,13 +738,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
         
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
@@ -828,7 +757,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Kinematics
@@ -841,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/01-frames/" class="md-nav__link">
+      <a href="../01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/02-basis-vectors/" class="md-nav__link">
+      <a href="../02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -881,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/03-vectors/" class="md-nav__link">
+      <a href="../03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -899,9 +828,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/04-rotations/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Rotations
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -910,6 +857,100 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theory" class="md-nav__link">
+    Theory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usage" class="md-nav__link">
+    Usage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotation-tables-matrices" class="md-nav__link">
+    Rotation Tables / matrices
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rotations-are-orthonormal1" class="md-nav__link">
+    Rotations are Orthonormal1
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotations are Orthonormal1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-length-row-and-column-vectors" class="md-nav__link">
+    Unit Length row and column vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-row-and-column-vectors" class="md-nav__link">
+    Orthogonal row and column vectors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-rotations-about-major-axes" class="md-nav__link">
+    Simple rotations about major axes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-rotations" class="md-nav__link">
+    Compound Rotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-references" class="md-nav__link">
+    External References
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -921,7 +962,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/05-expressing/" class="md-nav__link">
+      <a href="../05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -941,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/06-quaternions/" class="md-nav__link">
+      <a href="../06-quaternions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1011,7 +1052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/02-installing-packages/" class="md-nav__link">
+      <a href="../../python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1092,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1139,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/vscode-setup/" class="md-nav__link ">
+            <a href="../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1151,8 +1192,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1161,36 +1200,77 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#figures-tables" class="md-nav__link">
-    Figures &amp; Tables
+  <a href="#introduction" class="md-nav__link">
+    Introduction
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cad-renderings-or-screenshots" class="md-nav__link">
-    CAD renderings or screenshots
+  <a href="#theory" class="md-nav__link">
+    Theory
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-snippets" class="md-nav__link">
-    Code Snippets
+  <a href="#usage" class="md-nav__link">
+    Usage
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#rotation-tables-matrices" class="md-nav__link">
+    Rotation Tables / matrices
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hyperlinks" class="md-nav__link">
-    Hyperlinks
+  <a href="#rotations-are-orthonormal1" class="md-nav__link">
+    Rotations are Orthonormal1
+  </a>
+  
+    <nav class="md-nav" aria-label="Rotations are Orthonormal1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-length-row-and-column-vectors" class="md-nav__link">
+    Unit Length row and column vectors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#orthogonal-row-and-column-vectors" class="md-nav__link">
+    Orthogonal row and column vectors
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-rotations-about-major-axes" class="md-nav__link">
+    Simple rotations about major axes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compound-rotations" class="md-nav__link">
+    Compound Rotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-references" class="md-nav__link">
+    External References
   </a>
   
 </li>
@@ -1210,7 +1290,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/course-info/02-submission-best-practices.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/kinematics/04-rotations.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1218,91 +1298,82 @@
   
 
 
-<p>This page details how to prepare assignments for submission.  The "Submission" section of your assignment should provide the details for what format and where to submit assignments.  This document should be used in conjunction with each assignment to ensure that all required files are submitted, and in the correct format.</p>
-<h1 id="general-document-preparation">General Document Preparation</h1>
-<p>When answering questions, don't just answer the question, phrase the answer in a complete sentence which includes what the question asked. For example:</p>
-<p>Question:</p>
-<blockquote>
-<p>What is the sum of one and one?</p>
-</blockquote>
-<p>Response</p>
-<blockquote>
-<p>Two</p>
-</blockquote>
-<p>Instead, provide context and detail in your answer, like this:</p>
-<p>Question:</p>
-<blockquote>
-<p>What is the sum of one and one?</p>
-</blockquote>
-<p>Response:</p>
-<blockquote>
-<p>Our group found that the sum of one and one is two. This was verified in two ways. First we ran a simulation using the following code....</p>
-<p>Second we ran an experiment where we took M&amp;M's and counted how many there were when we put one next to another. We found the answer was two across ten experiments with a mean of 2 and standard deviation of 0.1 M&amp;M's. We attribute the error to the fact that Maxwell ate one.</p>
-</blockquote>
-<p>This will help when you transition from assignment reports to your final report. Please still include the question or at least the question number before your answer for the convenience of the grader.</p>
-<h2 id="figures-tables">Figures &amp; Tables</h2>
-<p>Please include figures and tables inline with the text so that it is easy to find when referring to it in the text.  Figures may be composed of images, data-centric plots, or annotated graphics.  Here are some other guidelines:</p>
-<ul>
-<li>Use detailed subtitles.</li>
-<li>Utilize figure numbers when referring to them in the main body of the text. Utilize color schemes in figures which print well in color as well as black and white.</li>
-</ul>
-<h2 id="cad-renderings-or-screenshots">CAD renderings or screenshots</h2>
-<ul>
-<li>Photo-realistic renderings look better than screenshots, but take longer to create. These will be required for final reports and presentations.</li>
-<li>Change background to white before taking screenshots.</li>
-<li>utilize multiple standard orientations (top, right, iso) in order to provide a clear picture of your design.</li>
-<li>include source CAD files as specified below</li>
-</ul>
-<h2 id="code-snippets">Code Snippets</h2>
-<ul>
-<li>Code Snippets: you may include useful code snippets inline as long as they are well commented and referred to in the main body of the text, but source code must always be supplied in the manner specified below.</li>
-</ul>
-<h2 id="references">References</h2>
-<p>Literary References must be used in body of your text, and supplied in a bibliography section at the end. <strong> Use IEEE format.</strong> Reference managers such as Mendeley or Zotero can do this formatting for you automatically.</p>
-<h2 id="hyperlinks">Hyperlinks</h2>
-<p>Plain text, unformatted hyperlinks should not be supplied in the main body of reports and documents. If you wish to use a hyperlink in the main body of a document, please use a footnote to the full-text link<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Please do not use <a href="#hyperlinks">masked links</a> in text.</p>
-<h1 id="file-format-specific-instructions">File Format-specific instructions</h1>
-<p>Different assignments may require you to submit documents and supporting files in a number of different formats.  Please see below for the submission guidelines for each file type</p>
-<h2 id="pdfs">PDFs</h2>
-<p>If the document is requested as a pdf, produce a single, monolithic pdf with all document parts such as figures, tables, images, code snippets and references included inline.  </p>
-<p>When submitting pdf-based submissions, you should only attach two files: 1) the monolithic pdf, and 2) any supporting files in a separate .zip file.</p>
-<h2 id="webpages">Webpages</h2>
-<p>If the document is requested as a web page, produce your site using markdown or html with all document parts such as figures, tables, images, and references embedded inline.  Inline files(media files, data, etc...) will need to be separately uploaded to the web host as well.  Supporting files may be uploaded to the host and linked from the web page.  <em>You may use external sites to render uploaded jupyter notebooks rather than converting them to markdown, if desired.  See the tutorials for more information</em></p>
-<p>When submitting web-based assignments, submit the link to the web page and the underlying github repository.  Ensure that any supporting files in are linked from within the web page and render completely from a separate computer.</p>
-<h2 id="jupyter-notebooks">Jupyter Notebooks</h2>
-<p>Jupyter submissions are convenient because they permit code, reporting, figures, photos, etc all to be housed within one dynamic document. This format is <em>highly encouraged</em> or <strong>required</strong> for many assignments.</p>
-<p>When you submit a Jupyter notebook, ensure that 1) the notebook has been <strong>fully compiled</strong> before submitting, and 2) that any external files are included either as a separate .zip file or, if the file is to be added to the website, uploaded to your web server.  The notebook can be recompiled by opening the file in the jupyter browser and in the top jupyter menu selecting "Kernel" --&gt; "Restart and Run All".</p>
-<p>If posting jupyter notebooks to a web page, there are two options: 1) download your jupyter notebook as a markdown file (or .zip) and upload that document, or link to the original .ipynb file using an external service.  </p>
-<!-- More details may be found in the jupyter notebook and web page tutorials. -->
+  <h1>Rotations</h1>
 
-<p>If submitting jupyter assignments, Submit the source .ipynb file. Ensure that any supporting files are included in a separate .zip file and are also separately uploaded. Include your name or team # at the beginning of all notebooks.</p>
-<h2 id="other-code-python-microcontroller-etc">Other Code (python, microcontroller, etc.)</h2>
-<p>Zip up all files used to run your code (outside of standard packages). Indicate any other packages you installed which are required to run it, where you got, them, how you installed them (conda, pip, etc), and what version you installed. The professor and TA should be able to run your code using the instructions and files provided. After finishing the code, print output as your name in the last line before submission.</p>
-<h2 id="cad">CAD</h2>
-<p>Utilize Solidworks' File --&gt; "Pack and Go" Feature to include all files required to view parts and assemblies into a single zip file. Drawings in .dxf format must be exported to .pdf format and submitted separately. Make sure you include your name or team name.</p>
-<h2 id="videos">Videos</h2>
-<p>You may be asked to submit or post recorded presentations or experiments as videos.  Due to space limitations, please embed these videos as embedded YouTube videos in web pages or link to their YouTube pages in .pdf documents. Please make sure the video is "unlisted" rather than "private" ("public" is also ok but is not required).  </p>
-<!-- For more information on exporting recorded powerpoint presentations to .mp4, see the tutorial. -->
-
-<p>When taking videos, try to follow these general rules of thumb:</p>
+<h2 id="introduction">Introduction</h2>
+<p>While there may be many ways to navigate and describe the same three-dimensional space using reference frames, it is also necessary and desireable to be able to change representations; this can be useful for interpreting motion from a different perspective, for adding forces or torques to a system using directional components which are a more natural description, or in order to perform mathematical operations between vectors which are represented by different basis vectors.  The method by which we represent one frame to another is through the concept of rotations.  </p>
+<p>Rotations define the relationship between two <em>frames</em>, whether those frames are explicitly used or not in your problem.  Though rotations are represented as 3x3 matrices, they may be defined  a number of ways, including (axis, angle) representations, quaternions, Euler parameters, Euler vectors, Rodrigues' parameters, etc.  Each representation has its benefits and drawbacks, but at the end of the day, each of these methods is simply a way to define the rotational relationships between reference frames and the basis vectors they contain.  A rotation is a specific type of vector transformation that <strong>1)</strong> preserves length and <strong>2)</strong>, preserves angles between vectors.  Generically, we may think of rotational transformations as permitting the same vector to be represented using a new set of basis vectors, or, in another way of thinking, to actually rotate a body into a new orientation with relation to some other frame.</p>
+<p>As stated above, rotations can be defined in a number of ways. You may:</p>
 <ul>
-<li>Avoid messy background scenes.  Try to utilize blank backgrounds, or ensure the background does not distract from the action in the foreground</li>
-<li>Reduce unwanted noise in the scene.  Turn down music, avoid picking up background conversations, etc.</li>
-<li>Utilize a tripod if possible.  Stay away from handheld video</li>
-<li>Use landscape rather than portrait aspect ratio.</li>
+<li>supply a 3x3 matrix directly</li>
+<li>generate one using an axis, angle pair</li>
+<li>create one by defining one or more simpler rotations along an x,y,or z axis.  </li>
 </ul>
-<h2 id="images">Images</h2>
+<p>Rotations can also hold variables as well as constants, and can be differentiated.</p>
+<h2 id="theory">Theory</h2>
+<p><a class="glightbox" href="/figures/dynamics/rotation_matrix.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="rotation between frames" src="/figures/dynamics/rotation_matrix.png" /></a></p>
+<h2 id="usage">Usage</h2>
+<p>Rotations are used extensively in kinematics and dynamics.  Some use cases include</p>
 <ul>
-<li>If you include an image of a hand-made origami element, over-draw each joint in a vector drawing program to highlight joint locations in the image.</li>
+<li>Generating basis vectors for use in general-purpose vector creation</li>
+<li>They can be used with constants to generate fixed changes of reference</li>
+<li>They can be used conjunction with differentiable state variables to determine rotational velocity and acceleration between frames.</li>
 </ul>
-<h2 id="slides-presentations">Slides &amp; Presentations</h2>
-<p>Slides may be submitted in .pptx or pdf form. If submitting .pptx files, beware of linked (rather than embedded) videos, unembedded fonts, missing codecs, etc. I can't play -- or grade -- what's not included.</p>
-<p>If submitting pdf files of presentations, include any embedded videos separately as indicated in the videos section.</p>
+<p>Rotations are typically generated in a sequential order from a fixed, or Newtonian reference frame (a non-accelerating world frame).</p>
+<h2 id="rotation-tables-matrices">Rotation Tables / matrices</h2>
+<div class="arithmatex">\[\sideset{^{a}}{^{b}}R = \begin{array}{c|ccc}&amp; b_x&amp; b_y&amp; b_z\\
+\hline
+a_x &amp; a_x \cdot b_x &amp; a_x \cdot b_y &amp; a_x \cdot b_z\\
+a_y &amp; a_y \cdot b_y &amp; a_y \cdot b_y &amp; a_y \cdot b_z\\
+a_z &amp; a_z \cdot b_y &amp; a_z \cdot b_y &amp; a_z \cdot b_z
+\end{array}
+= \begin{bmatrix}
+r_1 &amp; r_2 &amp; r_3 \\
+r_4 &amp; r_5 &amp; r_6 \\
+r_7 &amp; r_8 &amp; r_9 \\
+\end{bmatrix}
+=\begin{bmatrix}v_1 &amp; v_2 &amp; v_3\end{bmatrix}
+=\begin{bmatrix}v_4 \\ v_5 \\ v_6\end{bmatrix}
+\]</div>
+<h2 id="rotations-are-orthonormal1">Rotations are Orthonormal<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></h2>
+<div class="arithmatex">\[R^TR=RR^T=I\]</div>
+<div class="arithmatex">\[R^T=R^{-1}\]</div>
+<h3 id="unit-length-row-and-column-vectors">Unit Length row and column vectors</h3>
+<div class="arithmatex">\[1=|\vec{v}_1|=|\vec{v}_2|=|\vec{v}_3|=|\vec{v}_4|=|\vec{v}_5|=|\vec{v}_6|\]</div>
+<h3 id="orthogonal-row-and-column-vectors">Orthogonal row and column vectors</h3>
+<div class="arithmatex">\[0=\vec{v}_1 \times \vec{v}_2=\vec{v}_2 \times \vec{v}_3=\vec{v}_3 \times \vec{v}_1\]</div>
+<div class="arithmatex">\[0=\vec{v}_4 \times \vec{v}_5=\vec{v}_5 \times \vec{v}_6=\vec{v}_6 \times \vec{v}_4\]</div>
+<h2 id="simple-rotations-about-major-axes">Simple rotations about major axes</h2>
+<div class="arithmatex">\[R_x(\theta) = \begin{bmatrix}
+1&amp;0&amp;0\\
+0 &amp;\cos{\theta} &amp; \sin{\theta} \\
+0 &amp; -\sin{\theta} &amp; \cos{\theta}
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[R_y(\theta) = \begin{bmatrix}
+\cos{\theta} &amp;0&amp;  -\sin{\theta} \\
+0&amp;1&amp;0\\
+\sin{\theta} &amp; 0&amp; \cos{\theta}
+\end{bmatrix}
+\]</div>
+<div class="arithmatex">\[R_z(\theta) = \begin{bmatrix}
+\cos{\theta} &amp; \sin{\theta} &amp; 0 \\
+-\sin{\theta} &amp; \cos{\theta} &amp; 0 \\
+0&amp;0&amp;1 \\
+\end{bmatrix}
+\]</div>
+<h2 id="compound-rotations">Compound Rotations</h2>
+<p>Rotations can be chained together and resolved into a single expression:</p>
+<div class="arithmatex">\[\sideset{^{a}}{^{c}}R = \sideset{^{a}}{^{b}}R \sideset{^{b}}{^{c}}R \]</div>
+<h2 id="external-references">External References</h2>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Rotation_matrix">https://en.wikipedia.org/wiki/Rotation_matrix</a></li>
+</ul>
 <div class="footnote">
 <hr />
 <ol>
 <li id="fn:1">
-<p><a href="http://idealab.asu.edu">http://idealab.asu.edu</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+<p><a href="https://en.wikipedia.org/wiki/Orthogonal_matrix">https://en.wikipedia.org/wiki/Orthogonal_matrix</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
 </li>
 </ol>
 </div>
@@ -1348,12 +1419,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       

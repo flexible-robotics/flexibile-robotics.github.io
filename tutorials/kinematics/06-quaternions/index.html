@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../01-syllabus/">
+        <link rel="prev" href="../05-expressing/">
       
       
-        <link rel="next" href="../../lectures/">
+        <link rel="next" href="../../python/01-installing-anaconda-python/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Submission Best Practices - Flexible Robotics</title>
+        <title>Quaternions - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#general-document-preparation" class="md-skip">
+        <a href="#complex-numbers" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Submission Best Practices
+              Quaternions
             
           </span>
         </div>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -179,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../assignments/" class="md-tabs__link">
+        <a href="../../../assignments/" class="md-tabs__link">
           
   
     
@@ -195,13 +195,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01-syllabus/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -221,7 +219,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../lectures/" class="md-tabs__link">
+        <a href="../../../lectures/" class="md-tabs__link">
           
   
     
@@ -237,17 +235,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tutorials/kinematics/01-frames/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-frames/" class="md-tabs__link">
           
   
     
@@ -291,7 +293,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -320,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -360,7 +362,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../assignments/" class="md-nav__link ">
+            <a href="../../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -391,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/assignment-01/" class="md-nav__link">
+      <a href="../../../assignments/assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -416,8 +418,6 @@
       
   
   
-    
-  
   
     
     
@@ -428,13 +428,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
             
@@ -447,7 +447,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Course info
@@ -460,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-syllabus/" class="md-nav__link">
+      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -478,29 +478,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Submission Best Practices
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -509,61 +489,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#figures-tables" class="md-nav__link">
-    Figures &amp; Tables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cad-renderings-or-screenshots" class="md-nav__link">
-    CAD renderings or screenshots
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#code-snippets" class="md-nav__link">
-    Code Snippets
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#hyperlinks" class="md-nav__link">
-    Hyperlinks
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -605,7 +530,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/" class="md-nav__link ">
+            <a href="../../../lectures/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -655,7 +580,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/lecture-01/" class="md-nav__link ">
+            <a href="../../../lectures/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -709,7 +634,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lectures/lecture-02/" class="md-nav__link ">
+            <a href="../../../lectures/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -749,6 +674,8 @@
       
   
   
+    
+  
   
     
     
@@ -761,13 +688,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
@@ -780,7 +707,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -791,6 +718,8 @@
                 
   
   
+    
+  
   
     
     
@@ -809,13 +738,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
         
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
@@ -828,7 +757,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Kinematics
@@ -841,7 +770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/01-frames/" class="md-nav__link">
+      <a href="../01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/02-basis-vectors/" class="md-nav__link">
+      <a href="../02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -881,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/03-vectors/" class="md-nav__link">
+      <a href="../03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -901,7 +830,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/04-rotations/" class="md-nav__link">
+      <a href="../04-rotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -921,7 +850,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/05-expressing/" class="md-nav__link">
+      <a href="../05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -939,9 +868,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../tutorials/kinematics/06-quaternions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Quaternions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -950,6 +897,154 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#complex-numbers" class="md-nav__link">
+    Complex numbers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quaternion-structure" class="md-nav__link">
+    Quaternion Structure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-operations" class="md-nav__link">
+    Complex Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#pure-quaternion" class="md-nav__link">
+    Pure Quaternion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quaternion-operations" class="md-nav__link">
+    Quaternion Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternion Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition" class="md-nav__link">
+    Addition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutliplication" class="md-nav__link">
+    Mutliplication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-conjugate" class="md-nav__link">
+    Complex Conjugate
+  </a>
+  
+    <nav class="md-nav" aria-label="Complex Conjugate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjugate-properties" class="md-nav__link">
+    Conjugate properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    Inverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-quaternions" class="md-nav__link">
+    Unit Quaternions
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Quaternions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-quaternion-inverse" class="md-nav__link">
+    Unit Quaternion Inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotations-with-unit-quaternions" class="md-nav__link">
+    Rotations with unit quaternions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-quaternions-as-half-rotations" class="md-nav__link">
+    Unit quaternions as half rotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-a-rotation-matrix-from-a-unit-quaternion" class="md-nav__link">
+    Constructing a Rotation Matrix from a unit quaternion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1011,7 +1106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1031,7 +1126,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/02-installing-packages/" class="md-nav__link">
+      <a href="../../python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1051,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tutorials/python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1098,7 +1193,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/vscode-setup/" class="md-nav__link ">
+            <a href="../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1151,8 +1246,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -1161,36 +1254,131 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#figures-tables" class="md-nav__link">
-    Figures &amp; Tables
+  <a href="#complex-numbers" class="md-nav__link">
+    Complex numbers
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#cad-renderings-or-screenshots" class="md-nav__link">
-    CAD renderings or screenshots
+  <a href="#quaternion-structure" class="md-nav__link">
+    Quaternion Structure
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#code-snippets" class="md-nav__link">
-    Code Snippets
+  <a href="#complex-operations" class="md-nav__link">
+    Complex Operations
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#references" class="md-nav__link">
-    References
+  <a href="#pure-quaternion" class="md-nav__link">
+    Pure Quaternion
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#hyperlinks" class="md-nav__link">
-    Hyperlinks
+  <a href="#quaternion-operations" class="md-nav__link">
+    Quaternion Operations
+  </a>
+  
+    <nav class="md-nav" aria-label="Quaternion Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#addition" class="md-nav__link">
+    Addition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mutliplication" class="md-nav__link">
+    Mutliplication
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complex-conjugate" class="md-nav__link">
+    Complex Conjugate
+  </a>
+  
+    <nav class="md-nav" aria-label="Complex Conjugate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conjugate-properties" class="md-nav__link">
+    Conjugate properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inverse" class="md-nav__link">
+    Inverse
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-quaternions" class="md-nav__link">
+    Unit Quaternions
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Quaternions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#unit-quaternion-inverse" class="md-nav__link">
+    Unit Quaternion Inverse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rotations-with-unit-quaternions" class="md-nav__link">
+    Rotations with unit quaternions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unit-quaternions-as-half-rotations" class="md-nav__link">
+    Unit quaternions as half rotations
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#constructing-a-rotation-matrix-from-a-unit-quaternion" class="md-nav__link">
+    Constructing a Rotation Matrix from a unit quaternion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External resources
   </a>
   
 </li>
@@ -1210,7 +1398,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/course-info/02-submission-best-practices.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/kinematics/06-quaternions.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1218,94 +1406,100 @@
   
 
 
-<p>This page details how to prepare assignments for submission.  The "Submission" section of your assignment should provide the details for what format and where to submit assignments.  This document should be used in conjunction with each assignment to ensure that all required files are submitted, and in the correct format.</p>
-<h1 id="general-document-preparation">General Document Preparation</h1>
-<p>When answering questions, don't just answer the question, phrase the answer in a complete sentence which includes what the question asked. For example:</p>
-<p>Question:</p>
-<blockquote>
-<p>What is the sum of one and one?</p>
-</blockquote>
-<p>Response</p>
-<blockquote>
-<p>Two</p>
-</blockquote>
-<p>Instead, provide context and detail in your answer, like this:</p>
-<p>Question:</p>
-<blockquote>
-<p>What is the sum of one and one?</p>
-</blockquote>
-<p>Response:</p>
-<blockquote>
-<p>Our group found that the sum of one and one is two. This was verified in two ways. First we ran a simulation using the following code....</p>
-<p>Second we ran an experiment where we took M&amp;M's and counted how many there were when we put one next to another. We found the answer was two across ten experiments with a mean of 2 and standard deviation of 0.1 M&amp;M's. We attribute the error to the fact that Maxwell ate one.</p>
-</blockquote>
-<p>This will help when you transition from assignment reports to your final report. Please still include the question or at least the question number before your answer for the convenience of the grader.</p>
-<h2 id="figures-tables">Figures &amp; Tables</h2>
-<p>Please include figures and tables inline with the text so that it is easy to find when referring to it in the text.  Figures may be composed of images, data-centric plots, or annotated graphics.  Here are some other guidelines:</p>
-<ul>
-<li>Use detailed subtitles.</li>
-<li>Utilize figure numbers when referring to them in the main body of the text. Utilize color schemes in figures which print well in color as well as black and white.</li>
-</ul>
-<h2 id="cad-renderings-or-screenshots">CAD renderings or screenshots</h2>
-<ul>
-<li>Photo-realistic renderings look better than screenshots, but take longer to create. These will be required for final reports and presentations.</li>
-<li>Change background to white before taking screenshots.</li>
-<li>utilize multiple standard orientations (top, right, iso) in order to provide a clear picture of your design.</li>
-<li>include source CAD files as specified below</li>
-</ul>
-<h2 id="code-snippets">Code Snippets</h2>
-<ul>
-<li>Code Snippets: you may include useful code snippets inline as long as they are well commented and referred to in the main body of the text, but source code must always be supplied in the manner specified below.</li>
-</ul>
-<h2 id="references">References</h2>
-<p>Literary References must be used in body of your text, and supplied in a bibliography section at the end. <strong> Use IEEE format.</strong> Reference managers such as Mendeley or Zotero can do this formatting for you automatically.</p>
-<h2 id="hyperlinks">Hyperlinks</h2>
-<p>Plain text, unformatted hyperlinks should not be supplied in the main body of reports and documents. If you wish to use a hyperlink in the main body of a document, please use a footnote to the full-text link<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>. Please do not use <a href="#hyperlinks">masked links</a> in text.</p>
-<h1 id="file-format-specific-instructions">File Format-specific instructions</h1>
-<p>Different assignments may require you to submit documents and supporting files in a number of different formats.  Please see below for the submission guidelines for each file type</p>
-<h2 id="pdfs">PDFs</h2>
-<p>If the document is requested as a pdf, produce a single, monolithic pdf with all document parts such as figures, tables, images, code snippets and references included inline.  </p>
-<p>When submitting pdf-based submissions, you should only attach two files: 1) the monolithic pdf, and 2) any supporting files in a separate .zip file.</p>
-<h2 id="webpages">Webpages</h2>
-<p>If the document is requested as a web page, produce your site using markdown or html with all document parts such as figures, tables, images, and references embedded inline.  Inline files(media files, data, etc...) will need to be separately uploaded to the web host as well.  Supporting files may be uploaded to the host and linked from the web page.  <em>You may use external sites to render uploaded jupyter notebooks rather than converting them to markdown, if desired.  See the tutorials for more information</em></p>
-<p>When submitting web-based assignments, submit the link to the web page and the underlying github repository.  Ensure that any supporting files in are linked from within the web page and render completely from a separate computer.</p>
-<h2 id="jupyter-notebooks">Jupyter Notebooks</h2>
-<p>Jupyter submissions are convenient because they permit code, reporting, figures, photos, etc all to be housed within one dynamic document. This format is <em>highly encouraged</em> or <strong>required</strong> for many assignments.</p>
-<p>When you submit a Jupyter notebook, ensure that 1) the notebook has been <strong>fully compiled</strong> before submitting, and 2) that any external files are included either as a separate .zip file or, if the file is to be added to the website, uploaded to your web server.  The notebook can be recompiled by opening the file in the jupyter browser and in the top jupyter menu selecting "Kernel" --&gt; "Restart and Run All".</p>
-<p>If posting jupyter notebooks to a web page, there are two options: 1) download your jupyter notebook as a markdown file (or .zip) and upload that document, or link to the original .ipynb file using an external service.  </p>
-<!-- More details may be found in the jupyter notebook and web page tutorials. -->
+  <h1>Quaternions</h1>
 
-<p>If submitting jupyter assignments, Submit the source .ipynb file. Ensure that any supporting files are included in a separate .zip file and are also separately uploaded. Include your name or team # at the beginning of all notebooks.</p>
-<h2 id="other-code-python-microcontroller-etc">Other Code (python, microcontroller, etc.)</h2>
-<p>Zip up all files used to run your code (outside of standard packages). Indicate any other packages you installed which are required to run it, where you got, them, how you installed them (conda, pip, etc), and what version you installed. The professor and TA should be able to run your code using the instructions and files provided. After finishing the code, print output as your name in the last line before submission.</p>
-<h2 id="cad">CAD</h2>
-<p>Utilize Solidworks' File --&gt; "Pack and Go" Feature to include all files required to view parts and assemblies into a single zip file. Drawings in .dxf format must be exported to .pdf format and submitted separately. Make sure you include your name or team name.</p>
-<h2 id="videos">Videos</h2>
-<p>You may be asked to submit or post recorded presentations or experiments as videos.  Due to space limitations, please embed these videos as embedded YouTube videos in web pages or link to their YouTube pages in .pdf documents. Please make sure the video is "unlisted" rather than "private" ("public" is also ok but is not required).  </p>
-<!-- For more information on exporting recorded powerpoint presentations to .mp4, see the tutorial. -->
+<h2 id="complex-numbers">Complex numbers</h2>
+<div class="arithmatex">\[i^2=-1\]</div>
+<h2 id="quaternion-structure">Quaternion Structure</h2>
+<div class="arithmatex">\[q = a+bi+cj+dj\]</div>
+<p>where <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>, and <span class="arithmatex">\(k\)</span> represent an orthogonal set of complex numbers.</p>
+<h2 id="complex-operations">Complex Operations</h2>
+<div class="arithmatex">\[ii=jj=kk-1\]</div>
+<div class="arithmatex">\[ij=-ji=k\]</div>
+<div class="arithmatex">\[jk=-kj=i\]</div>
+<div class="arithmatex">\[ki=-ik=j\]</div>
+<div class="arithmatex">\[ijk=-1\]</div>
+<div class="arithmatex">\[\text{proof: } ijk=(ij)k=(k)k = -1\]</div>
+<p>Note that this means that quaternion compex compoents are non-commutative, eg $ ij\neq ji$, $ jk\neq kj$, $ ki\neq ik$.</p>
+<h2 id="pure-quaternion">Pure Quaternion</h2>
+<p>quaternion with no real component, eg <span class="arithmatex">\(bi+cj+dk\)</span></p>
+<!-- ## Dot product
 
-<p>When taking videos, try to follow these general rules of thumb:</p>
+$$i \cdot i = j \cdot j = k \cdot k = 1$$
+
+$$i \cdot j = j \cdot k = k \cdot i = 0$$ -->
+
+<!-- ## Cross Product
+
+$$i \times j = $$ -->
+
+<h2 id="quaternion-operations">Quaternion Operations</h2>
+<p>Given</p>
+<div class="arithmatex">\[q_1 = a+bi +cj+dk\]</div>
+<div class="arithmatex">\[q_2 = e+fi +gj+hk\]</div>
+<h3 id="addition">Addition</h3>
+<div class="arithmatex">\[\begin{align}q_1+q_2 &amp;= a+bi+cj+dk+e+fi +gj+hk\\
+&amp;=a+e(b+f)i+(c+g)j+(d+h)k\end{align}\]</div>
+<h3 id="mutliplication">Mutliplication</h3>
+<div class="arithmatex">\[\begin{align}q_1 q_2 = &amp;(a+bi+cj+dk)(e+fi +gj+hk)\\
+% =&amp;ae+afi+agj+ahk+bie+bifi+bigj+bihk+cje\\
+%  &amp;+cjfi+cjgj+cjhk+dke+dkfi+dkgj+dkhk\\
+=&amp;ae+afi+agj+ahk+bei+bfii+bgij+bhik+cej\\
+ &amp;+cfji+cgjj+chjk+dek+dfki+dgkj+dhkk\\
+% =&amp;ae+afi+agj+ahk+bei-bf+bgk-bhj+cej-cfk\\
+%  &amp;-cg+chi+dek+dfj-dgi-dh\\
+% =&amp;ae-bf-cg-dh+afi+bei+chi-dgi+agj-bhj+cej\\
+%  &amp;+dfj+ahk+bgk-cfk+dek\\
+=&amp;(ae-bf-cg-dh)+(af+be+ch-dg)i\\
+ &amp;+(ag-bh+ce+df)j+(ah+bg-cf+de)k\\
+\end{align}\]</div>
+<h2 id="complex-conjugate">Complex Conjugate</h2>
+<p>for <span class="arithmatex">\(q=a+bi+cj+dk\)</span>, its conjugate <span class="arithmatex">\(q^*\)</span> may be represented by</p>
+<div class="arithmatex">\[q^*=a-bi-cj-dk\]</div>
+<h3 id="conjugate-properties">Conjugate properties</h3>
+<div class="arithmatex">\[(q^*)^*=q\]</div>
+<div class="arithmatex">\[(pq)^*=q^*p^*\]</div>
+<div class="arithmatex">\[qq^*=q^*q=|q|^2\]</div>
+<div class="arithmatex">\[|pq|^2=|p|^2|q|^2\]</div>
+<h3 id="inverse">Inverse</h3>
+<div class="arithmatex">\[q^{-1}=\frac{q^*}{|q|^2}\]</div>
+<div class="arithmatex">\[qq^{-1}=q^{-1}q\]</div>
+<!-- ### Dot Product
+
+$$q_1 \cdot q_2 = (a+bi+cj+dk) \cdot (e + fi +gj+hk)$$
+
+### Cross Product
+
+$$q_1 \times q_2 = (a+bi+cj+dk) \times (e +fi +gj+hk)$$ -->
+
+<h2 id="unit-quaternions">Unit Quaternions</h2>
+<p>Unit quaternions observe the additional constraint that their length is 1.  In other words, for a quaternion <span class="arithmatex">\(q_1 = a+bi +cj+dk\)</span>,</p>
+<div class="arithmatex">\[|q|=qq^* =1\]</div>
+<p>This additional constraint ensures that mutliplying any quaternion by a unit quaternion preserves the length of the result, much like how multiplying an normal matrix with a vector preserves length of the vector.</p>
+<h3 id="unit-quaternion-inverse">Unit Quaternion Inverse</h3>
+<p>For a unit quaternion <span class="arithmatex">\(q\)</span>, its inverse can be simply represented by</p>
+<div class="arithmatex">\[q^{-1}=q^*\]</div>
+<p>because <span class="arithmatex">\(|q|=1\)</span></p>
+<h3 id="rotations-with-unit-quaternions">Rotations with unit quaternions</h3>
+<p>A unit quaternion may be used to represent a rotation in 3D space.  For a cartesion point <span class="arithmatex">\((u_1, u_2, u_3)\)</span> and its <em>pure</em> quaternion representation <span class="arithmatex">\(p=u_1i+u_2j+u_3k\)</span>, the operation</p>
+<div class="arithmatex">\[\begin{align}p'=&amp;rpr^{-1}\\
+=&amp;rpr^*\end{align}\]</div>
+<p>can be used to transform point <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(p'\)</span>.  In this expression, <span class="arithmatex">\(r\)</span> represents a unit quaternion and <span class="arithmatex">\(p'\)</span> represents the rotated point.</p>
+<h3 id="unit-quaternions-as-half-rotations">Unit quaternions as half rotations</h3>
+<p>Any unit quaternion can be decomposed in the following manner</p>
+<div class="arithmatex">\[r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\]</div>
+<p>where <span class="arithmatex">\(\theta\)</span> represents the rotation about a unit vector <span class="arithmatex">\(\vec{u}\)</span>, where  <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(u_y\)</span>, and <span class="arithmatex">\(u_z\)</span> represent the x, y, and z components, with <span class="arithmatex">\(u_x^2+u_y^2+u_z^2=1\)</span>.</p>
+<h3 id="constructing-a-rotation-matrix-from-a-unit-quaternion">Constructing a Rotation Matrix from a unit quaternion</h3>
+<p>For a unit quaternion <span class="arithmatex">\(r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\)</span>, </p>
+<div class="arithmatex">\[v_1=rir^*\]</div>
+<div class="arithmatex">\[v_2=rjr^*\]</div>
+<div class="arithmatex">\[v_3=rkr^*\]</div>
+<div class="arithmatex">\[R=\begin{bmatrix} \text{imag}(v_1) &amp; \text{imag}(v_2) &amp; \text{imag}(v_3)\end{bmatrix}\]</div>
+<h2 id="external-resources">External resources</h2>
 <ul>
-<li>Avoid messy background scenes.  Try to utilize blank backgrounds, or ensure the background does not distract from the action in the foreground</li>
-<li>Reduce unwanted noise in the scene.  Turn down music, avoid picking up background conversations, etc.</li>
-<li>Utilize a tripod if possible.  Stay away from handheld video</li>
-<li>Use landscape rather than portrait aspect ratio.</li>
+<li><a href="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Quaternion">https://en.wikipedia.org/wiki/Quaternion</a></li>
 </ul>
-<h2 id="images">Images</h2>
-<ul>
-<li>If you include an image of a hand-made origami element, over-draw each joint in a vector drawing program to highlight joint locations in the image.</li>
-</ul>
-<h2 id="slides-presentations">Slides &amp; Presentations</h2>
-<p>Slides may be submitted in .pptx or pdf form. If submitting .pptx files, beware of linked (rather than embedded) videos, unembedded fonts, missing codecs, etc. I can't play -- or grade -- what's not included.</p>
-<p>If submitting pdf files of presentations, include any embedded videos separately as indicated in the videos section.</p>
-<div class="footnote">
-<hr />
-<ol>
-<li id="fn:1">
-<p><a href="http://idealab.asu.edu">http://idealab.asu.edu</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
-</ol>
-</div>
 
 
 
@@ -1348,12 +1542,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
