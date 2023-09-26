@@ -1332,28 +1332,10 @@
 <li>describing the location of important points in space (eg particles, contact, etc)</li>
 <li>defining the magnitude and direction of a force, or the axis of rotation for a torque.</li>
 </ul>
-<p>:::{style="font-size:24pt;"}
-:::{.columns}
-:::{.column width=50%}
-<a class="glightbox" href="lecture-images2/img0082.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="lecture-images2/img0082.png" style="max-height:4in;background:#FFFFFF;" /></a>
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{v}=a_1\hat{u}_x+a_2\hat{u}_y+a_3\hat{a}_z\)</span>\)</span>
-:::
-:::{.column width=50%}
-<a class="glightbox" href="lecture-images2/img0083.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="lecture-images2/img0083.png" style="max-height:4in;background:#FFFFFF;" /></a>
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{v}=b_1\hat{w}_x+b_2\hat{w}_y+b_3\hat{w}_z\)</span>\)</span>
-:::
-:::
-:::</p>
 <h2 id="alternate-basis-vectors">Alternate Basis Vectors</h2>
-<p>:::columns
-:::column
-<a class="glightbox" href="frame-a-b-alt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="frame-a-b-alt.png" style="max-height:4in;background:#FFFFFF;" /></a>
-:::
-:::column
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{v}=c_1\hat{a}_x+c_2\hat{a}_y+c_3\hat{a}_z\)</span>\)</span>
-<span class="arithmatex">\(<span class="arithmatex">\(\vec{v}=c_4\hat{b}_x+c_5\hat{b}_y+c_6\hat{b}_z\)</span>\)</span>
-:::
-:::</p>
+<p><a class="glightbox" href="../frame-a-b-alt.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../frame-a-b-alt.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;" /></a></p>
+<div class="arithmatex">\[\vec{v}=c_1\hat{a}_x+c_2\hat{a}_y+c_3\hat{a}_z\]</div>
+<div class="arithmatex">\[\vec{v}=c_4\hat{b}_x+c_5\hat{b}_y+c_6\hat{b}_z\]</div>
 <h2 id="implementation">Implementation</h2>
 <p>Vectors can be represented as a Python class, and can leverage Python's ability to overload mathematical operators with other functionality.  In this way, common operators such as <span class="arithmatex">\(+\)</span>,<span class="arithmatex">\(-\)</span>,<span class="arithmatex">\(*\)</span> and <span class="arithmatex">\(/\)</span> take on their own meaning when used in expressions with scalars, vectors, dyads, or dyadics.  One can also use packages like numpy to represent vectors, though <strong>you must take care not to linearly combine two vectors defined in different reference frames without first expressing one in terms of the others' basis vectors.</strong></p>
 
