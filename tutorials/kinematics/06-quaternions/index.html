@@ -1229,6 +1229,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compound-rotations" class="md-nav__link">
+    Compound Rotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#external-resources" class="md-nav__link">
     External resources
   </a>
@@ -1593,6 +1600,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#compound-rotations" class="md-nav__link">
+    Compound Rotations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#external-resources" class="md-nav__link">
     External resources
   </a>
@@ -1627,7 +1641,7 @@
 <h2 id="complex-numbers">Complex numbers</h2>
 <div class="arithmatex">\[i^2=-1\]</div>
 <h2 id="quaternion-structure">Quaternion Structure</h2>
-<div class="arithmatex">\[q = a+bi+cj+dj\]</div>
+<div class="arithmatex">\[q = a+bi+cj+dk\]</div>
 <p>where <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>, and <span class="arithmatex">\(k\)</span> represent an orthogonal set of complex numbers.</p>
 <div class="arithmatex">\[ii=jj=kk=-1\]</div>
 <h2 id="operations-between-i-j-and-k">Operations between <span class="arithmatex">\(i\)</span>, <span class="arithmatex">\(j\)</span>, and <span class="arithmatex">\(k\)</span></h2>
@@ -1658,7 +1672,7 @@ $$i \times j = $$ -->
 <div class="arithmatex">\[q_2 = e+fi +gj+hk\]</div>
 <h3 id="addition">Addition</h3>
 <div class="arithmatex">\[\begin{align}q_1+q_2 &amp;= a+bi+cj+dk+e+fi +gj+hk\\
-&amp;=a+e(b+f)i+(c+g)j+(d+h)k\end{align}\]</div>
+&amp;=(a+e)+(b+f)i+(c+g)j+(d+h)k\end{align}\]</div>
 <h3 id="mutliplication">Mutliplication</h3>
 <div class="arithmatex">\[\begin{align}q_1 q_2 = &amp;(a+bi+cj+dk)(e+fi +gj+hk)\\
 % =&amp;ae+afi+agj+ahk+bie+bifi+bigj+bihk+cje\\
@@ -1670,7 +1684,7 @@ $$i \times j = $$ -->
 % =&amp;ae-bf-cg-dh+afi+bei+chi-dgi+agj-bhj+cej\\
 %  &amp;+dfj+ahk+bgk-cfk+dek\\
 =&amp;(ae-bf-cg-dh)+(af+be+ch-dg)i\\
- &amp;+(ag-bh+ce+df)j+(ah+bg-cf+de)k\\
+ &amp;+(ag-bh+ce+df)j+(ah+bg-cf+de)k
 \end{align}\]</div>
 <blockquote>
 <p><strong>Note:</strong> quaternion multiplication is non-commutative, ie $q_1 q_2 \neq q_2 q_1 $</p>
@@ -1712,11 +1726,16 @@ $$q_1 \times q_2 = (a+bi+cj+dk) \times (e +fi +gj+hk)$$ -->
 <div class="arithmatex">\[r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\]</div>
 <p>where <span class="arithmatex">\(\theta\)</span> represents the rotation about a unit vector <span class="arithmatex">\(\vec{u}\)</span>, where  <span class="arithmatex">\(u_x\)</span>, <span class="arithmatex">\(u_y\)</span>, and <span class="arithmatex">\(u_z\)</span> represent the x, y, and z components, with <span class="arithmatex">\(u_x^2+u_y^2+u_z^2=1\)</span>.</p>
 <h3 id="constructing-a-rotation-matrix-from-a-unit-quaternion">Constructing a Rotation Matrix from a unit quaternion</h3>
-<p>For a unit quaternion <span class="arithmatex">\(r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\)</span>, </p>
+<p>For a unit quaternion <span class="arithmatex">\(r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\)</span>,</p>
 <div class="arithmatex">\[v_1=rir^*\]</div>
 <div class="arithmatex">\[v_2=rjr^*\]</div>
 <div class="arithmatex">\[v_3=rkr^*\]</div>
 <div class="arithmatex">\[R=\begin{bmatrix} \text{imag}(v_1) &amp; \text{imag}(v_2) &amp; \text{imag}(v_3)\end{bmatrix}\]</div>
+<h2 id="compound-rotations">Compound Rotations</h2>
+<p>A point can be rotated using two successive unit quaternions like this:</p>
+<div class="arithmatex">\[p'=r_1pr_1^*\]</div>
+<div class="arithmatex">\[p''=r_2p'r_2^*\]</div>
+<div class="arithmatex">\[p''=r_2r_1pr_1^*r_2^*\]</div>
 <h2 id="external-resources">External resources</h2>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation">https://en.wikipedia.org/wiki/Quaternions_and_spatial_rotation</a></li>
