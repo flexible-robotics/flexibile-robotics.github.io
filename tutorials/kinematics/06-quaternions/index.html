@@ -349,6 +349,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -398,6 +400,26 @@
   
   <span class="md-ellipsis">
     A01: Mechanism Prototyping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/assignment-02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A02: Kinematics
   </span>
   
 
@@ -1836,7 +1858,7 @@ $$q_1 \times q_2 = (a+bi+cj+dk) \times (e +fi +gj+hk)$$ -->
 <p>A unit quaternion may be used to represent a rotation in 3D space.  For a cartesion point <span class="arithmatex">\((u_1, u_2, u_3)\)</span> and its <em>pure</em> quaternion representation <span class="arithmatex">\(p=u_1i+u_2j+u_3k\)</span>, the operation</p>
 <div class="arithmatex">\[\begin{align}p'=&amp;rpr^{-1}\\
 =&amp;rpr^*\end{align}\]</div>
-<p>can be used to transform point <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(p'\)</span>, or to express a point p in a different frame as p'.  In this expression, <span class="arithmatex">\(r\)</span> represents a unit quaternion and <span class="arithmatex">\(p'\)</span> represents the rotated point.</p>
+<p>can be used to transform point <span class="arithmatex">\(p\)</span> to <span class="arithmatex">\(p'\)</span>, or to express a point p in a different frame as p'.  In this expression, <span class="arithmatex">\(r\)</span> represents a unit quaternion and <span class="arithmatex">\(p'\)</span> represents the rotated / expressed point.</p>
 <h3 id="unit-quaternions-as-half-rotations">Unit quaternions as half rotations</h3>
 <p>Any unit quaternion can be decomposed in the following manner</p>
 <div class="arithmatex">\[r=\cos(\theta/2)+\sin(\theta/2)(u_x i+ u_y j + u_z k)\]</div>
@@ -1848,7 +1870,7 @@ $$q_1 \times q_2 = (a+bi+cj+dk) \times (e +fi +gj+hk)$$ -->
 <div class="arithmatex">\[v_3=rkr^*\]</div>
 <div class="arithmatex">\[R=\begin{bmatrix} \text{imag}(v_1) &amp; \text{imag}(v_2) &amp; \text{imag}(v_3)\end{bmatrix}\]</div>
 <h2 id="compound-rotations">Compound Rotations</h2>
-<p>A point can be rotated using two successive unit quaternions like this:</p>
+<p>A point can be rotated using two successive unit quaternions (or expressed in two successive frames) like this:</p>
 <div class="arithmatex">\[p'=r_1pr_1^*\]</div>
 <div class="arithmatex">\[p''=r_2p'r_2^*\]</div>
 <div class="arithmatex">\[p''=r_2r_1pr_1^*r_2^*\]</div>
