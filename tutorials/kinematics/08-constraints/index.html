@@ -1,0 +1,2190 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta name="robots" content="nofollow" />
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../07-vector-operations/">
+      
+      
+        <link rel="next" href="../09-jacobians/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
+            
+
+        
+
+    
+      
+        <title>Constraints - Flexible Robotics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+  <script src="../../javascripts/mathjax.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+        html.glightbox-open { overflow: initial; height: 100%; }
+        .gslide-title { margin-top: 0px; user-select: text; }
+        .gslide-desc { color: #666; user-select: text; }
+        .gslide-image img { background: white; }
+        
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#constraints" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Flexible Robotics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Constraints
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/flexible-robotics/project_flexible_robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../assignments/" class="md-tabs__link">
+          
+  
+    
+  
+  Assignments
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
+          
+  
+    
+  
+  Course info
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lecture-notes/" class="md-tabs__link">
+          
+  
+    
+  
+  Lecture notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../01-frames/" class="md-tabs__link">
+          
+  
+    
+  
+  Tutorials
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Flexible Robotics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/flexible-robotics/project_flexible_robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../assignments/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Assignments
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_2">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Assignments
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/assignment-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A01: Mechanism Prototyping
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/assignment-02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    A02: Kinematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Course info
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Course info
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submission Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parts List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture notes
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 01
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 01
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 02
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 02
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 03
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_4">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 03
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Rotation
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            Rotation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 04
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 04
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 05
+  </span>
+  
+
+            </a>
+            
+              <label class="md-nav__link " for="__nav_4_6">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 05
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Triangle
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Triangle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 06
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 06
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tutorials
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kinematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kinematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Frames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-basis-vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basis Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-rotations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-expressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressing Vectors in other Reference Frames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-quaternions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quaternions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-vector-operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Constraints
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Constraints
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#degrees-of-freedom" class="md-nav__link">
+    Degrees of Freedom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-constraint" class="md-nav__link">
+    What is a constraint?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-distance-between-two-points" class="md-nav__link">
+    Example: Distance between two points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distance-between-two-points" class="md-nav__link">
+    Distance between two points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constraint-equations" class="md-nav__link">
+    Constraint Equations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solved-nonlinearly" class="md-nav__link">
+    Solved Nonlinearly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-solving-advantages-and-disadvantages" class="md-nav__link">
+    Numerical Solving: Advantages and Disadvantages
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Solving: Advantages and Disadvantages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info-on-minimize" class="md-nav__link">
+    More Info on minimize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-solving-for-a-triangle" class="md-nav__link">
+    Example: Solving for a triangle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-choice" class="md-nav__link">
+    Description Choice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-variables" class="md-nav__link">
+    State Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-kinematic-equations" class="md-nav__link">
+    Counting Kinematic Equations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    Comparison
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-advantages" class="md-nav__link">
+    Cartesian Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-disadvantages" class="md-nav__link">
+    Cartesian Disadvantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-advantages" class="md-nav__link">
+    Polar Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-disadvantages" class="md-nav__link">
+    Polar Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../09-jacobians/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jacobians
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jacobians for Parallel Mechanisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
+        
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Miniconda/Anaconda (Python) Installation Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/02-installing-packages/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installing Packages in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Google Colab Tutorial
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/04-native-mujoco-install/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mujoco Native Installation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../python/sympy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sympy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../vscode-setup/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Vscode setup
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            Vscode setup
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#degrees-of-freedom" class="md-nav__link">
+    Degrees of Freedom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-a-constraint" class="md-nav__link">
+    What is a constraint?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-distance-between-two-points" class="md-nav__link">
+    Example: Distance between two points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#distance-between-two-points" class="md-nav__link">
+    Distance between two points
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#constraint-equations" class="md-nav__link">
+    Constraint Equations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#solved-nonlinearly" class="md-nav__link">
+    Solved Nonlinearly
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#numerical-solving-advantages-and-disadvantages" class="md-nav__link">
+    Numerical Solving: Advantages and Disadvantages
+  </a>
+  
+    <nav class="md-nav" aria-label="Numerical Solving: Advantages and Disadvantages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#advantages" class="md-nav__link">
+    Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disadvantages" class="md-nav__link">
+    Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-info-on-minimize" class="md-nav__link">
+    More Info on minimize()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-solving-for-a-triangle" class="md-nav__link">
+    Example: Solving for a triangle
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description-choice" class="md-nav__link">
+    Description Choice
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#state-variables" class="md-nav__link">
+    State Variables
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#counting-kinematic-equations" class="md-nav__link">
+    Counting Kinematic Equations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparison" class="md-nav__link">
+    Comparison
+  </a>
+  
+    <nav class="md-nav" aria-label="Comparison">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-advantages" class="md-nav__link">
+    Cartesian Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cartesian-disadvantages" class="md-nav__link">
+    Cartesian Disadvantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-advantages" class="md-nav__link">
+    Polar Advantages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#polar-disadvantages" class="md-nav__link">
+    Polar Disadvantages
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/kinematics/08-constraints.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="constraints">Constraints</h1>
+<h2 id="degrees-of-freedom">Degrees of Freedom</h2>
+<p>What are degrees of freedom?</p>
+<ul>
+<li>freedom of motion in a device</li>
+<li>freedom of description in variables used to describe the device</li>
+</ul>
+<h2 id="what-is-a-constraint">What is a constraint?</h2>
+<p>Constraints establish limitations in descriptions or degrees of freedom</p>
+<ul>
+<li>Degrees of Freedom<ul>
+<li>Distances</li>
+<li>Perpendicular, Parallel Vectors</li>
+<li>Point on a line</li>
+<li>Point a distance from a line</li>
+<li>Loops</li>
+</ul>
+</li>
+<li>Descriptions<ul>
+<li><span class="arithmatex">\(a^2+b^2+c^2+d^2=1\)</span></li>
+<li><span class="arithmatex">\(x = r \cos{\theta}\)</span>, <span class="arithmatex">\(y = r \sin{\theta}\)</span></li>
+</ul>
+</li>
+</ul>
+<h2 id="example-distance-between-two-points">Example: Distance between two points</h2>
+<p><a class="glightbox" href="../constraint-distance-between-points0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-distance-between-points0.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<h2 id="distance-between-two-points">Distance between two points</h2>
+<p><a class="glightbox" href="../constraint-distance-between-points.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-distance-between-points.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<div class="arithmatex">\[\vec{p}=p_x \hat{a}_x+p_y \hat{a}_y+p_z \hat{a}_z\]</div>
+<div class="arithmatex">\[\vec{q}=q_x \hat{a}_x+q_y \hat{a}_y+q_z \hat{a}_z\]</div>
+<div class="arithmatex">\[0=|\vec{v}|-l\]</div>
+<div class="arithmatex">\[0=|\vec{q}-\vec{p}|-l\]</div>
+<div class="arithmatex">\[0=(\vec{q}-\vec{p}) \cdot (\vec{q}-\vec{p}) -l^2\]</div>
+<div class="arithmatex">\[0=(q_x-p_x)^2 +(q_y-p_y)^2+(q_z-p_z)^2 -l^2\]</div>
+<h2 id="constraint-equations">Constraint Equations</h2>
+<p><a class="glightbox" href="../constraint-lecture-images/img0088.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/img0088.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<ul>
+<li>Many ways to represent the same constraint</li>
+<li>Variables don’t necessarily map to DOF</li>
+</ul>
+<h2 id="solved-nonlinearly">Solved Nonlinearly</h2>
+<p>For most code you write, data is not <em>differentiable</em> or <em>symbolic</em>, it is <em>numeric</em>.  Differentiation is also done <em>numerically</em>.</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Gradient_descent">https://en.wikipedia.org/wiki/Gradient_descent</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Hill_climbing">https://en.wikipedia.org/wiki/Hill_climbing</a></li>
+</ul>
+<h2 id="numerical-solving-advantages-and-disadvantages">Numerical Solving: Advantages and Disadvantages</h2>
+<h3 id="advantages">Advantages</h3>
+<ul>
+<li>Don't need to differentiate variables, only output.</li>
+<li>Faster and Easier to code</li>
+</ul>
+<h3 id="disadvantages">Disadvantages</h3>
+<ul>
+<li>Initial guess must be close.</li>
+<li>Numerical solving is slow for big systems with many variables.</li>
+<li>Have to solve for valid positions.  <ul>
+<li>Continuity between solutions was not guaranteed</li>
+<li>No knowledge if we skipped through a singularity.</li>
+</ul>
+</li>
+</ul>
+<h2 id="more-info-on-minimize">More Info on <code>minimize()</code></h2>
+<p>Many Algorithms</p>
+<ul>
+<li>Nelder-Mead</li>
+<li>Powell</li>
+<li>CG</li>
+<li>BFGS</li>
+<li>SLSQP</li>
+<li>... many more</li>
+</ul>
+<p><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html</a></p>
+<h2 id="example-solving-for-a-triangle">Example: Solving for a triangle</h2>
+<ul>
+<li>See Lecture Notes</li>
+</ul>
+<h2 id="description-choice">Description Choice</h2>
+<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<h2 id="_1"></h2>
+<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p>Cartesian Coordinates <span class="arithmatex">\((x,y)\)</span></p>
+<div class="arithmatex">\[ p_1 = x_1 \hat{n}_x + y_1 \hat{n}_y\]</div>
+<div class="arithmatex">\[ p_2 = x_2 \hat{n}_x + y_2 \hat{n}_y\]</div>
+<div class="arithmatex">\[ p_3 = x_3 \hat{n}_x + y_3 \hat{n}_y\]</div>
+<div class="arithmatex">\[0 = |\vec{p}_2-\vec{p}_1| - l_1\]</div>
+<div class="arithmatex">\[0 = |\vec{p}_3-\vec{p}_2| - l_2\]</div>
+<div class="arithmatex">\[0 = |\vec{p}_4-\vec{p}_3| - l_3\]</div>
+<p>Polar Coordinates <span class="arithmatex">\((r,\theta)\)</span></p>
+<div class="arithmatex">\[\vec{p}_2 = \vec{p}_1+l_1 \hat{a}_x\]</div>
+<div class="arithmatex">\[\vec{p}_3 = \vec{p}_2+l_2 \hat{b}_x\]</div>
+<div class="arithmatex">\[\vec{p}_4 = \vec{p}_3+l_3 \hat{c}_x\]</div>
+<p>where <span class="arithmatex">\(\hat{a}_x\)</span>, <span class="arithmatex">\(\hat{b}_x\)</span>, <span class="arithmatex">\(\hat{c}_x\)</span> are unit vectors directed along links 1, 2, 3, and <span class="arithmatex">\(l_1\)</span>, <span class="arithmatex">\(l_2\)</span>, <span class="arithmatex">\(l_3\)</span> are constants</p>
+<h2 id="state-variables">State Variables</h2>
+<p>Cartesian: <span class="arithmatex">\(\left\{\begin{matrix}
+x_1, \dot{x}_1,\\
+y_1, \dot{y}_1,\\
+x_2, \dot{x}_2,\\
+y_2, \dot{y}_2,\\
+x_3, \dot{x}_3,\\
+y_3, \dot{y}_3
+\end{matrix}\right.\)</span></p>
+<p>polar: <span class="arithmatex">\(\left\{\begin{matrix}
+q_1, \dot{q}_1,\\
+q_2, \dot{q}_2,\\
+q_3, \dot{q}_3
+\end{matrix}\right.\)</span></p>
+<h2 id="counting-kinematic-equations">Counting Kinematic Equations</h2>
+<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<table>
+<thead>
+<tr>
+<th align="left">equations</th>
+<th align="right">variables</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">variables</td>
+<td align="right">6</td>
+</tr>
+<tr>
+<td align="left">kinematic equations</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left">state equations</td>
+<td align="right">3</td>
+</tr>
+<tr>
+<td align="left"><strong>DOF</strong></td>
+<td align="right"><strong>3</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="comparison">Comparison</h2>
+<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<h3 id="cartesian-advantages">Cartesian Advantages</h3>
+<ul>
+<li>Simple representation</li>
+<li>Easy to represent all constraints as length of vector</li>
+</ul>
+<h3 id="cartesian-disadvantages">Cartesian Disadvantages</h3>
+<ul>
+<li>you can encounter "representational" singularites</li>
+<li>more variables than degrees of freedom</li>
+</ul>
+<h3 id="polar-advantages">Polar Advantages</h3>
+<ul>
+<li>representation matches physical meaning (structure, motors)</li>
+<li>fewer representational singularities</li>
+</ul>
+<h3 id="polar-disadvantages">Polar Disadvantages</h3>
+<ul>
+<li>requires intuition as to how to best represent?</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            Back to top
+          </button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 Dan Aukes
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
