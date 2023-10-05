@@ -504,6 +504,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+    <nav class="md-nav" aria-label="Submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1591,6 +1618,33 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+    <nav class="md-nav" aria-label="Submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1690,8 +1744,15 @@ a_z &amp; -\sin{\theta} &amp; 0&amp; \cos{\theta}
 <li>Cut along <span class="arithmatex">\(\vec{v}_1\)</span> to separate triangles A and D.  This creates a serial, spherical linkage from A to D.</li>
 <li>Copy body A, cut it out and tape it to D along <span class="arithmatex">\(\vec{v}_1\)</span>.</li>
 <li>Write down the four unit quaternions(<span class="arithmatex">\(r_1\)</span>-<span class="arithmatex">\(r_4\)</span>) that describe the half-angle rotations about <span class="arithmatex">\(\vec{v}_1\)</span>, <span class="arithmatex">\(\vec{v}_2\)</span>, <span class="arithmatex">\(\vec{v}_3\)</span>, and <span class="arithmatex">\(\vec{v}_4\)</span>.  Use the variables <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span> to describe the rotation angles about <span class="arithmatex">\(\vec{v}_1\)</span>-<span class="arithmatex">\(\vec{v}_4\)</span>, respectively.</li>
-<li>Write down the four pure quaternions(<span class="arithmatex">\(p_1\)</span>-<span class="arithmatex">\(p_4\)</span>) that describe the vectors <span class="arithmatex">\(\vec{v}_1\)</span>-<span class="arithmatex">\(\vec{v}_4\)</span> to points <span class="arithmatex">\(P_1\)</span>-<span class="arithmatex">\(P_4\)</span>.</li>
-<li>For the following steps, please express each point in the A frame using quaternion operations.  You don't need to expand <span class="arithmatex">\(q_1\)</span>-<span class="arithmatex">\(q_4\)</span> or substitute values in for <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span> at this point.<ol>
+<li>
+<p>Write down the four pure quaternions(<span class="arithmatex">\(p_1\)</span>-<span class="arithmatex">\(p_4\)</span>) that describe the vectors <span class="arithmatex">\(\vec{v}_1\)</span>-<span class="arithmatex">\(\vec{v}_4\)</span> to points <span class="arithmatex">\(P_1\)</span>-<span class="arithmatex">\(P_4\)</span>.</p>
+<blockquote>
+<p>Don't forget to ensure that your quaternion meets the constraints required for unit quaternions.</p>
+</blockquote>
+</li>
+<li>
+<p>For the following steps, please express each point in the A frame using quaternion operations.  You don't need to expand <span class="arithmatex">\(q_1\)</span>-<span class="arithmatex">\(q_4\)</span> or substitute values in for <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span> at this point.</p>
+<ol>
 <li>Consider <span class="arithmatex">\(p_3\)</span> to be a function of a rotation about <span class="arithmatex">\(\vec{v}_2\)</span> from A. Write the expression for <span class="arithmatex">\(p_3'\)</span> expressed in the A frame.</li>
 <li>Consider <span class="arithmatex">\(p_4\)</span> to be a function of 2 successive rotations about <span class="arithmatex">\(\vec{v}_2\)</span> and <span class="arithmatex">\(\vec{v}_3\)</span> from A. Write the expression for <span class="arithmatex">\(p_4'\)</span> expressed in the A frame.</li>
 <li>Consider <span class="arithmatex">\(p_1\)</span> to be a function of 3 successive rotations about <span class="arithmatex">\(\vec{v}_2\)</span>, <span class="arithmatex">\(\vec{v}_3\)</span>, and  <span class="arithmatex">\(\vec{v}_4\)</span> from A.  Write the expression for <span class="arithmatex">\(p_1'\)</span> expressed in the A frame.</li>
@@ -1700,12 +1761,76 @@ a_z &amp; -\sin{\theta} &amp; 0&amp; \cos{\theta}
 </li>
 <li>Using your modified spherical mechanism, define two constraint equations that will "glue" point <span class="arithmatex">\(P_1'\)</span> to the original point <span class="arithmatex">\(P_1\)</span> using vector operations.  Use your paper model to get a sense of the mechanism's degrees of freedom.</li>
 <li>Now, using your modified spherical mechanism, define one additional constraint equation that will "glue" <span class="arithmatex">\(P_2'\)</span> to the original <span class="arithmatex">\(P_2\)</span> using vector operations. Again, use your paper model to get a sense of the mechanism's degrees of freedom.</li>
-<li>In Python, using the code you began in class, define the same quaternions and quaternion operations from steps 5 and 6a-6d.  Use symbolic variables from the <code>sympy</code> package to represent <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span>.</li>
+<li>In Python, using the code you began in class, define the same quaternions and quaternion operations from steps 6 and 7a-7d.  Use symbolic variables from the <code>sympy</code> package to represent <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span>.</li>
 <li>Use your three constraint equations and <span class="arithmatex">\(\alpha_1 = \frac{\pi}{6}\)</span> to solve for a valid configuration for your device (<span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span>) with <code>scipy.optimize.minimize()</code>.  Use a physically consistent initial guess based on the "mountain" and "valley" joints you noticed earlier.  Show the results of the minimization function and the resulting values for <span class="arithmatex">\(\alpha_1\)</span>-<span class="arithmatex">\(\alpha_4\)</span></li>
 <li>Plot your device in 3D using matplotlib using the results of your optimization.</li>
 </ol>
 <!-- 1. your three constraint equations into a ```sympy.Matrix()```. 
 1. find the Jacobian as a function of ```sympy.Matrix([alpha1,alpha2,alpha3])``` -->
+
+<h2 id="submission">Submission</h2>
+<p>Please include a Jupyter notebook and pdf of the following:</p>
+<ol>
+<li>
+<p>Detailed description of the completed steps above</p>
+<ul>
+<li>Include  any chunks of related code as accompanying markdown blocks.</li>
+<li>
+<p>Images of handwritten work, parts you've made, and screenshots should be included inline within the ipython notebook. use the following notation:</p>
+<p><code>![alt text](path/to/your/image.jpg)</code></p>
+<p>or, if you want to access other html attributes:</p>
+<p><code>&lt;img src="path/to/your/image.jpg" width="300px" alt="alt text here"&gt;</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Code used in solving the assignment (inline in the report in code blocks), along with descriptions detailing your approach.</p>
+<ul>
+<li>requested plots and figures should be included inline</li>
+</ul>
+</li>
+<li>Detailed answers to the discussion questions asked alongside all steps</li>
+</ol>
+<h3 id="other-notes">Other Notes</h3>
+<ul>
+<li>Please follow the "Submission Best Practices" document posted on the course website.  </li>
+<li>This assignment should be submitted to moodle as a jupyter notebook (.ipynb) file and pdf.  <ul>
+<li>Please ensure that the .ipynb code is fully compiled and <em>runs without error</em> in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  </li>
+<li>Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages</li>
+</ul>
+</li>
+</ul>
+<h2 id="rubric">Rubric</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Part 1</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Part 2</td>
+<td>20</td>
+</tr>
+<tr>
+<td>Part 3</td>
+<td>30</td>
+</tr>
+<tr>
+<td>Part 4</td>
+<td>40</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td><strong>100</strong></td>
+</tr>
+</tbody>
+</table>
 
 
 
