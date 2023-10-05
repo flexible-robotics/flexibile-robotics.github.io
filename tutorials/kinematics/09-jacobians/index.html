@@ -1009,6 +1009,8 @@
           
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1032,6 +1034,10 @@
 
             </a>
             
+              <label class="md-nav__link " for="__nav_4_7">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
@@ -1041,6 +1047,60 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    2dofrobot
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            2dofrobot
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -1821,40 +1881,35 @@ b_z &amp;0&amp;0&amp;1 \\
 = &amp; l_1 (c\theta_1\hat{a}_x+s\theta_1\hat{a}_y) + l_2 (c\theta_2\hat{b}_x+s\theta_2\hat{b}_y)\\
 = &amp; l_1 (c\theta_1\hat{a}_x+s\theta_1\hat{a}_y) + l_2 (c\theta_2(c\theta_1\hat{a}_x+s\theta_1\hat{a}_y)+s\theta_2(-s\theta_1\hat{a}_x+c\theta_1\hat{a}_y))\\
 = &amp; l_1 c\theta_1\hat{a}_x + l_1 s\theta_1\hat{a}_y + l_2 c\theta_2 c\theta_1\hat{a}_x+l_2 c\theta_2 s\theta_1 \hat{a}_y - l_2 s\theta_2 s\theta_1\hat{a}_x + l_2 s\theta_2 c\theta_1\hat{a}_y\\
-= &amp; \left((l_1  + l_2 c\theta_2) c\theta_1 - l_2 s\theta_2 s\theta_1\right)\hat{a}_x + \left((l_1  + l_2 c\theta_2) s\theta_1  + l_2 s\theta_2 c\theta_1\right)\hat{a}_y
+=&amp;  \left(l_{1} c\theta_1 - l_{2} s\theta_1 s\theta_2 + l_{2} c\theta_1 c\theta_2\right)\hat{a}_x + \left(l_{1} s\theta_1 + l_{2} s\theta_1 c\theta_2 + l_{2} s\theta_2 c\theta_1\right)\hat{a}_y \\
+=&amp; (l_{1} c\theta_{1} + l_{2} c(\theta_{1} + \theta_{2})) \hat{a}_x
++(l_{1} s\theta_{1} + l_{2} s(\theta_{1} + \theta_{2}))\hat{a}_y
 \end{align}\]</div>
 <h2 id="derivative">Derivative</h2>
-<div class="arithmatex">\[\vec{r} = l_1 c\theta_1\hat{a}_x + l_1 s\theta_1\hat{a}_y + l_2 c\theta_2 c\theta_1\hat{a}_x+l_2 c\theta_2 s\theta_1 \hat{a}_y - l_2 s\theta_2 s\theta_1\hat{a}_x + l_2 s\theta_2 c\theta_1\hat{a}_y\]</div>
-<div class="arithmatex">\[\begin{align}
+<div class="arithmatex">\[\vec{r} =\left(l_{1} c\theta_1 - l_{2} s\theta_1 s\theta_2 + l_{2} c\theta_1 c\theta_2\right)\hat{a}_x + \left(l_{1} s\theta_1 + l_{2} s\theta_1 c\theta_2 + l_{2} s\theta_2 c\theta_1\right)\hat{a}_y \\$$
+$$\begin{align}
 \left.\frac{d\vec{r}}{dt}\right|_{\text{in }A} = &amp;
--l_1 s\theta_1\dot\theta_1\hat{a}_x
-+l_1 c\theta_1\dot\theta_1\hat{a}_y
--l_2 s\theta_2c\theta_1\dot\theta_2\hat{a}_x
--l_2 s\theta_2s\theta_1\dot\theta_2\hat{a}_y
-+l_2 c\theta_2c\theta_1\dot\theta_1\hat{a}_y \\&amp;
--l_2 c\theta_2s\theta_1\dot\theta_2\hat{a}_x
--l_2 s\theta_2c\theta_1\dot\theta_1\hat{a}_x
-+l_2 c\theta_2c\theta_1\dot\theta_2\hat{a}_y
--l_2 s\theta_2s\theta_1\dot\theta_1\hat{a}_y
+ \left(- \dot{ \theta }_1 l_{1} s\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_1 l_{2} s\theta_2 c\theta_1 - \dot{ \theta }_2 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_2 c\theta_1\right) \hat{a}_x\\
+&amp;+ \left(\dot{ \theta }_1 l_{1} c\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_1 l_{2} c\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_2 l_{2} c\theta_1 c\theta_2\right)\hat{a}_y \\
+=&amp;\left(- \dot{ \theta }_1 l_{1} s\theta_1 - \dot{ \theta }_1 l_{2} s(\theta_1+\theta_2) - \dot{ \theta }_2 l_{2} s(\theta_1+\theta_2)\right)\hat{a}_x  +\\
+&amp;  \left(\dot{ \theta }_1 l_{1} c\theta_1 + \dot{ \theta }_1 l_{2} c(\theta_1+\theta_2) + \dot{ \theta }_2 l_{2} c(\theta_1+\theta_2)\right)\hat{a}_y
 \end{align}\]</div>
 <div class="arithmatex">\[\left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_2=0}
 =\frac{\partial\vec{r}}{\partial\theta_1}
-=-(l_1 s\theta_1+l_2 s\theta_2c\theta_1)\hat{a}_x
-+(l_1 c\theta_1
-+l_2 c\theta_2c\theta_1
--l_2 s\theta_2s\theta_1)\hat{a}_y
+=\left(- l_{1} s\theta_1 - l_{2} s(\theta_1+\theta_2)\right)\hat{a}_x + \left(l_{1} c\theta_1 + l_{2} c(\theta_1+\theta_2)\right)\hat{a}_y
 \]</div>
 <div class="arithmatex">\[\left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_1=0}
 =\frac{\partial\vec{r}}{\partial\theta_2}
-=
--(l_2 s\theta_2c\theta_1+l_2 c\theta_2s\theta_1)\hat{a}_x
-+(-l_2 s\theta_2s\theta_1 + l_2 c\theta_2c\theta_1)\hat{a}_y
+=- l_{2} s(\theta_1+\theta_2)\hat{a}_x  +  l_{2} c(\theta_1+\theta_2)\hat{a}_y
 \]</div>
 <h2 id="assemble-the-jacobian">Assemble the Jacobian</h2>
-<div class="arithmatex">\[J = \begin{bmatrix}
+<div class="arithmatex">\[\begin{align}
+J = &amp;\begin{bmatrix}
 \frac{\partial\vec{r}}{\partial\theta_1} \cdot{\hat{a}_x} &amp; \frac{\partial\vec{r}}{\partial\theta_2} \cdot{\hat{a}_x}\\
 \frac{\partial\vec{r}}{\partial\theta_1} \cdot{\hat{a}_y} &amp; \frac{\partial\vec{r}}{\partial\theta_2} \cdot{\hat{a}_y}
-\end{bmatrix}\]</div>
+\end{bmatrix} \\=&amp;
+\left[\begin{matrix}- l_{1} \sin{\left(\theta_{1}{\left(t \right)} \right)} - l_{2} \sin{\left(\theta_{1}{\left(t \right)} + \theta_{2}{\left(t \right)} \right)} &amp; - l_{2} \sin{\left(\theta_{1}{\left(t \right)} + \theta_{2}{\left(t \right)} \right)}\\l_{1} \cos{\left(\theta_{1}{\left(t \right)} \right)} + l_{2} \cos{\left(\theta_{1}{\left(t \right)} + \theta_{2}{\left(t \right)} \right)} &amp; l_{2} \cos{\left(\theta_{1}{\left(t \right)} + \theta_{2}{\left(t \right)} \right)}\\0 &amp; 0\end{matrix}\right]
+\end{align}\]</div>
 
 
 
