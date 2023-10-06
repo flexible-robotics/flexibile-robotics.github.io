@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../03-google-colab-tutorial/">
+        <link rel="prev" href="../assignment-02/">
       
       
-        <link rel="next" href="../sympy/">
+        <link rel="next" href="../../course-info/01-syllabus/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Mujoco Native Installation - Flexible Robotics</title>
+        <title>Team Project 1 - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu" class="md-skip">
+        <a href="#assignment-overview" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Mujoco Native Installation
+              Team Project 1
             
           </span>
         </div>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -175,11 +175,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../assignments/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -199,7 +201,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -219,7 +221,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../lecture-notes/" class="md-tabs__link">
+        <a href="../../lecture-notes/" class="md-tabs__link">
           
   
     
@@ -235,21 +237,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../kinematics/01-frames/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../tutorials/kinematics/01-frames/" class="md-tabs__link">
           
   
     
@@ -293,7 +291,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -322,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -339,6 +337,8 @@
       
   
   
+    
+  
   
     
     
@@ -355,18 +355,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../assignments/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -382,7 +382,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Assignments
@@ -397,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/assignment-01/" class="md-nav__link">
+      <a href="../assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/assignment-02/" class="md-nav__link">
+      <a href="../assignment-02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -435,9 +435,27 @@
                 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../../../assignments/project-01/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Team Project 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -446,6 +464,73 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#assignment-overview" class="md-nav__link">
+    Assignment Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions" class="md-nav__link">
+    Instructions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion" class="md-nav__link">
+    Discussion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggestions" class="md-nav__link">
+    Suggestions
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -506,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -526,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +631,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -604,7 +689,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/" class="md-nav__link ">
+            <a href="../../lecture-notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -654,7 +739,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -708,7 +793,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -764,7 +849,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-03/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -814,7 +899,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -876,7 +961,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-04/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -932,7 +1017,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-05/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -982,7 +1067,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1046,7 +1131,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-06/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1096,7 +1181,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+            <a href="../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1144,8 +1229,6 @@
       
   
   
-    
-  
   
     
     
@@ -1158,13 +1241,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
@@ -1177,7 +1260,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -1246,7 +1329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/01-frames/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1266,7 +1349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/02-basis-vectors/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1369,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/03-vectors/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1306,7 +1389,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/04-rotations/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/04-rotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1326,7 +1409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/05-expressing/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1346,7 +1429,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/06-quaternions/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/06-quaternions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1366,7 +1449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/07-vector-operations/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/07-vector-operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1386,7 +1469,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/08-constraints/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/08-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1406,7 +1489,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/09-jacobians/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/09-jacobians/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1426,7 +1509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1452,8 +1535,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1470,13 +1551,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
         
           <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
             
@@ -1489,7 +1570,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_2">
             <span class="md-nav__icon md-icon"></span>
             Python
@@ -1502,7 +1583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../tutorials/python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1522,7 +1603,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-installing-packages/" class="md-nav__link">
+      <a href="../../tutorials/python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1542,7 +1623,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../tutorials/python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1560,27 +1641,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Mujoco Native Installation
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tutorials/python/04-native-mujoco-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1589,52 +1652,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#using-mujoco" class="md-nav__link">
-    Using mujoco
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#external-resources" class="md-nav__link">
-    External Resources
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1646,7 +1663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sympy/" class="md-nav__link">
+      <a href="../../tutorials/python/sympy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1693,7 +1710,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../vscode-setup/" class="md-nav__link ">
+            <a href="../../tutorials/vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1754,22 +1771,36 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu
+  <a href="#assignment-overview" class="md-nav__link">
+    Assignment Overview
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#instructions" class="md-nav__link">
+    Instructions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#using-mujoco" class="md-nav__link">
-    Using mujoco
+  <a href="#discussion" class="md-nav__link">
+    Discussion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
   </a>
   
 </li>
@@ -1777,6 +1808,13 @@
         <li class="md-nav__item">
   <a href="#external-resources" class="md-nav__link">
     External Resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#suggestions" class="md-nav__link">
+    Suggestions
   </a>
   
 </li>
@@ -1796,7 +1834,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/python/04-native-mujoco-install.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/assignments/project-01.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -1804,61 +1842,399 @@
   
 
 
-  <h1>Mujoco Native Installation</h1>
+  <h1>Team Project 1</h1>
 
-<p>These install instructions assume you have already installed anaconda / miniconda</p>
-<h2 id="ubuntu">Ubuntu</h2>
-<p>Run these commands line-by-line</p>
-<pre><code class="language-bash">conda create -n mujoco python=3.9
-conda activate mujoco
-conda install jupyterlab scipy ffmpeg
-conda install -c conda-forge glew
-conda install -c conda-forge mesalib
-conda install -c anaconda mesa-libgl-cos6-x86_64
-conda install -c menpo glfw3
-pip install mujoco mediapy mujoco-python-viewer
-conda env config vars set MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
-conda deactivate &amp;&amp; conda activate mujoco_env
-</code></pre>
-<h2 id="windows">Windows</h2>
-<p>Run these commands line-by-line</p>
-<pre><code class="language-bash">conda create -n mujoco python=3.9
-conda activate mujoco
-conda install jupyterlab ffmpeg
-pip install mujoco mediapy mujoco-python-viewer
-conda env config vars set MUJOCO_GL=glfw PYOPENGL_PLATFORM=glfw
-conda deactivate &amp;&amp; conda activate mujoco_env
-</code></pre>
+<h2 id="assignment-overview">Assignment Overview</h2>
+<p>The goal of this team project is to propose a design that is kinematially interesting, that is grounded in physical reality, and that permits you to ask an interesting research question.  This assignment is thus broken into three parts:</p>
+<ul>
+<li><strong>Research Discussion:</strong> Select a research topic that is interesting to you and worth pursuing.</li>
+<li><strong>Biomechanics / Bioinspiration / Specifications generation.</strong> Start thinking about<ul>
+<li>the scale of your robot,</li>
+<li>how to replicate the efficiencies of biological systems.  </li>
+</ul>
+</li>
+<li>
+<p><strong>Kinematics:</strong> Estimate the forces, and torques, power requirements, and speed of your system.</p>
+</li>
+<li>
+<p>This year we will be focusing on one or two system models that you can modify to answer your question[^1] These will involve arrangements of parallel mechanisms:</p>
+<ul>
+<li>Planar mechanisms, such as four and five-bar mechanisms</li>
+<li>Spherical mechanisms such as <em>spherical</em> four or five-bar systems</li>
+<li>Sarrus linkages (a particular straight-line mechanism)</li>
+</ul>
+</li>
+<li>The source of bioinspiration can be extant(living) or extinct, but you should be able to find enough information about it to make a set of reasonable assumptions about what you don't know.</li>
+<li>Focus on an animal in a size range that you can make at scale, at a reasonable cost, rather than scaling a different-sized animal up or down.</li>
+</ul>
+<p><em>Please Read this whole assignment first.</em></p>
+<h2 id="instructions">Instructions</h2>
+<ol>
+<li>
+<p>Identify a candidate organism you wish to focus on its biomechanics.  This consists of a specific animal species, its body plan, and the motion of interest.  Search in Google scholar, using keywords such as "anatomy", "morphology", "mechanics", "biomechanics", "ground reaction forces", etc. along with the animal's informal or scientific name along with the type of locomotion.  </p>
 <blockquote>
-<p>Note: these installation instructions may not work depending on your available graphics card.  Your other option is to use google colab.</p>
+<p>Please check with Dr. Aukes if you need further clarification / approval.</p>
 </blockquote>
-<h2 id="using-mujoco">Using mujoco</h2>
-<p>Before coding in your new mujoco environment, you will need to activate it.</p>
-<pre><code class="language-bash">conda activate mujoco
-</code></pre>
+</li>
+<li>
+<p>Identify three citations which are most useful in creating initial specifications for your robot.  Now discuss these three papers, highlighting the information you can draw from each.  Be specific.  Why is each paper valuable? (At least one paragraph each)</p>
+</li>
+<li>Search for existing <em>bio-inspired robots</em> based on the same animal, subsystem, and motion.</li>
+<li>Identify three citations which are most useful in creating initial specifications for your robot.  Now discuss these three papers, highlighting the information you can draw from each.  Be specific.  Why is each paper valuable?  (At least one paragraph each)</li>
+<li>
+<p>Collect all the information you have found from your references into one place. A well-formatted table may do, with supplementary figures from literature as needed.  A specifications table is a handy way to collect parameters.  Use SI units.  Example below:</p>
+<table>
+<thead>
+<tr>
+<th align="left">Parameter</th>
+<th align="left">Unit</th>
+<th align="left">Value Range</th>
+<th align="left">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Total Mass</td>
+<td align="left">kg</td>
+<td align="left">.2-.4</td>
+<td align="left">[1]</td>
+</tr>
+<tr>
+<td align="left">Maximum Landing Force</td>
+<td align="left">N</td>
+<td align="left">6</td>
+<td align="left">[1]</td>
+</tr>
+<tr>
+<td align="left">Maximum Takeoff Force</td>
+<td align="left">N</td>
+<td align="left">4</td>
+<td align="left">[2]</td>
+</tr>
+<tr>
+<td align="left">Average Takeoff acceleration</td>
+<td align="left"><span class="arithmatex">\(\frac{m}{s^2}\)</span></td>
+<td align="left">13</td>
+<td align="left">[3]</td>
+</tr>
+<tr>
+<td align="left">...</td>
+<td align="left">...</td>
+<td align="left">...</td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+<p>Examples of the types of information to include:</p>
+<ul>
+<li>Typical mass of the animal as a whole, and of key anatomical parts</li>
+<li>Average speed of the animal.</li>
+<li>Key points in a stride: leg motion such as stride length and maximum foot height, trunk motion and orientation, etc.</li>
+<li>Typical ground reaction forces during locomotion(plot is best)</li>
+<li>Metabolic energy/power consumed to locomote (respiration).</li>
+<li>Mechanical energy/power generated during locomotion</li>
+<li>Key biological materials and their mechanical properties (bone, ligaments, tendons, and the resulting link/joint stiffnesses and damping properties)</li>
+<li>Muscle forces</li>
+</ul>
+</li>
+<li>
+<p>Fill in the information gaps from your biomechanics investigation with informed assumptions you can make.   For example, if you know ground reaction forces from your paper, and some masses, try to find peak accelerations.  If you know forces and velocities, calculate  power usage.  If you know maximum jump height and mass, find energy required for a jump.  The most important pieces of information you can gather at this point are elements like "how much energy is consumed in accomplishing this gait", "What are the forces involved", etc.</p>
+</li>
+<li>Supply at least two figures from literature, highlighting key aspects of the biological system.  This should include one from each of the following categories:<ol>
+<li>Figures/drawings of skeleton, anatomy,  exoskeleton, body plan, musculature, kinematics</li>
+<li>Motion plots, freeze frames of gait cycle, plot of ground reaction forces</li>
+<li>... other aspects of the parameters above.</li>
+</ol>
+</li>
+<li>Draw the simplest engineering representation of the system you can of your proposed mechanical system. How many rigid bodies are there?  How many can be approximated as massless(1/10 of the total mass or less)?  Where are the springs?  Where is the (main) actuator?</li>
+<li>What is the total energy used to complete a single locomotion cycle?  What is the power required?  How did you calculate this?</li>
+<li>Can you find a reference that tells you how to scale respiration energy across different size animals? (10 points)</li>
+<li>Find the ground reaction forces involved with completing a typical locomotion cycle.  (10 points)</li>
+<li>
+<p>Create a figure (either in python, in a vector-based drawing program like inkscape or illustrator, or as a solidworks rendering) of your system kinematics.  Annotate the image to include:</p>
+<ul>
+<li>Names for each rotational reference frame.  You will need one for each rigid body (that moves independently), as well as one for the Newtonian reference frame (N).  Use the convention of a capital letter (A,B,C,...)</li>
+<li>Labeled joint locations, such as <span class="arithmatex">\(\vec{p}_{AB}\)</span></li>
+<li>A set of orthonormal basis vectors for each frame <span class="arithmatex">\((\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)\)</span>. It is best practice to align one of the basis vectors (like <span class="arithmatex">\(\hat{a}_x\)</span>) with each rigid link.</li>
+<li>variable names for each state variable <span class="arithmatex">\((q_1,q_2,x_1,y_1,\ldots)\)</span></li>
+<li>geometric constants such as link lengths (like <span class="arithmatex">\(l_1,l_2\)</span>)</li>
+</ul>
+<p>Save this figure for reuse later.  You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.</p>
+</li>
+<li>
+<p>Make the device in paper or cardboard. The paper model should dimensionally match your code and figures. It can be cut by hand, but must clearly communicate where a motor is connected and what touches the ground. Take pictures of it in multiple configurations of its gait cycle.</p>
+</li>
+<li>Using a Python-based script, develop a kinematic model for your device.<ol>
+<li>Define variables and constants</li>
+<li>Declare frames </li>
+<li>Define frame rotations</li>
+<li>Create vector descriptions for key points </li>
+<li>Take time-derivatives of position vectors or numerically compute the device throughout its gait cycle</li>
+<li>Assemble your knowledge of system motion into a Jacobian that maps input velocities to output velocities throughout its gait.</li>
+<li>Identify a set of key states that represent the system at important parts of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it).</li>
+<li>Plot the system in these states.</li>
+</ol>
+</li>
+<li>From your biomechanics-based specifications, define one or more estimates for ground reaction forces that the system should be expected to experience.  Consider including, based on your research<ul>
+<li>the force of gravity exerted by the mass of a "payload" or the main body of the robot.</li>
+<li>the acceleration the  system experiences during a typical gait</li>
+<li>ground reaction forces measured from biomechanics studies.</li>
+</ul>
+</li>
+<li>Calculate the force or torque required at the actuators to satisfy the end-effector force requirements.</li>
+<li>
+<p>Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.  </p>
+<p><em>This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok.</em></p>
+</li>
+<li>
+<p>Finally, using the two estimates about force and speed at the input, compute the required  power in this configuration.</p>
+</li>
+</ol>
+<!--## Discussion
+
+1. Identify the degrees of freedom of your device.
+
+<!--
+1. Solve the inverse kinematics problem for your system as its end effector moves through the given motion path.
+1. Identify whether your kinematics are serial or parallel
+1. Plot the motion of your device throughout its range of motion.
+1. Identify the rotational joints or linear attachment points where actuators to the system (active or passive) will be mounted.  These joints or points are  where the actuators or springs will deliver torques or forces, respectively.  There should be at least one input for each of your system's degree of freedom.
+
+<!--more-->
+
+<!--
+1. Define (plot) the motion path of the end-effector in terms of the specific gait you are interested in (walk, run, forward hop, vertical jump). 
+1. Identify a "critical portion" of your motion path, such as the stance phase of walking or the power stroke in swimming, as the worst-case portion of the motion path you would like to focus your analysis on.  This is where most of the power is being delivered from the motors.
+1. Calculate dy and dq as your system moves through a motion path.  Use the trapezoidal rule to get a better estimate of the rate of change at each point in the path.
+1. From dy and dq, calculate the Jacobian, J throughout the critical portion of your motion path
+1. From your specifications, estimate the expected forces on the end-effector.  This may be ground reaction forces for a leg or thrust forces for swimming / flying.
+1. Use the equation $\mathbf{\tau} = \mathbf{J}^T \mathbf{f}$ to calculate the expected joint torques
+1. From your specifications, estimate the expected output velocity vector
+1. Using $\dot{y}=J\dot{q}$, find the motor speeds required to achieve that forward velocity.
+1. using either $P=\mathbf{f}^T\dot{\mathbf{y}}$ or $P=\mathbf{\tau}^T\dot{\mathbf{q}}$, identify the power required to achieve your specifications.
+
+1. Adjust the design parameters such as mass, link lengths, etc to match your specifications.
+
+-->
+
+<ol>
+<li>Starting with the research question selected for your team, work on adapting and refining it to fit your team's specific goals and this year's course constraints (with regard to makeability, feasibility, etc)</li>
+</ol>
+<h2 id="discussion">Discussion</h2>
+<ol>
+<li>Discuss / defend your rationale for the size animal you selected in terms of your ability to replicate key features remotely with limited material selection.</li>
+<li>Find a motor and battery that can supply the mechanical power needs obtained above.  Consider that motor efficiencies may be as high as 95%, but if you can't find it listed, assume you find a more affordable motor at 50-70% efficiency.  Compare the mechanical watts/kg for the necessary motor and battery vs the animal's mechanical power/mass above?  Which one is more energy dense?</li>
+<li>How many degrees of freedom does your device have?  How many motors?  If the answer is not the same, what determines the state of the remaining degrees of freedom? How did you arrive at that number?</li>
+<li>If your mechanism has more than one degree of freedom, please describe how those multiple degrees of freedom will work togehter to create a locomotory gait or useful motion.  What is your plan for synchonizing, especially if passive energy storage?</li>
+<li>How did you estimate your expected end-effector forces</li>
+<li>
+<p>How did you estimate your expected end-effector speeds</p>
+</li>
+<li>
+<p>What is your research question?</p>
+</li>
+</ol>
+<p>Explain your rationale for why it is a good question to ask by answering the following questions.  For each numbered answer provide <em>at least one paragraph per response</em>.</p>
+<ol>
+<li>
+<p>Tractability: Is your question tractable and achievable?  Discuss your plan for scoping your problem to fit in a 15-week course. (&gt;1 paragraph)</p>
+<ul>
+<li>How have you focused or constrained the problem to differentiate yourself and/or become more tractable?  </li>
+</ul>
+<p>Examples include looking at one specific type of motion, using a specific animal as a source of inspiration (for generating unique specifications), or limiting yourself to a particular set of materials, parts, cost requirements, etc.</p>
+</li>
+<li>
+<p>Novelty: Is your question novel? How have you established novelty?</p>
+<ul>
+<li>What keywords did you use when performing a literature review on your topic?</li>
+<li>What were the four most highly cited references?  (Consider using Mendeley or similar to format your citations according to the "Submission Best Practices" document)</li>
+<li>Provide a short summary of each, focusing on whether these papers have already done what you set out to do.</li>
+</ul>
+</li>
+<li>Interesting: Is your question interesting, timely, and relevant?  <ul>
+<li>What makes it important to others?  </li>
+<li>Why is this idea important now?  What prevented it from being answered 10 years ago?</li>
+<li>Within what contexts could other people use your results?  </li>
+<li>What are the potential broader impacts on society?</li>
+</ul>
+</li>
+<li>Open-Ended: Is your question open-ended?  Could it leave room for a deeper look if given more time and resources?  Discuss how you have structured your research question to permit further, deeper investigation.</li>
+<li>Modular: Is your question modular?  How does it fit with other complementary research thrusts?</li>
+<li>Team Fit: How does answering this question leverage your interests and abilities?</li>
+<li>Topic Fit: How does the question use foldable robotics techniques to answer it?</li>
+</ol>
+<!--1. What is the valid range of motion of your device for each internal degree of freedom?-->
+
+<!--
+1. In your motion path you plotted in step X, what did you plot?  A point?  A link?  More than one point or link?  How many degrees of freedom does it take to represent the motion of that element?
+-->
+
+<h2 id="submission">Submission</h2>
+<p>Please include a report with the following</p>
+<ol>
+<li>The requested steps of the procedure, in paragraph form (no sentence fragments).</li>
+<li>Answers to the discussion points above</li>
+<li>plots &amp; figures</li>
+<li>Bibliography</li>
+<li>Appendices, consisting of<ul>
+<li>Data - any raw data collected in the generation of this report</li>
+<li>Code - any code created and by your team to in the generation of this report.  If you are using a jupyter notebook, to generate this assignment, you can supply your code inline or at the end.</li>
+</ul>
+</li>
+</ol>
+<p>Please follow the "Submission Best Practices" document posted the course website.  This assignment should be submitted to canvas as a .pdf document or a jupyter notebook (.ipynb).  If submitted as a notebook, make sure it is fully compiled.  This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting "Kernel" --&gt; "Restart and Run All".</p>
+<p>Please also post this completed assignment to your team's website.  This may be posted as a rendered jupyter notebook or a static markdown file with code and figures uploaded separately; details on how to do each may be found in the <a href="/modules/project/jupyter-notebooks-in-websites">Jupyter Notebooks in Websites</a> tutorial.</p>
+<p><em>This assignment will be presented in class</em> The week after it is due.</p>
+<h2 id="rubric">Rubric</h2>
+<table>
+<thead>
+<tr>
+<th align="left">Description</th>
+<th align="right">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Bio Inspiration</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Other bio-inspired robots</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Table</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="left">Other Assumptions</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Figures</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Engineering Representation</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Discussion</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="left">Bibliography</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Draft</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Step 1</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Step 2</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Step 3</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Step 4</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Step 5</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Step 6</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Step 7</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">Step 8</td>
+<td align="right">15</td>
+</tr>
+<tr>
+<td align="left">Discussion 1</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Discussion 2</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Discussion 3</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Discussion 4</td>
+<td align="right">10</td>
+</tr>
+<tr>
+<td align="left">Question</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Tractability Discussion</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Novelty Discussion</td>
+<td align="right">30</td>
+</tr>
+<tr>
+<td align="left">Interesting Discussion</td>
+<td align="right">40</td>
+</tr>
+<tr>
+<td align="left">Open-endedness Discussion</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Modularity Discussion</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Team Fit Discussion</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left">Topic Fit Discussion</td>
+<td align="right">20</td>
+</tr>
+<tr>
+<td align="left"><strong>Total</strong></td>
+<td align="right"><strong>600</strong></td>
+</tr>
+</tbody>
+</table>
 <h2 id="external-resources">External Resources</h2>
 <ul>
-<li>Anaconda<ul>
-<li><a href="https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">https://conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html</a></li>
+<li>Triple Pendulum Example</li>
+<li>EGR557 Kinematics Module</li>
+<li>EGR557 Dynamics Module</li>
+<li>pynamics repository</li>
+<li><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law">https://en.wikipedia.org/wiki/Kleiber%27s_law</a></li>
+<li>The associated module on <a href="/modules/project/developing-a-research-question">developing a research question</a></li>
+<li><a href="https://www.mendeley.com/download-desktop-new/">Mendeley Desktop</a>, a useful citation manager</li>
+<li>You may refer to the <a href="/modules/biomechanics/developing-specifications/">developing specifications</a> page for more information</li>
 </ul>
-</li>
-<li>Mujoco<ul>
-<li>Pytorch <a href="https://pytorch.org/rl/reference/generated/knowledge_base/MUJOCO_INSTALLATION.html">instructions</a> for installing mujoco <strong>(extremely helpful</strong>)</li>
-<li><a href="https://github.com/deepmind/mujoco">Github repository</a></li>
-<li><a href="https://github.com/deepmind/mujoco/releases">Binary Releases</a></li>
-<li><a href="https://mujoco.readthedocs.io/">Documentation</a></li>
-<li>Mujoco interactive <a href="https://colab.research.google.com/github/deepmind/mujoco/blob/main/python/tutorial.ipynb">tutorial</a></li>
-<li>https://pab47.github.io/mujoco.html<ul>
-<li>https://pab47.github.io/mujoco2022.html</li>
+<h2 id="suggestions">Suggestions</h2>
+<ul>
+<li>It will be useful to start using a program like <a href="https://www.mendeley.com/?interaction_required=true">Mendeley</a> to collect and organize references.</li>
+<li>Be creative in your search terms. Use {{&lt; cite "Dickinson2000" &gt;}} to find good starting points for references and keywords.</li>
+<li>Start writing down search keywords from class.</li>
 </ul>
-</li>
-<li><a href="https://github.com/tayalmanan28/Mujoco-Tutorial">a comprehensive mujoco tutorial</a><ul>
-<li><a href="https://tayalmanan28.github.io/my_blogs/mujoco/simulations/robotics/2022/01/21/MuJoCo.html">accompanying blog post</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
+<p>Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments.  As a team, come up with a mechanism that satisfies your team's need for scope/tractability, manufacturability, and cost.</p>
+<p>Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s).  This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass)</p>
 
 
 
@@ -1901,12 +2277,12 @@ conda deactivate &amp;&amp; conda activate mujoco_env
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
