@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../../lecture-notes/lecture-06/2dofrobot/">
+        <link rel="prev" href="../../kinematics/10-jacobians-for-parallel-mechanisms/">
       
       
-        <link rel="next" href="../kinematics/01-frames/">
+        <link rel="next" href="../../python/01-installing-anaconda-python/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../.." class="md-tabs__link">
+      <a href="../../.." class="md-tabs__link">
         
   
     
@@ -179,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../assignments/" class="md-tabs__link">
+        <a href="../../../assignments/" class="md-tabs__link">
           
   
     
@@ -199,7 +199,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -219,7 +219,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../lecture-notes/" class="md-tabs__link">
+        <a href="../../../lecture-notes/" class="md-tabs__link">
           
   
     
@@ -240,8 +240,16 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../kinematics/01-frames/" class="md-tabs__link">
           
   
     
@@ -250,6 +258,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -282,7 +293,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -311,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../.." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -340,6 +351,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -353,7 +366,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../assignments/" class="md-nav__link ">
+            <a href="../../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -384,7 +397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/assignment-01/" class="md-nav__link">
+      <a href="../../../assignments/assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -404,11 +417,31 @@
   
   
     <li class="md-nav__item">
-      <a href="../../assignments/assignment-02/" class="md-nav__link">
+      <a href="../../../assignments/assignment-02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     A02: Kinematics
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../assignments/project-01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team Project 1
   </span>
   
 
@@ -473,7 +506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -493,7 +526,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -513,7 +546,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,7 +604,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/" class="md-nav__link ">
+            <a href="../../../lecture-notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -621,7 +654,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -675,7 +708,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -731,7 +764,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-03/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -781,7 +814,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -843,7 +876,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-04/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -899,7 +932,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-05/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -949,7 +982,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1013,7 +1046,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-06/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1063,7 +1096,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1150,6 +1183,310 @@
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kinematics
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kinematics
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/01-frames/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Reference Frames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/02-basis-vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Basis Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/03-vectors/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vectors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/04-rotations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rotations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/05-expressing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expressing Vectors in other Reference Frames
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/06-quaternions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quaternions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/07-vector-operations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vector Operations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/08-constraints/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Constraints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/09-jacobians/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jacobians
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jacobians for Parallel Mechanisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -1298,262 +1635,6 @@
 
               
             
-              
-                
-  
-  
-  
-    
-    
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" >
-        
-          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
-            
-  
-  <span class="md-ellipsis">
-    Kinematics
-  </span>
-  
-
-            <span class="md-nav__icon md-icon"></span>
-          </label>
-        
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_2">
-            <span class="md-nav__icon md-icon"></span>
-            Kinematics
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/01-frames/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Reference Frames
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/02-basis-vectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Basis Vectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/03-vectors/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Vectors
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/04-rotations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Rotations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/05-expressing/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Expressing Vectors in other Reference Frames
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/06-quaternions/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Quaternions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/07-vector-operations/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Vector Operations
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/08-constraints/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Constraints
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/09-jacobians/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jacobians
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Jacobians for Parallel Mechanisms
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
           </ul>
         </nav>
       
@@ -1614,7 +1695,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1634,7 +1715,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/02-installing-packages/" class="md-nav__link">
+      <a href="../../python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1654,7 +1735,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1674,7 +1755,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/04-native-mujoco-install/" class="md-nav__link">
+      <a href="../../python/04-native-mujoco-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1694,7 +1775,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../python/sympy/" class="md-nav__link">
+      <a href="../../python/sympy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1741,7 +1822,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../vscode-setup/" class="md-nav__link ">
+            <a href="../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1905,7 +1986,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/developing-a-research-question.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/misc/developing-a-research-question.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2175,12 +2256,12 @@ Think of one of those fundamental questions.
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
