@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../07-vector-operations/">
+        <link rel="prev" href="../lecture-06/2dofrobot/">
       
       
-        <link rel="next" href="../09-jacobians/">
+        <link rel="next" href="../../tutorials/kinematics/01-frames/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.2.7">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Constraints - Flexible Robotics</title>
+        <title>Lecture 7 Notes - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.046329b4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.046329b4.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#constraints" class="md-skip">
+        <a href="#board-images" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Constraints
+              Lecture 7 Notes
             
           </span>
         </div>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -179,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../assignments/" class="md-tabs__link">
+        <a href="../../assignments/" class="md-tabs__link">
           
   
     
@@ -199,7 +199,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -215,11 +215,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../lecture-notes/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -235,21 +237,17 @@
         
   
   
-    
-  
   
     
     
       
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01-frames/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../tutorials/kinematics/01-frames/" class="md-tabs__link">
           
   
     
@@ -293,7 +291,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -322,7 +320,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -366,7 +364,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../assignments/" class="md-nav__link ">
+            <a href="../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -397,7 +395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/assignment-01/" class="md-nav__link">
+      <a href="../../assignments/assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -417,7 +415,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/assignment-02/" class="md-nav__link">
+      <a href="../../assignments/assignment-02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -437,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/project-01/" class="md-nav__link">
+      <a href="../../assignments/project-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -506,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -526,7 +524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -546,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -571,6 +569,8 @@
       
   
   
+    
+  
   
     
     
@@ -595,18 +595,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -622,7 +622,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             Lecture notes
@@ -656,7 +656,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -710,7 +710,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="../lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -766,7 +766,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
+            <a href="../lecture-03/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -816,7 +816,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+            <a href="../lecture-03/rotation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -878,7 +878,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
+            <a href="../lecture-04/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -934,7 +934,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
+            <a href="../lecture-05/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -984,7 +984,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+            <a href="../lecture-05/triangle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1048,7 +1048,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
+            <a href="../lecture-06/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1098,7 +1098,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+            <a href="../lecture-06/2dofrobot/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1139,6 +1139,8 @@
                 
   
   
+    
+  
   
     
     
@@ -1149,18 +1151,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_8" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-07/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1172,7 +1174,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_8">
             <span class="md-nav__icon md-icon"></span>
             Lecture 07
@@ -1200,8 +1202,6 @@
       
   
   
-    
-  
   
     
     
@@ -1216,13 +1216,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
         
           <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
             
@@ -1235,7 +1235,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -1246,8 +1246,6 @@
                 
   
   
-    
-  
   
     
     
@@ -1276,13 +1274,13 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
         
           <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
             
@@ -1295,7 +1293,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_5_1">
             <span class="md-nav__icon md-icon"></span>
             Kinematics
@@ -1308,7 +1306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-frames/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1328,7 +1326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-basis-vectors/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,7 +1346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-vectors/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1368,7 +1366,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../04-rotations/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/04-rotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1388,7 +1386,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../05-expressing/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1408,7 +1406,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../06-quaternions/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/06-quaternions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1428,7 +1426,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../07-vector-operations/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/07-vector-operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1446,29 +1444,9 @@
                 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Constraints
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../tutorials/kinematics/08-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1477,178 +1455,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#degrees-of-freedom" class="md-nav__link">
-    Degrees of Freedom
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-constraint" class="md-nav__link">
-    What is a constraint?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-distance-between-two-points" class="md-nav__link">
-    Example: Distance between two points
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#distance-between-two-points" class="md-nav__link">
-    Distance between two points
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint-equations" class="md-nav__link">
-    Constraint Equations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solved-nonlinearly" class="md-nav__link">
-    Solved Nonlinearly
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-solving-advantages-and-disadvantages" class="md-nav__link">
-    Numerical Solving: Advantages and Disadvantages
-  </a>
-  
-    <nav class="md-nav" aria-label="Numerical Solving: Advantages and Disadvantages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
-    Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disadvantages" class="md-nav__link">
-    Disadvantages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-info-on-minimize" class="md-nav__link">
-    More Info on minimize()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-solving-for-a-triangle" class="md-nav__link">
-    Example: Solving for a triangle
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description-choice" class="md-nav__link">
-    Description Choice
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-variables" class="md-nav__link">
-    State Variables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#counting-kinematic-equations" class="md-nav__link">
-    Counting Kinematic Equations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    Comparison
-  </a>
-  
-    <nav class="md-nav" aria-label="Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cartesian-advantages" class="md-nav__link">
-    Cartesian Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cartesian-disadvantages" class="md-nav__link">
-    Cartesian Disadvantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polar-advantages" class="md-nav__link">
-    Polar Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polar-disadvantages" class="md-nav__link">
-    Polar Disadvantages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1660,7 +1466,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../09-jacobians/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/09-jacobians/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1680,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1700,7 +1506,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../11-CAD-kinematics/" class="md-nav__link">
+      <a href="../../tutorials/kinematics/11-CAD-kinematics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1766,7 +1572,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/developing-a-research-question/" class="md-nav__link">
+      <a href="../../tutorials/misc/developing-a-research-question/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1840,7 +1646,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../tutorials/python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1860,7 +1666,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/02-installing-packages/" class="md-nav__link">
+      <a href="../../tutorials/python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1880,7 +1686,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../tutorials/python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1900,7 +1706,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/04-native-mujoco-install/" class="md-nav__link">
+      <a href="../../tutorials/python/04-native-mujoco-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1920,7 +1726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/sympy/" class="md-nav__link">
+      <a href="../../tutorials/python/sympy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1967,7 +1773,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../vscode-setup/" class="md-nav__link ">
+            <a href="../../tutorials/vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2020,8 +1826,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2030,154 +1834,9 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#degrees-of-freedom" class="md-nav__link">
-    Degrees of Freedom
+  <a href="#board-images" class="md-nav__link">
+    Board Images
   </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-is-a-constraint" class="md-nav__link">
-    What is a constraint?
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-distance-between-two-points" class="md-nav__link">
-    Example: Distance between two points
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#distance-between-two-points" class="md-nav__link">
-    Distance between two points
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#constraint-equations" class="md-nav__link">
-    Constraint Equations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#solved-nonlinearly" class="md-nav__link">
-    Solved Nonlinearly
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#numerical-solving-advantages-and-disadvantages" class="md-nav__link">
-    Numerical Solving: Advantages and Disadvantages
-  </a>
-  
-    <nav class="md-nav" aria-label="Numerical Solving: Advantages and Disadvantages">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#advantages" class="md-nav__link">
-    Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#disadvantages" class="md-nav__link">
-    Disadvantages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#more-info-on-minimize" class="md-nav__link">
-    More Info on minimize()
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#example-solving-for-a-triangle" class="md-nav__link">
-    Example: Solving for a triangle
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#description-choice" class="md-nav__link">
-    Description Choice
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#state-variables" class="md-nav__link">
-    State Variables
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#counting-kinematic-equations" class="md-nav__link">
-    Counting Kinematic Equations
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comparison" class="md-nav__link">
-    Comparison
-  </a>
-  
-    <nav class="md-nav" aria-label="Comparison">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#cartesian-advantages" class="md-nav__link">
-    Cartesian Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#cartesian-disadvantages" class="md-nav__link">
-    Cartesian Disadvantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polar-advantages" class="md-nav__link">
-    Polar Advantages
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#polar-disadvantages" class="md-nav__link">
-    Polar Disadvantages
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2196,7 +1855,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/kinematics/08-constraints.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/lecture-notes/lecture-07/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -2204,162 +1863,11 @@
   
 
 
-<h1 id="constraints">Constraints</h1>
-<h2 id="degrees-of-freedom">Degrees of Freedom</h2>
-<p>What are degrees of freedom?</p>
-<ul>
-<li>freedom of motion in a device</li>
-<li>freedom of description in variables used to describe the device</li>
-</ul>
-<h2 id="what-is-a-constraint">What is a constraint?</h2>
-<p>Constraints establish limitations in descriptions or degrees of freedom</p>
-<ul>
-<li>Degrees of Freedom<ul>
-<li>Distances</li>
-<li>Perpendicular, Parallel Vectors</li>
-<li>Point on a line</li>
-<li>Point a distance from a line</li>
-<li>Loops</li>
-</ul>
-</li>
-<li>Descriptions<ul>
-<li><span class="arithmatex">\(a^2+b^2+c^2+d^2=1\)</span></li>
-<li><span class="arithmatex">\(x = r \cos{\theta}\)</span>, <span class="arithmatex">\(y = r \sin{\theta}\)</span></li>
-</ul>
-</li>
-</ul>
-<h2 id="example-distance-between-two-points">Example: Distance between two points</h2>
-<p><a class="glightbox" href="../constraint-distance-between-points0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-distance-between-points0.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<h2 id="distance-between-two-points">Distance between two points</h2>
-<p><a class="glightbox" href="../constraint-distance-between-points.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-distance-between-points.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<div class="arithmatex">\[\vec{p}=p_x \hat{a}_x+p_y \hat{a}_y+p_z \hat{a}_z\]</div>
-<div class="arithmatex">\[\vec{q}=q_x \hat{a}_x+q_y \hat{a}_y+q_z \hat{a}_z\]</div>
-<div class="arithmatex">\[0=|\vec{v}|-l\]</div>
-<div class="arithmatex">\[0=|\vec{q}-\vec{p}|-l\]</div>
-<div class="arithmatex">\[0=(\vec{q}-\vec{p}) \cdot (\vec{q}-\vec{p}) -l^2\]</div>
-<div class="arithmatex">\[0=(q_x-p_x)^2 +(q_y-p_y)^2+(q_z-p_z)^2 -l^2\]</div>
-<h2 id="constraint-equations">Constraint Equations</h2>
-<p><a class="glightbox" href="../constraint-lecture-images/img0088.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/img0088.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<ul>
-<li>Many ways to represent the same constraint</li>
-<li>Variables don’t necessarily map to DOF</li>
-</ul>
-<h2 id="solved-nonlinearly">Solved Nonlinearly</h2>
-<p>For most code you write, data is not <em>differentiable</em> or <em>symbolic</em>, it is <em>numeric</em>.  Differentiation is also done <em>numerically</em>.</p>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Gradient_descent">https://en.wikipedia.org/wiki/Gradient_descent</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Hill_climbing">https://en.wikipedia.org/wiki/Hill_climbing</a></li>
-</ul>
-<h2 id="numerical-solving-advantages-and-disadvantages">Numerical Solving: Advantages and Disadvantages</h2>
-<h3 id="advantages">Advantages</h3>
-<ul>
-<li>Don't need to differentiate variables, only output.</li>
-<li>Faster and Easier to code</li>
-</ul>
-<h3 id="disadvantages">Disadvantages</h3>
-<ul>
-<li>Initial guess must be close.</li>
-<li>Numerical solving is slow for big systems with many variables.</li>
-<li>Have to solve for valid positions.  <ul>
-<li>Continuity between solutions was not guaranteed</li>
-<li>No knowledge if we skipped through a singularity.</li>
-</ul>
-</li>
-</ul>
-<h2 id="more-info-on-minimize">More Info on <code>minimize()</code></h2>
-<p>Many Algorithms</p>
-<ul>
-<li>Nelder-Mead</li>
-<li>Powell</li>
-<li>CG</li>
-<li>BFGS</li>
-<li>SLSQP</li>
-<li>... many more</li>
-</ul>
-<p><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html</a></p>
-<h2 id="example-solving-for-a-triangle">Example: Solving for a triangle</h2>
-<ul>
-<li>See Lecture Notes</li>
-</ul>
-<h2 id="description-choice">Description Choice</h2>
-<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<h2 id="_1"></h2>
-<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<p>Cartesian Coordinates <span class="arithmatex">\((x,y)\)</span></p>
-<div class="arithmatex">\[ p_1 = x_1 \hat{n}_x + y_1 \hat{n}_y\]</div>
-<div class="arithmatex">\[ p_2 = x_2 \hat{n}_x + y_2 \hat{n}_y\]</div>
-<div class="arithmatex">\[ p_3 = x_3 \hat{n}_x + y_3 \hat{n}_y\]</div>
-<div class="arithmatex">\[0 = |\vec{p}_2-\vec{p}_1| - l_1\]</div>
-<div class="arithmatex">\[0 = |\vec{p}_3-\vec{p}_2| - l_2\]</div>
-<div class="arithmatex">\[0 = |\vec{p}_4-\vec{p}_3| - l_3\]</div>
-<p>Polar Coordinates <span class="arithmatex">\((r,\theta)\)</span></p>
-<div class="arithmatex">\[\vec{p}_2 = \vec{p}_1+l_1 \hat{a}_x\]</div>
-<div class="arithmatex">\[\vec{p}_3 = \vec{p}_2+l_2 \hat{b}_x\]</div>
-<div class="arithmatex">\[\vec{p}_4 = \vec{p}_3+l_3 \hat{c}_x\]</div>
-<p>where <span class="arithmatex">\(\hat{a}_x\)</span>, <span class="arithmatex">\(\hat{b}_x\)</span>, <span class="arithmatex">\(\hat{c}_x\)</span> are unit vectors directed along links 1, 2, 3, and <span class="arithmatex">\(l_1\)</span>, <span class="arithmatex">\(l_2\)</span>, <span class="arithmatex">\(l_3\)</span> are constants</p>
-<h2 id="state-variables">State Variables</h2>
-<p>Cartesian: <span class="arithmatex">\(\left\{\begin{matrix}
-x_1, \dot{x}_1,\\
-y_1, \dot{y}_1,\\
-x_2, \dot{x}_2,\\
-y_2, \dot{y}_2,\\
-x_3, \dot{x}_3,\\
-y_3, \dot{y}_3
-\end{matrix}\right.\)</span></p>
-<p>polar: <span class="arithmatex">\(\left\{\begin{matrix}
-q_1, \dot{q}_1,\\
-q_2, \dot{q}_2,\\
-q_3, \dot{q}_3
-\end{matrix}\right.\)</span></p>
-<h2 id="counting-kinematic-equations">Counting Kinematic Equations</h2>
-<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<table>
-<thead>
-<tr>
-<th align="left">equations</th>
-<th align="right">variables</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td align="left">variables</td>
-<td align="right">6</td>
-</tr>
-<tr>
-<td align="left">kinematic equations</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td align="left">state equations</td>
-<td align="right">3</td>
-</tr>
-<tr>
-<td align="left"><strong>DOF</strong></td>
-<td align="right"><strong>3</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="comparison">Comparison</h2>
-<p><a class="glightbox" href="../constraint-lecture-images/explicit-implicit.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../constraint-lecture-images/explicit-implicit.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<h3 id="cartesian-advantages">Cartesian Advantages</h3>
-<ul>
-<li>Simple representation</li>
-<li>Easy to represent all constraints as length of vector</li>
-</ul>
-<h3 id="cartesian-disadvantages">Cartesian Disadvantages</h3>
-<ul>
-<li>you can encounter "representational" singularites</li>
-<li>more variables than degrees of freedom</li>
-</ul>
-<h3 id="polar-advantages">Polar Advantages</h3>
-<ul>
-<li>representation matches physical meaning (structure, motors)</li>
-<li>fewer representational singularities</li>
-</ul>
-<h3 id="polar-disadvantages">Polar Disadvantages</h3>
-<ul>
-<li>requires intuition as to how to best represent?</li>
-</ul>
+  <h1>Lecture 7 Notes</h1>
+
+<h2 id="board-images">Board Images</h2>
+<p><a class="glightbox" href="PXL_20231010_092728464.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231010_092728464.jpg" style="height:200px;" /></a>
+<a class="glightbox" href="PXL_20231010_092742268.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231010_092742268.jpg" style="height:200px;" /></a></p>
 
 
 
@@ -2402,12 +1910,12 @@ q_3, \dot{q}_3
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../assets/javascripts/workers/search.dfff1995.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
+      <script src="../../assets/javascripts/bundle.dff1b7c8.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
