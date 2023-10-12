@@ -1214,6 +1214,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1433,6 +1435,26 @@
   
   <span class="md-ellipsis">
     Jacobians for Parallel Mechanisms
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../kinematics/11-CAD-kinematics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Spherical Kinematics in CAD
   </span>
   
 
@@ -1886,16 +1908,16 @@ conda install -c anaconda mesa-libgl-cos6-x86_64
 conda install -c menpo glfw3
 pip install mujoco mediapy mujoco-python-viewer
 conda env config vars set MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
-conda deactivate &amp;&amp; conda activate mujoco_env
+conda deactivate &amp;&amp; conda activate mujoco
 </code></pre>
 <h2 id="windows">Windows</h2>
 <p>Run these commands line-by-line</p>
-<pre><code class="language-bash">conda create -n mujoco python=3.9
+<pre><code class="language-bash">conda create -n mujoco python=3.9 -y
 conda activate mujoco
-conda install jupyterlab ffmpeg
+conda install -y jupyterlab ffmpeg
 pip install mujoco mediapy mujoco-python-viewer
 conda env config vars set MUJOCO_GL=glfw PYOPENGL_PLATFORM=glfw
-conda deactivate &amp;&amp; conda activate mujoco_env
+conda deactivate &amp;&amp; conda activate mujoco
 </code></pre>
 <blockquote>
 <p>Note: these installation instructions may not work depending on your available graphics card.  Your other option is to use google colab.</p>
