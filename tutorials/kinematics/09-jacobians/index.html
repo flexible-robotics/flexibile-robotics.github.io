@@ -2110,22 +2110,22 @@ b_z &amp;0&amp;0&amp;1 \\
 +(l_{1} s\theta_{1} + l_{2} s(\theta_{1} + \theta_{2}))\hat{a}_y
 \end{align}\]</div>
 <h2 id="derivative">Derivative</h2>
-<div class="arithmatex">\[\vec{r} =\left(l_{1} c\theta_1 - l_{2} s\theta_1 s\theta_2 + l_{2} c\theta_1 c\theta_2\right)\hat{a}_x + \left(l_{1} s\theta_1 + l_{2} s\theta_1 c\theta_2 + l_{2} s\theta_2 c\theta_1\right)\hat{a}_y \\$$
-$$\begin{align}
+<div class="arithmatex">\[\vec{r} = \left(l_{1} c\theta_1 - l_{2} s\theta_1 s\theta_2 + l_{2} c\theta_1 c\theta_2\right)\hat{a}_x + \left(l_{1} s\theta_1 + l_{2} s\theta_1 c\theta_2 + l_{2} s\theta_2 c\theta_1\right)\hat{a}_y\]</div>
+<div class="arithmatex">\[\begin{align}
 \left.\frac{d\vec{r}}{dt}\right|_{\text{in }A} = &amp;
- \left(- \dot{ \theta }_1 l_{1} s\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_1 l_{2} s\theta_2 c\theta_1 - \dot{ \theta }_2 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_2 c\theta_1\right) \hat{a}_x\\
-&amp;+ \left(\dot{ \theta }_1 l_{1} c\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_1 l_{2} c\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_2 l_{2} c\theta_1 c\theta_2\right)\hat{a}_y \\
+ \left(- \dot{ \theta }_1 l_{1} s\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_1 l_{2} s\theta_2 c\theta_1 - \dot{ \theta }_2 l_{2} s\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_2 c\theta_1\right) \hat{a}_x +\\
+&amp; \left(\dot{ \theta }_1 l_{1} c\theta_1 - \dot{ \theta }_1 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_1 l_{2} c\theta_1 c\theta_2 - \dot{ \theta }_2 l_{2} s\theta_1 s\theta_2 + \dot{ \theta }_2 l_{2} c\theta_1 c\theta_2\right)\hat{a}_y \\
 =&amp;\left(- \dot{ \theta }_1 l_{1} s\theta_1 - \dot{ \theta }_1 l_{2} s(\theta_1+\theta_2) - \dot{ \theta }_2 l_{2} s(\theta_1+\theta_2)\right)\hat{a}_x  +\\
 &amp;  \left(\dot{ \theta }_1 l_{1} c\theta_1 + \dot{ \theta }_1 l_{2} c(\theta_1+\theta_2) + \dot{ \theta }_2 l_{2} c(\theta_1+\theta_2)\right)\hat{a}_y
 \end{align}\]</div>
-<div class="arithmatex">\[\left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_2=0}
-=\frac{\partial\vec{r}}{\partial\theta_1}
-=\left(- l_{1} s\theta_1 - l_{2} s(\theta_1+\theta_2)\right)\hat{a}_x + \left(l_{1} c\theta_1 + l_{2} c(\theta_1+\theta_2)\right)\hat{a}_y
-\]</div>
-<div class="arithmatex">\[\left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_1=0}
-=\frac{\partial\vec{r}}{\partial\theta_2}
+<div class="arithmatex">\[\begin{align}
+\frac{\partial\vec{r}}{\partial\theta_1}
+=&amp;\left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_2=0}
+=\left(- l_{1} s\theta_1 - l_{2} s(\theta_1+\theta_2)\right)\hat{a}_x + \left(l_{1} c\theta_1 + l_{2} c(\theta_1+\theta_2)\right)\hat{a}_y \\
+\frac{\partial\vec{r}}{\partial\theta_2} = 
+&amp; \left.\frac{d\vec{r}}{dt}  \right|_{\text{in }A,\dot\theta_1=0}
 =- l_{2} s(\theta_1+\theta_2)\hat{a}_x  +  l_{2} c(\theta_1+\theta_2)\hat{a}_y
-\]</div>
+\end{align}\]</div>
 <h2 id="assemble-the-jacobian">Assemble the Jacobian</h2>
 <div class="arithmatex">\[\begin{align}
 J = &amp;\begin{bmatrix}

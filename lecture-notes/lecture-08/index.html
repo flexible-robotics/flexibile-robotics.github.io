@@ -1897,15 +1897,36 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#board-images" class="md-nav__link">
-    Board Images
+  <a href="#example-1" class="md-nav__link">
+    Example 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#external-references" class="md-nav__link">
-    External References
+  <a href="#example-2" class="md-nav__link">
+    Example 2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-3" class="md-nav__link">
+    Example 3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discussion-finding-the-internal-jacobian-for-a-four-bar-linkage" class="md-nav__link">
+    Discussion: Finding the internal Jacobian for a four-bar linkage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-images" class="md-nav__link">
+    Board Images
   </a>
   
 </li>
@@ -1936,15 +1957,62 @@
   <h1>Lecture 8 Notes</h1>
 
 <h2 id="code">Code</h2>
-<p><a href="four-bar-alphas.ipynb">four-bar-alphas</a>
-<a href="four-bar-points.ipynb">four-bar-points</a>
-<a href="quaternion-updated.ipynb">quaternion-updated</a></p>
+<ul>
+<li><a href="quaternion-updated.ipynb">quaternion-updated</a></li>
+<li><a href="four-bar-points.ipynb">four-bar-points</a></li>
+<li><a href="four-bar-alphas.ipynb">four-bar-alphas</a></li>
+</ul>
+<h2 id="example-1">Example 1</h2>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\0\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=90^{\circ}\)</span>.  We form two quaternions:</p>
+<div class="arithmatex">\[p=2i+1j+0k\]</div>
+<div class="arithmatex">\[r=\cos\left(\frac{\theta}{2}\right) +\sin\left(\frac{\theta}{2}\right)(1i+0j+0k)\]</div>
+<p>Noting that this quaternion is already a unit quaternion (<span class="arithmatex">\(|r|=1\)</span>), We can then compute the quaternion <span class="arithmatex">\(p'\)</span> with the equation</p>
+<div class="arithmatex">\[p'=rpr^*\]</div>
+<p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}2\\0\\1\end{pmatrix}\)</span>.  </p>
+<h2 id="example-2">Example 2</h2>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\1\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=180^{\circ}\)</span>.  We form two quaternions:</p>
+<div class="arithmatex">\[p=2i+1j+0k\]</div>
+<div class="arithmatex">\[r=\cos\left(\frac{\theta}{2}\right) +\sin\left(\frac{\theta}{2}\right)\frac{(1i+1j+0k)}{\sqrt{2}}\]</div>
+<p>Noting that the original vector needed to be normalized, (hence dividing by <span class="arithmatex">\(\sqrt{2}\)</span>) or else the resulting quaternion would have needed to be normalized (<span class="arithmatex">\(r_{new}=\frac{r}{|r|}\)</span>), we can then compute the quaternion <span class="arithmatex">\(p'\)</span> with the equation</p>
+<div class="arithmatex">\[p'=rpr^*\]</div>
+<p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}1\\2\\0\end{pmatrix}\)</span>.  </p>
+<h2 id="example-3">Example 3</h2>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<p>Say we have a vector v representing a robot arm, initially expressed in its native (non-inertial) reference frames, as in</p>
+<div class="arithmatex">\[\vec{v}_1 = l_b \hat{b}_x\]</div>
+<div class="arithmatex">\[\vec{v}_2 = l_c \hat{c}_x\]</div>
+<div class="arithmatex">\[\vec{p}_{end} = \vec{v}_1+ \vec{v}_2\]</div>
+<p>In quaternion form,</p>
+<div class="arithmatex">\[v_{1(B)} = l_b i\]</div>
+<div class="arithmatex">\[v_{2(C)} = l_c i\]</div>
+<div class="arithmatex">\[p_{end}=v_1 + v_2\]</div>
+<p>If frame <span class="arithmatex">\(B\)</span> is rotated from the base inertial frame <span class="arithmatex">\(A\)</span> by <span class="arithmatex">\(\theta_1\)</span> about <span class="arithmatex">\(\hat{a}_z\)</span>, we can create a unit quaternion which represents this rotation.</p>
+<div class="arithmatex">\[r_{ab}=\cos\left(\frac{\theta_1}{2}\right) +\sin\left(\frac{\theta_1}{2}\right)(0i+0j+1k)\]</div>
+<p>We can then express <span class="arithmatex">\(v_{1(B)}\)</span> in the <span class="arithmatex">\(A\)</span> frame:</p>
+<div class="arithmatex">\[v_{1(A)}=r_{ab}v_{1(B)}r_{ab}^*\]</div>
+<div class="arithmatex">\[v_{1(A)}=r_{ab}(l_b i)r_{ab}^*\]</div>
+<p>Similarly, if frame <span class="arithmatex">\(C\)</span> is rotated from <span class="arithmatex">\(B\)</span> by <span class="arithmatex">\(\theta_2\)</span> about <span class="arithmatex">\(\hat{b}_z\)</span>, we can create a second unit quaternion which represents this rotation.</p>
+<div class="arithmatex">\[r_{bc}=\cos\left(\frac{\theta_2}{2}\right) +\sin\left(\frac{\theta_2}{2}\right)(0i+0j+1k)\]</div>
+<p>We can then express <span class="arithmatex">\(v_{2(C)}\)</span> in the <span class="arithmatex">\(B\)</span> frame, and then the <span class="arithmatex">\(A\)</span> frame, respectively:</p>
+<div class="arithmatex">\[v_{2(B)}=r_{bc}v_{2(C)}r_{bc}^*\]</div>
+<div class="arithmatex">\[v_{2(A)}=r_{ab}v_{2(B)}r_{ab}^*\]</div>
+<div class="arithmatex">\[v_{2(A)}=r_{ab}r_{bc}v_{2(C)}r_{bc}^*r_{ab}^*\]</div>
+<div class="arithmatex">\[v_{2(A)}=r_{ab}r_{bc}(l_c i)r_{bc}^*r_{ab}^*\]</div>
+<p>We can now express <span class="arithmatex">\(\vec{p}_{end}\)</span> in <span class="arithmatex">\(A\)</span></p>
+<div class="arithmatex">\[\begin{align}
+\vec{p}_{end} = &amp;\vec{v}_1+ \vec{v}_2\\
+ = &amp;r_{ab}(l_b i + r_{bc}(l_c i)r_{bc}^*)r_{ab}^*
+\end{align}\]</div>
+<h2 id="discussion-finding-the-internal-jacobian-for-a-four-bar-linkage">Discussion: Finding the internal Jacobian for a four-bar linkage</h2>
+<p><a class="glightbox" href="PXL_20231012_142045721.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142045721.MP.jpg" style="height:200px;" /></a></p>
+<p>Consider the above four bar linkage, which, without additional constraint equations, is a chain of four links from <span class="arithmatex">\(\vec{p}_1\)</span> to <span class="arithmatex">\(\vec{p}_4\)</span>, and back to <span class="arithmatex">\(\vec{p}_1'\)</span>. The incremental rotations about <span class="arithmatex">\(\hat{a}_z\)</span> between each link are described by <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_4\)</span>.  It should be pretty clear that you need to add a constraint using the expressions for <span class="arithmatex">\(\vec{p}_1'\)</span> and <span class="arithmatex">\(\vec{p}_1\)</span> that "glues" (or constrains) <span class="arithmatex">\(\vec{p}_1'\)</span> to <span class="arithmatex">\(\vec{p}_1\)</span>.  In this case, we know the length of <span class="arithmatex">\(\vec{p}_1'-\vec{p}_1\)</span> should be <span class="arithmatex">\(0\)</span>, or </p>
+<div class="arithmatex">\[\vec{p}_1'-\vec{p}_1=\vec{0}\]</div>
+<p>But the expression for <span class="arithmatex">\(\vec{p}_1'\)</span> in <span class="arithmatex">\(A\)</span> only uses <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_3\)</span>.  This means that <span class="arithmatex">\(\alpha_4\)</span> is not used in the constraint equation.</p>
 <h2 id="board-images">Board Images</h2>
 <p><a class="glightbox" href="PXL_20231012_133010905.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133010905.MP.jpg" style="height:200px;" /></a>
-<a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a>
-<a class="glightbox" href="PXL_20231012_142045721.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142045721.MP.jpg" style="height:200px;" /></a>
 <a class="glightbox" href="PXL_20231012_142053542.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142053542.jpg" style="height:200px;" /></a></p>
-<h2 id="external-references">External References</h2>
 
 
 
