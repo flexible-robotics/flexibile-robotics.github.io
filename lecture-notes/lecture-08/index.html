@@ -1897,22 +1897,22 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-1" class="md-nav__link">
-    Example 1
+  <a href="#example-1-transforming-points" class="md-nav__link">
+    Example 1: Transforming Points
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-2" class="md-nav__link">
-    Example 2
+  <a href="#example-2-transforming-points" class="md-nav__link">
+    Example 2: Transforming Points
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#example-3" class="md-nav__link">
-    Example 3
+  <a href="#example-3-compund-rotations" class="md-nav__link">
+    Example 3: Compund Rotations
   </a>
   
 </li>
@@ -1962,7 +1962,7 @@
 <li><a href="four-bar-points.ipynb">four-bar-points</a></li>
 <li><a href="four-bar-alphas.ipynb">four-bar-alphas</a></li>
 </ul>
-<h2 id="example-1">Example 1</h2>
+<h2 id="example-1-transforming-points">Example 1: Transforming Points</h2>
 <p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\0\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=90^{\circ}\)</span>.  We form two quaternions:</p>
 <div class="arithmatex">\[p=2i+1j+0k\]</div>
@@ -1970,7 +1970,7 @@
 <p>Noting that this quaternion is already a unit quaternion (<span class="arithmatex">\(|r|=1\)</span>), We can then compute the quaternion <span class="arithmatex">\(p'\)</span> with the equation</p>
 <div class="arithmatex">\[p'=rpr^*\]</div>
 <p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}2\\0\\1\end{pmatrix}\)</span>.  </p>
-<h2 id="example-2">Example 2</h2>
+<h2 id="example-2-transforming-points">Example 2: Transforming Points</h2>
 <p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\1\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=180^{\circ}\)</span>.  We form two quaternions:</p>
 <div class="arithmatex">\[p=2i+1j+0k\]</div>
@@ -1978,8 +1978,9 @@
 <p>Noting that the original vector needed to be normalized, (hence dividing by <span class="arithmatex">\(\sqrt{2}\)</span>) or else the resulting quaternion would have needed to be normalized (<span class="arithmatex">\(r_{new}=\frac{r}{|r|}\)</span>), we can then compute the quaternion <span class="arithmatex">\(p'\)</span> with the equation</p>
 <div class="arithmatex">\[p'=rpr^*\]</div>
 <p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}1\\2\\0\end{pmatrix}\)</span>.  </p>
-<h2 id="example-3">Example 3</h2>
-<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<h2 id="example-3-compund-rotations">Example 3: Compund Rotations</h2>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a>
+<a class="glightbox" href="PXL_20231012_133010905.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133010905.MP.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector v representing a robot arm, initially expressed in its native (non-inertial) reference frames, as in</p>
 <div class="arithmatex">\[\vec{v}_1 = l_b \hat{b}_x\]</div>
 <div class="arithmatex">\[\vec{v}_2 = l_c \hat{c}_x\]</div>
@@ -1987,7 +1988,6 @@
 <p>In quaternion form,</p>
 <div class="arithmatex">\[v_{1(B)} = l_b i\]</div>
 <div class="arithmatex">\[v_{2(C)} = l_c i\]</div>
-<div class="arithmatex">\[p_{end}=v_1 + v_2\]</div>
 <p>If frame <span class="arithmatex">\(B\)</span> is rotated from the base inertial frame <span class="arithmatex">\(A\)</span> by <span class="arithmatex">\(\theta_1\)</span> about <span class="arithmatex">\(\hat{a}_z\)</span>, we can create a unit quaternion which represents this rotation.</p>
 <div class="arithmatex">\[r_{ab}=\cos\left(\frac{\theta_1}{2}\right) +\sin\left(\frac{\theta_1}{2}\right)(0i+0j+1k)\]</div>
 <p>We can then express <span class="arithmatex">\(v_{1(B)}\)</span> in the <span class="arithmatex">\(A\)</span> frame:</p>
@@ -2002,17 +2002,102 @@
 <div class="arithmatex">\[v_{2(A)}=r_{ab}r_{bc}(l_c i)r_{bc}^*r_{ab}^*\]</div>
 <p>We can now express <span class="arithmatex">\(\vec{p}_{end}\)</span> in <span class="arithmatex">\(A\)</span></p>
 <div class="arithmatex">\[\begin{align}
-\vec{p}_{end} = &amp;\vec{v}_1+ \vec{v}_2\\
+{p}_{end(A)} = &amp;{v}_{1(A)}+ {v}_{2(A)}\\
  = &amp;r_{ab}(l_b i + r_{bc}(l_c i)r_{bc}^*)r_{ab}^*
 \end{align}\]</div>
 <h2 id="discussion-finding-the-internal-jacobian-for-a-four-bar-linkage">Discussion: Finding the internal Jacobian for a four-bar linkage</h2>
 <p><a class="glightbox" href="PXL_20231012_142045721.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142045721.MP.jpg" style="height:200px;" /></a></p>
-<p>Consider the above four bar linkage, which, without additional constraint equations, is a chain of four links from <span class="arithmatex">\(\vec{p}_1\)</span> to <span class="arithmatex">\(\vec{p}_4\)</span>, and back to <span class="arithmatex">\(\vec{p}_1'\)</span>. The incremental rotations about <span class="arithmatex">\(\hat{a}_z\)</span> between each link are described by <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_4\)</span>.  It should be pretty clear that you need to add a constraint using the expressions for <span class="arithmatex">\(\vec{p}_1'\)</span> and <span class="arithmatex">\(\vec{p}_1\)</span> that "glues" (or constrains) <span class="arithmatex">\(\vec{p}_1'\)</span> to <span class="arithmatex">\(\vec{p}_1\)</span>.  In this case, we know the length of <span class="arithmatex">\(\vec{p}_1'-\vec{p}_1\)</span> should be <span class="arithmatex">\(0\)</span>, or </p>
+<p>Consider the above four-bar linkage, which, without additional constraint equations, is a chain of four links from <span class="arithmatex">\(\vec{p}_1\)</span> to <span class="arithmatex">\(\vec{p}_4\)</span>, and back to <span class="arithmatex">\(\vec{p}_1'\)</span>. The incremental rotations about <span class="arithmatex">\(\hat{a}_z\)</span> between each link are described by <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_4\)</span>.  It should be pretty clear that you need to add  constraints using the expressions for <span class="arithmatex">\(\vec{p}_1'\)</span> and <span class="arithmatex">\(\vec{p}_1\)</span> that "glues" (or constrains) <span class="arithmatex">\(\vec{p}_1'\)</span> to <span class="arithmatex">\(\vec{p}_1\)</span>.  In this case, we know the length of <span class="arithmatex">\(\vec{p}_1'-\vec{p}_1\)</span> should be <span class="arithmatex">\(0\)</span>, or</p>
 <div class="arithmatex">\[\vec{p}_1'-\vec{p}_1=\vec{0}\]</div>
-<p>But the expression for <span class="arithmatex">\(\vec{p}_1'\)</span> in <span class="arithmatex">\(A\)</span> only uses <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_3\)</span>.  This means that <span class="arithmatex">\(\alpha_4\)</span> is not used in the constraint equation.</p>
+<p>But this is a vector expression, not a scalar expression, which makes it hard to use in solvers.  So we can dot this expression with <span class="arithmatex">\(\hat{a}_x\)</span> and <span class="arithmatex">\(\hat{a}_y\)</span> in order to decompose this vector expression into two independent scalar expressions.</p>
+<div class="arithmatex">\[(\vec{p}_1'-\vec{p}_1)\cdot \hat{a}_x=0\]</div>
+<div class="arithmatex">\[(\vec{p}_1'-\vec{p}_1)\cdot \hat{a}_y=0\]</div>
+<blockquote>
+<p><strong>Question:</strong> Why can't we just use the expression for the length of this vector is 0, or <span class="arithmatex">\(|\vec{p}_1'-\vec{p}_1|=0\)</span>?  That's also a scalar expression.<br />
+<strong>Answer 1:</strong> This only produces one equation, when we need two constraint equations to fully constrain the four bar.<br />
+<strong>Answer 2:</strong> This would be a "degenerate" form of <span class="arithmatex">\(|\vec{p}_1'-\vec{p}_1|=l\)</span>, which would effectively create a fifth link of our mechanism.  When <span class="arithmatex">\(l=0\)</span>, solvers would probably be able to find a solution, but it would not generally work, and there would still technically be an extra degree of freedom in your mechanism that would not be accounted for.</p>
+</blockquote>
+<p>But the expression for <span class="arithmatex">\(\vec{p}_1'\)</span> in <span class="arithmatex">\(A\)</span> only uses three of our four variables, <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_3\)</span>.  This means that <span class="arithmatex">\(\alpha_4\)</span> is not used in the system of constraint equations generated, either.  What is the result?  In this case, </p>
+<div class="arithmatex">\[\begin{align}
+J = &amp;\left[\begin{array}{c | c c}
+j_{11}&amp;j_{12}&amp;j_{13}\\
+j_{21}&amp;j_{22}&amp;j_{23}
+\end{array}\right]\\
+0=&amp;J\dot{\alpha}\\
+= &amp;\left[\begin{array}{c | c c}
+j_{11}&amp;j_{12}&amp;j_{13}\\
+j_{21}&amp;j_{22}&amp;j_{23}
+\end{array}\right]
+\begin{bmatrix}
+    \dot\alpha_1 \\\hline \dot\alpha_2\\\dot\alpha_3
+\end{bmatrix} \\
+0= &amp; 
+\underbrace{
+\begin{bmatrix}
+    j_{11}\\
+    j_{21}
+\end{bmatrix} 
+}_A
+\underbrace{\begin{bmatrix}\dot \alpha_1\end{bmatrix}}_\dot{q_i} + 
+\underbrace{
+\begin{bmatrix}
+    j_{12}&amp;j_{13}\\
+    j_{22}&amp;j_{23}
+\end{bmatrix}
+}_B
+\underbrace{
+\begin{bmatrix}
+    \dot\alpha_2\\\dot\alpha_3
+\end{bmatrix}
+}_\dot{q_d}\\
+\end{align}\]</div>
+<!-- 0=&A\dot q_i + B \dot q_d\\
+B \dot q_d=&-A\dot q_i\\
+\dot q_d=&-B^{-1}A\dot q_i -->
+
+<p>So how do we include <span class="arithmatex">\(\alpha_4\)</span> in our expressions so that we can find the relationships between it and our independent state variable, <span class="arithmatex">\(\alpha_4\)</span>?  Create another constraint expression from a vector that uses it!</p>
+<div class="arithmatex">\[(\vec{p}_2'-\vec{p}_2)\cdot \hat{a}_y=0\]</div>
+<p>Recalculating, we now have three equations, three unknowns, and one independent variable, <span class="arithmatex">\(\alpha_1\)</span></p>
+<div class="arithmatex">\[\begin{align}
+J = &amp;\left[\begin{array}{c | c c c}
+j_{11}&amp;j_{12}&amp;j_{13}&amp;j_{14}\\
+j_{21}&amp;j_{22}&amp;j_{23}&amp;j_{24}\\
+j_{31}&amp;j_{32}&amp;j_{33}&amp;j_{34}
+\end{array}\right]\\
+0=&amp;J\dot{\alpha}\\
+= &amp;\left[\begin{array}{c | c c c}
+j_{11}&amp;j_{12}&amp;j_{13}&amp;j_{14}\\
+j_{21}&amp;j_{22}&amp;j_{23}&amp;j_{24}\\
+j_{31}&amp;j_{32}&amp;j_{33}&amp;j_{34}
+\end{array}\right]
+\begin{bmatrix}
+    \dot\alpha_1 \\\hline \dot\alpha_2\\\dot\alpha_3\\\dot \alpha_4
+\end{bmatrix} \\
+0= &amp; 
+\underbrace{
+\begin{bmatrix}
+    j_{11}\\
+    j_{21}\\
+    j_{31}
+\end{bmatrix} 
+}_A
+\underbrace{\begin{bmatrix}\dot \alpha_1\end{bmatrix}}_\dot{q_i} + 
+\underbrace{
+\begin{bmatrix}
+    j_{12}&amp;j_{13}&amp;j_{14}\\
+    j_{22}&amp;j_{23}&amp;j_{24}\\
+    j_{32}&amp;j_{33}&amp;j_{34}
+\end{bmatrix}
+}_B
+\underbrace{
+\begin{bmatrix}
+    \dot\alpha_2\\\dot\alpha_3\\\dot \alpha_4
+\end{bmatrix}
+}_\dot{q_d}\\
+\end{align}\]</div>
 <h2 id="board-images">Board Images</h2>
-<p><a class="glightbox" href="PXL_20231012_133010905.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133010905.MP.jpg" style="height:200px;" /></a>
-<a class="glightbox" href="PXL_20231012_142053542.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142053542.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_142053542.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142053542.jpg" style="height:200px;" /></a></p>
+<p>Ways to specify <span class="arithmatex">\(\alpha_1\)</span></p>
 
 
 
