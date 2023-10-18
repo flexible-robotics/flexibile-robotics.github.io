@@ -16,7 +16,7 @@
         <link rel="prev" href="../assignment-02/">
       
       
-        <link rel="next" href="../../course-info/01-syllabus/">
+        <link rel="next" href="../project-01part2/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -27,7 +27,7 @@
 
     
       
-        <title>Team Project 1 - Flexible Robotics</title>
+        <title>Team Project 1: Part 1 - Flexible Robotics</title>
       
     
     
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Team Project 1
+              Team Project 1: Part 1
             
           </span>
         </div>
@@ -353,6 +353,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -448,7 +450,7 @@
           
   
   <span class="md-ellipsis">
-    Team Project 1
+    Team Project 1: Part 1
   </span>
   
 
@@ -459,7 +461,7 @@
         
   
   <span class="md-ellipsis">
-    Team Project 1
+    Team Project 1: Part 1
   </span>
   
 
@@ -524,6 +526,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../project-01part2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team Project 1: Part 2
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -2030,9 +2052,12 @@
   
 
 
-  <h1>Team Project 1</h1>
+  <h1>Team Project 1: Part 1</h1>
 
 <h2 id="assignment-overview">Assignment Overview</h2>
+<blockquote>
+<p><strong>UPDATE:</strong> This assignment has been split into two parts.  Please see <a href="../project-01part2/">Part 2</a> for the rest of the assignment.</p>
+</blockquote>
 <p>The goal of this team project is to propose a mechanism design that is interesting, grounded in physical reality, and relevant to the course material.
 This year, we will be focusing on <em>bio-inspired solutions</em> for <strong>terrestrial locomotion</strong>.  Your task is to develop and study a mechanism composed of:</p>
 <ul>
@@ -2044,8 +2069,11 @@ This year, we will be focusing on <em>bio-inspired solutions</em> for <strong>te
 <ul>
 <li><strong>Project Goal and Fit:</strong> Select a research topic that is interesting to you and worth pursuing, and defend your decision.</li>
 <li><strong>Background Research</strong>  Start thinking about the scale of your robot, how to use the motion,behavior, or morphology of biological systems to inspire your design, and how knowledge of biomechanics can inspire a mechanism design.</li>
-<li><strong>Specifications generation.</strong></li>
 <li><strong>Initial Calculations</strong></li>
+<li><strong>Specifications generation.</strong></li>
+</ul>
+<p>Part 2 of this assignment continues with:</p>
+<ul>
 <li><strong>Mechanism Design</strong></li>
 <li><strong>Modeling and Analysis:</strong> Use your knowledge of the mechanism's motion to estimate the forces, and torques, power requirements, and speed of your system.</li>
 </ul>
@@ -2218,91 +2246,7 @@ v_1 = &amp; (F/m)t + 0\\
 </li>
 </ol>
 </li>
-<li>
-<p><strong>Develop a kinematic model</strong> for your device using a Python-based script,</p>
-<ol>
-<li>Define all variables and constants (especially if they were not defined in your figure)</li>
-<li>Declare frames and rotation tables</li>
-<li>Create vector descriptions for key points</li>
-<li>Take time-derivatives of position vectors or numerically compute the device throughout its gait cycle.</li>
-<li>Assemble your knowledge of system motion into a Jacobian that maps input velocities to output velocities throughout its gait.</li>
-<li>Identify a set of important mechanism states (or configurations) that represent the system at important parts of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it).</li>
-<li>Plot the system in these states.</li>
-<li>From your biomechanics-based specifications, define one or more estimates for ground reaction forces that the system should be expected to experience.<br />
-    &gt; Consider including, based on your background research:
-    &gt;
-    &gt; * the force of gravity exerted by the mass of a "payload" or the main body of the robot.
-    &gt; * the acceleration the  system experiences during a typical gait
-    &gt; * ground reaction forces measured from biomechanics studies.</li>
-<li>Calculate the force or torque required at the actuators to satisfy the end-effector force requirements.</li>
-<li>
-<p>Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.  </p>
-<blockquote>
-<p>This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok._</p>
-</blockquote>
-</li>
-<li>
-<p>Finally, using the two estimates about force and speed at the input, compute the required  power in this specific state.</p>
-</li>
-<li>Discussion:<ol>
-<li>How many degrees of freedom does your device have?  How many motors?  If the answer is not the same, what determines the state of the remaining degrees of freedom? How did you arrive at that number?</li>
-<li>How did you estimate your expected end-effector forces?</li>
-<li>How did you estimate your expected end-effector speeds?</li>
 </ol>
-</li>
-</ol>
-<!-- The most important pieces of information you can gather at this point are elements like "how much energy is consumed in accomplishing this gait", "What are the forces involved", etc. -->
-<!-- 1. What is the total energy used to complete a single locomotion cycle?  What is the power required?  How did you calculate this?
-1. Can you find a reference that tells you how to scale respiration energy across different size animals?
-1. Find the ground reaction forces involved with completing a typical locomotion cycle. -->
-</li>
-</ol>
-<!-- 1. Draw the simplest physics representation of the system you can of your proposed mechanical system. How many rigid bodies are there?  How many can be approximated as massless(1/10 of the total mass or less)?  Where are springs located?  Where is the (main) actuator? -->
-
-<!-- The paper model should dimensionally match your code and figures.  -->
-<!-- 1. extends upon the physical representation from the previous figure  -->
-
-<!--## Discussion
-
-1. Identify the degrees of freedom of your device.
-
-<!--
-1. Solve the inverse kinematics problem for your system as its end effector moves through the given motion path.
-1. Identify whether your kinematics are serial or parallel
-1. Plot the motion of your device throughout its range of motion.
-1. Identify the rotational joints or linear attachment points where actuators to the system (active or passive) will be mounted.  These joints or points are  where the actuators or springs will deliver torques or forces, respectively.  There should be at least one input for each of your system's degree of freedom.
-
-<!--more-->
-
-<!--
-1. Define (plot) the motion path of the end-effector in terms of the specific gait you are interested in (walk, run, forward hop, vertical jump). 
-1. Identify a "critical portion" of your motion path, such as the stance phase of walking or the power stroke in swimming, as the worst-case portion of the motion path you would like to focus your analysis on.  This is where most of the power is being delivered from the motors.
-1. Calculate dy and dq as your system moves through a motion path.  Use the trapezoidal rule to get a better estimate of the rate of change at each point in the path.
-1. From dy and dq, calculate the Jacobian, J throughout the critical portion of your motion path
-1. From your specifications, estimate the expected forces on the end-effector.  This may be ground reaction forces for a leg or thrust forces for swimming / flying.
-1. Use the equation $\mathbf{\tau} = \mathbf{J}^T \mathbf{f}$ to calculate the expected joint torques
-1. From your specifications, estimate the expected output velocity vector
-1. Using $\dot{y}=J\dot{q}$, find the motor speeds required to achieve that forward velocity.
-1. using either $P=\mathbf{f}^T\dot{\mathbf{y}}$ or $P=\mathbf{\tau}^T\dot{\mathbf{q}}$, identify the power required to achieve your specifications.
-
-1. Adjust the design parameters such as mass, link lengths, etc to match your specifications.
-
--->
-
-<!-- 1. Starting with the research question selected for your team, work on adapting and refining it to fit your team's specific goals and this year's course constraints (with regard to makeability, feasibility, etc) -->
-
-<!-- ## Discussion
-
-1. Discuss / defend your rationale for the size animal you selected in terms of your ability to replicate key features remotely with limited material selection.
-1. Find a motor and battery that can supply the mechanical power needs obtained above.  Consider that motor efficiencies may be as high as 95%, but if you can't find it listed, assume you find a more affordable motor at 50-70% efficiency.  Compare the mechanical watts/kg for the necessary motor and battery vs the animal's mechanical power/mass above?  Which one is more energy dense?
-1. If your mechanism has more than one degree of freedom, please describe how those multiple degrees of freedom will work togehter to create a locomotory gait or useful motion.  What is your plan for synchonizing, especially if passive energy storage? -->
-
-<!--1. What is the valid range of motion of your device for each internal degree of freedom?-->
-
-<!--
-1. In your motion path you plotted in step X, what did you plot?  A point?  A link?  More than one point or link?  How many degrees of freedom does it take to represent the motion of that element?
--->
-
 <h2 id="submission">Submission</h2>
 <p>Please include a report with the following</p>
 <ol>
@@ -2342,20 +2286,8 @@ v_1 = &amp; (F/m)t + 0\\
 <td align="right">100</td>
 </tr>
 <tr>
-<td align="left">Specifications Table</td>
-<td align="right">100</td>
-</tr>
-<tr>
-<td align="left">Mechanism Design</td>
-<td align="right">100</td>
-</tr>
-<tr>
-<td align="left">Modeling and Analysis</td>
-<td align="right">100</td>
-</tr>
-<tr>
 <td align="left"><strong>Total</strong></td>
-<td align="right"><strong>600</strong></td>
+<td align="right"><strong>300</strong></td>
 </tr>
 </tbody>
 </table>
