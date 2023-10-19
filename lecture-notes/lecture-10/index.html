@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#external-references" class="md-skip">
+        <a href="#agenda" class="md-skip">
           Skip to content
         </a>
       
@@ -1968,6 +1968,111 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    Agenda
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#xml-mjcf" class="md-nav__link">
+    XML (MJCF)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bodies" class="md-nav__link">
+    Bodies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-bodies" class="md-nav__link">
+    Specifying bodies
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geoms" class="md-nav__link">
+    Geoms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-geoms" class="md-nav__link">
+    Specifying Geoms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joints" class="md-nav__link">
+    Joints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#specifying-joints" class="md-nav__link">
+    Specifying Joints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#inertial" class="md-nav__link">
+    Inertial
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#position" class="md-nav__link">
+    Position
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#orientation" class="md-nav__link">
+    Orientation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#camera" class="md-nav__link">
+    Camera
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lights" class="md-nav__link">
+    Lights
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-on-this" class="md-nav__link">
+    More on this
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activity" class="md-nav__link">
+    Activity
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#external-references" class="md-nav__link">
     External References
   </a>
@@ -1999,11 +2104,142 @@
 
   <h1>Lecture 10 Notes</h1>
 
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Go over homework 2 Tuesday</li>
+<li>Introduction to mujoco</li>
+</ul>
+<h2 id="xml-mjcf">XML (MJCF)</h2>
+<ul>
+<li>Kinematic Tree</li>
+<li>World &amp; Visualization Params<ul>
+<li>Scene</li>
+<li>Lighting</li>
+<li>Cameras</li>
+</ul>
+</li>
+<li>Contact Settings</li>
+<li>Actuators</li>
+<li>Sensors</li>
+<li>Constraints (equality)</li>
+<li>Tendons</li>
+<li>Compiler Flags</li>
+<li>Options</li>
+<li>Defaults</li>
+</ul>
+<h2 id="bodies">Bodies</h2>
+<ul>
+<li>containers for<ul>
+<li>joints</li>
+<li>one or more geoms</li>
+<li>inertial definitions</li>
+<li>cameras, lights</li>
+<li>other bodies</li>
+</ul>
+</li>
+</ul>
+<h2 id="specifying-bodies">Specifying bodies</h2>
+<ul>
+<li>name</li>
+<li>pos</li>
+<li>orientation</li>
+</ul>
+<h2 id="geoms">Geoms</h2>
+<ul>
+<li>can be used for specifiying multiple things<ul>
+<li>visualization</li>
+<li>contact</li>
+<li>mass</li>
+</ul>
+</li>
+<li>different types<ul>
+<li>solid bodies (sphere, box, ,capsule, ellisoid, cylinder)</li>
+<li>other interesting types: hfield, sdf, mesh</li>
+</ul>
+</li>
+</ul>
+<h2 id="specifying-geoms">Specifying Geoms</h2>
+<ul>
+<li>name</li>
+<li>size</li>
+<li>position</li>
+<li>color(rgba)</li>
+<li>mass/density</li>
+<li>specific contact parameters</li>
+</ul>
+<h2 id="joints">Joints</h2>
+<p>Different Types</p>
+<ul>
+<li>free</li>
+<li>ball</li>
+<li>slide</li>
+<li>hinge</li>
+</ul>
+<h2 id="specifying-joints">Specifying Joints</h2>
+<ul>
+<li>name</li>
+<li>pos</li>
+<li>axis</li>
+<li>stiffness, damping</li>
+<li>limited, range</li>
+</ul>
+<h2 id="inertial">Inertial</h2>
+<p><code>&lt;inertial&gt;</code> takes precedence if supplied</p>
+<ul>
+<li>position</li>
+<li>orientation</li>
+<li>mass</li>
+<li>diaginertia</li>
+<li>fullinertia</li>
+</ul>
+<h2 id="position">Position</h2>
+<ul>
+<li><code>pos</code> parameter</li>
+<li>x,y,z cartesian values</li>
+</ul>
+<h2 id="orientation">Orientation</h2>
+<p>Many options</p>
+<ul>
+<li><strong>quat</strong>: a, bi, cj, dk,</li>
+<li><strong>axisangle</strong>: x,y,z, angle</li>
+<li>euler: three successive rotations (default: x,y,z)</li>
+<li>xyaxes: define the two x-y axes.</li>
+<li>zaxis: define only the z axis</li>
+</ul>
+<p><a href="https://mujoco.readthedocs.io/en/stable/modeling.html#corientation">more info</a></p>
+<h2 id="camera">Camera</h2>
+<p>The camera is looking along the -Z axis of its frame</p>
+<ul>
+<li>name</li>
+<li>mode: fixed, track, trackcom, targetbody,targetbodycom</li>
+<li>fovy</li>
+<li>pos</li>
+<li>orientation</li>
+<li>target</li>
+</ul>
+<h2 id="lights">Lights</h2>
+<ul>
+<li>name</li>
+<li>mode: fixed, track, trackcom, targetbody,targetbodycom</li>
+<li>directional</li>
+<li>castshadow</li>
+<li>pos</li>
+<li>orientation</li>
+<li>target</li>
+<li>dir</li>
+<li>colors: diffuse, specular, ambient</li>
+</ul>
+<h2 id="more-on-this">More on this</h2>
+<p>https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-light</p>
+<h2 id="activity">Activity</h2>
+<p>See <a href="transformations.ipynb">transformations.ipynb</a> notebook</p>
 <h2 id="external-references">External References</h2>
-<p>https://mushr.io/tutorials/mujoco/
-https://pab47.github.io/mujocopy.html</p>
-<p>https://mujoco.readthedocs.io/en/stable/modeling.html#solver-parameters
-https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-geom</p>
+<ul>
+<li><a href="https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-geom">https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-geom</a></li>
+<li><a href="https://mujoco.readthedocs.io/en/stable/modeling.html#solver-parameters">https://mujoco.readthedocs.io/en/stable/modeling.html#solver-parameters</a></li>
+<li><a href="https://mushr.io/tutorials/mujoco/">https://mushr.io/tutorials/mujoco/</a></li>
+<li><a href="https://pab47.github.io/mujocopy.html">https://pab47.github.io/mujocopy.html</a></li>
+</ul>
 
 
 
