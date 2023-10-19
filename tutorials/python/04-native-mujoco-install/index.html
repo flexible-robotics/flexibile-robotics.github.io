@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#ubuntu" class="md-skip">
+        <a href="#windows" class="md-skip">
           Skip to content
         </a>
       
@@ -1828,15 +1828,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu
+  <a href="#windows" class="md-nav__link">
+    Windows
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#ubuntu" class="md-nav__link">
+    Ubuntu
   </a>
   
 </li>
@@ -1978,15 +1978,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#ubuntu" class="md-nav__link">
-    Ubuntu
+  <a href="#windows" class="md-nav__link">
+    Windows
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    Windows
+  <a href="#ubuntu" class="md-nav__link">
+    Ubuntu
   </a>
   
 </li>
@@ -2031,6 +2031,19 @@
   <h1>Mujoco Native Installation</h1>
 
 <p>These install instructions assume you have already installed anaconda / miniconda</p>
+<h2 id="windows">Windows</h2>
+<p>Run these commands line-by-line</p>
+<pre><code class="language-bash">conda create -y -n mujoco python=3.9 -y
+conda activate mujoco
+conda install -y jupyterlab ffmpeg pip
+pip install mujoco mediapy mujoco-python-viewer
+pip install pygmsh
+conda env config vars set MUJOCO_GL=glfw PYOPENGL_PLATFORM=glfw
+conda deactivate &amp;&amp; conda activate mujoco
+</code></pre>
+<blockquote>
+<p>Note: these installation instructions may not work depending on your available graphics card.  Your other option is to use google colab.</p>
+</blockquote>
 <h2 id="ubuntu">Ubuntu</h2>
 <p>Run these commands line-by-line</p>
 <pre><code class="language-bash">conda create -y -n mujoco python=3.9
@@ -2040,22 +2053,10 @@ conda install -y -c conda-forge glew
 conda install -y -c conda-forge mesalib
 conda install -y -c anaconda mesa-libgl-cos6-x86_64
 conda install -y -c menpo glfw3
-pip install mujoco mediapy mujoco-python-viewer
+pip install mujoco mediapy mujoco-python-viewer pygmsh
 conda env config vars set MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
 conda deactivate &amp;&amp; conda activate mujoco
 </code></pre>
-<h2 id="windows">Windows</h2>
-<p>Run these commands line-by-line</p>
-<pre><code class="language-bash">conda create -y -n mujoco python=3.9 -y
-conda activate mujoco
-conda install -y jupyterlab ffmpeg
-pip install mujoco mediapy mujoco-python-viewer
-conda env config vars set MUJOCO_GL=glfw PYOPENGL_PLATFORM=glfw
-conda deactivate &amp;&amp; conda activate mujoco
-</code></pre>
-<blockquote>
-<p>Note: these installation instructions may not work depending on your available graphics card.  Your other option is to use google colab.</p>
-</blockquote>
 <h2 id="using-mujoco">Using mujoco</h2>
 <p>Before coding in your new mujoco environment, you will need to activate it.</p>
 <pre><code class="language-bash">conda activate mujoco
@@ -2072,8 +2073,8 @@ conda deactivate &amp;&amp; conda activate mujoco
 <li><a href="https://github.com/deepmind/mujoco/releases">Binary Releases</a></li>
 <li><a href="https://mujoco.readthedocs.io/">Documentation</a></li>
 <li>Mujoco interactive <a href="https://colab.research.google.com/github/deepmind/mujoco/blob/main/python/tutorial.ipynb">tutorial</a></li>
-<li>https://pab47.github.io/mujoco.html<ul>
-<li>https://pab47.github.io/mujoco2022.html</li>
+<li><a href="https://pab47.github.io/mujoco.html">https://pab47.github.io/mujoco.html</a><ul>
+<li><a href="https://pab47.github.io/mujoco2022.html">https://pab47.github.io/mujoco2022.html</a></li>
 </ul>
 </li>
 <li><a href="https://github.com/tayalmanan28/Mujoco-Tutorial">a comprehensive mujoco tutorial</a><ul>
