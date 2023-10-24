@@ -2053,22 +2053,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#transformations-example" class="md-nav__link">
-    Transformations example
+  <a href="#question" class="md-nav__link">
+    Question
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#questions" class="md-nav__link">
-    Questions
+  <a href="#case-study-1" class="md-nav__link">
+    Case Study 1
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#examples" class="md-nav__link">
-    Examples
+  <a href="#question_1" class="md-nav__link">
+    Question
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#case-study-2" class="md-nav__link">
+    Case Study 2
   </a>
   
 </li>
@@ -2078,19 +2085,25 @@
     Double Pendulum Example
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
+    <nav class="md-nav" aria-label="Double Pendulum Example">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#xml-walkthrough" class="md-nav__link">
     XML Walkthrough
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
-  <a href="#rendering-video" class="md-nav__link">
-    Rendering Video
+        
+          <li class="md-nav__item">
+  <a href="#python-code" class="md-nav__link">
+    Python code
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2183,35 +2196,65 @@
   <h1>Lecture 11 notes</h1>
 
 <h2 id="todays-code">Today's Code</h2>
-<ul>
-<li><a href="transformations.ipynb">transformations</a></li>
-<li><a href="double_pendulum_simple.ipynb">double_pendulum_simple</a></li>
-</ul>
-<h2 id="transformations-example">Transformations example</h2>
-<ul>
-<li>Child position is relative to parent</li>
-</ul>
-<h2 id="questions">Questions</h2>
-<ul>
-<li>In a body, which operation is done first, translation or rotation</li>
-<li>How does the parent-child relationship work in nested bodies?</li>
-</ul>
-<h2 id="examples">Examples</h2>
-<ul>
-<li>Translate Body</li>
-<li>Translate Geom</li>
-<li>Rotate Body</li>
-<li>Translate and Rotate Body</li>
-<li>Rotate Body and Translate Geom</li>
-<li>Add a child and explore nesting</li>
-</ul>
+<p>Download the <a href="transformations.ipynb">final version</a> of today's example</p>
+<h2 id="question">Question</h2>
+<p><strong>Q:</strong> In a body element, which operation is applied first, translation or rotation?<br />
+<strong>A:</strong> <code>pos</code> is applied first, then the rotation.</p>
+<h2 id="case-study-1">Case Study 1</h2>
+<pre><code class="language-xml">&lt;mujoco&gt;
+    &lt;compiler angle=&quot;degree&quot; /&gt;
+    &lt;worldbody&gt;
+        &lt;light name=&quot;light1&quot; pos=&quot;0 0 5&quot; /&gt;
+        &lt;camera name=&quot;world&quot; pos=&quot;0 -5 0&quot; quat=&quot;.707 .707 0 0&quot;/&gt;
+        &lt;body pos=&quot;0 0 0&quot; axisangle=&quot;0 1 0 0&quot;&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;1 0 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .5 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 1 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .05 .5&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 0 1 1&quot;/&gt;
+        &lt;/body&gt;
+        &lt;body pos=&quot;1.5 0 0&quot; axisangle=&quot;0 1 0 45&quot;&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;1 0 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .5 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 1 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .05 .5&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 0 1 1&quot;/&gt;
+        &lt;/body&gt;
+    &lt;/worldbody&gt;
+&lt;/mujoco&gt;
+</code></pre>
+<p><a class="glightbox" href="transformation1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation1.png" /></a></p>
+<p>In the xml above are two bodies.  The central body is placed at 0,0,0 and is not rotated, with x,y, and z axes shown by red, green, and blue boxes, respectively.  The second body to its right is translated to point (1.5,0,0) and rotated about the y-axis by 45 degrees.  What we see is that the translation occurred first, in the world frame, and the rotation occurred afterwards.  Otherwise, the second body would have been translated along a 45-degree angle direction as well.</p>
+<h2 id="question_1">Question</h2>
+<p><strong>Q:</strong> How does the parent-child relationship work in mujoco's xml?<br />
+<strong>A:</strong> A child's configuration is relative to its parent.</p>
+<h2 id="case-study-2">Case Study 2</h2>
+<p>In this case study we will look at how transformations in children are affected by parents</p>
+<pre><code class="language-xml">&lt;mujoco&gt;
+    &lt;compiler angle=&quot;degree&quot; /&gt;
+    &lt;worldbody&gt;
+        &lt;light name=&quot;light1&quot; pos=&quot;0 0 5&quot; /&gt;
+        &lt;camera name=&quot;world&quot; pos=&quot;0 -5 0&quot; quat=&quot;.707 .707 0 0&quot;/&gt;
+        &lt;body pos=&quot;0 0 0&quot; axisangle=&quot;0 1 0 0&quot;&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;1 0 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .5 .05&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 1 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .05 .5&quot; pos=&quot;0 0 0&quot; rgba=&quot;0 0 1 1&quot;/&gt;
+        &lt;/body&gt;
+        &lt;body pos=&quot;0 0 0&quot; axisangle=&quot;0 1 0 45&quot;&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;1.5 0 0&quot; rgba=&quot;1 0 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .5 .05&quot; pos=&quot;1.5 0 0&quot; rgba=&quot;0 1 0 1&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.05 .05 .5&quot; pos=&quot;1.5 0 0&quot; rgba=&quot;0 0 1 1&quot;/&gt;
+        &lt;/body&gt;
+    &lt;/worldbody&gt;
+&lt;/mujoco&gt;
+</code></pre>
+<p><a class="glightbox" href="transformation2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation2.png" /></a></p>
+<p>In this second case study, the interior geoms of the second body are translated along the x axis by 1.5.  The parent body is rotated as before, with no translation.  This shows us that <em>a child's transformation is relative to its parent's frame, not to the global frame.</em></p>
+<hr />
 <h2 id="double-pendulum-example">Double Pendulum Example</h2>
-<h2 id="xml-walkthrough">XML Walkthrough</h2>
-<ul>
-<li>joints: position, axis</li>
-<li>geom: box</li>
-</ul>
-<h2 id="rendering-video">Rendering Video</h2>
+<p>Download the double pendulum <a href="double_pendulum_simple.ipynb">starter code</a></p>
+<h3 id="xml-walkthrough">XML Walkthrough</h3>
+<p>The xml in the attached file above is very straightforward.  Insided the required <code>&lt;mujoco&gt;</code> brackets, all we need is a <code>&lt;worldbody&gt;</code>.  Inside that is a <code>&lt;light&gt;</code> element, added to make the resulting scene look better, and a <code>&lt;body&gt;</code> element named <code>"A"</code> at (0,0,0).  Inside that is a <code>&lt;joint&gt;</code> element of type <code>"hinge"</code> located at (0,0,0), along the y-axis.  Next is a <code>&lt;geom&gt;</code> element of type <code>"box"</code>, with size specified in xml as (.5, .05, .05).  Remember, though, that dimensions in mujoco should be considered like the radius or half-length of an object rather than the diameter, or full length of an object.  So our box's actual size is (1, .1, .1).  We have specified a mass of 1 so that even if our box changes shape, the mass will not change.</p>
+<p>The next element inside body A is another <code>&lt;body&gt;</code> element, which is a copy of the exterior body with small tweaks.  First, we have changed its name to <code>"B"</code>, set its position to (1,0,0), the end of link A, and renamed the joint from <code>"j1"</code> to <code>"j2"</code>.</p>
+<h3 id="python-code">Python code</h3>
+<p>The rest of the python code for the double pendulum is fairly straightforward.  We create instances of the model, data, and renderer classes, specify the duration and framerate of our simulation, and step through our simulation, generating new animation frames once every 1/30th of a second.</p>
+<p>The following sections describe additions that can be made to the code to enhance the simulation.</p>
 <h2 id="parent-child">Parent Child</h2>
 <ul>
 <li>difference between embedding a second body in the first or having it separate</li>
@@ -2230,9 +2273,9 @@
     &lt;/worldbody&gt;
 &lt;/mujoco&gt;
 </code></pre>
-<!-- produces  -->
-
-<!-- ![](video1.mp4) -->
+<video src="video1.mp4" controls>
+your browser does not support this video tag
+</video>
 
 <pre><code class="language-xml">&lt;mujoco&gt;
     &lt;worldbody&gt;
@@ -2248,7 +2291,9 @@
     &lt;/worldbody&gt;
 &lt;/mujoco&gt;
 </code></pre>
-<!-- ![](video2.mp4) -->
+<video src="video2.mp4" controls>
+your browser does not support this video tag
+</video>
 
 <h2 id="plotting-data">Plotting Data</h2>
 <p>To extract and plot data from your simulation you need to modify your code in a couple spots.  First, you need to initialize an empty list for time, joint position, joint velocity, and cartesian position before the simulation <code>while</code> loop:</p>
