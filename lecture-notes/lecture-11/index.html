@@ -2216,12 +2216,66 @@
 <ul>
 <li>difference between embedding a second body in the first or having it separate</li>
 </ul>
+<pre><code class="language-xml">&lt;mujoco&gt;
+    &lt;worldbody&gt;
+        &lt;light name=&quot;top&quot; pos=&quot;0 0 1&quot;/&gt;
+        &lt;body name=&quot;A&quot; pos=&quot;0 0 0&quot;&gt;
+            &lt;joint name=&quot;j1&quot; type=&quot;hinge&quot; axis=&quot;0 1 0&quot; pos=&quot;0 0 0&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;.5 0 0&quot; rgba=&quot;1 0 0 1&quot; mass=&quot;1&quot;/&gt;
+            &lt;body name=&quot;B&quot; pos=&quot;1 0 0&quot;&gt;
+                &lt;joint name=&quot;j2&quot; type=&quot;hinge&quot; axis=&quot;0 1 0&quot; pos=&quot;0 0 0&quot;/&gt;
+                &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;.5 0 0&quot; rgba=&quot;1 0 0 1&quot; mass=&quot;1&quot;/&gt;
+            &lt;/body&gt;
+        &lt;/body&gt;
+    &lt;/worldbody&gt;
+&lt;/mujoco&gt;
+</code></pre>
+<!-- produces  -->
+
+<!-- ![](video1.mp4) -->
+
+<pre><code class="language-xml">&lt;mujoco&gt;
+    &lt;worldbody&gt;
+        &lt;light name=&quot;top&quot; pos=&quot;0 0 1&quot;/&gt;
+        &lt;body name=&quot;A&quot; pos=&quot;0 0 0&quot;&gt;
+            &lt;joint name=&quot;j1&quot; type=&quot;hinge&quot; axis=&quot;0 1 0&quot; pos=&quot;0 0 0&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;.5 0 0&quot; rgba=&quot;1 0 0 1&quot; mass=&quot;1&quot;/&gt;
+        &lt;/body&gt;
+        &lt;body name=&quot;B&quot; pos=&quot;1.5 0 0&quot;&gt;
+            &lt;joint name=&quot;j2&quot; type=&quot;hinge&quot; axis=&quot;0 1 0&quot; pos=&quot;0 0 0&quot;/&gt;
+            &lt;geom type=&quot;box&quot; size=&quot;.5 .05 .05&quot; pos=&quot;.5 0 0&quot; rgba=&quot;1 0 0 1&quot; mass=&quot;1&quot;/&gt;
+        &lt;/body&gt;
+    &lt;/worldbody&gt;
+&lt;/mujoco&gt;
+</code></pre>
+<!-- ![](video2.mp4) -->
+
 <h2 id="plotting-data">Plotting Data</h2>
-<ul>
-<li>saving data each step</li>
-<li>copy arrays</li>
-<li>adding a legend</li>
-</ul>
+<p>To extract and plot data from your simulation you need to modify your code in a couple spots.  First, you need to initialize an empty list for time, joint position, joint velocity, and cartesian position before the simulation <code>while</code> loop:</p>
+<pre><code class="language-python">x = []
+q = []
+w = []
+t = []
+</code></pre>
+<p>Then, you need to add code to extract time, position, velocity and cartesian position each time step within the while loop and under the <code>mujoco.mj_step(model,data)</code> line</p>
+<pre><code class="language-python">t.append(data.time)
+q.append(data.qpos.copy())
+w.append(data.qvel.copy())
+x.append(data.xpos.copy())
+</code></pre>
+<p>Note that <code>copy()</code> is needed to ensure that we get a copy of the data within <code>qpos</code>, <code>qvel</code>, and <code>xpos</code>.  This is because these arrays do not change their location in memory, only the values inside change.  This means that if you don't copy the values each step, they will all be the same at the end of the simulaiton.  Time, however, is not an array, just a scalar, and does not need to be copied.</p>
+<p>After stepping through the simulation, you should convert your lists to arrays.</p>
+<pre><code class="language-python">t = numpy.array(t)
+q = numpy.array(q)
+w = numpy.array(w)
+x = numpy.array(x)
+</code></pre>
+<p>Finally, you can plot the position over time using:</p>
+<pre><code class="language-python">artists = plt.plot(t,q)
+plt.legend(artists,['q1','q2'])
+</code></pre>
+<p>Note that if you save the result of the plot to the <code>artists</code> variable, you can then reference them when creating a legend.</p>
+<p>You can also plot joint velocities and cartesian positions.  Note, that <code>xpos</code> outputs the position of the body, not its center of mass.  If you want to plot a specific point, you will need to add a <code>sensor</code> at a specific <code>site</code>.</p>
 <h2 id="saving-data-to-a-file">Saving Data to a file</h2>
 <p>The following code saves our time and joint positions to a file called "data.yml" and then reloads those values back into the same variables from the same file.  </p>
 <pre><code class="language-python">data = {}
@@ -2250,6 +2304,7 @@ t = numpy.array(data['t'])
 <li>saves the q and t variables as numpy arrays, from the <code>'q'</code> and <code>'t'</code> keys of the data <code>dict</code>, respectively</li>
 </ol>
 <p>The benefit of saving a file as a <code>yaml</code> file is that it is human-readable, with the drawback that there can be precision loss in the conversion from a floating point number to a string, and back.</p>
+<p>You can split the code into two parts to only save your code, or to load code by itself.</p>
 <h2 id="setting-initial-conditions">Setting Initial Conditions</h2>
 <p>You can specify initial position and orientation of bodies in your xml file using the <code>pos</code> tag and your choice of orientation tags.  This can be useful if there is a consistent configuration your device starts from.</p>
 <p>If you are planning on re-initializing your structure at different points, however, doing it in XML can lead to confusion, because the XML configuration indicates the system when all joints are equal to zero.</p>
