@@ -552,8 +552,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-1-confirming-the-jacobian" class="md-nav__link">
-    Part 1: Confirming the Jacobian
+  <a href="#part-3-confirming-the-jacobian" class="md-nav__link">
+    Part 3: Confirming the Jacobian
   </a>
   
 </li>
@@ -2157,8 +2157,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#part-1-confirming-the-jacobian" class="md-nav__link">
-    Part 1: Confirming the Jacobian
+  <a href="#part-3-confirming-the-jacobian" class="md-nav__link">
+    Part 3: Confirming the Jacobian
   </a>
   
 </li>
@@ -2204,10 +2204,18 @@
 <p>The purpose of this assignment is to acquaint you with the concepts of creating and using a dynamic simulation for answering questions</p>
 <h2 id="instructions">Instructions</h2>
 <h3 id="part-1-constraints-revisited">Part 1: Constraints revisited</h3>
-<p>The purpose of this exercise is to get experience working with constraints in MuJoCo, and how the parameters work.  You will create a planar four-bar linkage in mujoco, adapted from the code shared in class.</p>
+<blockquote>
+<p>The purpose of this exercise is to get experience working with constraints in MuJoCo, and how the parameters work.  You will create a planar four-bar linkage in mujoco, adapted from the double pendulum code <a href="/lecture-notes/lecture-11/#double-pendulum-example">shared in lecture 11</a>.</p>
+</blockquote>
+<p><a class="glightbox" href="../four-bar-flat.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../four-bar-flat.png" /></a></p>
 <ol>
-<li>You should define a total of five links: A, B, C, D, and Ap.  A should be grounded and the other four should initially align with the x asis of your A frame.</li>
+<li>Define a total of five links in series with each other.  From proximal to distal they should be labeled <code>"A"</code>, <code>"B"</code>, <code>"C"</code>, <code>"D"</code>, and <code>"Ap"</code>.  <code>"A"</code> should be grounded and the other four should initially align with the x asis of your A frame.<ul>
 <li>Ensure your xml is in "degree" mode</li>
+<li>Add a small amount of damping to each joint (<code>damping=.1</code>)</li>
+<li>set the mass of each body to 1 (defining <code>mass</code> inside the <code>&lt;geom&gt;</code> is sufficient)</li>
+<li>all the links should be a length of 1 for this exercise.</li>
+</ul>
+</li>
 <li>
 <p>Add the following code to the bottom of the xml, right above the <code>&lt;/mujoco&gt;</code> line.  What happens?  Does this look like a four-bar?</p>
 <pre><code>&lt;equality&gt;
@@ -2216,15 +2224,15 @@
 </code></pre>
 </li>
 <li>
-<p>change <code>axisangle="0 1 0 0"</code> to <code>axisangle="0 1 0 -80"</code> for all bodies.  Display the pose at t=0.</p>
+<p>change <code>axisangle="0 1 0 0"</code> to <code>axisangle="0 1 0 -80"</code> for bodies <code>"B"</code> thru <code>"Ap"</code>.  Display the pose at t=0.</p>
 <ol>
-<li>Report the joint angles at t=0.  Is this surprising?  Explain why the values are what they are.</li>
-<li>Show the plot at t=3</li>
-<li>Now describe what happens when you run the code</li>
+<li>Report the joint angles at t=0.  Based on our in-class discussion, explain why the values are what they are.</li>
+<li>Show the 3D rendering at t=3.</li>
+<li>Now describe what happens when you run the step through the simulation.  How is this different from your first try?</li>
 </ol>
 </li>
 <li>
-<p>Finally, revert <code>axisangle="0 1 0 -90"</code> to <code>axisangle="0 1 0 0"</code> for all bodies.  After the line that performs a <code>resetData()</code>, insert the following line:</p>
+<p>Finally, revert <code>axisangle="0 1 0 -80"</code> to <code>axisangle="0 1 0 0"</code> for bodies <code>"B"</code> thru <code>"Ap"</code>.  After the line that performs a <code>resetData()</code>, insert the following line:</p>
 <pre><code>data.qpos = numpy.array([-math.pi*80/180,-math.pi*80/180,-math.pi*80/180,-math.pi*80/180])
 </code></pre>
 </li>
@@ -2234,47 +2242,59 @@
 <li><code>relpose="1 1 1 1 0 0 0" anchor="1 1 1"</code></li>
 <li><code>relpose=".5 0 0 1 0 0 0" anchor="0 0 0"</code></li>
 <li><code>relpose="0 0 0 .866 0 -.5 0" anchor="0 0 0"</code></li>
-<li><code>relpose="0 0 0 .866 0 -.5 0" anchor=".5 0 0"</code>
-Supply an image at t=3 for each of these cases, and explain in your own words what you see for each case.  Using these examples, please explain what the first three terms of <code>relpose</code> represent, what the last four terms of <code>relpose</code> represent, and what the three terms of <code>anchor</code> represent.</li>
+<li><code>relpose="0 0 0 .866 0 -.5 0" anchor=".5 0 0"</code></li>
 </ol>
+<p>Supply an image at t=3 for each of these cases, and explain in your own words what you see for each case.  Using these examples, please explain what the first three terms of <code>relpose</code> represent, what the last four terms of <code>relpose</code> represent, and what the three terms of <code>anchor</code> represent.</p>
 </li>
 </ol>
 <h3 id="part-2-templates">Part 2: Templates</h3>
+<blockquote>
 <p>The purpose of this exercise is to learn how to re-run simulations repeatedly with different model parameters.  First, study the concept of string formatting in Python.  </p>
 <ul>
 <li><a href="https://docs.python.org/3/library/stdtypes.html#str.format">https://docs.python.org/3/library/stdtypes.html#str.format</a></li>
 <li><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></li>
 </ul>
-<p>Then using the following code as a starting point,</p>
+</blockquote>
+<p>Then, using the double pendulum code <a href="/lecture-notes/lecture-11/#double-pendulum-example">shared in lecture 11</a> as a starting point,</p>
 <ol>
-<li>Ensure the following parameters are set<ol>
-<li>mass of each body is 1</li>
-<li>timestep is set to .001</li>
+<li>Ensure the following parameters are set:<ol>
+<li>Mass of each body is 1</li>
+<li>Timestep is set to .001</li>
+<li>Stiffness and damping are defined for each joint to be 10 and 1, respectively.</li>
+<li>Run the code and plot the joint positions over three seconds.</li>
 </ol>
 </li>
-<li>Modify the xml to create a template, so that all the damper and spring values in the model can be replaced by two variables, b and k, respectively.</li>
-<li>Generate xml from the template with with k=10 and b=1.  Run the simulation and plot the joint positions over 3 seconds.</li>
-<li>put the code to define and run a single simulation into a function that takes two parameters: b and k.</li>
-<li>Calculate the sum of squared error between the output position and this data over each time step from t=0s to 3s.</li>
-<li>Create a for loop that iterates over all <span class="arithmatex">\(k=(k_i)_{k_i=1}^{10}\)</span> and <span class="arithmatex">\(b=(.1 b_j)_{b_j=1}^{10}\)</span></li>
-<li>Identify the values of b and k that result in the smallest error.</li>
+<li>Now, modify the xml to act as a template variable, so that all the damper and spring values in the model can be replaced by two variables, b and k, respectively.</li>
+<li>Generate the xml variable from the template variable using the python <code>format()</code> function, with k=10 and b=1.  Re-run the simulation and confirm that the output matches your original results.</li>
+<li>Move the code required to define and run a single simulation into a function that takes two parameters: b and k.  It should output two variables: t and q, your time vector and your joint vector.</li>
+<li>Calculate the sum of squared error between the joint position vector <code>q</code> and <a href="../hw3p2-data.yml">this dataset</a> over each time step from t=0s to 3s.</li>
+<li>
+<p>Create a <code>for</code> loop that iterates over </p>
+<div class="arithmatex">\[(k_i,b_j), \text{ } k_i=10,20,30,\ldots,100, \text{ }b_j=1,\ldots,10\]</div>
+<p>and repeatedly finds the error for each <span class="arithmatex">\((k_i,b_j)\)</span> pair.</p>
+</li>
+<li>
+<p>Plot the error as a function of <span class="arithmatex">\(k_i\)</span> and <span class="arithmatex">\(b_j\)</span>, and identify the values of <span class="arithmatex">\(b_j\)</span> and <span class="arithmatex">\(k_i\)</span> that result in the smallest error.</p>
+</li>
 <li>What have we just done by hand?  What steps would you have to do to automate this better using built-in functions already provided in Python or its packages?</li>
 </ol>
-<h3 id="part-1-confirming-the-jacobian">Part 1: Confirming the Jacobian</h3>
+<h3 id="part-3-confirming-the-jacobian">Part 3: Confirming the Jacobian</h3>
 <p><a class="glightbox" href="../robot3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../robot3.png" style="display:block;margin-left:auto;margin-right:auto;height:300px;" /></a></p>
 <p>Create a two-link robotic arm following the kinematics diagram found in  "Assignment 2: Kinematics", Part 3.</p>
 <ol>
 <li>Disable gravity and contact.</li>
 <li>Define the bodies.  <ol>
-<li>For the  <code>geom</code>s, use rectangular boxes to represent each link, with <span class="arithmatex">\(l_b=1.2\)</span> and <span class="arithmatex">\(l_c=.8\)</span>.  Set the width and height of each link to .1</li>
+<li>For the  <code>geom</code>s, use rectangular boxes to represent each link, with <span class="arithmatex">\(l_b=1\)</span> and <span class="arithmatex">\(l_c=1\)</span>.  Set the width and height of each link to .1</li>
 <li>For the <code>joint</code>s, use pin / revolute / hinge joints using the figure from Assignment 2 (copied above) as your reference for joint axes and reference frames</li>
 </ol>
 </li>
-<li>Define the initial state of the robot as <span class="arithmatex">\(\begin{bmatrix}\theta_1 \\ \theta_2\end{bmatrix} =\begin{bmatrix}\frac{\pi}{6} \\ \frac{\pi}{3}\end{bmatrix}\)</span> and  <span class="arithmatex">\(\begin{bmatrix}\dot\theta_1 \\ \dot\theta_2\end{bmatrix} =\begin{bmatrix}2.2 \\ 3.1\end{bmatrix}\)</span></li>
+<li>Define the initial state of the robot as <span class="arithmatex">\(\begin{bmatrix}\theta_1 \\ \theta_2\end{bmatrix} =\begin{bmatrix}\frac{\pi}{6} \\ \frac{\pi}{6}\end{bmatrix}\)</span> and  <span class="arithmatex">\(\begin{bmatrix}\dot\theta_1 \\ \dot\theta_2\end{bmatrix} =\begin{bmatrix}2.2 \\ 3.1\end{bmatrix}\)</span></li>
 <li>Run the simulation for 3 seconds with a .01 s timestep</li>
-<li>Plot the position and velocity of your robot's end-effector.  This will be made easier by adding an extra, low-mass body to the end of your robot arm and saving its cartesian position over time.</li>
-<li>Discuss whether the speed of your end-effector at t=0 is the same as your calculations in assignment 2 predicted from Part 3, question 5.  Why is it the same or different?</li>
-<li>Fix whatever you need to in your simulation to resolve any inconsistencies, and re-run the code.  Now what do you see?</li>
+<li>Plot the position and velocity of your robot's end-effector.  <blockquote>
+<p>This will be made easier by adding an extra, low-mass body to the end of your robot arm and saving its cartesian position over time.</p>
+</blockquote>
+</li>
+<li>Discuss whether the speed of your end-effector at t=0 is the same as your calculations predicted in Assignment 2, Part 3, Question 5.  Discuss the scale of the difference, and what factors might cause it to differ.</li>
 </ol>
 <h2 id="rubric">Rubric</h2>
 <table>
