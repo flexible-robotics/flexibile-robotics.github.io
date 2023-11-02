@@ -2085,6 +2085,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -2128,6 +2130,60 @@
   
 
       </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tutorials/misc/RC%20Servos/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    RC Servos
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            RC Servos
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
     </li>
   
 
@@ -2388,6 +2444,47 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#overview-of-esp32" class="md-nav__link">
+    Overview of ESP32
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#breadboard-connections" class="md-nav__link">
+    Breadboard connections
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#walkthrough-of-esp32-installation-steps" class="md-nav__link">
+    Walkthrough of ESP32 installation steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vs-code-introduction" class="md-nav__link">
+    VS Code Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="VS Code Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#vs-code-interaction-with-esp32" class="md-nav__link">
+    VS Code Interaction with ESP32
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#code-examples" class="md-nav__link">
     Code Examples
   </a>
@@ -2448,38 +2545,81 @@
 <ul>
 <li>Homework questions<ul>
 <li>There was a question about the data.yml file:  Please refer to <a href="/lecture-notes/lecture-11/#saving-data-to-a-file">lecture 11 notes</a>.  We will be loading this file using the second half of the yaml saving/loading example done in class.</li>
-<li>What to watch out for in setting initial conditions<ul>
-<li>Make sure you set initial conditions after resetting the sim</li>
+<li><strong>Q:</strong> I can't set initial conditions correctly.  What could I be doing wrong?<ul>
+<li><strong>A:</strong> Make sure you set initial conditions after resetting the sim</li>
+<li><strong>A:</strong> Remember that joint angles are given in radians in the python code, while you can define it in the XML file to be radians or degrees.</li>
 </ul>
 </li>
-<li>What's a good way to plot the output in Part 2?</li>
-<li>See <a href="https://matplotlib.org/stable/gallery/index.html">matplotlib examples</a>, specifically <a href="https://matplotlib.org/stable/gallery/images_contours_and_fields/colormap_interactive_adjustment.html#sphx-glr-gallery-images-contours-and-fields-colormap-interactive-adjustment-py">this example</a></li>
+<li><strong>Q:</strong> What's a good way to plot the output in Part 2?<ul>
+<li><strong>A:</strong> See <a href="https://matplotlib.org/stable/gallery/index.html">matplotlib examples</a>, specifically <a href="https://matplotlib.org/stable/gallery/images_contours_and_fields/colormap_interactive_adjustment.html#sphx-glr-gallery-images-contours-and-fields-colormap-interactive-adjustment-py">this example</a></li>
 </ul>
 </li>
-<li><a href="/tutorials/esp32/esp32-concepts/">Overview of ESP32</a><ul>
-<li>will fix links</li>
 </ul>
 </li>
-<li>Walkthrough of <a href="/tutorials/esp32/esp32-installation-and-setup/">installation steps</a><ul>
-<li>Need new packages installed in your base environment.</li>
-<li>Need to install driver in windows</li>
+</ul>
+<h2 id="overview-of-esp32"><a href="/tutorials/esp32/esp32-concepts/">Overview of ESP32</a></h2>
+<ul>
+<li>I will fix dead links in this page</li>
+<li>ESP32 is a module.  The dev kit is the board it is mounted on, which includes other parts, including<ul>
+<li>3.3V voltage regulator</li>
+<li>USB-serial converter</li>
+<li>LEDs and resistors</li>
+<li>Header pins for use with breadboard</li>
+</ul>
+</li>
+</ul>
+<h2 id="breadboard-connections">Breadboard connections</h2>
+<ul>
+<li>The ESP32 is quite wide, so that only one side of pins is accessible when plugged into the breadboard.  <ul>
+<li>We want to expose the <code>Vin</code> and <code>Gnd</code> side of the board when you plug it into the breadboard.</li>
+<li>We don't need to access the 3.3V output</li>
+<li>Connect vin to the red rail</li>
+<li>Connect gnd to the blue rail</li>
+</ul>
+</li>
+<li>Servo<ul>
+<li>See <a href="/tutorials/misc/RC Servos/">this overview</a>.  We will probably go over in more detail</li>
+<li>3 wires: <ul>
+<li>Brown/Black is ground</li>
+<li>Red is +V (we will connect to <code>Vin</code>)</li>
+<li>Yellow is signal</li>
+</ul>
+</li>
+<li>timing of the PWM signal corresponds to position</li>
+</ul>
+</li>
+</ul>
+<h2 id="walkthrough-of-esp32-installation-steps">Walkthrough of <a href="/tutorials/esp32/esp32-installation-and-setup/">ESP32 installation steps</a></h2>
+<ul>
+<li>Need new packages installed in your base conda environment.  I updated the conda page, but the esp32 installation page also has the instructions.</li>
+<li>Need to install CP2102 USB-Serial driver in windows.</li>
 <li>We will be using thonny to flash micropython to our device.<ul>
 <li>Use v1.20 or newer.</li>
 </ul>
 </li>
 </ul>
-</li>
-<li>We will be using VS code to develop our python project<ul>
-<li>VS Code is not Visual Studio .Net; more like a fancy text editor with plugins.</li>
-<li>The keyboard shortcuts are awesome</li>
-<li>See this page to install and use vscode</li>
+<h2 id="vs-code-introduction">VS Code Introduction</h2>
+<p>We will be using VS code to develop our python project</p>
+<ul>
+<li>VS Code is not VisualStudio.net; it's more like a fancy text editor with plugins.</li>
+<li>The keyboard shortcuts are awesome, specifically <code>ctrl</code>+<code>shift</code>+<code>p</code></li>
+<li>See <a href="/tutorials/vscode-setup/">this page</a> to install and use vscode.</li>
 <li>
-<p>We will be using pymakr-preview, so make sure you install it.  Below is the command you can run from <code>cmd</code></p>
+<p>You can install all the plugins listed, but we will be using pymakr-preview, so make sure you install that one.  Below is the command you can run from <code>cmd</code></p>
 <p><code>bash
 code --install-extension Pycom.pymakr-preview</code></p>
+<h3 id="vs-code-interaction-with-esp32">VS Code Interaction with ESP32</h3>
 </li>
-</ul>
+<li>
+<p>Once pymakr-preview is installed, create a new workspace in vs code and add a new pymakr-preview project.</p>
 </li>
+<li>Interaction will happen in the top bar.</li>
+<li>select your esp32 if it is connected (COM1, COM2, etc if windows, ttyUSBX or similar if linux/Mac)</li>
+<li>Use the icons to connect to your esp32, program, interact with it</li>
+<li>boot.py runs first</li>
+<li>main.py runs next</li>
+<li>Use <code>ctrl</code>+<code>c</code> to kill a running program before you can interact in the interpreter or download new code.</li>
+<li>Use the <code>en</code> button on the esp32 dev board to hard reset the board.  this will trigger it to load boot.py and main.py</li>
 </ul>
 <hr />
 <h1 id="code-examples">Code Examples</h1>
