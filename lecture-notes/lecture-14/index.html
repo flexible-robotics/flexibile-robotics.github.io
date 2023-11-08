@@ -2591,6 +2591,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#code-from-todays-example" class="md-nav__link">
+    Code from today's example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-photos" class="md-nav__link">
+    Board Photos
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -2617,7 +2631,9 @@
   <h1>Lecture 14 Notes</h1>
 
 <h2 id="terms">Terms</h2>
-<p>Flexure</p>
+<ul>
+<li>Flexure</li>
+</ul>
 <h2 id="other-advantages-of-compliant-mechanism">Other advantages of compliant Mechanism</h2>
 <ul>
 <li>Fewer pinch points</li>
@@ -2625,6 +2641,45 @@
 </ul>
 <h2 id="series-compliance">Series Compliance</h2>
 <div class="arithmatex">\[k = \frac{1}{\sum_{i=1}^N \frac{1}{k_i}}\]</div>
+<h2 id="code-from-todays-example">Code from today's example</h2>
+<pre><code class="language-python">from machine import Pin, PWM
+from time import sleep
+frequency = 50
+range_low = 28
+range_high = 122
+
+servo1 = PWM(Pin(13),frequency)
+
+def angle_to_pwm(angle):
+    output_range = range_high-range_low
+    input_range = 180-0
+    output_pwm = (angle/input_range)*output_range+range_low
+    if output_pwm&lt;range_low:
+        output_pwm=range_low
+    if output_pwm&gt;range_high:
+        output_pwm=range_high
+    return int(output_pwm)
+
+# for angle in range(180):
+#     servo1.duty(angle_to_pwm(angle))
+#     sleep(.01)
+
+import time
+t0=time.time_ns()
+
+import math
+
+A = 90
+f = 2
+l=.25
+
+while True: 
+    t=time.time_ns()
+    dt = (t - t0)/1e9
+    y = A*math.sin(dt*2*(f*math.pi+l))+90
+    servo1.duty(angle_to_pwm(y))
+</code></pre>
+<h2 id="board-photos">Board Photos</h2>
 <p><a class="glightbox" href="PXL_20231107_093259391.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="PXL_20231107_093259391.jpg" style="height:200px;" /></a>
 <a class="glightbox" href="PXL_20231107_093309251.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="PXL_20231107_093309251.jpg" style="height:200px;" /></a>
 <a class="glightbox" href="PXL_20231107_093319186.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="PXL_20231107_093319186.jpg" style="height:200px;" /></a>
