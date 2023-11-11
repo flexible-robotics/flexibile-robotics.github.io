@@ -2701,6 +2701,19 @@
     Actuators
   </a>
   
+    <nav class="md-nav" aria-label="Actuators">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#controllers" class="md-nav__link">
+    Controllers
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -2784,6 +2797,34 @@
 <pre><code class="language-xml">&lt;actuator&gt;
 &lt;position name=&quot;motor1&quot; joint=&quot;j1&quot; kp=&quot;1000&quot;/&gt;
 &lt;/actuator&gt;
+</code></pre>
+<h3 id="controllers">Controllers</h3>
+<p>A controller is a "callback" function that is inserted into the computation sequence of each MuJoCo integration step.  You first define the controller and then attach it using a mujoco function.  A mujoco controller needs two inputs, your MuJoCo Model and Data classes.</p>
+<p>The simplest torque controller (matching the first xml example above) could look like this:</p>
+<pre><code class="language-python">def mycontroller1(model, data):
+    data.ctrl = [30]
+    return
+</code></pre>
+<p>which would get connected to the simulator like this:</p>
+<pre><code class="language-python">mujoco.set_mjcb_control(mycontroller1)
+</code></pre>
+<p>Alternatively, for a position controlled actuator, it could look something like this:</p>
+<pre><code class="language-python">A = .5
+d = 0 
+ts = .25
+f = .5
+
+def mycontroller2(model, data):
+    t = data.time
+    linear_act = t*d/ts
+    if linear_act &lt; d:
+        linear_act = d
+    pos_goal = A*math.sin(2*math.pi*f*t)
+    data.ctrl = [pos_goal]
+    return
+</code></pre>
+<p>which would get connected to the simulator like this:</p>
+<pre><code class="language-python">mujoco.set_mjcb_control(mycontroller2)
 </code></pre>
 <h2 id="constraints">Constraints</h2>
 <ul>
