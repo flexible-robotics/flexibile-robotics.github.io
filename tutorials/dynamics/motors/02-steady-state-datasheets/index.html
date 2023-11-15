@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../masses-example/">
+        <link rel="prev" href="../01-theory/">
       
       
-        <link rel="next" href="../../esp32/esp32-concepts/">
+        <link rel="next" href="../03-motor-dynamics-secondorder/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Motors: Theory and Steady-State Operation - Flexible Robotics</title>
+        <title>Obtaining Steady-State Information from Data Sheets - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -89,7 +89,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#theory" class="md-skip">
+        <a href="#intro" class="md-skip">
           Skip to content
         </a>
       
@@ -105,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Motors: Theory and Steady-State Operation
+              Obtaining Steady-State Information from Data Sheets
             
           </span>
         </div>
@@ -160,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -179,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../assignments/" class="md-tabs__link">
+        <a href="../../../../assignments/" class="md-tabs__link">
           
   
     
@@ -199,7 +199,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -219,7 +219,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../lecture-notes/" class="md-tabs__link">
+        <a href="../../../../lecture-notes/" class="md-tabs__link">
           
   
     
@@ -249,7 +249,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../mass-and-inertia/" class="md-tabs__link">
+        <a href="../../mass-and-inertia/" class="md-tabs__link">
           
   
     
@@ -293,7 +293,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -322,7 +322,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -374,7 +374,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../assignments/" class="md-nav__link ">
+            <a href="../../../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -405,7 +405,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/01-assignment-01/" class="md-nav__link">
+      <a href="../../../../assignments/01-assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -425,7 +425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/02-assignment-02/" class="md-nav__link">
+      <a href="../../../../assignments/02-assignment-02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,7 +445,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/03-project-01/" class="md-nav__link">
+      <a href="../../../../assignments/03-project-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -465,7 +465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/04-project-01part2/" class="md-nav__link">
+      <a href="../../../../assignments/04-project-01part2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -485,7 +485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/05-assignment-03/" class="md-nav__link">
+      <a href="../../../../assignments/05-assignment-03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -505,7 +505,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/06-assignment-04/" class="md-nav__link">
+      <a href="../../../../assignments/06-assignment-04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,7 +525,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part1/" class="md-nav__link">
+      <a href="../../../../assignments/07-project-02-part1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -594,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -614,7 +614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -712,7 +712,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -762,7 +762,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -816,7 +816,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -872,7 +872,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-03/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -922,7 +922,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -984,7 +984,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-04/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1040,7 +1040,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-05/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1090,7 +1090,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1154,7 +1154,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-06/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1204,7 +1204,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1266,7 +1266,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-07/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-07/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1320,7 +1320,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-08/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-08/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1374,7 +1374,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-09/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-09/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1428,7 +1428,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-10/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-10/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1482,7 +1482,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-11/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-11/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1536,7 +1536,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-12/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-12/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1590,7 +1590,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-13/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-13/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1644,7 +1644,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-14/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-14/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1698,7 +1698,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-15/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-15/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1752,7 +1752,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-16/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-16/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1888,7 +1888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mass-and-inertia/" class="md-nav__link">
+      <a href="../../mass-and-inertia/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1927,7 +1927,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../masses-example/" class="md-nav__link ">
+            <a href="../../masses-example/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1967,7 +1967,13 @@
     
       
         
-          
+      
+        
+      
+        
+      
+        
+      
         
       
     
@@ -1980,20 +1986,16 @@
         
         <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" checked>
         
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
-              
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
     Motors
   </span>
   
 
-            </a>
-            
-          </div>
+            <span class="md-nav__icon md-icon"></span>
+          </label>
         
         <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_1_3">
@@ -2002,6 +2004,331 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Motor Basic Theory 
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Obtaining Steady-State Information from Data Sheets
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Obtaining Steady-State Information from Data Sheets
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#intro" class="md-nav__link">
+    Intro
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-data" class="md-nav__link">
+    Motor Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-calcs" class="md-nav__link">
+    Motor Calcs
+  </a>
+  
+    <nav class="md-nav" aria-label="Motor Calcs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-i_stall" class="md-nav__link">
+    Calculating \(i_{stall}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-k_e-from-no-load-measurements" class="md-nav__link">
+    Calculating \(k_e\) from no-load measurements
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculating-k_v" class="md-nav__link">
+    Calculating \(k_v\)
+  </a>
+  
+    <nav class="md-nav" aria-label="Calculating \(k_v\)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculating-k_t" class="md-nav__link">
+    Calculating \(k_t\)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#theoretical-limits" class="md-nav__link">
+    Theoretical limits
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plotting-preparation" class="md-nav__link">
+    Plotting Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-damping" class="md-nav__link">
+    Motor Damping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-efficiency" class="md-nav__link">
+    Power and efficiency
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../03-motor-dynamics-secondorder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    03 motor dynamics secondorder
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            03 motor dynamics secondorder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../04-motor-dynamics-firstorder/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    04 motor dynamics firstorder
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            04 motor dynamics firstorder
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../05-motor-dynamics-firstorder-lumped/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    05 motor dynamics firstorder lumped
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            05 motor dynamics firstorder lumped
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -2085,7 +2412,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../esp32/esp32-concepts/" class="md-nav__link ">
+            <a href="../../../esp32/esp32-concepts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2139,7 +2466,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../esp32/esp32-installation-and-setup/" class="md-nav__link ">
+            <a href="../../../esp32/esp32-installation-and-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2240,7 +2567,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/01-frames/" class="md-nav__link">
+      <a href="../../../kinematics/01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2260,7 +2587,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/02-basis-vectors/" class="md-nav__link">
+      <a href="../../../kinematics/02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2280,7 +2607,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/03-vectors/" class="md-nav__link">
+      <a href="../../../kinematics/03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2300,7 +2627,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/04-rotations/" class="md-nav__link">
+      <a href="../../../kinematics/04-rotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2320,7 +2647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/05-expressing/" class="md-nav__link">
+      <a href="../../../kinematics/05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2340,7 +2667,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/06-quaternions/" class="md-nav__link">
+      <a href="../../../kinematics/06-quaternions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2360,7 +2687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/07-vector-operations/" class="md-nav__link">
+      <a href="../../../kinematics/07-vector-operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2380,7 +2707,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/08-constraints/" class="md-nav__link">
+      <a href="../../../kinematics/08-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2400,7 +2727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/09-jacobians/" class="md-nav__link">
+      <a href="../../../kinematics/09-jacobians/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2420,7 +2747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+      <a href="../../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2440,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/11-CAD-kinematics/" class="md-nav__link">
+      <a href="../../../kinematics/11-CAD-kinematics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2512,7 +2839,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/developing-a-research-question/" class="md-nav__link">
+      <a href="../../../misc/developing-a-research-question/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2551,7 +2878,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/RC%20Servos/" class="md-nav__link ">
+            <a href="../../../misc/RC%20Servos/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2605,7 +2932,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/assignment-02-part4/" class="md-nav__link ">
+            <a href="../../../misc/assignment-02-part4/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2659,7 +2986,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/tracker-tutorial/" class="md-nav__link ">
+            <a href="../../../misc/tracker-tutorial/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2748,7 +3075,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../../python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2768,7 +3095,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/02-installing-packages/" class="md-nav__link">
+      <a href="../../../python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2788,7 +3115,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../../python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2808,7 +3135,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/04-native-mujoco-install/" class="md-nav__link">
+      <a href="../../../python/04-native-mujoco-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2828,7 +3155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/sympy/" class="md-nav__link">
+      <a href="../../../python/sympy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2875,7 +3202,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../vscode-setup/" class="md-nav__link ">
+            <a href="../../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2928,8 +3255,6 @@
   
   
   
-    
-  
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
@@ -2938,30 +3263,37 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#motor-characteristics" class="md-nav__link">
-    Motor Characteristics
+  <a href="#intro" class="md-nav__link">
+    Intro
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#back-emf-and-k_e" class="md-nav__link">
-    Back EMF and \(k_e\)
+  <a href="#motor-data" class="md-nav__link">
+    Motor Data
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#torque-and-k_t" class="md-nav__link">
-    Torque and \(k_t\)
+  <a href="#motor-calcs" class="md-nav__link">
+    Motor Calcs
   </a>
   
-    <nav class="md-nav" aria-label="Torque and \(k_t\)">
+    <nav class="md-nav" aria-label="Motor Calcs">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#important-point" class="md-nav__link">
-    Important point
+  <a href="#calculating-i_stall" class="md-nav__link">
+    Calculating \(i_{stall}\)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#calculating-k_e-from-no-load-measurements" class="md-nav__link">
+    Calculating \(k_e\) from no-load measurements
   </a>
   
 </li>
@@ -2972,30 +3304,16 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#k_v" class="md-nav__link">
-    \(k_v\)
+  <a href="#calculating-k_v" class="md-nav__link">
+    Calculating \(k_v\)
   </a>
   
-    <nav class="md-nav" aria-label="\(k_v\)">
+    <nav class="md-nav" aria-label="Calculating \(k_v\)">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#important-note-about-k_v-in-practice" class="md-nav__link">
-    Important Note about \(k_v\) in practice
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#calculating-speed-dependent-terms" class="md-nav__link">
-    Calculating speed-dependent terms
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#free-running-current" class="md-nav__link">
-    Free-running current
+  <a href="#calculating-k_t" class="md-nav__link">
+    Calculating \(k_t\)
   </a>
   
 </li>
@@ -3006,15 +3324,29 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#k_m" class="md-nav__link">
-    \(k_m\)
+  <a href="#theoretical-limits" class="md-nav__link">
+    Theoretical limits
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#second-order-equations" class="md-nav__link">
-    Second Order Equations
+  <a href="#plotting-preparation" class="md-nav__link">
+    Plotting Preparation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motor-damping" class="md-nav__link">
+    Motor Damping
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#power-and-efficiency" class="md-nav__link">
+    Power and efficiency
   </a>
   
 </li>
@@ -3034,7 +3366,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/dynamics/motors/index.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/dynamics/motors/02-steady-state-datasheets.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3042,55 +3374,8 @@
   
 
 
-<h1 id="theory">Theory</h1>
-<div class="arithmatex">\[\require{cancel}\]</div>
-<h2 id="motor-characteristics">Motor Characteristics</h2>
-<p>Motors have a few characteristics at steady state that can be used to quickly characterize it.  Given a coil winding resistance <span class="arithmatex">\(R\)</span>, the motor's steady-state voltage and current may be related (at stall) to one another using Ohm's Law:</p>
-<div class="arithmatex">\[V=iR\]</div>
-<h2 id="back-emf-and-k_e">Back EMF and <span class="arithmatex">\(k_e\)</span></h2>
-<p>As a motor spins up, it builds up "back-EMF" as a result of the motor's magnets and coils moving and changing in relation to each other.  Back-EMF is typically calculated by running a motor at a given speed and measuring the voltage it generates.  This is a linear relationship, following</p>
-<div class="arithmatex">\[V=k_e\omega\]</div>
-<p>It should be noted that the units of <span class="arithmatex">\(\omega\)</span> are given in <span class="arithmatex">\(\frac{\text{rad}}{\text{s}}\)</span>(radians being unitless), meaning that <span class="arithmatex">\(k_v\)</span> is given in <span class="arithmatex">\(\frac{V}{\left(\frac{rad}{s}\right)}=V\,s=\frac{kg\,m^2}{C\,s^2}s=\frac{kg\,m^2}{C\,s}\)</span>.</p>
-<h2 id="torque-and-k_t">Torque and <span class="arithmatex">\(k_t\)</span></h2>
-<p>The torque available to a motor at stall is related by the equation</p>
-<div class="arithmatex">\[\tau=k_{\tau} i\]</div>
-<p>This puts the units of <span class="arithmatex">\(k_t\)</span> in <span class="arithmatex">\(\frac{N\,m}{A}=\frac{kg\,m^2}{s^2} \frac{s}{C}=\frac{kg\,m^2}{C\,s}\)</span>, which is the same units as <span class="arithmatex">\(k_e\)</span>.  </p>
-<p>This can be measured by comparing the torque available when clamped to a load cell as you vary the current through the coil.  Because there is no back-EMF being generated, the motor's torque is quite linear to that current.  Thus, if a datasheet contains information like "stall current" and "stall torque", you can easily calculate <span class="arithmatex">\(k_\tau\)</span> with <span class="arithmatex">\(k_\tau=\frac{\tau_{stall}}{i_{stall}}\)</span></p>
-<h3 id="important-point">Important point</h3>
-<p>It should be noted that <span class="arithmatex">\(k_t\)</span> and <span class="arithmatex">\(k_e\)</span> ideally represent the same motor characteristic; thus, only one of those numbers is required to model the motor.  Considering that measuring speed and voltage is cheaper and easier than measuring torque, it is safe to assume that some parameters provided by a manufacturer in its datasheet may be redundant, and may not have been obtained through independent tests.</p>
-<h2 id="k_v"><span class="arithmatex">\(k_v\)</span></h2>
-<p>When driven at a given voltage (without any external loads), a motor's speed is also related linearly to its supplied voltage, by</p>
-<div class="arithmatex">\[V=k_v\omega\]</div>
-<p>This measurement should be a little different from the measurement of <span class="arithmatex">\(k_e\)</span> in practice because its measurement approach factors in the mechanical losses of the motor in question.  For example, any friction, damping, or wind resistance is overcome by the experimental setup during the process of determining <span class="arithmatex">\(k_e\)</span>, as the test setup is responsible for supplying the torque necessary for moving the tested motor at a given speed.  But when driven at a given voltage, a motor needs to overcome its own friction, and so its speed at at the same test voltage will be lower when driven.  This reveals something about the efficiency of the motor.</p>
-<h3 id="important-note-about-k_v-in-practice">Important Note about <span class="arithmatex">\(k_v\)</span> in practice</h3>
-<p>A typical manufacturer's datasheet[^a] typically uses the relation <span class="arithmatex">\(\cancel{RPM = k_{v\text{(manufacturer)}}V}\)</span>, with <span class="arithmatex">\(k_{v\text{(manufacturer)}}\)</span> in <span class="arithmatex">\(\frac{\text{RPM}}{\text{V}}\)</span>.  We are not following this convention here, because it masks the fact that <span class="arithmatex">\(k_\tau\)</span> and <span class="arithmatex">\(k_v\)</span> should be the same for ideal motors with no internal friction, but are often disguised as different numbers via different unit systems and definitions.  This will typically have to be ameliorated by scaling the manufacturer's value using <span class="arithmatex">\(\frac{rad}{s}=RPM \frac{2\pi\,\text{rad}}{\text{rev}}\frac{1\,\text{min}}{60\,\text{sec}}\)</span>.</p>
-<p>Manufacturers often state the motor's "nominal" operating voltage, usually given by the amount of voltage that can be continuously delivered under typical operating conditions.  Along with the "no-load" speed, one can calculate <span class="arithmatex">\(k_v\)</span>.</p>
-<blockquote>
-<p>Example: A motor's no-load speed is 12500 RPM, at a nominal voltage of 12V.  with <span class="arithmatex">\(\omega=12500 \frac{2\pi}{60} \frac{rad}{s}\)</span>, we can calculate <span class="arithmatex">\(k_v=\frac{12*60}{12500*2\pi}=9.2*10^{-3} \frac{kg\,m^2}{C\,s}\)</span></p>
-</blockquote>
-<h3 id="calculating-speed-dependent-terms">Calculating speed-dependent terms</h3>
-<p>Given a nominal voltage supplied to the motor, that voltage is split between the voltage drop across the coil and the back EMF generated by the motion of the coil in a magnetic field, and the the current going through the coil goes down, according to:</p>
-<div class="arithmatex">\[V = iR+V_{EMF}=iR+k_e\omega\]</div>
-<h3 id="free-running-current">Free-running current</h3>
-<p>The "free-running current" or "no-load current" describes the amount of current the motor requires to overcome internal loss damping in order to move at its maximum speed.  This is typically given by a current, but can also be modeled by</p>
-<p><span class="arithmatex">\(\tau_{\text{internal}}=k_\tau*i_{NL}\)</span></p>
-<p>So to actually determine <span class="arithmatex">\(k_e\)</span> given typical datasheet parameters, we can solve for <span class="arithmatex">\(k_e\)</span> at the no-load operating condition instead.</p>
-<div class="arithmatex">\[k_e = \frac{V-i_{NL}R}{\omega_{NL}}\]</div>
-<p>We can then also calculate the theoretical maximum velocity of the motor, without mechanical losses considered:</p>
-<p><span class="arithmatex">\(\omega_{max} =\left.\frac{V-\frac{\tau_{\text{internal}}}{k_\tau}R}{k_e}\right|_{\tau_{\text{internal}}=0}=\left.\frac{V-i_{NL}R}{k_e}\right|_{i_{NL}=0}=\frac{V}{k_e}\)</span></p>
-<h2 id="k_m"><span class="arithmatex">\(k_m\)</span></h2>
-<ul>
-<li>There is another constant, <span class="arithmatex">\(k_m\)</span>.  We won't talk about it but you should be aware of it:</li>
-</ul>
-<div class="arithmatex">\[k_m = \frac{\tau}{\sqrt{P}}\]</div>
-<ul>
-<li>Related to <span class="arithmatex">\(k_t\)</span> by: <span class="arithmatex">\(k_m=\frac{k_t}{\sqrt{R}}\)</span></li>
-<li>Allows you to select a motor based on mechanical power, independent of the wirings / electrical characteristics</li>
-</ul>
-<h2 id="second-order-equations">Second Order Equations</h2>
-<div class="arithmatex">\[L \frac{di}{dt} = V - iR - k_ew\]</div>
-<div class="arithmatex">\[I \frac{dw}{dt} = k_t i - bw\]</div>
-<h1 id="using-a-data-sheet-to-obtain-key-motor-parameters">Using a data sheet to obtain key motor parameters</h1>
+  <h1>Obtaining Steady-State Information from Data Sheets</h1>
+
 <pre><code class="language-python">import matplotlib.pyplot as plt
 import numpy
 import math
@@ -3183,8 +3468,8 @@ t_stall(calc 2):  0.0027993375806788117
 </code></pre>
 <h2 id="theoretical-limits">Theoretical limits</h2>
 <p>The maximum theoretical limits of the electrical coils can be calculated, assuming that all sources of mechanical loss are absent.  This can be done using the computed value of <span class="arithmatex">\(k_e\)</span>: </p>
-<p>$<span class="arithmatex">\(w_{max(theoretical)} = \frac{V}{k_e}\)</span></p>
-<p><span class="arithmatex">\(\tau_{max(theoretical)} = k_t i_{stall}=k_e\frac{V}{R}\)</span>$</p>
+<div class="arithmatex">\[w_{max(theoretical)} = \frac{V}{k_e}\]</div>
+<div class="arithmatex">\[\tau_{max(theoretical)} = k_t i_{stall}=k_e\frac{V}{R}\]</div>
 <pre><code class="language-python">w_max_theoretical = V/ke
 t_max_theoretical = ke*V/R
 </code></pre>
@@ -3197,19 +3482,19 @@ i = (V-ke*w)/R
 i_act = (V-ke*w_act)/R
 </code></pre>
 <h2 id="motor-damping">Motor Damping</h2>
-<p>The motor's loss is modeled as speed-dependent damping.  This is due to the many speed-dependent factors that dominate motor losses, though friction should not be forgotten.  Maxon does not separate these two effects in their data sheet (though they do supply separate values upon request, I have learned), so we will lump it all into damping as well here</p>
+<p>The motor's loss is modeled as speed-dependent damping.  This is due to the many speed-dependent factors that dominate motor losses, though friction should not be forgotten.  Maxon does not separate these two effects in their data sheet (though they do supply separate values upon request, I have learned), so we will lump it all into damping as well here.  The force of damping can be calculated at no-load conditions:</p>
 <div class="arithmatex">\[\tau_{damping} = k_t i_{nl} = b \omega_{nl}\]</div>
-<p>the force of damping can be calculated at no-load conditions:</p>
+<p>And you can isolate the damping term by rearranging.</p>
 <div class="arithmatex">\[b =\frac{k_t i_{nl}}{\omega_{nl}}\]</div>
 <pre><code class="language-python">b = kt*i_nl/w_nl
 t_damp = b*w
 </code></pre>
 <p>This permits us to separate the motor's useful mechanical torque it can output in contrast to the losses it experiences in overcoming its own friction</p>
 <div class="arithmatex">\[\tau = \tau_{damping}+\tau_{out}\]</div>
-<p>$<span class="arithmatex">\(\tau_{out} = \tau-\tau_{damping}\)</span></p>
-<p><span class="arithmatex">\(\tau_{out} = k_t i-b \omega = \frac{k_t(V-k_e\omega)}{R} -  \frac{k_t i_{nl}}{\omega_{nl}}\omega\)</span></p>
-<p>$\tau_{out} = k_t\left(\frac{V-\left(k_e+\frac{k_t i_{nl}R}{\omega_{nl}}\right)\omega}{R}\right) $</p>
-<p>$\tau_{out} = k_t\left(\frac{V-k_v\omega}{R}\right) $$</p>
+<div class="arithmatex">\[\tau_{out} = \tau-\tau_{damping}\]</div>
+<div class="arithmatex">\[\tau_{out} = k_t i-b \omega = \frac{k_t(V-k_e\omega)}{R} -  \frac{k_t i_{nl}}{\omega_{nl}}\omega\]</div>
+<div class="arithmatex">\[\tau_{out} = k_t\left(\frac{V-\left(k_e+\frac{k_t i_{nl}R}{\omega_{nl}}\right)\omega}{R}\right)\]</div>
+<div class="arithmatex">\[\tau_{out} = k_t\left(\frac{V-k_v\omega}{R}\right) \]</div>
 <pre><code class="language-python">t_total = kt*i
 t_mech = kt*(V-kv*w_act)/R
 </code></pre>
@@ -3253,7 +3538,7 @@ ax1.text(w_1000-700,b_1000/2+t_mech_1000/2,'mechanical loss')
 plt.show()
 
 </code></pre>
-<p><a class="glightbox" href="output_31_0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_31_0.png" /></a></p>
+<p><a class="glightbox" href="../output_31_0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_31_0.png" /></a></p>
 <h2 id="power-and-efficiency">Power and efficiency</h2>
 <p>the mechanical power out is equal to mechanical power:</p>
 <div class="arithmatex">\[P_{out} = \tau_{out}*\omega\]</div>
@@ -3310,26 +3595,7 @@ ax1.legend(handles1+handles2+handles3, labels1+labels2+labels3)
 </code></pre>
 <pre><code>&lt;matplotlib.legend.Legend at 0x7ff85482c580&gt;
 </code></pre>
-<p><a class="glightbox" href="output_35_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_35_1.png" /></a></p>
-<h2 id="external-resources">External Resources</h2>
-<ul>
-<li><a href="https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Introduction_to_Control_Systems_(Iqbal)/01%3A_Mathematical_Models_of_Physical_Systems/1.04%3A_An_Electro-Mechanical_System_Model">https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Introduction_to_Control_Systems_(Iqbal)/01%3A_Mathematical_Models_of_Physical_Systems/1.04%3A_An_Electro-Mechanical_System_Model</a></li>
-<li><a href="https://electronics.stackexchange.com/questions/531406/how-to-calculate-the-torque-constant-for-a-bldc-motor">https://electronics.stackexchange.com/questions/531406/how-to-calculate-the-torque-constant-for-a-bldc-motor</a></li>
-<li><a href="https://en.m.wikipedia.org/wiki/Motor_constants">https://en.m.wikipedia.org/wiki/Motor_constants</a></li>
-<li><a href="https://www.roboticstomorrow.com/article/2020/04/understanding-the-motor-constant-in-dc-motor-sizing/15146">https://www.roboticstomorrow.com/article/2020/04/understanding-the-motor-constant-in-dc-motor-sizing/15146</a></li>
-<li><a href="https://duckduckgo.com/?q=kt+kv+efficiency+no+load+current&amp;t=fpas&amp;ia=web">https://duckduckgo.com/?q=kt+kv+efficiency+no+load+current&amp;t=fpas&amp;ia=web</a></li>
-<li><a href="https://support.controltechnologycorp.com/customer/elearning/younkin/motorParameters.pdf">https://support.controltechnologycorp.com/customer/elearning/younkin/motorParameters.pdf</a></li>
-<li><a href="https://support.maxongroup.com/hc/en-us/article_attachments/4413473498130">https://support.maxongroup.com/hc/en-us/article_attachments/4413473498130</a></li>
-<li><a href="https://www.ecmweb.com/maintenance-repair-operations/motors/article/20900535/estimation-of-electric-motor-load">https://www.ecmweb.com/maintenance-repair-operations/motors/article/20900535/estimation-of-electric-motor-load</a></li>
-<li><a href="https://designlab.eng.rpi.edu/edn/attachments/download/57871/DC_Motor_Calculations.pdf">https://designlab.eng.rpi.edu/edn/attachments/download/57871/DC_Motor_Calculations.pdf</a></li>
-<li><a href="https://link.springer.com/chapter/10.1007/978-981-10-4762-6_22">https://link.springer.com/chapter/10.1007/978-981-10-4762-6_22</a></li>
-<li><a href="https://www.faulhaber.com/fileadmin/Import/Media/EN_TI_BRUSHLESS_DC-MOTORS.pdf">https://www.faulhaber.com/fileadmin/Import/Media/EN_TI_BRUSHLESS_DC-MOTORS.pdf</a></li>
-<li><a href="https://electronics.stackexchange.com/questions/531406/how-to-calculate-the-torque-constant-for-a-bldc-motor">https://electronics.stackexchange.com/questions/531406/how-to-calculate-the-torque-constant-for-a-bldc-motor</a></li>
-<li><a href="https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Introduction_to_Control_Systems_(Iqbal)/01%3A_Mathematical_Models_of_Physical_Systems/1.04%3A_An_Electro-Mechanical_System_Model
-https://ctms.engin.umich.edu/CTMS/index.php?aux=Activities_DCmotorA">https://eng.libretexts.org/Bookshelves/Industrial_and_Systems_Engineering/Introduction_to_Control_Systems_(Iqbal)/01%3A_Mathematical_Models_of_Physical_Systems/1.04%3A_An_Electro-Mechanical_System_Model
-https://ctms.engin.umich.edu/CTMS/index.php?aux=Activities_DCmotorA</a></li>
-<li><a href="https://www.maxongroup.com/maxon/view/category/motor?etcc_cu=onsite&amp;etcc_med_onsite=Product&amp;etcc_cmp_onsite=RE+Program&amp;etcc_plc=Overview-Page-DC-Motors&amp;etcc_var=%5bcom%5d%23en%23_d_&amp;target=filter&amp;filterCategory=re">https://www.maxongroup.com/maxon/view/category/motor?etcc_cu=onsite&amp;etcc_med_onsite=Product&amp;etcc_cmp_onsite=RE+Program&amp;etcc_plc=Overview-Page-DC-Motors&amp;etcc_var=%5bcom%5d%23en%23_d_&amp;target=filter&amp;filterCategory=re</a></li>
-</ul>
+<p><a class="glightbox" href="../output_35_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_35_1.png" /></a></p>
 
 
 
@@ -3372,12 +3638,12 @@ https://ctms.engin.umich.edu/CTMS/index.php?aux=Activities_DCmotorA</a></li>
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
