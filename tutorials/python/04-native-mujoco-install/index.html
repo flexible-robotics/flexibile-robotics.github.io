@@ -3268,15 +3268,15 @@ conda deactivate &amp;&amp; conda activate mujoco
 </blockquote>
 <h2 id="ubuntu">Ubuntu</h2>
 <p>Run these commands line-by-line</p>
-<pre><code class="language-bash">conda create -y -n mujoco python=3.9
+<pre><code class="language-bash">conda create -y -n mujoco
 conda activate mujoco
-conda install -y jupyterlab scipy ffmpeg
+conda install -y python jupyterlab scipy ffmpeg
 conda install -y -c conda-forge glew
 conda install -y -c conda-forge mesalib
 conda install -y -c anaconda mesa-libgl-cos6-x86_64
 conda install -y -c menpo glfw3
 pip install mujoco mediapy mujoco-python-viewer pygmsh
-conda env config vars set MUJOCO_GL=egl PYOPENGL_PLATFORM=egl
+conda env config vars set MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa
 conda deactivate &amp;&amp; conda activate mujoco
 </code></pre>
 <h2 id="using-mujoco">Using mujoco</h2>
