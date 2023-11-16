@@ -3276,6 +3276,88 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#homework-discussion" class="md-nav__link">
+    Homework discussion
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-end-point-deflectino" class="md-nav__link">
+    Getting end-point deflectino
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#massaging-data" class="md-nav__link">
+    Massaging data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-initial-conditions" class="md-nav__link">
+    Setting Initial Conditions
+  </a>
+  
+    <nav class="md-nav" aria-label="Setting Initial Conditions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adding-external-cartesion-forces-to-simulation" class="md-nav__link">
+    Adding external cartesion forces to simulation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpolation" class="md-nav__link">
+    Interpolation
+  </a>
+  
+    <nav class="md-nav" aria-label="Interpolation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#options_1" class="md-nav__link">
+    Options
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#minimization-function" class="md-nav__link">
+    Minimization Function
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#board-images" class="md-nav__link">
+    Board Images
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -3303,7 +3385,6 @@
 
 <ul>
 <li>Office Hour oops</li>
-<li>HW3 Grading Update</li>
 <li>Project 2 Part 1 Questions?<ul>
 <li>Meeting scheduled with 1 team</li>
 <li>find a time with me</li>
@@ -3321,7 +3402,6 @@
 <li>Series Damping and Compliance</li>
 <li>Motor <span class="arithmatex">\(k_e\)</span> / <span class="arithmatex">\(k_e\)</span> slope</li>
 <li>Homework walkthrough</li>
-<li>Psuedo-rigid-body model approximations</li>
 <li>Inertia Calc in Solidworks</li>
 </ul>
 </li>
@@ -3329,9 +3409,99 @@
 <h2 id="motor-k_e-k_e-slope">Motor <span class="arithmatex">\(k_e\)</span> / <span class="arithmatex">\(k_e\)</span> slope</h2>
 <p>please see the <a href="https://flexible-robotics.github.io/tutorials/dynamics/motors/02-steady-state-datasheets/">Steady-state walkthrough</a> for improved plot from what was shown last lecture</p>
 <h2 id="inertia-calc-in-solidworks">Inertia Calc in Solidworks</h2>
-<p>See <a href="https://flexible-robotics.github.io/tutorials/dynamics/computing-inertia-in-solidworks/">Here</a></p>
+<p>See <a href="https://flexible-robotics.github.io/tutorials/dynamics/computing-inertia-in-solidworks/">Here</a> for a new tutorial</p>
 <h2 id="series-compliance-and-damping">Series Compliance and Damping</h2>
 <p>please see the new tutorial on <a href="/tutorials/dynamics/series-and-parallel-elements/">series and parallel elements</a></p>
+<h2 id="homework-discussion">Homework discussion</h2>
+<ul>
+<li>How do we get the deflection of the end point?</li>
+<li>how do we import / massage data from tracker into python?</li>
+<li>we have xpos as initial conditions, but we can't set xpos, only qpos.  How do we do it?</li>
+<li>should the joints be equally spaced?<ul>
+<li>yes.  the assumption of equal joint stiffness is based on the assumption of equal spacing.  if you put more joints in one area you would probably need to stiffen those joints more.  more discussion on tuesday...</li>
+</ul>
+</li>
+</ul>
+<h2 id="getting-end-point-deflectino">Getting end-point deflectino</h2>
+<p>add a small geom to the distal-most body, at the location where your tracking marker is located.  Make sure the mass of this extra geom is negligible.  MuJoCo will add the information about this point's center of mass to the xpos list.</p>
+<h2 id="massaging-data">Massaging data</h2>
+<ul>
+<li>use tracker's options for coordinate system, including origin and angle, as well as a "calibration stick" in order to scale and shift your position data before it comes into python</li>
+<li>Use either <code>pandas.read_csv()</code> or <code>numpy.getfromtxt()</code> functions</li>
+</ul>
+<h2 id="setting-initial-conditions">Setting Initial Conditions</h2>
+<p>Setting your simulation to match the initial conditions of your experiment can be hard without planning.  here is a summary of the many ways you could obtain initial condition information based on some guesswork</p>
+<p>In reality, this is an iterative process, where you use an initial assumption to get better data, that you use iteratively to improve your guess until there is little change.  In practice for the assignment, we will be only doing / expecting one pass.</p>
+<h3 id="options">Options</h3>
+<ul>
+<li>Use FEA or static beam theory, along with a guess about material properties and loading to get the initial shape of the beam.</li>
+<li>Use a still frame (image) of the first image of your experiment video to extract / measure the positions of your beams in the pseudo-rigid body model</li>
+<li>With a guess for joint stiffness values, apply a small external load to the end of the beam in mujoco (using <code>xfrc_applied</code>), varying the load until you get the deflection observed in your experiment.  use those <code>qpos</code> values as your initial conditions for the optimization step</li>
+<li>Take direct measurements of the deflections prior to running the experiment</li>
+</ul>
+<p><em>or</em></p>
+<ul>
+<li>change your initial conditions in your experiment so that the beam starts from an undeflected state.s</li>
+</ul>
+<h2 id="adding-external-cartesion-forces-to-simulation">Adding external cartesion forces to simulation</h2>
+<p>add before the <code>step()</code> function within your simulation loop:</p>
+<pre><code class="language-python">data.body('B').xfrc_applied[2] = -200
+</code></pre>
+<ul>
+<li>xfrc applied is a 6-element array, of x,y,z,tx,ty,tz elements.</li>
+<li>the command above applies a 200N force to body "B" in the negative y direction.</li>
+</ul>
+<h2 id="interpolation">Interpolation</h2>
+<p>Data comes in at 30fps but mujoco runs at a different timestep.  How do you get the numbers to line up?</p>
+<h3 id="options_1">Options</h3>
+<ol>
+<li>Interpolate experimental data to fit the precision of the simulation.  <ul>
+<li>see <code>scipy.interpolate</code> module <a href="https://docs.scipy.org/doc/scipy/tutorial/interpolate.html">documentation</a><ul>
+<li>can do linear, quadratic, cubic, etc...many options</li>
+<li>essentially feed in data and get out a function</li>
+<li>you can evaluate the function anywhere within the domain of the data you fed in, and sometimes you can extrapolate too!</li>
+</ul>
+</li>
+<li>interpolation is really necessary when you have "irregular" timings.  In our case, we just have different sample rates</li>
+</ul>
+</li>
+<li>change mujoco timestep<ul>
+<li>not desired because it impacts simulation precision</li>
+</ul>
+</li>
+<li>Decimate your data after the fact<ul>
+<li>fractional differences in timing might produce irregularities and still require interpolation...</li>
+<li>means you generate a lot of data and then throw it away</li>
+</ul>
+</li>
+<li>select a data "sampling" frequency just like we have already done with rendering &amp; animation.<ul>
+<li>only collect data every so many time steps.</li>
+<li>
+<p>should set your base timestep to a whole-number fraction of your data-collection framerate</p>
+<blockquote>
+<p>if experimental data was collected at 30fps, run your simulation at 600Hz, 3000Hz, 12000Hz, etc, but maybe not 1000Hz, because <span class="arithmatex">\(1000/30=33.33\bar{3}\)</span>, ie not a whole number.</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="minimization-function">Minimization Function</h2>
+<ul>
+<li><code>scipy.optimize.minimize()</code> is a function that can use many underlying algorithms.  Instead of using the default, you should select the "right" algorithm.</li>
+<li>each algorithm has extra arguments that control different things</li>
+<li>you should look for algorithms that permit supplying "constraints" or "bounds" so that you don't try to find negative k or b values, for example</li>
+<li>look for algorithms' "tolerance" terms.<ul>
+<li>The larger the error tolerance, the more likely it is to solve</li>
+<li>I use 1e-3, which is ~1mm if measuring error in distance</li>
+<li>1e-8 could take much longer to solve and you may not need that precision.</li>
+<li>usually called <code>tol</code>, <code>atol</code>, <code>rtol</code>, <code>ftol</code>, <code>fatol</code>, etc.</li>
+</ul>
+</li>
+<li>I like the "powell" algorithm.</li>
+</ul>
+<h2 id="board-images">Board Images</h2>
+<p><a class="glightbox" href="PXL_20231116_133552604.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231116_133552604.jpg" style="height:200px;" /></a>
+<a class="glightbox" href="PXL_20231116_133607667.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231116_133607667.jpg" style="height:200px;" /></a></p>
 
 
 
