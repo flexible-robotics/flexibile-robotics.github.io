@@ -3275,10 +3275,14 @@ conda install -y -c conda-forge glew
 conda install -y -c conda-forge mesalib
 conda install -y -c anaconda mesa-libgl-cos6-x86_64
 conda install -y -c menpo glfw3
+conda install -y sympy pandas
 pip install mujoco mediapy mujoco-python-viewer pygmsh
 conda env config vars set MUJOCO_GL=osmesa PYOPENGL_PLATFORM=osmesa
 conda deactivate &amp;&amp; conda activate mujoco
 </code></pre>
+<blockquote>
+<p>MUJOCO_GL=egl and PYOPENGL_PLATFORM=egl is no longer working</p>
+</blockquote>
 <h2 id="using-mujoco">Using mujoco</h2>
 <p>Before coding in your new mujoco environment, you will need to activate it.</p>
 <pre><code class="language-bash">conda activate mujoco
