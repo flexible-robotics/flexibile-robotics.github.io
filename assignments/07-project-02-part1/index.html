@@ -16,7 +16,7 @@
         <link rel="prev" href="../06-assignment-04/">
       
       
-        <link rel="next" href="../../course-info/01-syllabus/">
+        <link rel="next" href="../07-project-02-part2/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -361,6 +361,8 @@
       
         
       
+        
+      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -601,8 +603,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+    <nav class="md-nav" aria-label="Submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
   </a>
   
 </li>
@@ -611,6 +633,26 @@
   
 </nav>
       
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-project-02-part2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Team Project 2 -- Part 2
+  </span>
+  
+
+      </a>
     </li>
   
 
@@ -3365,8 +3407,28 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2
+  <a href="#submission" class="md-nav__link">
+    Submission
+  </a>
+  
+    <nav class="md-nav" aria-label="Submission">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#other-notes" class="md-nav__link">
+    Other Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rubric" class="md-nav__link">
+    Rubric
   </a>
   
 </li>
@@ -3513,7 +3575,66 @@
 <li>Add / ensure that at least one passive link or joint in your system exhibits material-based compliance through bending, and that you have a plan for measuring that parameter as well as adjusting its behavior through manufacturing.</li>
 <li>Ensure that the scaling of your model is appropriate for the system you would like to build.</li>
 <li>Ensure it includes all of the system parameters discussed above.</li>
-<li>Make sure it runs with some rational initial assumptions about material parameters, motor power, mass, and length supplied.</li>
+<li>
+<p>Make sure it runs with some rational initial assumptions about material parameters, motor power, mass, and length supplied.</p>
+<blockquote>
+<p>Remember that mujoco does not assume the units of your model and does not scale units internally.  Therefore,  SI units and their derived units should be used as they are the most consistent with each other.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>measurement</th>
+<th>recommended unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>time</td>
+<td>sec</td>
+</tr>
+<tr>
+<td>length</td>
+<td>meter</td>
+</tr>
+<tr>
+<td>velocity</td>
+<td><span class="arithmatex">\(\frac{\text{meter}}{\text{s}}\)</span></td>
+</tr>
+<tr>
+<td>acceleration</td>
+<td><span class="arithmatex">\(\frac{\text{meter}}{\text{s}^2}\)</span></td>
+</tr>
+<tr>
+<td>rotational position</td>
+<td>radian (unitless)</td>
+</tr>
+<tr>
+<td>rotational velocity</td>
+<td><span class="arithmatex">\(\frac{\text{radian}}{\text{s}}\)</span> (unitless)</td>
+</tr>
+<tr>
+<td>rotational acceleration</td>
+<td><span class="arithmatex">\(\frac{\text{radian}}{\text{s}^2}\)</span> (unitless)</td>
+</tr>
+<tr>
+<td>mass</td>
+<td>kg</td>
+</tr>
+<tr>
+<td>inertia</td>
+<td><span class="arithmatex">\(\text{kg-meter}^2\)</span></td>
+</tr>
+<tr>
+<td>force</td>
+<td>Newton (<span class="arithmatex">\(\frac{\text{kg-meter}}{\text{s}^2}\)</span>)</td>
+</tr>
+<tr>
+<td>torque</td>
+<td>Newton-meter (<span class="arithmatex">\(\frac{\text{kg-meter}^2}{\text{s}^2}\)</span>)</td>
+</tr>
+</tbody>
+</table>
+</li>
 </ol>
 </li>
 </ol>
@@ -3521,14 +3642,69 @@
 <ol>
 <li>Discuss each step of the above assignment and provide thoughts and feedback about how you approached each step and your reflections on how it work</li>
 </ol>
-<hr />
-<h2 id="part-2">Part 2</h2>
-<p>Part 2 of this assignment will be posted soon.  It will involve:</p>
+<h2 id="submission">Submission</h2>
+<p>Please include a pdf of the following:</p>
+<ol>
+<li>
+<p>Detailed description of the completed steps above</p>
 <ul>
-<li>Reporting the collected values listed in your parameters table</li>
-<li>Running an optimization of your mujoco model over across your stated design parameters</li>
-<li>Building and testing your robot, and reporting its real-life performance in contrast to simulation. </li>
+<li>Include relevant chunks of code in your report as inline blocks.</li>
+<li>
+<p>Images of handwritten work, parts you've made, and screenshots can be included inline within the pdf. Use the following notation if you are doing this inside jupyter notebook:</p>
+<p><code>![alt text](path/to/your/image.jpg)</code></p>
+<p>or, if you want to access other html attributes:</p>
+<p><code>&lt;img src="path/to/your/image.jpg" width="300px" alt="alt text here"&gt;</code></p>
+</li>
 </ul>
+</li>
+<li>
+<p>Any relevant code used in solving the assignment (relevant code inline in the report in code blocks), along with descriptions detailing your approach.</p>
+<ul>
+<li>requested plots and figures should be included inline</li>
+<li>if you are not using jupyter notebook for writing up your report, include any/all necessary notebooks within a .zip file.</li>
+</ul>
+</li>
+<li>Detailed answers to the discussion questions asked alongside all steps</li>
+<li>Final video(s) of the successful simulations or experiments can be included inline in your jupyter notebook.  These files must be included within your team's .zip file as well.</li>
+<li>CSV files of any experimental data collected</li>
+</ol>
+<h3 id="other-notes">Other Notes</h3>
+<ul>
+<li>Please follow the "Submission Best Practices" document posted on the course website.  </li>
+<li>Please ensure that .ipynb code is fully compiled and <em>runs without error</em> in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  </li>
+<li>Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages</li>
+</ul>
+<h2 id="rubric">Rubric</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Item</th>
+<th style="text-align: right;">Points</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Step 1: Updated Description</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Part 2: Data Collection Plan</td>
+<td style="text-align: right;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Part 3: Optimization Description</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td style="text-align: left;">Part 4: Mujoco Model</td>
+<td style="text-align: right;">100</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>300</strong></td>
+</tr>
+</tbody>
+</table>
 
 
 
