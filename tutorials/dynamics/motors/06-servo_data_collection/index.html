@@ -13,13 +13,13 @@
       
       
       
-        <link rel="prev" href="../../../lecture-notes/lecture-17/">
+        <link rel="prev" href="../05-motor-dynamics-firstorder-lumped/">
       
       
-        <link rel="next" href="../mass-and-inertia/">
+        <link rel="next" href="../07-servo-fitting/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
             
 
@@ -27,11 +27,11 @@
 
     
       
-        <title>Computing Inertia in Solidworks - Flexible Robotics</title>
+        <title>Working with Experimental Data - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.9f615399.min.css">
       
       
 
@@ -50,7 +50,7 @@
       
     
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -63,7 +63,7 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-   <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+   <link href="../../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
         html.glightbox-open { overflow: initial; height: 100%; }
         .gslide-title { margin-top: 0px; user-select: text; }
         .gslide-desc { color: #666; user-select: text; }
@@ -74,7 +74,7 @@
             body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
             body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
             body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+            </style> <script src="../../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -88,6 +88,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#guessing-the-input-signal" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -100,7 +105,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -120,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Computing Inertia in Solidworks
+              Working with Experimental Data
             
           </span>
         </div>
@@ -155,7 +160,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -174,7 +179,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../assignments/" class="md-tabs__link">
+        <a href="../../../../assignments/" class="md-tabs__link">
           
   
     
@@ -194,7 +199,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -214,7 +219,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../lecture-notes/" class="md-tabs__link">
+        <a href="../../../../lecture-notes/" class="md-tabs__link">
           
   
     
@@ -243,8 +248,16 @@
   
     
     
+      
+  
+  
+    
+  
+  
+    
+    
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="./" class="md-tabs__link">
+        <a href="../../compliant_beam_analysis/01-theory/" class="md-tabs__link">
           
   
     
@@ -253,6 +266,9 @@
 
         </a>
       </li>
+    
+  
+
     
   
 
@@ -288,7 +304,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../../../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -317,7 +333,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -373,7 +389,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../assignments/" class="md-nav__link ">
+            <a href="../../../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -404,7 +420,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/01-assignment-01/" class="md-nav__link">
+      <a href="../../../../assignments/01-assignment-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -424,7 +440,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/02-assignment-02/" class="md-nav__link">
+      <a href="../../../../assignments/02-assignment-02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -444,7 +460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/03-project-01/" class="md-nav__link">
+      <a href="../../../../assignments/03-project-01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -464,7 +480,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/04-project-01part2/" class="md-nav__link">
+      <a href="../../../../assignments/04-project-01part2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +500,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/05-assignment-03/" class="md-nav__link">
+      <a href="../../../../assignments/05-assignment-03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -504,7 +520,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/06-assignment-04/" class="md-nav__link">
+      <a href="../../../../assignments/06-assignment-04/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -524,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part1/" class="md-nav__link">
+      <a href="../../../../assignments/07-project-02-part1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +560,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part2/" class="md-nav__link">
+      <a href="../../../../assignments/07-project-02-part2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +580,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/09-assignment-05/" class="md-nav__link">
+      <a href="../../../../assignments/09-assignment-05/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -633,7 +649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -653,7 +669,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -673,7 +689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -753,7 +769,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -803,7 +819,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -857,7 +873,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-02/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -913,7 +929,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-03/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -963,7 +979,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-03/rotation/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1025,7 +1041,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-04/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-04/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1081,7 +1097,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-05/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1131,7 +1147,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-05/triangle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1195,7 +1211,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-06/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1245,7 +1261,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-06/2dofrobot/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1307,7 +1323,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-07/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-07/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1361,7 +1377,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-08/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-08/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1415,7 +1431,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-09/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-09/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1469,7 +1485,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-10/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-10/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1523,7 +1539,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-11/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-11/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1577,7 +1593,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-12/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-12/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1631,7 +1647,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-13/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-13/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1685,7 +1701,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-14/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-14/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1739,7 +1755,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-15/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-15/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1793,7 +1809,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-16/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-16/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1847,7 +1863,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../lecture-notes/lecture-17/" class="md-nav__link ">
+            <a href="../../../../lecture-notes/lecture-17/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1953,8 +1969,6 @@
       
         
       
-        
-      
     
     
     <li class="md-nav__item md-nav__item--active md-nav__item--nested">
@@ -1987,29 +2001,41 @@
                 
   
   
+  
     
-  
-  
-    <li class="md-nav__item md-nav__item--active">
+    
       
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
         
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_1" >
+        
+          <label class="md-nav__link" for="__nav_5_1_1" id="__nav_5_1_1_label" tabindex="0">
+            
   
   <span class="md-ellipsis">
-    Computing Inertia in Solidworks
+    Compliant beam analysis
   </span>
   
 
-      </a>
-      
-    </li>
-  
-
-              
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Compliant beam analysis
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
             
               
                 
@@ -2017,31 +2043,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../mass-and-inertia/" class="md-nav__link">
+      <a href="../../compliant_beam_analysis/01-theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Mass and Inertia
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../series-and-parallel-elements/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Dampers and Springs in Series and Parallel
+    Theory
   </span>
   
 
@@ -2057,7 +2063,73 @@
   
   
     <li class="md-nav__item">
-      <a href="../spherical_four_bar/" class="md-nav__link">
+      <a href="../../compliant_beam_analysis/02-compliant_beam_analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Compliant Beam Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_2" >
+        
+          <label class="md-nav__link" for="__nav_5_1_2" id="__nav_5_1_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Examples
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_2">
+            <span class="md-nav__icon md-icon"></span>
+            Examples
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../examples/spherical_four_bar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2069,52 +2141,6 @@
     </li>
   
 
-              
-            
-              
-                
-  
-  
-  
-    
-    
-      
-        
-          
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
-        
-        
-        
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
-        
-          
-          
-          <div class="md-nav__link md-nav__container">
-            <a href="../masses-example/" class="md-nav__link ">
-              
-  
-  <span class="md-ellipsis">
-    Masses example
-  </span>
-  
-
-            </a>
-            
-          </div>
-        
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_5">
-            <span class="md-nav__icon md-icon"></span>
-            Masses example
-          </label>
-          <ul class="md-nav__list" data-md-scrollfix>
-            
               
             
           </ul>
@@ -2139,8 +2165,84 @@
       
         
       
-        
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
       
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3" >
+        
+          <label class="md-nav__link" for="__nav_5_1_3" id="__nav_5_1_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Mass and inertia
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mass and inertia
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mass-and-inertia/01-theory/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Theory
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mass-and-inertia/03-computing-inertia-in-solidworks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Computing Inertia in Solidworks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
         
       
     
@@ -2151,9 +2253,83 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_3_3" >
         
-          <label class="md-nav__link" for="__nav_5_1_6" id="__nav_5_1_6_label" tabindex="0">
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mass-and-inertia/02-masses-example/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    02 masses example
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            02 masses example
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4" checked>
+        
+          <label class="md-nav__link" for="__nav_5_1_4" id="__nav_5_1_4_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -2164,8 +2340,8 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_6_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_6">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_4">
             <span class="md-nav__icon md-icon"></span>
             Motors
           </label>
@@ -2177,7 +2353,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../motors/01-theory/" class="md-nav__link">
+      <a href="../01-theory/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2197,7 +2373,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../motors/02-steady-state-datasheets/" class="md-nav__link">
+      <a href="../02-steady-state-datasheets/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2231,12 +2407,12 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../motors/03-motor-dynamics-secondorder/" class="md-nav__link ">
+            <a href="../03-motor-dynamics-secondorder/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2248,8 +2424,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_6_3_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_6_3">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4_3">
             <span class="md-nav__icon md-icon"></span>
             03 motor dynamics secondorder
           </label>
@@ -2285,12 +2461,12 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6_4" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../motors/04-motor-dynamics-firstorder/" class="md-nav__link ">
+            <a href="../04-motor-dynamics-firstorder/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2302,8 +2478,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_6_4_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_6_4">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4_4">
             <span class="md-nav__icon md-icon"></span>
             04 motor dynamics firstorder
           </label>
@@ -2339,12 +2515,12 @@
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_6_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_5" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../motors/05-motor-dynamics-firstorder-lumped/" class="md-nav__link ">
+            <a href="../05-motor-dynamics-firstorder-lumped/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2356,8 +2532,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_6_5_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_5_1_6_5">
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4_5">
             <span class="md-nav__icon md-icon"></span>
             05 motor dynamics firstorder lumped
           </label>
@@ -2371,6 +2547,170 @@
     </li>
   
 
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_6" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="./" class="md-nav__link md-nav__link--active">
+              
+  
+  <span class="md-ellipsis">
+    06 servo data collection
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_4_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            06 servo data collection
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_4_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../07-servo-fitting/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    07 servo fitting
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="4" aria-labelledby="__nav_5_1_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            07 servo fitting
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../scaling/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Scaling
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_5_1_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1_5">
+            <span class="md-nav__icon md-icon"></span>
+            Scaling
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
               
             
           </ul>
@@ -2454,7 +2794,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../esp32/esp32-concepts/" class="md-nav__link ">
+            <a href="../../../esp32/esp32-concepts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2508,7 +2848,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../esp32/esp32-installation-and-setup/" class="md-nav__link ">
+            <a href="../../../esp32/esp32-installation-and-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2609,7 +2949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/01-frames/" class="md-nav__link">
+      <a href="../../../kinematics/01-frames/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2629,7 +2969,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/02-basis-vectors/" class="md-nav__link">
+      <a href="../../../kinematics/02-basis-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2649,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/03-vectors/" class="md-nav__link">
+      <a href="../../../kinematics/03-vectors/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2669,7 +3009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/04-rotations/" class="md-nav__link">
+      <a href="../../../kinematics/04-rotations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2689,7 +3029,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/05-expressing/" class="md-nav__link">
+      <a href="../../../kinematics/05-expressing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2709,7 +3049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/06-quaternions/" class="md-nav__link">
+      <a href="../../../kinematics/06-quaternions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2729,7 +3069,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/07-vector-operations/" class="md-nav__link">
+      <a href="../../../kinematics/07-vector-operations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2749,7 +3089,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/08-constraints/" class="md-nav__link">
+      <a href="../../../kinematics/08-constraints/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2769,7 +3109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/09-jacobians/" class="md-nav__link">
+      <a href="../../../kinematics/09-jacobians/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2789,7 +3129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
+      <a href="../../../kinematics/10-jacobians-for-parallel-mechanisms/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2809,7 +3149,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../kinematics/11-CAD-kinematics/" class="md-nav__link">
+      <a href="../../../kinematics/11-CAD-kinematics/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2881,7 +3221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../misc/developing-a-research-question/" class="md-nav__link">
+      <a href="../../../misc/developing-a-research-question/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2920,7 +3260,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/RC%20Servos/" class="md-nav__link ">
+            <a href="../../../misc/RC%20Servos/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2974,7 +3314,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/assignment-02-part4/" class="md-nav__link ">
+            <a href="../../../misc/assignment-02-part4/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3028,7 +3368,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../misc/tracker-tutorial/" class="md-nav__link ">
+            <a href="../../../misc/tracker-tutorial/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3117,7 +3457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/01-installing-anaconda-python/" class="md-nav__link">
+      <a href="../../../python/01-installing-anaconda-python/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3137,7 +3477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/02-installing-packages/" class="md-nav__link">
+      <a href="../../../python/02-installing-packages/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3157,7 +3497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/03-google-colab-tutorial/" class="md-nav__link">
+      <a href="../../../python/03-google-colab-tutorial/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3177,7 +3517,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/04-native-mujoco-install/" class="md-nav__link">
+      <a href="../../../python/04-native-mujoco-install/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3197,7 +3537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../python/sympy/" class="md-nav__link">
+      <a href="../../../python/sympy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3244,7 +3584,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../vscode-setup/" class="md-nav__link ">
+            <a href="../../../vscode-setup/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3298,6 +3638,21 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#guessing-the-input-signal" class="md-nav__link">
+    Guessing the input signal
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3311,7 +3666,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/dynamics/computing-inertia-in-solidworks.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/dynamics/motors/06-servo_data_collection/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
     </a>
@@ -3319,9 +3674,205 @@
   
 
 
-  <h1>Computing Inertia in Solidworks</h1>
+  <h1>Working with Experimental Data</h1>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/1w9VlST_cso?si=nxAX6T7lL-9RYxvX" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<pre><code class="language-python">import pandas
+import scipy.signal as ss
+import scipy.optimize as so
+import numpy
+import matplotlib.pyplot as plt
+import math
+</code></pre>
+<p>Import data collected by tracker and identify the useful columns</p>
+<blockquote>
+<p>Note: You will need to massage the .csv file to remove the first two rows.  Pandas expects just one row for column names above the data</p>
+</blockquote>
+<pre><code class="language-python">data = pandas.read_csv('data.csv')
+data.columns
+</code></pre>
+<pre><code>Index(['t', 'x', 'y', 'x.1', 'y.1'], dtype='object')
+</code></pre>
+<p>Extract the time and position data of our markers</p>
+<pre><code class="language-python">t = data['t']
+</code></pre>
+<p>Make a guess for the center of rotation by finding the mean of all the x and y data of our first point.  This is rough but it should be close enough for an optimizer to do the rest</p>
+<pre><code class="language-python">xini = data['x'].mean()
+yini = data['y'].mean()
+ini = numpy.array([xini,yini])
+print(ini)
+</code></pre>
+<pre><code>[2.55072079 0.21735663]
+</code></pre>
+<p>Create a function that finds the center of rotation for our two tracked points by obtaining the distance from the proposed center to each point over all the data.  The true center should minimize the sum of all distances to all points that rotate.</p>
+<pre><code class="language-python">def fun(guess):
+    x0,y0 = guess
+    error = 0
+    error += ((data['x']-x0)**2+(data['y']-y0)**2).sum()
+    error += ((data['x.1']-x0)**2+(data['y.1']-y0)**2).sum()
+    error = error**.5
+    return error
+</code></pre>
+<p>The function, evaluated at the initial guess should provide a baseline error that can go lower still</p>
+<pre><code class="language-python">print(fun(ini))
+</code></pre>
+<pre><code>18.010570547148244
+</code></pre>
+<p>Run the minimization and check the result</p>
+<pre><code class="language-python">result = so.minimize(fun,ini)
+result
+</code></pre>
+<pre><code>  message: Optimization terminated successfully.
+  success: True
+   status: 0
+      fun: 17.655446173747816
+        x: [ 2.719e+00  2.522e-01]
+      nit: 4
+      jac: [-7.153e-07  0.000e+00]
+ hess_inv: [[ 8.129e-02 -1.918e-01]
+            [-1.918e-01  9.600e-01]]
+     nfev: 21
+     njev: 7
+</code></pre>
+<p>Compute the vectors from the origin to the two tracked points.  This will effectively shift the original tracked points to move about the result of our optimization, the selected center of rotation in the video.</p>
+<pre><code class="language-python">v1 = numpy.array([data['x']-result.x[0],(data['y']-result.x[1])]).T
+v2 = numpy.array([data['x.1']-result.x[0],(data['y.1']-result.x[1])]).T
+</code></pre>
+<p>Plot the vectors over time, along with a dot at the origin.</p>
+<pre><code class="language-python">plt.plot(v1[:,0],v1[:,1])
+plt.plot(v2[:,0],v2[:,1])
+plt.plot(0,0,'ro')
+plt.axis('equal')
+</code></pre>
+<pre><code>(-1.0102513998296843,
+ 0.8169597001703157,
+ -1.101215392464636,
+ 1.0497984175353638)
+</code></pre>
+<p><a class="glightbox" href="output_16_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_16_1.png" /></a></p>
+<p>The angle of each vector can be computed by taking the arctan of the x and y components of vector 1 and 2.  Plot the result.</p>
+<pre><code class="language-python">theta_v1 = numpy.arctan2(v1[:,1],v1[:,0])
+theta_v2 = numpy.arctan2(v2[:,1],v2[:,0])
+plt.plot(t,theta_v1)
+plt.plot(t,theta_v2)
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414d2c350&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_18_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_18_1.png" /></a></p>
+<p>The issue is that the theta value recovered jumps when it wraps around <span class="arithmatex">\(0\)</span> or <span class="arithmatex">\(2\pi\)</span>. We can massage the data to "unwrap this value</p>
+<pre><code class="language-python">def unwrap(theta,period):
+    theta2 = [theta[0]]
+    last_theta = theta[0]
+    mem = 0
+
+    for t_ii,item in zip(t[1:],theta[1:]):
+        dt = (item - last_theta)
+        if dt&gt;(period/2):
+            mem-=period
+        if dt&lt;(-period/2):
+            mem+=period
+        theta2.append(item+mem)
+        last_theta = item
+
+    theta2 = numpy.array(theta2)
+    return theta2
+</code></pre>
+<pre><code class="language-python">theta_v1_u = unwrap(theta_v1,2*math.pi)
+theta_v2_u = unwrap(theta_v2,2*math.pi)
+</code></pre>
+<p>By subtracting the initial values for theta_1 and theta_2 we obtain two guesses for the same angle value.</p>
+<pre><code class="language-python">theta_v1_u-=theta_v1_u.min()
+theta_v2_u-=theta_v2_u.min()
+</code></pre>
+<p>Plot the corrected values</p>
+<pre><code class="language-python">plt.plot(t,theta_v1_u)
+plt.plot(t,theta_v2_u)
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414cf57d0&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_25_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_25_1.png" /></a></p>
+<p>Compute the average of these two samples.  Adding even more points to this analysis would give us a more accurate measurement of theta.</p>
+<pre><code class="language-python">theta_u = (theta_v1_u+theta_v2_u)/2
+plt.plot(t,theta_v1_u,'b:')
+plt.plot(t,theta_v2_u,'b:')
+plt.plot(t,theta_u,'r-')
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe4142efcd0&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_27_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_27_1.png" /></a></p>
+<p>Out of curiosity, what is the maximum value of our guessed value of theta?</p>
+<pre><code class="language-python">theta_u.max()*180/math.pi
+</code></pre>
+<pre><code>180.13261077941166
+</code></pre>
+<p>Wow!</p>
+<h2 id="guessing-the-input-signal">Guessing the input signal</h2>
+<p>Because of the informal nature of the experiment, it is hard to capture the actual PWM signal and compare against the output motion of our servo.  To make a good guess, however, we can reconstruct the step signal sent by the ESP32 and place it one time-step in front of any observed motion in the frames.</p>
+<p>First, we make a filter to only look at data values less than a second, just to zoom in on the first transition</p>
+<pre><code class="language-python">time_filter = t&lt;1
+</code></pre>
+<p>We then find the index of the first point in time where theta starts moving in order to guess the time-delay of our first command signal.  We find it hueristically by finding the theta value that more than 1% of the full range of observed thetas from min(theta), starting at t=0.  We save that index as <code>jj</code>, and identify the starting time, <code>t_0</code>, using the index</p>
+<pre><code class="language-python">jj = theta_u[time_filter] &gt; (theta_u[time_filter].max() - theta_u[time_filter].min())*.01 + theta_u[time_filter].min()
+t_0_kk = (t[time_filter][jj]).idxmin() 
+t_0 = t[t_0_kk]
+t_0
+</code></pre>
+<pre><code>0.5015946
+</code></pre>
+<p>We then plot the moment motion starts on top of the adjusted theta values:</p>
+<pre><code class="language-python">plt.plot(t[time_filter],theta_u[time_filter])
+plt.plot(t[t_0_kk],theta_u[t_0_kk],'ro')
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414d22810&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_36_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_36_1.png" /></a></p>
+<p>This means the signal must have been sent at least one time-step before this.  Maybe more, but the best-case scenario for lag would be one frame of video.</p>
+<p>Lets create a function that can generate a step function with the following parameters</p>
+<ul>
+<li><code>A</code>: amplitude</li>
+<li><code>f</code>: frequency</li>
+<li><code>w</code>: width (as a fraction of the full time step) of the positive portion of the square wave</li>
+<li><code>b</code>: y-offset</li>
+</ul>
+<pre><code class="language-python">A = math.pi
+f = .5
+w = .5
+b = 0
+
+def square(t,A,f,w,b,t_0):
+    y = (t-t_0)*f 
+    y = y%1
+    y = (y&lt;w)*1
+    y = A*y +b
+    return y
+</code></pre>
+<pre><code class="language-python">y = square(t,A,f,w,b,t_0)
+plt.plot(t[time_filter],theta_u[time_filter])
+plt.plot(t[time_filter],y[time_filter])
+plt.plot(t[t_0_kk],theta_u[t_0_kk],'ro')
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414371a10&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_39_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_39_1.png" /></a></p>
+<p>Now lets check our results over all the collected data</p>
+<pre><code class="language-python">plt.plot(t,y)
+plt.plot(t,theta_u)
+</code></pre>
+<pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe41414f850&gt;]
+</code></pre>
+<p><a class="glightbox" href="output_41_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_41_1.png" /></a></p>
+<p>it looks good!  Now let's save some of our work for use in other code</p>
+<pre><code class="language-python">data = {}
+data['A'] = A
+data['f'] = f
+data['b'] = b
+data['w'] = w
+data['t'] = t
+data['t_0'] = t_0
+data['theta_u'] = theta_u
+import yaml
+with open('servo_data_collection.yml','w') as f:
+    yaml.dump(data,f)
+</code></pre>
 
 
 
@@ -3364,12 +3915,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit"], "search": "../../../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
