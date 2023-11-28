@@ -3787,37 +3787,44 @@ def run_sim(kp,b_act,render=False):
         data.ctrl = [torque]
         return
 
-    mujoco.set_mjcb_control(mycontroller1)
+    try:
+        mujoco.set_mjcb_control(mycontroller1)
 
-    duration = t_data[-1]  # (seconds)
-    framerate = 30  # (Hz)
-    data_rate = 1/dt_data
+        duration = t_data[-1]  # (seconds)
+        framerate = 30  # (Hz)
+        data_rate = 1/dt_data
 
-    q = []
-    w = []
-    t = []
-    frames = []
+        q = []
+        w = []
+        t = []
+        frames = []
 
-    mujoco.mj_resetData(model, data)
+        mujoco.mj_resetData(model, data)
 
-    while data.time &lt; duration:
-        # print(data.time)
-        mujoco.mj_step(model, data)
-        if len(frames) &lt; data.time * framerate:
-            renderer.update_scene(data)
-            pixels = renderer.render()
-            frames.append(pixels)
-        if len(t) &lt; data.time * data_rate:
+        while data.time &lt; duration:
             # print(data.time)
-            q.append(data.qpos.copy())
-            w.append(data.qvel.copy())
-            t.append(data.time)
-    if render:
-        media.show_video(frames, fps=framerate)
+            mujoco.mj_step(model, data)
+            if len(frames) &lt; data.time * framerate:
+                renderer.update_scene(data)
+                pixels = renderer.render()
+                frames.append(pixels)
+            if len(t) &lt; data.time * data_rate:
+                # print(data.time)
+                q.append(data.qpos.copy())
+                w.append(data.qvel.copy())
+                t.append(data.time)
+        if render:
+            media.show_video(frames, fps=framerate)
 
-    t = numpy.array(t)
-    q = numpy.array(q)
-    q = q[:len(q_data)]
+        mujoco.set_mjcb_control(None)
+
+        t = numpy.array(t)
+        q = numpy.array(q)
+        q = q[:len(q_data)]
+
+    except:
+
+        mujoco.set_mjcb_control(None)
 
     return t, q
 </code></pre>
