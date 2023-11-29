@@ -3900,6 +3900,9 @@
 your browser does not support this video tag
 </video>
 
+<blockquote>
+<p><strong>Note:</strong> I have updated the mass of the body</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -3912,7 +3915,7 @@ your browser does not support this video tag
 <tr>
 <td><span class="arithmatex">\(m\)</span></td>
 <td>mass of body</td>
-<td style="text-align: right;">.05 kg</td>
+<td style="text-align: right;">.01 kg</td>
 </tr>
 <tr>
 <td><span class="arithmatex">\(w\)</span></td>
@@ -3982,8 +3985,13 @@ your browser does not support this video tag
 <p>Use the code and parameters derived in class for modeling an RC servo</p>
 <p>Use two approaches to study the effect of stiffness on jump height</p>
 <ol>
-<li>Sweep through leg stiffness values from 1e-4 to 1e2.  Plot the maximum z height of the robot as a function of k.</li>
-<li>program a minimization function to obtain the value that maximizes jump height</li>
+<li>
+<p>Sweep through leg stiffness values from 1e-3 to 1e1.  Plot the maximum z height of the robot as a function of k.
+    &gt; <strong>Note:</strong> I narrowed this range due to instabilities at k&gt; 1e1</p>
+</li>
+<li>
+<p>program a minimization function to obtain the value that maximizes jump height</p>
+</li>
 </ol>
 <h2 id="hints">Hints</h2>
 <ul>
@@ -4011,6 +4019,12 @@ your browser does not support this video tag
 
 &lt;/contact&gt;
 </code></pre>
+</li>
+<li>
+<p>When copying over the controller code from the servo example, it is critical to ensure you remap the joint number to match the servo's joint index in your new model</p>
+<blockquote>
+<p><strong>Note:</strong> This advice was recently added</p>
+</blockquote>
 </li>
 </ul>
 <h2 id="submission">Submission</h2>
