@@ -4130,6 +4130,8 @@
   
 
 
+  <h1>Lecture 13 Notes</h1>
+
 <h2 id="agenda">Agenda</h2>
 <ul>
 <li>Finish HW2 Discussion</li>
@@ -4225,8 +4227,8 @@ code --install-extension Pycom.pymakr-preview</code></p>
 <p><a class="glightbox" href="servos_schem.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="servos_schem.png" style="height:200px;display:block;margin-left:auto;margin-right:auto;" /></a></p>
 <p><a class="glightbox" href="servos_bb.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="servos_bb.png" style="height:200px;display:block;margin-left:auto;margin-right:auto;" /></a></p>
 <hr />
-<h1 id="code-examples">Code Examples</h1>
-<h2 id="example-1">Example 1</h2>
+<h2 id="code-examples">Code Examples</h2>
+<h3 id="example-1">Example 1</h3>
 <pre><code class="language-python">from machine import Pin, PWM
 from time import sleep
 frequency = 50
@@ -4241,7 +4243,7 @@ while(True):
     servo1.duty(range_high)
     sleep(1)
 </code></pre>
-<h2 id="example-2">Example 2</h2>
+<h3 id="example-2">Example 2</h3>
 <pre><code class="language-python">from machine import Pin, PWM
 from time import sleep
 frequency = 50
@@ -4265,7 +4267,7 @@ while(True):
     servo4.duty(range_high)
     sleep(1)
 </code></pre>
-<h2 id="example-3">Example 3</h2>
+<h3 id="example-3">Example 3</h3>
 <p>In this example, we create an <code>angle_to_pwm()</code> function that converts a desired angle in terms of the servo's angular range to a PWM range</p>
 <pre><code class="language-python">from machine import Pin, PWM
 from time import sleep
