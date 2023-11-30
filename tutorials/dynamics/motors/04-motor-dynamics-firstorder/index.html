@@ -3997,6 +3997,7 @@ while data.time &lt; duration:
         w.append(data.qvel.copy())
         t.append(data.time)
 
+mujoco.set_mjcb_control(None)
 
 media.show_video(frames, fps=framerate)
 
