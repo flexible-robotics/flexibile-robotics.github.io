@@ -634,6 +634,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instructions" class="md-nav__link">
     Instructions
   </a>
@@ -3839,6 +3846,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    References
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#instructions" class="md-nav__link">
     Instructions
   </a>
@@ -3980,6 +3994,12 @@ your browser does not support this video tag
 | $k_{p}$     | control gain (obtained experimentally)          | $1.404 \times 10^{-6}$ | 
 -->
 
+<h2 id="references">References</h2>
+<ul>
+<li><a href="/lecture-notes/lecture-11/">Lecture 11 Notes</a></li>
+<li><a href="/lecture-notes/lecture-12/">Lecture 12 Notes</a></li>
+<li><a href="/tutorials/dynamics/motors/07-servo-fitting/">Servo Fitting Example</a></li>
+</ul>
 <h2 id="instructions">Instructions</h2>
 <p>Using MuJoCo, find the ideal spring stiffness for this system that permits the body's center of mass to reach the highest point using two approaches.</p>
 <p>Use the code and parameters derived in class for modeling an RC servo</p>
@@ -4021,9 +4041,11 @@ your browser does not support this video tag
 
 &lt;/contact&gt;
 </code></pre>
-</li>
-<li>
-<p>When copying over the controller code from the servo example, it is critical to ensure you remap the joint number to match the servo's joint index in your new model</p>
+<ul>
+<li>Remember to add joint limits to pin joint 1 (not joint 2) at 0 and 180 degrees.  This will ensure that your servo joint doesn't hit the body.  It also reflects the actual joint limits of the servo.</li>
+<li>When you copy over the joint controller code from my servo fitting example, update the position / velocity joint index to 1 from 0.  The 0th joint is the slider.  the 1st joint is the servo, in our current model.</li>
+<li>When copying over the controller code from the servo example, it is critical to ensure you remap the joint number to match the servo's joint index in your new model</li>
+</ul>
 <blockquote>
 <p><strong>Note:</strong> This advice was recently added</p>
 </blockquote>

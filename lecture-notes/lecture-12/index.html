@@ -3909,6 +3909,12 @@ def mycontroller2(model, data):
 <p>which would get connected to the simulator like this:</p>
 <pre><code class="language-python">mujoco.set_mjcb_control(mycontroller2)
 </code></pre>
+<blockquote>
+<p><strong>Note:</strong> Remember to unset the controller if you are running the mujoco simulation repeatedly in a loop and redefining the controller function.  Put </p>
+<p><code>python
+mujoco.set_mjcb_control(None)</code></p>
+<p>immediately after the loop finishes.  Also, if your simulation errors out, you will want to add that line to any <code>try</code> / <code>except</code> pairs.</p>
+</blockquote>
 <h2 id="constraints">Constraints</h2>
 <ul>
 <li>defined by initial XML config not initial joint pos</li>
