@@ -4212,7 +4212,13 @@
   <h1>A06: System Prototyping & Validation</h1>
 
 <h2 id="introduction">Introduction</h2>
-<p>The purpose of this assignment is to determine, from a first-principles model, the static and dynamic friction constants, as well as the contact parameters that effect the same behavior in simulation.  You will measure the friction between a selected material and the floor experimentally.</p>
+<p>The purpose of this assignment is to obtain friction parameters in MuJoCo that best capture real-world scenario.  In this assignment you will:</p>
+<ul>
+<li>Conduct an experiment to measure the friction between a selected material and the floor.</li>
+<li>Obtain the static and dynamic friction coefficients between two materials from first principles</li>
+<li>Construct a MuJoCo model of the same experiment</li>
+<li>Identify the friction parameters in MuJoco that reproduce the behavior you observed</li>
+</ul>
 <h2 id="instructions">Instructions</h2>
 <p><a class="glightbox" href="../friction2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../friction2.png" /></a></p>
 <ol>
@@ -4230,30 +4236,42 @@
 <li>Measure the height of your floor and compute the angle</li>
 <li>Reduce the angle until your sample slides at constant velocity down the slope.</li>
 <li>Measure the height of your floor and compute the angle</li>
-<li>Create a free-body diagram of the system in its inclined state<ol>
-<li>Calculate the friction constants (dynamic and static) that result in a force balance given the mass</li>
-</ol>
+<li>Create a free-body diagram of the system in its inclined state.  Calculate the friction constants respectively, where 1) the force balance between normal/tangential forces is broken and sliding is initiated (static friction coefficient), and 2) where a constant sliding velocity is observed (dynamic friction coefficient).</li>
+<li>Create a simulation of the same scenario in MuJoCo.  Your model should accept different ramp angles and should set the initial height and velocity of the box appropriately.<ul>
+<li>Use the same angle you determined for dynamic friction from the experiment.</li>
+<li>Your box should begin aligned with the ramp's angle, at a height such that it does not drop down.</li>
+<li>You should initialize the velocity of the box such that it slides down the ramp at 1 m/s</li>
+<li>Identify the value of dynamic friction that maintains a constant sliding velocity (given an initial condition of velocity = 1 m/s) down the ramp.</li>
+</ul>
 </li>
-<li>Create the same simulation in mujoco<ol>
-<li>use the same angle you determined from the experiment</li>
-<li>twiddle the value of friction until you achieve the same results given an initial condition of velocity = 1 m/s down the slope, with the material located on to the angled material.</li>
-</ol>
-</li>
+<li>Compute and plot the speed of the box over time to verify your results.</li>
 </ol>
 <h2 id="submission">Submission</h2>
 <p>Include:</p>
 <ol>
 <li>your calculations</li>
-<li>your free body diagram</li>
+<li>your finished free body diagram</li>
 <li>a description of each step you completed</li>
-<li>your code<ol>
+<li>
+<p>your code</p>
+<ol>
 <li>include comments</li>
 <li>include plots</li>
 <li>include renderings</li>
-<li>include inline discussion</li>
+<li>
+<p>include inline discussion about <em>why</em> you made specific decisions.  </p>
+<blockquote>
+<p>You should be able to defend each step in your code and </p>
+</blockquote>
+</li>
+<li>
+<p>Analysis and discussion of your results.  Was the value for sliding friction you obtained in MuJoCo the same as your calculations?  Was it in between the static and dynamic values?</p>
+</li>
 </ol>
 </li>
-<li>images of your experimental setup from multiple angles<ol>
+<li>
+<p>images of your experimental setup from multiple angles</p>
+<ol>
 <li>include shots of your material </li>
 <li>include shots of the angle mass</li>
 </ol>
