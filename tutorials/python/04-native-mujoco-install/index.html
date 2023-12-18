@@ -4141,6 +4141,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-mujoco" class="md-nav__link">
     Using mujoco
   </a>
@@ -4291,6 +4298,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#mac" class="md-nav__link">
+    Mac
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#using-mujoco" class="md-nav__link">
     Using mujoco
   </a>
@@ -4360,6 +4374,14 @@ conda deactivate &amp;&amp; conda activate mujoco
 <blockquote>
 <p>MUJOCO_GL=egl and PYOPENGL_PLATFORM=egl is no longer working</p>
 </blockquote>
+<h2 id="mac">Mac</h2>
+<pre><code class="language-bash">conda create -y -n mujoco
+conda activate mujoco
+conda install -y python jupyterlab scipy ffmpeg
+conda install -y sympy pandas
+pip install mujoco mediapy mujoco-python-viewer pygmsh
+conda install -y git pandoc #extra tools if you need them
+</code></pre>
 <h2 id="using-mujoco">Using mujoco</h2>
 <p>Before coding in your new mujoco environment, you will need to activate it.</p>
 <pre><code class="language-bash">conda activate mujoco
