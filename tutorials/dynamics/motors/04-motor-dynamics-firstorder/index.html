@@ -4475,7 +4475,7 @@ plt.legend(a,['$q_{motor}$','$q_{load}$'])
 
 <pre><code>&lt;matplotlib.legend.Legend at 0x7f541b016580&gt;
 </code></pre>
-<p><a class="glightbox" href="output_11_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_11_2.png" /></a></p>
+<p><a class="glightbox" href="output_11_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_11_2.png" /></a></p>
 <pre><code class="language-python">a = plt.plot(t,w)    
 plt.legend(a,['$\omega_{motor}$','$\omega_{load}$'])
 plt.xlabel('t (s)')
@@ -4483,7 +4483,7 @@ plt.ylabel('$\omega$ (rad/s)')
 </code></pre>
 <pre><code>Text(0, 0.5, '$\\omega$ (rad/s)')
 </code></pre>
-<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_12_1.png" /></a></p>
+<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_12_1.png" /></a></p>
 <h2 id="plotting-current">Plotting Current</h2>
 <p>In the first order momdel, the dynamics of the electrical side are ignored.  Instead, the change of current is directly linked to the change in speed and the back-EMF of the motor.  This simulation, however, took much less time to run than the second-order model.</p>
 <p>If the time cost of simulating with <span class="arithmatex">\(t_s=1\times10^{-6}\)</span> is too high, consider this approximation.</p>
@@ -4494,7 +4494,7 @@ plt.ylabel('current (A)')
 </code></pre>
 <pre><code>Text(0, 0.5, 'current (A)')
 </code></pre>
-<p><a class="glightbox" href="output_14_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_14_1.png" /></a></p>
+<p><a class="glightbox" href="output_14_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_14_1.png" /></a></p>
 <pre><code class="language-python">data = {}
 data['t'] = t
 data['q'] = q

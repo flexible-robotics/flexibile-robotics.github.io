@@ -4320,7 +4320,7 @@ plt.axis('equal')
  -1.101215392464636,
  1.0497984175353638)
 </code></pre>
-<p><a class="glightbox" href="output_16_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_16_1.png" /></a></p>
+<p><a class="glightbox" href="output_16_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_16_1.png" /></a></p>
 <p>The angle of each vector can be computed by taking the arctan of the x and y components of vector 1 and 2.  Plot the result.</p>
 <pre><code class="language-python">theta_v1 = numpy.arctan2(v1[:,1],v1[:,0])
 theta_v2 = numpy.arctan2(v2[:,1],v2[:,0])
@@ -4329,7 +4329,7 @@ plt.plot(t,theta_v2)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414d2c350&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_18_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_18_1.png" /></a></p>
+<p><a class="glightbox" href="output_18_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_18_1.png" /></a></p>
 <p>The issue is that the theta value recovered jumps when it wraps around <span class="arithmatex">\(0\)</span> or <span class="arithmatex">\(2\pi\)</span>. We can massage the data to "unwrap this value</p>
 <pre><code class="language-python">def unwrap(theta,period):
     theta2 = [theta[0]]
@@ -4361,7 +4361,7 @@ plt.plot(t,theta_v2_u)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414cf57d0&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_25_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_25_1.png" /></a></p>
+<p><a class="glightbox" href="output_25_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_25_1.png" /></a></p>
 <p>Compute the average of these two samples.  Adding even more points to this analysis would give us a more accurate measurement of theta.</p>
 <pre><code class="language-python">theta_u = (theta_v1_u+theta_v2_u)/2
 plt.plot(t,theta_v1_u,'b:')
@@ -4370,7 +4370,7 @@ plt.plot(t,theta_u,'r-')
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe4142efcd0&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_27_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_27_1.png" /></a></p>
+<p><a class="glightbox" href="output_27_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_27_1.png" /></a></p>
 <p>Out of curiosity, what is the maximum value of our guessed value of theta?</p>
 <pre><code class="language-python">theta_u.max()*180/math.pi
 </code></pre>
@@ -4396,7 +4396,7 @@ plt.plot(t[t_0_kk],theta_u[t_0_kk],'ro')
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414d22810&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_36_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_36_1.png" /></a></p>
+<p><a class="glightbox" href="output_36_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_36_1.png" /></a></p>
 <p>This means the signal must have been sent at least one time-step before this.  Maybe more, but the best-case scenario for lag would be one frame of video.</p>
 <p>Lets create a function that can generate a step function with the following parameters</p>
 <ul>
@@ -4424,14 +4424,14 @@ plt.plot(t[t_0_kk],theta_u[t_0_kk],'ro')
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe414371a10&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_39_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_39_1.png" /></a></p>
+<p><a class="glightbox" href="output_39_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_39_1.png" /></a></p>
 <p>Now lets check our results over all the collected data</p>
 <pre><code class="language-python">plt.plot(t,y)
 plt.plot(t,theta_u)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7fe41414f850&gt;]
 </code></pre>
-<p><a class="glightbox" href="output_41_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_41_1.png" /></a></p>
+<p><a class="glightbox" href="output_41_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_41_1.png" /></a></p>
 <p>it looks good!  Now let's save some of our work for use in other code</p>
 <pre><code class="language-python">data = {}
 data['A'] = A

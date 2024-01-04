@@ -4276,7 +4276,7 @@
   <h1>Lecture 8 Notes</h1>
 
 <h2 id="example-1-transforming-points">Example 1: Transforming Points</h2>
-<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\0\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=90^{\circ}\)</span>.  We form two quaternions:</p>
 <div class="arithmatex">\[p=2i+1j+0k\]</div>
 <div class="arithmatex">\[r=\cos\left(\frac{\theta}{2}\right) +\sin\left(\frac{\theta}{2}\right)(1i+0j+0k)\]</div>
@@ -4284,7 +4284,7 @@
 <div class="arithmatex">\[p'=rpr^*\]</div>
 <p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}2\\0\\1\end{pmatrix}\)</span>.  </p>
 <h2 id="example-2-transforming-points">Example 2: Transforming Points</h2>
-<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector <span class="arithmatex">\(\vec{p}=\begin{pmatrix}2\\1\\0\end{pmatrix}\)</span> that we want to rotate about the vector <span class="arithmatex">\(\vec{r}=\begin{pmatrix}1\\1\\0\end{pmatrix}\)</span> by the amount <span class="arithmatex">\(\theta=180^{\circ}\)</span>.  We form two quaternions:</p>
 <div class="arithmatex">\[p=2i+1j+0k\]</div>
 <div class="arithmatex">\[r=\cos\left(\frac{\theta}{2}\right) +\sin\left(\frac{\theta}{2}\right)\frac{(1i+1j+0k)}{\sqrt{2}}\]</div>
@@ -4292,8 +4292,8 @@
 <div class="arithmatex">\[p'=rpr^*\]</div>
 <p>The result in vector notation is <span class="arithmatex">\(\vec{p}'=\begin{pmatrix}1\\2\\0\end{pmatrix}\)</span>.  </p>
 <h2 id="example-3-compund-rotations">Example 3: Compund Rotations</h2>
-<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a>
-<a class="glightbox" href="PXL_20231012_133010905.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133010905.MP.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_133019883.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133019883.jpg" style="height:200px;" /></a>
+<a class="glightbox" href="PXL_20231012_133010905.MP.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_133010905.MP.jpg" style="height:200px;" /></a></p>
 <p>Say we have a vector v representing a robot arm, initially expressed in its native (non-inertial) reference frames, as in</p>
 <div class="arithmatex">\[\vec{v}_1 = l_b \hat{b}_x\]</div>
 <div class="arithmatex">\[\vec{v}_2 = l_c \hat{c}_x\]</div>
@@ -4319,7 +4319,7 @@
  = &amp;r_{ab}(l_b i + r_{bc}(l_c i)r_{bc}^*)r_{ab}^*
 \end{align}\]</div>
 <h2 id="discussion-finding-the-internal-jacobian-for-a-four-bar-linkage">Discussion: Finding the internal Jacobian for a four-bar linkage</h2>
-<p><a class="glightbox" href="PXL_20231012_142045721.MP.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142045721.MP.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_142045721.MP.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142045721.MP.jpg" style="height:200px;" /></a></p>
 <p>Consider the above four-bar linkage, which, without additional constraint equations, is a chain of four links from <span class="arithmatex">\(\vec{p}_1\)</span> to <span class="arithmatex">\(\vec{p}_4\)</span>, and back to <span class="arithmatex">\(\vec{p}_1'\)</span>. The incremental rotations about <span class="arithmatex">\(\hat{a}_z\)</span> between each link are described by <span class="arithmatex">\(\alpha_1\)</span> - <span class="arithmatex">\(\alpha_4\)</span>.  It should be pretty clear that you need to add  constraints using the expressions for <span class="arithmatex">\(\vec{p}_1'\)</span> and <span class="arithmatex">\(\vec{p}_1\)</span> that "glues" (or constrains) <span class="arithmatex">\(\vec{p}_1'\)</span> to <span class="arithmatex">\(\vec{p}_1\)</span>.  In this case, we know the length of <span class="arithmatex">\(\vec{p}_1'-\vec{p}_1\)</span> should be <span class="arithmatex">\(0\)</span>, or</p>
 <div class="arithmatex">\[\vec{p}_1'-\vec{p}_1=\vec{0}\]</div>
 <p>But this is a vector expression, not a scalar expression, which makes it hard to use in solvers.  So we can dot this expression with <span class="arithmatex">\(\hat{a}_x\)</span> and <span class="arithmatex">\(\hat{a}_y\)</span> in order to decompose this vector expression into two independent scalar expressions.</p>
@@ -4409,7 +4409,7 @@ j_{31}&amp;j_{32}&amp;j_{33}&amp;j_{34}
 }_\dot{q_d}\\
 \end{align}\]</div>
 <h2 id="board-images">Board Images</h2>
-<p><a class="glightbox" href="PXL_20231012_142053542.jpg" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142053542.jpg" style="height:200px;" /></a></p>
+<p><a class="glightbox" href="PXL_20231012_142053542.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="PXL_20231012_142053542.jpg" style="height:200px;" /></a></p>
 <p>Ways to specify <span class="arithmatex">\(\alpha_1\)</span></p>
 <h2 id="code">Code</h2>
 <ul>

@@ -4383,7 +4383,7 @@ video_height = 300 -->
 <h2 id="particles-and-point-masses">Particles and Point Masses</h2>
 <p>Particles can be considered items with mass but no inertia.  They are the basis for many formula and definitions in physics, but Mujoco does not support them out of the box.</p>
 <h2 id="motion-of-a-pendulum-w-point-mass">Motion of a pendulum w/ point mass</h2>
-<p><a class="glightbox" href="pendulum.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="pendulum.png" style="max-height:2in;background-color:#FFFFFF;" /></a></p>
+<p><a class="glightbox" href="pendulum.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="pendulum.png" style="max-height:2in;background-color:#FFFFFF;" /></a></p>
 <div class="arithmatex">\[\frac{d^2\theta}{dt^2} = \frac{-g\cos{\theta}}{l}\]</div>
 <div class="arithmatex">\[\frac{d\theta}{dt} = \dot\theta\]</div>
 <h2 id="state-space-equations">State Space Equations</h2>
@@ -4419,7 +4419,7 @@ except RuntimeError:
     pass
 </code></pre>
 <h2 id="results">Results</h2>
-<p><a class="glightbox" href="output_3_0.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="output_3_0.png" /></a></p>
+<p><a class="glightbox" href="output_3_0.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="output_3_0.png" /></a></p>
 <h2 id="conclusions">Conclusions</h2>
 <p>Because particles don't have any geometry other than mass at a single point, they cannot be considered to have inertia, nor can they be thought to rotate.  <strong>Mujoco doesn't like this</strong> because it doesn't model particles separately, and the mass matrix it tries to invert would thus have a row of zeros.</p>
 <blockquote>
@@ -4486,7 +4486,7 @@ except RuntimeError:
 <video src="pendulum.mp4"  controls/>
 
 <h2 id="plot">Plot</h2>
-<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="output_12_1.png" /></a></p>
+<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="output_12_1.png" /></a></p>
 
 
 

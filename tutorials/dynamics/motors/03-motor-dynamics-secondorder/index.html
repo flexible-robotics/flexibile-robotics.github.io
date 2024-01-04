@@ -4486,7 +4486,7 @@ plt.legend(a,['$q_{motor}$','$q_{load}$'])
 </code></pre>
 <pre><code>&lt;matplotlib.legend.Legend at 0x7f0b7e83ffa0&gt;
 </code></pre>
-<p><a class="glightbox" href="output_9_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_9_1.png" /></a></p>
+<p><a class="glightbox" href="output_9_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_9_1.png" /></a></p>
 <pre><code class="language-python">a = plt.plot(t,w[:,1:])    
 plt.legend(a,['$\omega_{motor}$','$\omega_{load}$'])
 plt.xlabel('t (s)')
@@ -4494,7 +4494,7 @@ plt.ylabel('$\omega$ (rad/s)')
 </code></pre>
 <pre><code>Text(0, 0.5, '$\\omega$ (rad/s)')
 </code></pre>
-<p><a class="glightbox" href="output_10_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_10_1.png" /></a></p>
+<p><a class="glightbox" href="output_10_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_10_1.png" /></a></p>
 <h2 id="plotting-current">Plotting Current</h2>
 <p>While the dynamics of current are readily observed with its sharp increase near t=0, the slope of the current as a function of time in the rest of the plot is far less pronounced.  The simulation, however, took much longer to run.  </p>
 <p>If the time cost of simulating with <span class="arithmatex">\(t_s=1\times10^{-6}\)</span> is too high, consider the first-order approximation.</p>
@@ -4504,7 +4504,7 @@ plt.ylabel('current (A)')
 </code></pre>
 <pre><code>Text(0, 0.5, 'current (A)')
 </code></pre>
-<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_12_1.png" /></a></p>
+<p><a class="glightbox" href="output_12_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="output_12_1.png" /></a></p>
 <pre><code class="language-python">data = {}
 data['t'] = t[::100]
 data['q'] = q[::100]

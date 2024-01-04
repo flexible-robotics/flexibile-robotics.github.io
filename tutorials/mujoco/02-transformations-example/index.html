@@ -4313,7 +4313,7 @@
     &lt;/worldbody&gt;
 &lt;/mujoco&gt;
 </code></pre>
-<p><a class="glightbox" href="transformation1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation1.png" /></a></p>
+<p><a class="glightbox" href="transformation1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation1.png" /></a></p>
 <p>In the xml above are two bodies.  The central body is placed at 0,0,0 and is not rotated, with x,y, and z axes shown by red, green, and blue boxes, respectively.  The second body to its right is translated to point (1.5,0,0) and rotated about the y-axis by 45 degrees.  What we see is that the translation occurred first, in the world frame, and the rotation occurred afterwards.  Otherwise, the second body would have been translated along a 45-degree angle direction as well.</p>
 <h2 id="question_1">Question</h2>
 <p><strong>Q:</strong> How does the parent-child relationship work in mujoco's xml?<br />
@@ -4338,7 +4338,7 @@
     &lt;/worldbody&gt;
 &lt;/mujoco&gt;
 </code></pre>
-<p><a class="glightbox" href="transformation2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation2.png" /></a></p>
+<p><a class="glightbox" href="transformation2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="transformation2.png" /></a></p>
 <p>In this second case study, the interior geoms of the second body are translated along the x axis by 1.5.  The parent body is rotated as before, with no translation.  This shows us that <em>a child's transformation is relative to its parent's frame, not to the global frame.</em></p>
 <h2 id="final">Final</h2>
 <p>Download the <a href="transformations-2.ipynb">final version</a> of today's transformations example</p>

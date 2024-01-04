@@ -4379,12 +4379,12 @@ j_{m1} &amp; j_{m2} &amp; \ldots &amp; j_{mn}\\
 <p><strong>Warning:</strong> You can't take the derivative of vectors in moving / rotating frames without accounting for that frame's motion in the base frame.</p>
 </blockquote>
 <h2 id="physical-meaning">Physical Meaning</h2>
-<p><a class="glightbox" href="../gears.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../gears.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../gears.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../gears.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <div class="arithmatex">\[\dot{q}_2 = J\dot{q}_1\]</div>
 <div class="arithmatex">\[\tau_1 = J\tau_2\]</div>
 <div class="arithmatex">\[J = \frac{r_1}{r_2}\]</div>
 <h2 id="jacobian">Jacobian</h2>
-<p><a class="glightbox" href="../numerical-jacobian.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../numerical-jacobian.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <div class="arithmatex">\[\dot{x}  = \mathbf{J} \dot{q}\]</div>
 <div class="arithmatex">\[\left[\begin{matrix}\dot{x}\\ \dot{y}\end{matrix}\right]  = \mathbf{J} \left[\begin{matrix}\dot{q}_1\\\dot{q}_2\end{matrix}\right]\]</div>
 <h2 id="virtual-work">Virtual Work</h2>
@@ -4394,17 +4394,17 @@ j_{m1} &amp; j_{m2} &amp; \ldots &amp; j_{mn}\\
 <div class="arithmatex">\[\tau^T  = F^T \mathbf{J}\]</div>
 <div class="arithmatex">\[\tau  = \mathbf{J}^T F\]</div>
 <h2 id="torques-and-forces">Torques and Forces</h2>
-<p><a class="glightbox" href="../jtf.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../jtf.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../jtf.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../jtf.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <p>Forces applied at the end-effector can be related kinematically to torques felt by the motors using the Jacobian</p>
 <h1 id="numerical-jacobians">Numerical Jacobians</h1>
 <h2 id="meaning">Meaning</h2>
-<p><a class="glightbox" href="../numerical-jacobian.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../numerical-jacobian.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <h2 id="process">Process</h2>
-<p><a class="glightbox" href="../numerical-jacobian2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian2.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
-<p><a class="glightbox" href="../numerical-jacobian3.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian3.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../numerical-jacobian2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian2.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../numerical-jacobian3.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian3.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <h1 id="example-derivative-based-jacobians">Example: Derivative-based Jacobians</h1>
 <h2 id="find-end-effector">Find end-effector</h2>
-<p><a class="glightbox" href="../numerical-jacobian4.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian4.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
+<p><a class="glightbox" href="../numerical-jacobian4.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../numerical-jacobian4.png" style="display:block;margin-left:auto;margin-right:auto;height:200px;" /></a></p>
 <div class="arithmatex">\[\begin{array}{c|ccc}\sideset{^{a}}{^{b}}R (\theta_1)&amp; b_x&amp; b_y&amp; b_z\\
 \hline
 a_x &amp;\cos{\theta_1} &amp; -\sin{\theta_1} &amp; 0 \\

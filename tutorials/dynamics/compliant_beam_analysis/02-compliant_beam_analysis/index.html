@@ -4350,7 +4350,7 @@ plt.plot(t,xyz_10_elements[:,-1,2],label='10 elements')
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6ca4137390&gt;]
 </code></pre>
-<p><a class="glightbox" href="../output_6_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_6_1.png" /></a></p>
+<p><a class="glightbox" href="../output_6_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_6_1.png" /></a></p>
 <pre><code class="language-python">ini = [40,.5]
 
 results = []
@@ -4377,7 +4377,7 @@ plt.plot(num_elements_to_try,error_agnostic)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6cb63af090&gt;]
 </code></pre>
-<p><a class="glightbox" href="../output_8_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_8_1.png" /></a></p>
+<p><a class="glightbox" href="../output_8_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_8_1.png" /></a></p>
 <pre><code class="language-python">for nn in num_elements_to_try:
 
     def calc_error_internal(x):
@@ -4409,7 +4409,7 @@ plt.legend()
 </code></pre>
 <pre><code>&lt;matplotlib.legend.Legend at 0x7f6cb6a9a810&gt;
 </code></pre>
-<p><a class="glightbox" href="../output_10_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_10_1.png" /></a></p>
+<p><a class="glightbox" href="../output_10_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_10_1.png" /></a></p>
 <pre><code class="language-python">k_ii = 1/((1/k_total)/num_elements_to_try)
 
 plt.figure()
@@ -4418,7 +4418,7 @@ plt.plot(num_elements_to_try,k_ii)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6cb6564b90&gt;]
 </code></pre>
-<p><a class="glightbox" href="../output_11_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_11_1.png" /></a></p>
+<p><a class="glightbox" href="../output_11_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_11_1.png" /></a></p>
 <pre><code class="language-python">b_ii = 1/((1/b_total)/num_elements_to_try)
 plt.figure()
 plt.plot(results[:,0],results[:,2])
@@ -4426,7 +4426,7 @@ plt.plot(num_elements_to_try,b_ii)
 </code></pre>
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6cb6576fd0&gt;]
 </code></pre>
-<p><a class="glightbox" href="../output_12_1.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_12_1.png" /></a></p>
+<p><a class="glightbox" href="../output_12_1.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_12_1.png" /></a></p>
 <pre><code class="language-python">nn,k_ii,b_ii,error=results[0]
 
 t,xyz = run_sim(num_joints = nn,k_i = k_ii, b_i = b_ii,m_total=1,render=True)
@@ -4442,7 +4442,7 @@ plt.plot(t,xyz[:,-1,2])
 
 <pre><code>[&lt;matplotlib.lines.Line2D at 0x7f6c88718750&gt;]
 </code></pre>
-<p><a class="glightbox" href="../output_13_2.png" data-type="image" data-width="100%" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_13_2.png" /></a></p>
+<p><a class="glightbox" href="../output_13_2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="png" src="../output_13_2.png" /></a></p>
 <pre><code class="language-python">
 </code></pre>
 
