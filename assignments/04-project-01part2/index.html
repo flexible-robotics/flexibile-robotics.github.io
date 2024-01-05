@@ -536,13 +536,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#suggestions" class="md-nav__link">
     Suggestions
   </a>
@@ -4299,13 +4292,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#suggestions" class="md-nav__link">
     Suggestions
   </a>
@@ -4361,122 +4347,132 @@
 <li><strong>Modeling and Analysis:</strong> Use your knowledge of the mechanism's motion to estimate the forces, and torques, power requirements, and speed of your system.</li>
 </ul>
 <p><strong><em>Please read this whole assignment first.</em></strong></p>
-<!-- on one or two system models that you can modify to answer your question These will involve arrangements of parallel mechanisms: -->
-
 <h2 id="instructions">Instructions</h2>
-<ol>
-<li>
-<p><strong>Assemble a Specifications Table</strong>  Collect all the physics-based information you have found from your references into one place. A well-formatted table may do, with supplementary figures from literature as needed.  A specifications table is a handy way to collect parameters.  Use SI units.  Example below:</p>
+<p><strong><em>This assignment has not yet been released</em></strong></p>
+<!-- 
+1. **Assemble a Specifications Table**  Collect all the physics-based information you have found from your references into one place. A well-formatted table may do, with supplementary figures from literature as needed.  A specifications table is a handy way to collect parameters.  Use SI units.  Example below:
+
+    | Parameter                    |            Unit | Value Range |    Reference     |
+    | :--------------------------- | --------------: | ----------: | :--------------: |
+    | Total Mass                   |              kg |       .2-.4 |       [1]        |
+    | Maximum Landing Force        |               N |           6 | calculated above |
+    | Maximum Takeoff Force        |               N |           4 |       [2]        |
+    | Average Takeoff acceleration | $\frac{m}{s^2}$ |          13 |       [3]        |
+    | ...                          |             ... |         ... |       ...        |
+
+    1. Make sure what source you got each piece of information from, or whether you calculated it yourself.
+    1. Discuss any changes you made to the values found in your background reading, for safety or performance reasons.
+
+1. **Develop an analogous mechanism** for your source of bio-inspiration in paper or cardboard.
+    1. **Make the mechanism.** It can be cut by hand, but must clearly communicate where motor(s) will be connected, what touches the ground, and be able to move through its proposed range of motion from (only) motion about the actuators. Take pictures of it in multiple configurations of its gait cycle.  
+        * The mechanism should use a link / joint topology and the folding approach for making joints that you have learned from this class.
+        * Consider using parallel and series mechanisms as they are best suited.
+        * Consider both planar and spherical mechanisms as appropriate for your needs.
+        * Consider where to eventually place springs.
+    1. **Draw the proposed mechanism**.   Use a vector drawing program (Inkscape, IPE, Illustrator, Draw.io) or 3D modeling software to ensure a professional result.
+        * Label each reference frame, including your inertial (Newtonian) reference frame.
+        * Include a set of orthonormal basis vectors for each frame $(\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)$. It is best practice to align one of the basis vectors (like $\hat{a}_x$) with each rigid link.
+        * variable names for each state variable $(\theta_1,\theta_2,\dot\theta_1,\dot\theta_2,...)$
+        * geometric values such as link lengths ($l_1,l_2,...$)
+
+        > **Save this figure for reuse later.**  You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.
+
+1. **Develop a kinematic model** for your device using a Python-based script,
+    1. Define all variables and constants (especially if they were not defined in your figure)
+    1. Declare frames and rotation tables
+    1. Create vector descriptions for key points
+    1. Take time-derivatives of position vectors or numerically compute the device throughout its gait cycle.
+    1. Assemble your knowledge of system motion into a Jacobian that maps input velocities to output velocities throughout its gait.
+    1. Identify a set of important mechanism states (or configurations) that represent the system at important parts of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it).
+    1. Plot the system in these states.
+    1. From your biomechanics-based specifications, define one or more estimates for ground reaction forces that the system should be expected to experience.  
+        > Consider including, based on your background research:
+        >
+        > * the force of gravity exerted by the mass of a "payload" or the main body of the robot.
+        > * the acceleration the  system experiences during a typical gait
+        > * ground reaction forces measured from biomechanics studies.
+    1. Calculate the force or torque required at the actuators to satisfy the end-effector force requirements.
+    1. Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.  
+
+        > This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok._
+
+    1. Finally, using the two estimates about force and speed at the input, compute the required  power in this specific state.
+    1. Discussion:
+        1. How many degrees of freedom does your device have?  How many motors?  If the answer is not the same, what determines the state of the remaining degrees of freedom? How did you arrive at that number?
+        1. How did you estimate your expected end-effector forces?
+        1. How did you estimate your expected end-effector speeds?
+
+## Submission
+
+Please include a report with the following
+
+1. The requested steps of the procedure, in paragraph form (no sentence fragments).
+1. Answers to the discussion points above
+1. Plots & Figures
+1. Bibliography in IEEE format
+1. Code - any code created by your team to in the generation of this report.  If you are using a jupyter notebook, to generate the whole report, you can supply your code inline.
+
+Please follow the "Submission Best Practices" document posted the course website.  This assignment should be submitted as a .pdf document and/or a jupyter notebook (.ipynb).  If submitted as a notebook, make sure it is fully compiled.  This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting "Kernel" -->
+<p>"Restart and Run All". Attach a pdf version of the compiled notebook as well.</p>
+<p><em>You will also present your team's design in class</em></p>
+<h2 id="suggestions">Suggestions</h2>
+<ul>
+<li>Be creative in your search terms, and make sure to report the search terms that yielded good results.</li>
+<li>Write down and use the keywords identified from class.</li>
+<li>Collect your references in a bibliography program like Zotero or Mendeley for easier handling. --&gt;</li>
+</ul>
+<h2 id="rubric">Rubric</h2>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Parameter</th>
-<th style="text-align: right;">Unit</th>
-<th style="text-align: right;">Value Range</th>
-<th style="text-align: center;">Reference</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: right;">Points</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Total Mass</td>
-<td style="text-align: right;">kg</td>
-<td style="text-align: right;">.2-.4</td>
-<td style="text-align: center;">[1]</td>
+<td style="text-align: left;">Specifications Table</td>
+<td style="text-align: right;">100</td>
 </tr>
 <tr>
-<td style="text-align: left;">Maximum Landing Force</td>
-<td style="text-align: right;">N</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: center;">calculated above</td>
+<td style="text-align: left;">Mechanism Design</td>
+<td style="text-align: right;">100</td>
 </tr>
 <tr>
-<td style="text-align: left;">Maximum Takeoff Force</td>
-<td style="text-align: right;">N</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: center;">[2]</td>
+<td style="text-align: left;">Modeling and Analysis</td>
+<td style="text-align: right;">100</td>
 </tr>
 <tr>
-<td style="text-align: left;">Average Takeoff acceleration</td>
-<td style="text-align: right;"><span class="arithmatex">\(\frac{m}{s^2}\)</span></td>
-<td style="text-align: right;">13</td>
-<td style="text-align: center;">[3]</td>
-</tr>
-<tr>
-<td style="text-align: left;">...</td>
-<td style="text-align: right;">...</td>
-<td style="text-align: right;">...</td>
-<td style="text-align: center;">...</td>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>300</strong></td>
 </tr>
 </tbody>
 </table>
-<ol>
-<li>Make sure what source you got each piece of information from, or whether you calculated it yourself.</li>
-<li>Discuss any changes you made to the values found in your background reading, for safety or performance reasons.</li>
-</ol>
-</li>
-<li>
-<p><strong>Develop an analogous mechanism</strong> for your source of bio-inspiration in paper or cardboard.</p>
-<ol>
-<li><strong>Make the mechanism.</strong> It can be cut by hand, but must clearly communicate where motor(s) will be connected, what touches the ground, and be able to move through its proposed range of motion from (only) motion about the actuators. Take pictures of it in multiple configurations of its gait cycle.  <ul>
-<li>The mechanism should use a link / joint topology and the folding approach for making joints that you have learned from this class.</li>
-<li>Consider using parallel and series mechanisms as they are best suited.</li>
-<li>Consider both planar and spherical mechanisms as appropriate for your needs.</li>
-<li>Consider where to eventually place springs.</li>
-</ul>
-</li>
-<li>
-<p><strong>Draw the proposed mechanism</strong>.   Use a vector drawing program (Inkscape, IPE, Illustrator, Draw.io) or 3D modeling software to ensure a professional result.</p>
+<h2 id="external-resources">External Resources</h2>
 <ul>
-<li>Label each reference frame, including your inertial (Newtonian) reference frame.</li>
-<li>Include a set of orthonormal basis vectors for each frame <span class="arithmatex">\((\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)\)</span>. It is best practice to align one of the basis vectors (like <span class="arithmatex">\(\hat{a}_x\)</span>) with each rigid link.</li>
-<li>variable names for each state variable <span class="arithmatex">\((\theta_1,\theta_2,\dot\theta_1,\dot\theta_2,...)\)</span></li>
-<li>geometric values such as link lengths (<span class="arithmatex">\(l_1,l_2,...\)</span>)</li>
+<li><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law">https://en.wikipedia.org/wiki/Kleiber%27s_law</a></li>
+<li><a href="/tutorials/misc/developing-a-research-question/">Developing a Research Question</a></li>
+<li>Citation Managers:<ul>
+<li><a href="https://www.mendeley.com/download-desktop-new/">Mendeley Desktop</a></li>
+<li><a href="https://www.zotero.org/">https://www.zotero.org/</a></li>
 </ul>
-<blockquote>
-<p><strong>Save this figure for reuse later.</strong>  You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.</p>
-</blockquote>
 </li>
-</ol>
-</li>
-<li>
-<p><strong>Develop a kinematic model</strong> for your device using a Python-based script,</p>
-<ol>
-<li>Define all variables and constants (especially if they were not defined in your figure)</li>
-<li>Declare frames and rotation tables</li>
-<li>Create vector descriptions for key points</li>
-<li>Take time-derivatives of position vectors or numerically compute the device throughout its gait cycle.</li>
-<li>Assemble your knowledge of system motion into a Jacobian that maps input velocities to output velocities throughout its gait.</li>
-<li>Identify a set of important mechanism states (or configurations) that represent the system at important parts of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it).</li>
-<li>Plot the system in these states.</li>
-<li>From your biomechanics-based specifications, define one or more estimates for ground reaction forces that the system should be expected to experience.<br />
-    &gt; Consider including, based on your background research:
-    &gt;
-    &gt; * the force of gravity exerted by the mass of a "payload" or the main body of the robot.
-    &gt; * the acceleration the  system experiences during a typical gait
-    &gt; * ground reaction forces measured from biomechanics studies.</li>
-<li>Calculate the force or torque required at the actuators to satisfy the end-effector force requirements.</li>
-<li>
-<p>Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.  </p>
-<blockquote>
-<p>This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok._</p>
-</blockquote>
-</li>
-<li>
-<p>Finally, using the two estimates about force and speed at the input, compute the required  power in this specific state.</p>
-</li>
-<li>Discussion:<ol>
-<li>How many degrees of freedom does your device have?  How many motors?  If the answer is not the same, what determines the state of the remaining degrees of freedom? How did you arrive at that number?</li>
-<li>How did you estimate your expected end-effector forces?</li>
-<li>How did you estimate your expected end-effector speeds?</li>
-</ol>
-</li>
-</ol>
+</ul>
+<!-- 
+------------------------
+
+Old Stuff -->
+
+<!-- Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments.  As a team, come up with a mechanism that satisfies your team's need for scope/tractability, manufacturability, and cost. -->
+
+<!-- Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s).  This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass) -->
+
 <!-- The most important pieces of information you can gather at this point are elements like "how much energy is consumed in accomplishing this gait", "What are the forces involved", etc. -->
+
 <!-- 1. What is the total energy used to complete a single locomotion cycle?  What is the power required?  How did you calculate this?
 1. Can you find a reference that tells you how to scale respiration energy across different size animals?
 1. Find the ground reaction forces involved with completing a typical locomotion cycle. -->
-</li>
-</ol>
+
 <!-- 1. Draw the simplest physics representation of the system you can of your proposed mechanical system. How many rigid bodies are there?  How many can be approximated as massless(1/10 of the total mass or less)?  Where are springs located?  Where is the (main) actuator? -->
 
 <!-- The paper model should dimensionally match your code and figures.  -->
@@ -4522,64 +4518,6 @@
 <!--
 1. In your motion path you plotted in step X, what did you plot?  A point?  A link?  More than one point or link?  How many degrees of freedom does it take to represent the motion of that element?
 -->
-
-<h2 id="submission">Submission</h2>
-<p>Please include a report with the following</p>
-<ol>
-<li>The requested steps of the procedure, in paragraph form (no sentence fragments).</li>
-<li>Answers to the discussion points above</li>
-<li>Plots &amp; Figures</li>
-<li>Bibliography in IEEE format</li>
-<li>Code - any code created by your team to in the generation of this report.  If you are using a jupyter notebook, to generate the whole report, you can supply your code inline.</li>
-</ol>
-<p>Please follow the "Submission Best Practices" document posted the course website.  This assignment should be submitted as a .pdf document and/or a jupyter notebook (.ipynb).  If submitted as a notebook, make sure it is fully compiled.  This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting "Kernel" --&gt; "Restart and Run All". Attach a pdf version of the compiled notebook as well.</p>
-<p><em>You will also present your team's design in class</em></p>
-<h2 id="suggestions">Suggestions</h2>
-<ul>
-<li>Be creative in your search terms, and make sure to report the search terms that yielded good results.</li>
-<li>Write down and use the keywords identified from class.</li>
-<li>Collect your references in a bibliography program like Zotero or Mendeley for easier handling.</li>
-</ul>
-<h2 id="rubric">Rubric</h2>
-<table>
-<thead>
-<tr>
-<th style="text-align: left;">Description</th>
-<th style="text-align: right;">Points</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: left;">Specifications Table</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr>
-<td style="text-align: left;">Mechanism Design</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr>
-<td style="text-align: left;">Modeling and Analysis</td>
-<td style="text-align: right;">100</td>
-</tr>
-<tr>
-<td style="text-align: left;"><strong>Total</strong></td>
-<td style="text-align: right;"><strong>300</strong></td>
-</tr>
-</tbody>
-</table>
-<h2 id="external-resources">External Resources</h2>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Kleiber%27s_law">https://en.wikipedia.org/wiki/Kleiber%27s_law</a></li>
-<li><a href="/tutorials/misc/developing-a-research-question/">Developing a Research Question</a></li>
-<li>Citation Managers:<ul>
-<li><a href="https://www.mendeley.com/download-desktop-new/">Mendeley Desktop</a></li>
-<li><a href="https://www.zotero.org/">https://www.zotero.org/</a></li>
-</ul>
-</li>
-</ul>
-<!-- Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments.  As a team, come up with a mechanism that satisfies your team's need for scope/tractability, manufacturability, and cost. -->
-
-<!-- Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s).  This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass) -->
 
 
 

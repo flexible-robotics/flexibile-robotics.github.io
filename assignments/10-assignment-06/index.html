@@ -656,13 +656,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#grading" class="md-nav__link">
     Grading
   </a>
@@ -4285,13 +4278,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#grading" class="md-nav__link">
     Grading
   </a>
@@ -4332,63 +4318,48 @@
 <li>Identify the friction parameters in MuJoco that reproduce the behavior you observed</li>
 </ul>
 <h2 id="instructions">Instructions</h2>
-<p><a class="glightbox" href="../friction2.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../friction2.png" /></a></p>
-<ol>
-<li>
-<p>Cut a sample of material that you will use at the foot</p>
-<blockquote>
-<p><strong>Hint:</strong> It is a good idea to increase the friction at the foot to improve traction with the floor.  Rubber is a good material, but some plastics actually lower the friction.  Try to avoid using "tacky" materials that stick.  You can also try using sharp metal points to increase traction.</p>
-</blockquote>
-</li>
-<li>
-<p>Select your floor material and bring it to class</p>
-</li>
-<li>Set a mass of known weight on top of your material</li>
-<li>Slowly increase the angle of your "floor" until the material begins to slide</li>
-<li>Measure the height of your floor and compute the angle</li>
-<li>Reduce the angle until your sample slides at constant velocity down the slope.</li>
-<li>Measure the height of your floor and compute the angle</li>
-<li>Create a free-body diagram of the system in its inclined state.  Calculate the friction constants respectively, where 1) the force balance between normal/tangential forces is broken and sliding is initiated (static friction coefficient), and 2) where a constant sliding velocity is observed (dynamic friction coefficient).</li>
-<li>Create a simulation of the same scenario in MuJoCo.  Your model should accept different ramp angles and should set the initial height and velocity of the box appropriately.<ul>
-<li>Use the same angle you determined for dynamic friction from the experiment.</li>
-<li>Your box should begin aligned with the ramp's angle, at a height such that it does not drop down.</li>
-<li>You should initialize the velocity of the box such that it slides down the ramp at 1 m/s</li>
-<li>Identify the value of dynamic friction that maintains a constant sliding velocity (given an initial condition of velocity = 1 m/s) down the ramp.</li>
-</ul>
-</li>
-<li>Compute and plot the speed of the box over time to verify your results.</li>
-</ol>
-<h2 id="submission">Submission</h2>
-<p>Include:</p>
-<ol>
-<li>your calculations</li>
-<li>your finished free body diagram</li>
-<li>a description of each step you completed</li>
-<li>
-<p>your code</p>
-<ol>
-<li>include comments</li>
-<li>include plots</li>
-<li>include renderings</li>
-<li>
-<p>include inline discussion about <em>why</em> you made specific decisions.  </p>
-<blockquote>
-<p>You should be able to defend each step in your code and</p>
-</blockquote>
-</li>
-<li>
-<p>Analysis and discussion of your results.  Was the value for sliding friction you obtained in MuJoCo the same as your calculations?  Was it in between the static and dynamic values?</p>
-</li>
-</ol>
-</li>
-<li>
-<p>images of your experimental setup from multiple angles</p>
-<ol>
-<li>include shots of your material</li>
-<li>include shots of the angle mass</li>
-</ol>
-</li>
-</ol>
+<p><strong><em>This assignment has not yet been released</em></strong></p>
+<!-- ![](friction2.png)
+
+1. Cut a sample of material that you will use at the foot
+
+    > **Hint:** It is a good idea to increase the friction at the foot to improve traction with the floor.  Rubber is a good material, but some plastics actually lower the friction.  Try to avoid using "tacky" materials that stick.  You can also try using sharp metal points to increase traction.
+
+1. Select your floor material and bring it to class
+1. Set a mass of known weight on top of your material
+1. Slowly increase the angle of your "floor" until the material begins to slide
+1. Measure the height of your floor and compute the angle
+1. Reduce the angle until your sample slides at constant velocity down the slope.
+1. Measure the height of your floor and compute the angle
+1. Create a free-body diagram of the system in its inclined state.  Calculate the friction constants respectively, where 1) the force balance between normal/tangential forces is broken and sliding is initiated (static friction coefficient), and 2) where a constant sliding velocity is observed (dynamic friction coefficient).
+1. Create a simulation of the same scenario in MuJoCo.  Your model should accept different ramp angles and should set the initial height and velocity of the box appropriately.
+    * Use the same angle you determined for dynamic friction from the experiment.
+    * Your box should begin aligned with the ramp's angle, at a height such that it does not drop down.
+    * You should initialize the velocity of the box such that it slides down the ramp at 1 m/s
+    * Identify the value of dynamic friction that maintains a constant sliding velocity (given an initial condition of velocity = 1 m/s) down the ramp.
+1. Compute and plot the speed of the box over time to verify your results.
+
+## Submission
+
+Include:
+
+1. your calculations
+1. your finished free body diagram
+1. a description of each step you completed
+1. your code
+    1. include comments
+    1. include plots
+    1. include renderings
+    1. include inline discussion about _why_ you made specific decisions.  
+
+        > You should be able to defend each step in your code and
+
+    1. Analysis and discussion of your results.  Was the value for sliding friction you obtained in MuJoCo the same as your calculations?  Was it in between the static and dynamic values?
+
+1. images of your experimental setup from multiple angles
+    1. include shots of your material
+    1. include shots of the angle mass -->
+
 <h2 id="grading">Grading</h2>
 <table>
 <thead>

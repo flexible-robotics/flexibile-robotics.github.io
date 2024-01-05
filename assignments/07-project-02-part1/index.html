@@ -597,35 +597,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#assignment-instructions" class="md-nav__link">
-    Assignment Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-    <nav class="md-nav" aria-label="Submission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#other-notes" class="md-nav__link">
-    Other Notes
+  <a href="#instructions" class="md-nav__link">
+    Instructions
   </a>
   
 </li>
@@ -4319,35 +4292,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#assignment-instructions" class="md-nav__link">
-    Assignment Instructions
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#discussion" class="md-nav__link">
-    Discussion
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-    <nav class="md-nav" aria-label="Submission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#other-notes" class="md-nav__link">
-    Other Notes
+  <a href="#instructions" class="md-nav__link">
+    Instructions
   </a>
   
 </li>
@@ -4407,204 +4353,107 @@
 <p>After meeting with Dr. Aukes, discuss decide changes and adaptations you'd like to make to your project 1. goals</p>
 </li>
 </ol>
-<h3 id="assignment-instructions">Assignment Instructions</h3>
-<ol>
-<li>
-<p><strong>Refresh / restate your team's updated goal(s) for project 2.</strong> These goals should use and consider the main topics of the course, including how the kinematics, materials, or dynamics of your system can be adjusted to improve a key parameter (or parameters) of your device.</p>
-<ul>
-<li>In this assignment, please add compliance to your design as well as to any optimization goals and/or considerations.</li>
-</ul>
-<blockquote>
-<p><strong>Example:</strong> Our team is interested in developing a frog-inspired robot that is optimized for  forward jumping while carrying extra payloads (in addition to the mass of its motors, microcontroller, and circuitry).  We plan to study the effect of leg compliance on our system's performance as we vary leg compliance.</p>
-</blockquote>
-</li>
-<li>
-<p><strong>System Identification:</strong> Create a table of real-world values you must obtain in order to capture real-life performance.  Assign responsibility to members of your team.  You <em>can and should</em> work together, but  you  must list a member of your group responsible for each element</p>
-<table>
-<thead>
-<tr>
-<th>Value</th>
-<th>Assigned To</th>
-<th>Collection Plan</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Foot / Floor Static Friction</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Joint Stiffness &amp; Damping</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Link Density / Mass</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Link Stiffness &amp; Damping</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Motor Parameters</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>... and many others</td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>
-<p><strong>Optimization</strong></p>
-<ol>
-<li>
-<p>Define your team's design goal as a set of statements</p>
-<blockquote>
-<p><strong>Example:</strong> Our team has decided to make a robot that hops far but also carries a large payload.  Thus, our robot's ability to hop a certain distance must be measured as a function of external loading conditions.</p>
-</blockquote>
-</li>
-<li>
-<p><strong>Performance Metric(s):</strong> Describe how you plan to measure each goal, both in simulation, and when you verify it experimentally.</p>
-<blockquote>
-<p><strong>Example:</strong> We will evaluate the robot's jumping performance in simulation and real life as the final distance of the robot's center of mass after a single hop command.  We will repeat the physical experiment 5 times at  three separate loading conditions: <span class="arithmatex">\(m_{\text{payload}}=0\,g\)</span>, <span class="arithmatex">\(m_{\text{payload}}=100\,g\)</span>, and <span class="arithmatex">\(m_{\text{payload}}=300\,g\)</span>.  We will take the mean of each set of experiments to obtain the average jump distance as a function of payload, and record the standard deviation in case repeatability is questioned.</p>
-</blockquote>
-<ul>
-<li>If you have multiple performance objectives, how do you plan on weighting the importance of each metric?</li>
-</ul>
-</li>
-<li>
-<p><strong>What value(s) are you varying?</strong>  Are you adjusting the stiffness of the leg?  Are you changing key kinematics? Are you exploring differences in gait or control?  Please stay within the confines of topics learned in this course.</p>
-<blockquote>
-<p><strong>Example:</strong> We will be investigating the role of leg stiffness on jumping performance.  Our design includes a long beam whose length can be kept constant, but whose other geometry(thickness, width, and material selection) can be adjusted to create a stiff or soft beam.  Our plan is to use a pseudo-rigid-body model to approximate a compliant beam for this joint and to obtain the stiffness that balances our distance / payload needs</p>
-</blockquote>
-</li>
-<li>
-<p><strong>List your constraints.</strong> What parameters will not be changing?  What are the limits of your search?</p>
-<blockquote>
-<p><strong>Examples:</strong></p>
-<ul>
-<li>Your team may only be looking for solutions with a given motor.</li>
-<li>Your team may need to limit the search of your design variable to values that are rational and can actually be manufactured.</li>
-<li>If you are investigating parameters such as length, how do you plan to stay away from the limits of your search?  For example, the bigger your leg is, the farther you might be able to jump, but this is not realistic to manufacture.</li>
-</ul>
-</blockquote>
-</li>
-</ol>
-</li>
-<li>
-<p>Develop an initial Mujoco Model</p>
-<ol>
-<li>If you have not already, please develop a MuJoCo model for the full system you would like to build and test</li>
-<li>Add / ensure that at least one passive link or joint in your system exhibits material-based compliance through bending, and that you have a plan for measuring that parameter as well as adjusting its behavior through manufacturing.</li>
-<li>Ensure that the scaling of your model is appropriate for the system you would like to build.</li>
-<li>Ensure it includes all of the system parameters discussed above.</li>
-<li>
-<p>Make sure it runs with some rational initial assumptions about material parameters, motor power, mass, and length supplied.</p>
-<blockquote>
-<p>Remember that mujoco does not assume the units of your model and does not scale units internally.  Therefore,  SI units and their derived units should be used as they are the most consistent with each other.</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th>measurement</th>
-<th>recommended unit</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>time</td>
-<td>sec</td>
-</tr>
-<tr>
-<td>length</td>
-<td>meter</td>
-</tr>
-<tr>
-<td>velocity</td>
-<td><span class="arithmatex">\(\frac{\text{meter}}{\text{s}}\)</span></td>
-</tr>
-<tr>
-<td>acceleration</td>
-<td><span class="arithmatex">\(\frac{\text{meter}}{\text{s}^2}\)</span></td>
-</tr>
-<tr>
-<td>rotational position</td>
-<td>radian (unitless)</td>
-</tr>
-<tr>
-<td>rotational velocity</td>
-<td><span class="arithmatex">\(\frac{\text{radian}}{\text{s}}\)</span> (unitless)</td>
-</tr>
-<tr>
-<td>rotational acceleration</td>
-<td><span class="arithmatex">\(\frac{\text{radian}}{\text{s}^2}\)</span> (unitless)</td>
-</tr>
-<tr>
-<td>mass</td>
-<td>kg</td>
-</tr>
-<tr>
-<td>inertia</td>
-<td><span class="arithmatex">\(\text{kg-meter}^2\)</span></td>
-</tr>
-<tr>
-<td>force</td>
-<td>Newton (<span class="arithmatex">\(\frac{\text{kg-meter}}{\text{s}^2}\)</span>)</td>
-</tr>
-<tr>
-<td>torque</td>
-<td>Newton-meter (<span class="arithmatex">\(\frac{\text{kg-meter}^2}{\text{s}^2}\)</span>)</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="discussion">Discussion</h2>
-<ol>
-<li>Discuss each step of the above assignment and provide thoughts and feedback about how you approached each step and your reflections on how it work</li>
-</ol>
-<h2 id="submission">Submission</h2>
-<p>Please include a pdf of the following:</p>
-<ol>
-<li>
-<p>Detailed description of the completed steps above</p>
-<ul>
-<li>Include relevant chunks of code in your report as inline blocks.</li>
-<li>
-<p>Images of handwritten work, parts you've made, and screenshots can be included inline within the pdf. Use the following notation if you are doing this inside jupyter notebook:</p>
-<p><code>![alt text](path/to/your/image.jpg)</code></p>
-<p>or, if you want to access other html attributes:</p>
-<p><code>&lt;img src="path/to/your/image.jpg" width="300px" alt="alt text here"&gt;</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>Any relevant code used in solving the assignment (relevant code inline in the report in code blocks), along with descriptions detailing your approach.</p>
-<ul>
-<li>requested plots and figures should be included inline</li>
-<li>if you are not using jupyter notebook for writing up your report, include any/all necessary notebooks within a .zip file.</li>
-</ul>
-</li>
-<li>Detailed answers to the discussion questions asked alongside all steps</li>
-<li>Final video(s) of the successful simulations or experiments can be included inline in your jupyter notebook.  These files must be included within your team's .zip file as well.</li>
-<li>CSV files of any experimental data collected</li>
-</ol>
-<h3 id="other-notes">Other Notes</h3>
-<ul>
-<li>Please follow the "Submission Best Practices" document posted on the course website.  </li>
-<li>Please ensure that .ipynb code is fully compiled and <em>runs without error</em> in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  </li>
-<li>Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages</li>
-</ul>
+<h3 id="instructions">Instructions</h3>
+<p><strong><em>This assignment has not yet been released</em></strong></p>
+<!-- 
+1. **Refresh / restate your team's updated goal(s) for project 2.** These goals should use and consider the main topics of the course, including how the kinematics, materials, or dynamics of your system can be adjusted to improve a key parameter (or parameters) of your device.
+
+    * In this assignment, please add compliance to your design as well as to any optimization goals and/or considerations.
+
+    > **Example:** Our team is interested in developing a frog-inspired robot that is optimized for  forward jumping while carrying extra payloads (in addition to the mass of its motors, microcontroller, and circuitry).  We plan to study the effect of leg compliance on our system's performance as we vary leg compliance.
+
+1. **System Identification:** Create a table of real-world values you must obtain in order to capture real-life performance.  Assign responsibility to members of your team.  You _can and should_ work together, but  you  must list a member of your group responsible for each element
+
+    | Value                        | Assigned To | Collection Plan |
+    | ---------------------------- | ----------- | --------------- |
+    | Foot / Floor Static Friction |
+    | Joint Stiffness & Damping    |
+    | Link Density / Mass          |
+    | Link Stiffness & Damping     |
+    | Motor Parameters             |
+    | ... and many others          |
+
+1. **Optimization**
+    1. Define your team's design goal as a set of statements
+
+        > **Example:** Our team has decided to make a robot that hops far but also carries a large payload.  Thus, our robot's ability to hop a certain distance must be measured as a function of external loading conditions.
+
+    1. **Performance Metric(s):** Describe how you plan to measure each goal, both in simulation, and when you verify it experimentally.
+
+        > **Example:** We will evaluate the robot's jumping performance in simulation and real life as the final distance of the robot's center of mass after a single hop command.  We will repeat the physical experiment 5 times at  three separate loading conditions: $m_{\text{payload}}=0\,g$, $m_{\text{payload}}=100\,g$, and $m_{\text{payload}}=300\,g$.  We will take the mean of each set of experiments to obtain the average jump distance as a function of payload, and record the standard deviation in case repeatability is questioned.
+
+        * If you have multiple performance objectives, how do you plan on weighting the importance of each metric?
+
+    1. **What value(s) are you varying?**  Are you adjusting the stiffness of the leg?  Are you changing key kinematics? Are you exploring differences in gait or control?  Please stay within the confines of topics learned in this course.
+
+        > **Example:** We will be investigating the role of leg stiffness on jumping performance.  Our design includes a long beam whose length can be kept constant, but whose other geometry(thickness, width, and material selection) can be adjusted to create a stiff or soft beam.  Our plan is to use a pseudo-rigid-body model to approximate a compliant beam for this joint and to obtain the stiffness that balances our distance / payload needs
+
+    1. **List your constraints.** What parameters will not be changing?  What are the limits of your search?
+
+        > **Examples:**
+        >
+        > * Your team may only be looking for solutions with a given motor.
+        > * Your team may need to limit the search of your design variable to values that are rational and can actually be manufactured.
+        > * If you are investigating parameters such as length, how do you plan to stay away from the limits of your search?  For example, the bigger your leg is, the farther you might be able to jump, but this is not realistic to manufacture.
+
+1. Develop an initial Mujoco Model
+    1. If you have not already, please develop a MuJoCo model for the full system you would like to build and test
+    1. Add / ensure that at least one passive link or joint in your system exhibits material-based compliance through bending, and that you have a plan for measuring that parameter as well as adjusting its behavior through manufacturing.
+    1. Ensure that the scaling of your model is appropriate for the system you would like to build.
+    1. Ensure it includes all of the system parameters discussed above.
+    1. Make sure it runs with some rational initial assumptions about material parameters, motor power, mass, and length supplied.
+
+        > Remember that mujoco does not assume the units of your model and does not scale units internally.  Therefore,  SI units and their derived units should be used as they are the most consistent with each other.
+
+        | measurement             | recommended unit                                      |
+        | ----------------------- | ----------------------------------------------------- |
+        | time                    | sec                                                   |
+        | length                  | meter                                                 |
+        | velocity                | $\frac{\text{meter}}{\text{s}}$                       |
+        | acceleration            | $\frac{\text{meter}}{\text{s}^2}$                     |
+        | rotational position     | radian (unitless)                                     |
+        | rotational velocity     | $\frac{\text{radian}}{\text{s}}$ (unitless)           |
+        | rotational acceleration | $\frac{\text{radian}}{\text{s}^2}$ (unitless)         |
+        | mass                    | kg                                                    |
+        | inertia                 | $\text{kg-meter}^2$                                   |
+        | force                   | Newton ($\frac{\text{kg-meter}}{\text{s}^2}$)         |
+        | torque                  | Newton-meter ($\frac{\text{kg-meter}^2}{\text{s}^2}$) |
+
+## Discussion
+
+1. Discuss each step of the above assignment and provide thoughts and feedback about how you approached each step and your reflections on how it work
+
+## Submission
+
+Please include a pdf of the following:
+
+1. Detailed description of the completed steps above
+    * Include relevant chunks of code in your report as inline blocks.
+    * Images of handwritten work, parts you've made, and screenshots can be included inline within the pdf. Use the following notation if you are doing this inside jupyter notebook:
+
+        ```
+        ![alt text](path/to/your/image.jpg)
+        ```
+
+        or, if you want to access other html attributes:
+
+        ```
+        <a class="glightbox" href="path/to/your/image.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="path/to/your/image.jpg" width="300px" alt="alt text here"></a>
+        ```
+
+1. Any relevant code used in solving the assignment (relevant code inline in the report in code blocks), along with descriptions detailing your approach.
+    * requested plots and figures should be included inline
+    * if you are not using jupyter notebook for writing up your report, include any/all necessary notebooks within a .zip file.
+1. Detailed answers to the discussion questions asked alongside all steps
+1. Final video(s) of the successful simulations or experiments can be included inline in your jupyter notebook.  These files must be included within your team's .zip file as well.
+1. CSV files of any experimental data collected
+
+### Other Notes
+
+* Please follow the "Submission Best Practices" document posted on the course website.  
+* Please ensure that .ipynb code is fully compiled and _runs without error_ in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  
+* Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages -->
+
 <h2 id="rubric">Rubric</h2>
 <table>
 <thead>

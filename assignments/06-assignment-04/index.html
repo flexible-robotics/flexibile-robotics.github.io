@@ -580,53 +580,6 @@
     Instructions
   </a>
   
-    <nav class="md-nav" aria-label="Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-15" class="md-nav__link">
-    Part 1.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-    <nav class="md-nav" aria-label="Submission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#other-notes" class="md-nav__link">
-    Other Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4336,53 +4289,6 @@
     Instructions
   </a>
   
-    <nav class="md-nav" aria-label="Instructions">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#part-1" class="md-nav__link">
-    Part 1
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-15" class="md-nav__link">
-    Part 1.5
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#part-2" class="md-nav__link">
-    Part 2
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-    <nav class="md-nav" aria-label="Submission">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#other-notes" class="md-nav__link">
-    Other Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
@@ -4421,126 +4327,103 @@
 <p>The purpose of this module is to lead you through the process of collecting data on a flexible system and fitting its behavior to a dynamic model</p>
 <h2 id="external-resources">External Resources</h2>
 <h2 id="instructions">Instructions</h2>
-<h3 id="part-1">Part 1</h3>
-<p><a class="glightbox" href="../sysid.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../sysid.png" style="width:75%;display:block;margin-left:auto;margin-right:auto;" /></a></p>
-<p>Using the <a href="/tutorials/misc/tracker-tutorial/">tracker tutorial</a> as a starting point, adapt it for the above setup.</p>
-<ol>
-<li>Cut a long, rectangular piece of cardboard, posterboard, or other rigid material you hope / plan to use in your robot design<ul>
-<li>The more accurate you fabricate it and measure it the better.  Cut with straight lines and try to avoid notches or gouges that will create weak points.</li>
-</ul>
-</li>
-<li>Measure the dimensions and weight of your specimen, including thickness.  <ol>
-<li>The more accurate your measurements the better.  </li>
-<li>Consider using a calipers or micrometer to measure the material thickness accurately, in several spots.</li>
-<li>calculate the density of your material</li>
-</ol>
-</li>
-<li>Attach a small amount of known mass to the end of your specimen.<ul>
-<li>Again, mount the mass as rigidly as possible.  The more it moves, the harder it is to track and model.</li>
-<li>Record the distance from the edge of the table to the center of the added mass.  Ensure it is placed symmetrially to avoid out of plane torsional effects in the beam.</li>
-</ul>
-</li>
-<li>Mount your specimen to a solid table, desk or other overhang as seen above<ol>
-<li>Make sure the connection to the "ground" is rigid.  This can be done with a heavy weight, such as many books.  Tape doesn't work, it's too flexible</li>
-<li>Measure the amount of beam overhanging vs the amount attached to ground.  </li>
-</ol>
-</li>
-<li>Attach tracking markers to your scene, at the same camera depth as your experimental setup.<ol>
-<li>Multiple markers, of known distances apart, will help you scale your scene later.</li>
-<li>Measure the distance between all markers.</li>
-<li>Attach at least one marker at the tip of the flexible beam.</li>
-</ol>
-</li>
-<li>Attach your camera to the fixed/rigid frame using a tripod or fixed camera mount.<ol>
-<li>Measure the distance from your camera to the center of your experiment's z-plane.</li>
-</ol>
-</li>
-<li>
-<p>Take a practice video and run it through your capture software to ensure the markers are always visible.</p>
-<ol>
-<li>Start recording.  Use high-quality mode.</li>
-<li>Give the beam a "kick" that is measurable but not destructive (does not plastically deform your material).  </li>
-</ol>
-<blockquote>
-<p>To simplify setting initial conditions, pull the device with a string displaced a fixed distance or by a known load,  let it settle, then cut the string.</p>
-</blockquote>
-</li>
-<li>
-<p>Check your video for issues and check the tracking process in tracker</p>
-<ol>
-<li>Does your beam oscillate more than once before coming to rest?  If not, consider adding more mass.  </li>
-<li>Is it too fast for your camera to see without blurring?  Consider making the beam longer or adding mass</li>
-<li>Is gravity deforming your specimen?  Consider mounting your beam vertically or reducing mass.</li>
-<li>Is your specimen deforming?  Consider using thicker material, or reducing the load</li>
-<li>Is it possible for tracker to see your markers?  If not, use higher-contrast colors or change your lighting.</li>
-</ol>
-</li>
-<li>Repeat this process until you have a setup that works</li>
-<li>Run your experiment with video running at least three times (to ensure you get one good video.)<ol>
-<li>Track the motion of your system until it stops moving.  Make sure your motion is planar.</li>
-</ol>
-</li>
-<li>Export/save the video to your computer</li>
-<li>Using tracker, export the x-y position  of all markers over time.</li>
-<li>Ignore the initial portions of the video where you are touching the setup.  Only track the free motion of the system after it is disturbed.</li>
-<li>Using the base frame markers as reference points, size and rotate your data to get x-y values in SI units.</li>
-<li>Save the results as a .csv file.</li>
-</ol>
-<h2 id="part-15">Part 1.5</h2>
-<ul>
-<li>Import your csv file into python</li>
-<li>
-<p>If your experimental data starts with the system in motion, calculate the initial velocity of your system.</p>
-<p><a class="glightbox" href="../find-slope.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../find-slope.png" style="display:block;margin-left:auto;margin-right:auto;width:50%;" /></a></p>
-<blockquote>
-<p>for example, by using the positions from <span class="arithmatex">\(t_0\)</span> and <span class="arithmatex">\(t_2\)</span>, you can find the velocity at <span class="arithmatex">\(t_1\)</span>  Truncate your data to start at <span class="arithmatex">\(t_1\)</span></p>
-</blockquote>
-</li>
-</ul>
-<h2 id="part-2">Part 2</h2>
-<ol>
-<li>In mujoco, create a facsimiile of your experiment using 5 beams.  As in HW3, build your simulation as a template, with the ability to insert your own values for stiffness and damping at each joint.</li>
-<li>Add masses of the correct dimension and weight/density at the appropriate locations.</li>
-<li>Add a <code>site</code> and <code>sensor</code> or (negligible mass) at the location of all added markers.</li>
-<li>Define the initial conditions at t=0 to match the data you collected.</li>
-<li>Run your simulation and compare the output to your experimental data.  Find the sum of squared error between your simulation and the experiment</li>
-<li>Encapsulate the main body of your simulation and error calculation within a function, with the two inputs as stiffness and damping, and the output returned is the <span class="arithmatex">\(\sqrt{\sum{\text{error}^2_i}}\)</span>, such that your experiment gets re-run every time you call the function and outputs the error.</li>
-<li>Use <code>scipy.optimize.minimize()</code> to identify the unknown stiffness and damping parameters for your material</li>
-</ol>
-<h2 id="submission">Submission</h2>
-<p>Please include a Jupyter notebook and pdf of the following:</p>
-<ol>
-<li>
-<p>Detailed description of the completed steps above</p>
-<ul>
-<li>Include  any chunks of related code as accompanying markdown blocks.</li>
-<li>
-<p>Images of handwritten work, parts you've made, and screenshots should be included inline within the ipython notebook. use the following notation:</p>
-<p><code>![alt text](path/to/your/image.jpg)</code></p>
-<p>or, if you want to access other html attributes:</p>
-<p><code>&lt;img src="path/to/your/image.jpg" width="300px" alt="alt text here"&gt;</code></p>
-</li>
-</ul>
-</li>
-<li>
-<p>Code used in solving the assignment (inline in the report in code blocks), along with descriptions detailing your approach.</p>
-<ul>
-<li>requested plots and figures should be included inline</li>
-</ul>
-</li>
-<li>Detailed answers to the discussion questions asked alongside all steps</li>
-<li>Final video(s) of the successful runs</li>
-<li>CSV files of experimental data.</li>
-</ol>
-<h3 id="other-notes">Other Notes</h3>
-<ul>
-<li>Please follow the "Submission Best Practices" document posted on the course website.  </li>
-<li>This assignment should be submitted to moodle as a jupyter notebook (.ipynb) file and pdf.  <ul>
-<li>Please ensure that the .ipynb code is fully compiled and <em>runs without error</em> in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  </li>
-<li>Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages</li>
-</ul>
-</li>
-</ul>
+<p><strong><em>This assignment has not yet been released</em></strong></p>
+<!-- 
+### Part 1
+
+![Alt text](sysid.png){style="width:75%;display:block;margin-left:auto;margin-right:auto;"}
+
+Using the [tracker tutorial](/tutorials/misc/tracker-tutorial/) as a starting point, adapt it for the above setup.
+
+1. Cut a long, rectangular piece of cardboard, posterboard, or other rigid material you hope / plan to use in your robot design
+    * The more accurate you fabricate it and measure it the better.  Cut with straight lines and try to avoid notches or gouges that will create weak points.
+1. Measure the dimensions and weight of your specimen, including thickness.  
+    1. The more accurate your measurements the better.  
+    1. Consider using a calipers or micrometer to measure the material thickness accurately, in several spots.
+    1. calculate the density of your material
+1. Attach a small amount of known mass to the end of your specimen.
+    * Again, mount the mass as rigidly as possible.  The more it moves, the harder it is to track and model.
+    * Record the distance from the edge of the table to the center of the added mass.  Ensure it is placed symmetrially to avoid out of plane torsional effects in the beam.
+1. Mount your specimen to a solid table, desk or other overhang as seen above
+    1. Make sure the connection to the "ground" is rigid.  This can be done with a heavy weight, such as many books.  Tape doesn't work, it's too flexible
+    1. Measure the amount of beam overhanging vs the amount attached to ground.  
+1. Attach tracking markers to your scene, at the same camera depth as your experimental setup.
+    1. Multiple markers, of known distances apart, will help you scale your scene later.
+    1. Measure the distance between all markers.
+    1. Attach at least one marker at the tip of the flexible beam.
+1. Attach your camera to the fixed/rigid frame using a tripod or fixed camera mount.
+    1. Measure the distance from your camera to the center of your experiment's z-plane.
+1. Take a practice video and run it through your capture software to ensure the markers are always visible.
+    1. Start recording.  Use high-quality mode.
+    1. Give the beam a "kick" that is measurable but not destructive (does not plastically deform your material).  
+
+    > To simplify setting initial conditions, pull the device with a string displaced a fixed distance or by a known load,  let it settle, then cut the string.
+
+1. Check your video for issues and check the tracking process in tracker
+    1. Does your beam oscillate more than once before coming to rest?  If not, consider adding more mass.  
+    1. Is it too fast for your camera to see without blurring?  Consider making the beam longer or adding mass
+    1. Is gravity deforming your specimen?  Consider mounting your beam vertically or reducing mass.
+    1. Is your specimen deforming?  Consider using thicker material, or reducing the load
+    1. Is it possible for tracker to see your markers?  If not, use higher-contrast colors or change your lighting.
+1. Repeat this process until you have a setup that works
+1. Run your experiment with video running at least three times (to ensure you get one good video.)
+    1. Track the motion of your system until it stops moving.  Make sure your motion is planar.
+1. Export/save the video to your computer
+1. Using tracker, export the x-y position  of all markers over time.
+1. Ignore the initial portions of the video where you are touching the setup.  Only track the free motion of the system after it is disturbed.
+1. Using the base frame markers as reference points, size and rotate your data to get x-y values in SI units.
+1. Save the results as a .csv file.
+
+## Part 1.5
+
+* Import your csv file into python
+* If your experimental data starts with the system in motion, calculate the initial velocity of your system.
+
+    ![](find-slope.png){style="display:block;margin-left:auto;margin-right:auto;width:50%;"}
+
+    > for example, by using the positions from $t_0$ and $t_2$, you can find the velocity at $t_1$  Truncate your data to start at $t_1$
+
+## Part 2
+
+1. In mujoco, create a facsimiile of your experiment using 5 beams.  As in HW3, build your simulation as a template, with the ability to insert your own values for stiffness and damping at each joint.
+1. Add masses of the correct dimension and weight/density at the appropriate locations.
+1. Add a ```site``` and ```sensor``` or (negligible mass) at the location of all added markers.
+1. Define the initial conditions at t=0 to match the data you collected.
+1. Run your simulation and compare the output to your experimental data.  Find the sum of squared error between your simulation and the experiment
+1. Encapsulate the main body of your simulation and error calculation within a function, with the two inputs as stiffness and damping, and the output returned is the $\sqrt{\sum{\text{error}^2_i}}$, such that your experiment gets re-run every time you call the function and outputs the error.
+1. Use ```scipy.optimize.minimize()``` to identify the unknown stiffness and damping parameters for your material
+
+## Submission
+
+Please include a Jupyter notebook and pdf of the following:
+
+1. Detailed description of the completed steps above
+    * Include  any chunks of related code as accompanying markdown blocks.
+    * Images of handwritten work, parts you've made, and screenshots should be included inline within the ipython notebook. use the following notation:
+
+        ```
+        ![alt text](path/to/your/image.jpg)
+        ```
+
+        or, if you want to access other html attributes:
+
+        ```
+        <a class="glightbox" href="path/to/your/image.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="path/to/your/image.jpg" width="300px" alt="alt text here"></a>
+        ```
+
+1. Code used in solving the assignment (inline in the report in code blocks), along with descriptions detailing your approach.
+    * requested plots and figures should be included inline
+1. Detailed answers to the discussion questions asked alongside all steps
+1. Final video(s) of the successful runs
+1. CSV files of experimental data.
+
+### Other Notes
+
+* Please follow the "Submission Best Practices" document posted on the course website.  
+* This assignment should be submitted to moodle as a jupyter notebook (.ipynb) file and pdf.  
+    * Please ensure that the .ipynb code is fully compiled and _runs without error_ in its entirety.  This can be done by opening the file in your browser / editor of choice, and by selecting "Restart and Run All" (or similar).  
+    * Ensure the pdf is legible and makes appropriate use of page scaling to ensure answers are not cut off, truncated, or spread across multiple pages -->
+
 <h2 id="rubric">Rubric</h2>
 <table>
 <thead>

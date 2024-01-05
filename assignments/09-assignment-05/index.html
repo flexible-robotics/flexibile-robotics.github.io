@@ -650,20 +650,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hints" class="md-nav__link">
-    Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#rubric" class="md-nav__link">
     Rubric
   </a>
@@ -4320,20 +4306,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hints" class="md-nav__link">
-    Hints
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#submission" class="md-nav__link">
-    Submission
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#rubric" class="md-nav__link">
     Rubric
   </a>
@@ -4443,17 +4415,6 @@ your browser does not support this video tag
 </tr>
 </tbody>
 </table>
-<!-- 
-| $V_{nom}$   | Voltage the servo's data was taken at           |                     6V |
-| $t_{stall}$ | stall torque                                    |              .0027 N-m |
-| $i_{stall}$ | stall current of the motor at 6V                |                   .6 A |
-| $w_{NL}$    | no load speed of the servo                      |           1278 rad/sec |
-| $i_{NL}$    | no load current of the servo                    |                   .2 A |
-| $b_{servo}$ | damping loss in servo (obtained experimentally) | $1.404 \times 10^{-6}$ |
-| V_{power}   | Voltage powering the servo                      |                     5V |
-| $k_{p}$     | control gain (obtained experimentally)          | $1.404 \times 10^{-6}$ | 
--->
-
 <h2 id="references">References</h2>
 <ul>
 <li><a href="/lecture-notes/lecture-11/">Lecture 11 Notes</a></li>
@@ -4461,67 +4422,64 @@ your browser does not support this video tag
 <li><a href="/tutorials/dynamics/motors/07-servo-fitting/">Servo Fitting Example</a></li>
 </ul>
 <h2 id="instructions">Instructions</h2>
-<p>Using MuJoCo, find the ideal spring stiffness for this system that permits the body's center of mass to reach the highest point using two approaches.</p>
-<p>Use the code and parameters derived in class for modeling an RC servo</p>
-<p>Use two approaches to study the effect of stiffness on jump height</p>
-<ol>
-<li>
-<p>Sweep through leg stiffness values from 1e-3 to 1e1.  Plot the maximum z height of the robot as a function of k.</p>
-<blockquote>
-<p><strong>Note:</strong> I narrowed this range due to instabilities at k&gt; 1e1</p>
-</blockquote>
-</li>
-<li>
-<p>program a minimization function to obtain the value that maximizes jump height</p>
-</li>
-</ol>
-<h2 id="hints">Hints</h2>
-<ul>
-<li>in part 1, use <code>matplotlib.pyplot.semilogx()</code> to scale your x axes logarithmically</li>
-<li>
-<p>Use this code at the beginning of your simulation so that we all have the same contact parameters:</p>
-<pre><code>&lt;mujoco&gt;
-    &lt;option&gt;&lt;flag gravity="enable" contact="enable" /&gt;&lt;/option&gt;
-    &lt;option timestep="1e-4"/&gt;
-    &lt;compiler angle="degree" /&gt;
+<p><strong><em>This assignment has not yet been released</em></strong></p>
+<!-- 
+Using MuJoCo, find the ideal spring stiffness for this system that permits the body's center of mass to reach the highest point using two approaches.
 
-&lt;default&gt;
-    &lt;geom contype="1" conaffinity="1" condim="3" friction=".6 .3 .3" solimp=".999 .999 .001" solref=".001 1" margin="0.001" group="0"/&gt;
-&lt;/default&gt;
-...
-</code></pre>
-</li>
-<li>
-<p>If contact is enabled, make sure you add exclude pairs to ensure neighboring joints do not hit each other:</p>
-<pre><code>&lt;contact&gt;
-    &lt;exclude body1="body1" body2="body2" /&gt;
-    &lt;exclude body1="body1" body2="body3" /&gt;
+Use the code and parameters derived in class for modeling an RC servo
 
-    ...
+Use two approaches to study the effect of stiffness on jump height
 
-&lt;/contact&gt;
-</code></pre>
-<ul>
-<li>Remember to add joint limits to pin joint 1 (not joint 2) at 0 and 180 degrees.  This will ensure that your servo joint doesn't hit the body.  It also reflects the actual joint limits of the servo.</li>
-<li>When you copy over the joint controller code from my servo fitting example, update the position / velocity joint index to 1 from 0.  The 0th joint is the slider.  the 1st joint is the servo, in our current model.</li>
-<li>When copying over the controller code from the servo example, it is critical to ensure you remap the joint number to match the servo's joint index in your new model</li>
-</ul>
-<blockquote>
-<p><strong>Note:</strong> This advice was recently added</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="submission">Submission</h2>
-<p>You should turn in a completed jupyter notebook with the following items shown:</p>
-<ol>
-<li>working simulation modeling all the above parameters discussed above</li>
-<li>video of arbitrarily-selected result.</li>
-<li>plot of height of center of mass of body over time for an arbitrarily selected result</li>
-<li>plot of stiffness vs max jump height over the range specified above</li>
-<li>successfully completed optimization with results overplotted on previous figure</li>
-<li>video of the optimized jump.</li>
-<li>plot of height of center of mass of body over time for the optimized design.</li>
-</ol>
+1. Sweep through leg stiffness values from 1e-3 to 1e1.  Plot the maximum z height of the robot as a function of k.
+
+    > **Note:** I narrowed this range due to instabilities at k> 1e1
+
+1. program a minimization function to obtain the value that maximizes jump height
+
+## Hints
+
+* in part 1, use ```matplotlib.pyplot.semilogx()``` to scale your x axes logarithmically
+* Use this code at the beginning of your simulation so that we all have the same contact parameters:
+
+        <mujoco>
+            <option><flag gravity="enable" contact="enable" /></option>
+            <option timestep="1e-4"/>
+            <compiler angle="degree" />
+
+        <default>
+            <geom contype="1" conaffinity="1" condim="3" friction=".6 .3 .3" solimp=".999 .999 .001" solref=".001 1" margin="0.001" group="0"/>
+        </default>
+        ...
+
+* If contact is enabled, make sure you add exclude pairs to ensure neighboring joints do not hit each other:
+
+        <contact>
+            <exclude body1="body1" body2="body2" />
+            <exclude body1="body1" body2="body3" />
+
+            ...
+
+        </contact>
+
+    * Remember to add joint limits to pin joint 1 (not joint 2) at 0 and 180 degrees.  This will ensure that your servo joint doesn't hit the body.  It also reflects the actual joint limits of the servo.
+* When you copy over the joint controller code from my servo fitting example, update the position / velocity joint index to 1 from 0.  The 0th joint is the slider.  the 1st joint is the servo, in our current model.
+* When copying over the controller code from the servo example, it is critical to ensure you remap the joint number to match the servo's joint index in your new model
+
+    > **Note:** This advice was recently added
+
+
+## Submission
+
+You should turn in a completed jupyter notebook with the following items shown:
+
+1. working simulation modeling all the above parameters discussed above
+1. video of arbitrarily-selected result.
+1. plot of height of center of mass of body over time for an arbitrarily selected result
+1. plot of stiffness vs max jump height over the range specified above
+1. successfully completed optimization with results overplotted on previous figure
+1. video of the optimized jump.
+1. plot of height of center of mass of body over time for the optimized design. -->
+
 <h2 id="rubric">Rubric</h2>
 <table>
 <thead>
