@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/03-project-01/" class="md-nav__link">
+      <a href="../../../assignments/03-project-01-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/04-project-01part2/" class="md-nav__link">
+      <a href="../../../assignments/04-project-01-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part1/" class="md-nav__link">
+      <a href="../../../assignments/07-project-02-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/08-project-02-part2/" class="md-nav__link">
+      <a href="../../../assignments/08-project-02-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4235,11 +4235,38 @@
     Flashing the ESP32 Firmware for MicroPython
   </a>
   
+    <nav class="md-nav" aria-label="Flashing the ESP32 Firmware for MicroPython">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#option-1-thonny-approach" class="md-nav__link">
+    Option 1: Thonny approach
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#option-2-command-line-approach-with-esptool" class="md-nav__link">
+    Option 2: Command-line approach with esptool
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#mac-specific-suggestions" class="md-nav__link">
-    Mac-Specific Suggestions
+    Mac Specific Suggestions
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External Resources
   </a>
   
 </li>
@@ -4278,20 +4305,38 @@
 
 <h2 id="install-miniconda-and-packages">Install Miniconda and packages</h2>
 <blockquote>
-<p>You need to use Python on your PC to program the ESP32.  This assumes that you already have miniconda installed.  For more instructions, see <a href="/tutorials/python/01-installing-anaconda-python/">here</a>.</p>
+<p>You need to use Python on your PC to program the ESP32.  This assumes that you already have miniconda installed.  For more instructions, see <a href="/tutorials/python/01-installing-anaconda-python/">here</a> for detailed instructions.</p>
 </blockquote>
 <ol>
-<li><strong>Installing Thonny and other Packages:</strong> Open up your anaconda environment (start--&gt;anaconda prompt)<ol>
-<li>Activate the desired environment <code>conda activate &lt;environment_name&gt;</code>, or ignore if you want to install</li>
-<li>type <code>conda install -c conda-forge wrapt</code></li>
 <li>
-<p>type <code>pip install esptool thonny</code></p>
+<p><strong>Installing Thonny and other Packages:</strong> Open up your anaconda environment (start--&gt;anaconda prompt)</p>
+<ol>
+<li>
+<p>(optional) Activate your desired environment <code>conda activate &lt;environment_name&gt;</code>.  </p>
+<blockquote>
+<p>You can ignore if you want to install in the base environment</p>
+</blockquote>
+</li>
+<li>
+<p>type the following to install a prerequisite package</p>
+<p><code>bash
+conda install -y -c conda-forge wrapt</code></p>
+</li>
+<li>
+<p>Install the ESP32 commandline flashing tool</p>
+<p><code>bash
+pip install esptool</code></p>
+</li>
+<li>
+<p>To install Thonny type the following <em>(This is optional)</em>:</p>
+<p><code>bash
+pip install thonny</code></p>
 <p><strong>Note:</strong> on Mac, open up terminal or xterm and type <code>pip3 install esptool thonny</code></p>
 </li>
 </ol>
 </li>
 </ol>
-<h2 id="install-device-drivers-required-for-windows">Install Device Drivers (Required for Windows)</h2>
+<h2 id="install-device-drivers-required-for-windows">Install Device Drivers <em>(Required for Windows)</em></h2>
 <p>The device drivers will help your computer recognize the ESP32 as a USB Device</p>
 <ol>
 <li>
@@ -4306,10 +4351,14 @@
 </ol>
 <h2 id="flashing-the-esp32-firmware-for-micropython">Flashing the ESP32 Firmware for MicroPython</h2>
 <ol>
-<li>download <a href="https://micropython.org/download/esp32/">firmware</a>.</li>
+<li>download <a href="https://micropython.org/download/esp32/">firmware</a></li>
 </ol>
 <blockquote>
 <p><strong>Note:</strong> For this class you must use 1.20 or greater.</p>
+</blockquote>
+<h3 id="option-1-thonny-approach">Option 1: Thonny approach</h3>
+<blockquote>
+<p>Requires thonny to be installed, see <a href="#install-miniconda-and-packages">above</a></p>
 </blockquote>
 <ol>
 <li>
@@ -4338,7 +4387,7 @@
 </li>
 <li>
 <p>Look at the interpreter window.  You should see something similar to:</p>
-<p>```
+<p>```python
 MicroPython v1.XX on 20XX-YY-ZZ; ESP32 module with ESP32</p>
 <p>Type "help()" for more information.</p>
 <blockquote>
@@ -4355,7 +4404,27 @@ MicroPython v1.XX on 20XX-YY-ZZ; ESP32 module with ESP32</p>
 <p><a class="glightbox" href="101.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hello World!" src="101.png" /></a></p>
 </li>
 </ol>
-<h2 id="mac-specific-suggestions">Mac-Specific Suggestions</h2>
+<h3 id="option-2-command-line-approach-with-esptool">Option 2: Command-line approach with <code>esptool</code></h3>
+<p>windows:</p>
+<pre><code class="language-bash">esptool --chip esp32 --port COM7 erase_flash
+</code></pre>
+<p>linux:</p>
+<pre><code class="language-bash">esptool.py --chip esp32 --port /dev/ttyUSB0 erase_flash
+</code></pre>
+<p>Now flash it using the template below.  Check device manager in windows to identify the appropriate COM port</p>
+<p>Windows:</p>
+<pre><code class="language-bash">esptool --chip esp32 --port &lt;serial_port&gt; write_flash -z 0x1000 &lt;esp32-X.bin&gt;
+</code></pre>
+<p>For Example:</p>
+<pre><code class="language-bash">esptool --chip esp32 --port COM7 write_flash -z 0x1000 Downloads/esp32-20220618-v1.19.1.bin
+</code></pre>
+<p>Linux:</p>
+<pre><code class="language-bash">esptool.py --chip esp32 --port &lt;serial_port&gt; write_flash -z 0x1000 &lt;esp32-X.bin&gt;
+</code></pre>
+<p>For Example:</p>
+<pre><code class="language-bash">esptool.py --chip esp32 --port /dev/ttyUSB0 write_flash -z 0x1000 esp32-20220618-v1.19.1.bin
+</code></pre>
+<h2 id="mac-specific-suggestions">Mac Specific Suggestions</h2>
 <ul>
 <li>use terminal or xterm if you have it as Macs do not have powershell</li>
 <li>use <code>pip3 install ...</code> instead of <code>pip install ...</code> with the most recent flavors of MacOS</li>
@@ -4374,6 +4443,11 @@ ls -al /dev/tty.</code></p>
 <p>when selecting the port, there may be two Silicon Labs CP210X USB to UART Bridge (ESP device name here) devices.  Watch the messages in the terminal to determine the correct selection (obviously, don't use the one that says error/cannot find/etc.)</p>
 </li>
 <li>when running the program you may need to press ctrl + c twice within thonny</li>
+</ul>
+<h2 id="external-resources">External Resources</h2>
+<ul>
+<li><a href="https://micropython.org/download/esp32/">https://micropython.org/download/esp32/</a></li>
+<li><a href="https://randomnerdtutorials.com/flashing-micropython-firmware-esptool-py-esp32-esp8266/">https://randomnerdtutorials.com/flashing-micropython-firmware-esptool-py-esp32-esp8266/</a></li>
 </ul>
 <hr />
 <h2 id="issues">Issues</h2>

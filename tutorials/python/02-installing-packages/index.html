@@ -457,7 +457,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/03-project-01/" class="md-nav__link">
+      <a href="../../../assignments/03-project-01-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -477,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/04-project-01part2/" class="md-nav__link">
+      <a href="../../../assignments/04-project-01-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -537,7 +537,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part1/" class="md-nav__link">
+      <a href="../../../assignments/07-project-02-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -557,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/08-project-02-part2/" class="md-nav__link">
+      <a href="../../../assignments/08-project-02-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4234,7 +4234,7 @@
 
 <ol>
 <li>
-<p><strong>Install additional software packages.</strong> In Windows, go to the search bar and type "cmd". Once you see the Command Prompt app in the list, right click on it and choose "Run as administrator" from the contextual menu.</p>
+<p><strong>Install additional software packages.</strong> In Windows, go to the search bar and type "anaconda". Once you see the "Anaconda Prompt" app in the list, click on it.</p>
 <p><a class="glightbox" href="../image08.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../image08.png" style="height:400px;"></a></p>
 </li>
 <li>
@@ -4244,14 +4244,12 @@ conda install -y pyqtgraph pyopengl pycairo shapely pyserial ffmpeg
 conda update -y --all
 python -m pip install --upgrade pip
 pip install meshio pygmsh ezdxf pypdf4 pypoly2tri idealab_tools foldable_robotics
+conda install -c conda-forge wrapt```
+pip install esptool thonny```
 </code></pre>
 </li>
 <li>
-<p>NEW PACKAGES (2023-11-01)</p>
-<ol>
-<li>type <code>conda install -c conda-forge wrapt</code></li>
-<li>type <code>pip install esptool thonny</code></li>
-</ol>
+<p>But that's not all.  This is just your "base" environment.  We will be using MuJoCo later in a separate environment.  See the tutorial <a href="/tutorials/python/04-native-mujoco-install/">here</a></p>
 </li>
 </ol>
 

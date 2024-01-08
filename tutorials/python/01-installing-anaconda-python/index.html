@@ -464,7 +464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/03-project-01/" class="md-nav__link">
+      <a href="../../../assignments/03-project-01-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -484,7 +484,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/04-project-01part2/" class="md-nav__link">
+      <a href="../../../assignments/04-project-01-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/07-project-02-part1/" class="md-nav__link">
+      <a href="../../../assignments/07-project-02-part-1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +564,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../assignments/08-project-02-part2/" class="md-nav__link">
+      <a href="../../../assignments/08-project-02-part-2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4095,6 +4095,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External Resources
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4304,6 +4311,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#external-resources" class="md-nav__link">
+    External Resources
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4330,6 +4344,7 @@
   <h1>Miniconda/Anaconda (Python) Installation Tutorial</h1>
 
 <h2 id="introduction">Introduction</h2>
+<p>Anaconda is a distribution of Python that includes the ability to manage packages using the conda package manager as well as the ability to create and manage <em>environments</em>, or collections of packages that work together.  Anaconda ships as a ~500 Mb installer.  This tutorial gets you started with miniconda, a slimmed down installer that allows you to install just the packages you need.  Below are the steps to gettting a working installation of Python with all the packages you need for <em>Foldable Robotics</em>.</p>
 <p>This tutorial is for installing the anaconda python distribution on windows.</p>
 <h2 id="windows-installation">Windows Installation</h2>
 <p>These installation instructions are for computers that <strong>do</strong> <strong>not</strong> have Python or Anaconda installed already. Python and Anaconda do not come installed by default on most computers so if you haven't installed them intentionally, these instructions likely apply to you. If you <strong>do</strong> have another version of Python installed, then please ask Dr. Aukes for further details.</p>
@@ -4338,40 +4353,50 @@
 <ol>
 <li>
 <p>Download and install <a href="https://docs.conda.io/en/latest/miniconda.html">miniconda</a> (<a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">win64 quick link</a>) with the following options:</p>
-<p><a class="glightbox" href="../image00.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image00.png" /></a>
-<a class="glightbox" href="../image01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image01.png" /></a></p>
+<p><a class="glightbox" href="../image00.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Installer" src="../image00.png" /></a>
+<a class="glightbox" href="../image01.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Select Agree" src="../image01.png" /></a></p>
 <ol>
 <li>
 <p>Install for "Just for Me" </p>
-<p><a class="glightbox" href="../image02.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image02.png" /></a></p>
+<p><a class="glightbox" href="../image02.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Select &quot;Just for Me&quot;" src="../image02.png" /></a></p>
 </li>
 <li>
 <p>Accept the the default directory (e.g., C:\ProgramData\Miniconda3 )</p>
-<p><a class="glightbox" href="../image03.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image03.png" /></a></p>
+<p><a class="glightbox" href="../image03.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Accept default directory" src="../image03.png" /></a></p>
 <!-- > the "install for everyone" option no longer permits you to add python to the system PATH -->
 <!-- - Check the "Add Miniconda3 to the system PATH environment variable" box -->
 </li>
 <li>
 <p>Keep the options page default, ensuring the "Register Miniconda3 as the system Python" box is checked</p>
-<p><a class="glightbox" href="../image04.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image04.png" /></a></p>
+<p><a class="glightbox" href="../image04.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Keep default options" src="../image04.png" /></a></p>
 </li>
 <li>
 <p>Complete the installation</p>
-<p><a class="glightbox" href="../image05.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image05.png" /></a></p>
-<p><a class="glightbox" href="../image06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Alt text" src="../image06.png" /></a></p>
+<p><a class="glightbox" href="../image05.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Complete the Install" src="../image05.png" /></a></p>
+<p><a class="glightbox" href="../image06.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Complete the Install" src="../image06.png" /></a></p>
 </li>
 </ol>
 </li>
 <li>
-<p><strong>Update Conda.</strong> In Windows, go to the search bar and type "cmd". Once you see the Command Prompt app in the list, right click on it and choose "Run as administrator" from the contextual menu.</p>
-<p><a class="glightbox" href="../image08.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img src="../image08.png" style="height:400px;"></a></p>
+<p><strong>Update Conda.</strong> In Windows, go to the search bar and type "anaconda". Once you see the "Anaconda Prompt" app in the list, click on it.</p>
+<p><a class="glightbox" href="../image08.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Anaconda Prompt" src="../image08.png" /></a></p>
 </li>
 <li>
 <p>When the terminal opens, paste each of the following lines (one at a time) at the command prompt and press enter:</p>
 <pre><code>conda update --all
 </code></pre>
 </li>
+<li>
+<p>Install <a href="/tutorials/python/02-installing-packages">course-specific packages</a></p>
+</li>
+<li>
+<p>Install MuJoCo in a separate environment <a href="/tutorials/python/04-native-mujoco-install/">here</a>.</p>
+</li>
 </ol>
+<h2 id="external-resources">External Resources</h2>
+<ul>
+<li><a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html">Managing Conda Environments</a></li>
+</ul>
 
 
 
