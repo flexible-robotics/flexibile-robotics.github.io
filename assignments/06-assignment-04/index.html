@@ -4380,7 +4380,8 @@ Using the [tracker tutorial](/tutorials/misc/tracker-tutorial/) as a starting po
 1. Add masses of the correct dimension and weight/density at the appropriate locations.
 1. Add a ```site``` and ```sensor``` or (negligible mass) at the location of all added markers.
 1. Define the initial conditions at t=0 to match the data you collected.
-1. Run your simulation and compare the output to your experimental data.  Find the sum of squared error between your simulation and the experiment
+1. Run your simulation, plot the experimental and simulated results on the same plat, and then discuss the comparison in the simulated output to your experimental data.  
+1. Find the sum of squared error between your simulation and the experiment and discuss the role this measurement plays on the goodness of the fit. 
 1. Encapsulate the main body of your simulation and error calculation within a function, with the two inputs as stiffness and damping, and the output returned is the $\sqrt{\sum{\text{error}^2_i}}$, such that your experiment gets re-run every time you call the function and outputs the error.
 1. Use ```scipy.optimize.minimize()``` to identify the unknown stiffness and damping parameters for your material
 
