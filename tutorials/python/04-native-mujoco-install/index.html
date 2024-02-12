@@ -64,17 +64,15 @@
 
 
    <link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
-        html.glightbox-open { overflow: initial; height: 100%; }
-        .gslide-title { margin-top: 0px; user-select: text; }
-        .gslide-desc { color: #666; user-select: text; }
-        .gslide-image img { background: white; }
-        
-            .gscrollbar-fixer { padding-right: 15px; }
-            .gdesc-inner { font-size: 0.75rem; }
-            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
-            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
-            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
-            </style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -4361,7 +4359,7 @@ conda deactivate &amp;&amp; conda activate mujoco
 <p>Run these commands line-by-line</p>
 <pre><code class="language-bash">conda create -y -n mujoco
 conda activate mujoco
-conda install -y python jupyterlab scipy ffmpeg
+conda install -y python pip jupyterlab scipy ffmpeg
 conda install -y -c conda-forge glew
 conda install -y -c conda-forge mesalib
 conda install -y -c anaconda mesa-libgl-cos6-x86_64
@@ -4377,7 +4375,7 @@ conda deactivate &amp;&amp; conda activate mujoco
 <h2 id="mac">Mac</h2>
 <pre><code class="language-bash">conda create -y -n mujoco
 conda activate mujoco
-conda install -y python jupyterlab scipy ffmpeg
+conda install -y python pip jupyterlab scipy ffmpeg pip
 conda install -y sympy pandas
 pip install mujoco mediapy mujoco-python-viewer pygmsh
 conda install -y git pandoc #extra tools if you need them
