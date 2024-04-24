@@ -13,9 +13,11 @@
       
       
       
+        <link rel="prev" href="../lecture-01/">
       
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.0">
             
 
@@ -23,11 +25,11 @@
 
     
       
-        <title>Flexible Robotics</title>
+        <title>Lecture 2 Notes - Flexible Robotics</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.9f615399.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.9f615399.min.css">
       
       
 
@@ -46,7 +48,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -59,7 +61,16 @@
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 
-  </head>
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
   
   
     <body dir="ltr">
@@ -73,6 +84,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#kinematics" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -85,7 +101,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-header__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -105,7 +121,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Lecture 2 Notes
             
           </span>
         </div>
@@ -177,7 +193,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/." class="md-tabs__link">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -196,7 +212,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/assignments/" class="md-tabs__link">
+        <a href="../../assignments/" class="md-tabs__link">
           
   
     
@@ -216,7 +232,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/course-info/01-syllabus/" class="md-tabs__link">
+        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -236,7 +252,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="/handouts/" class="md-tabs__link">
+        <a href="../../handouts/" class="md-tabs__link">
           
   
     
@@ -252,11 +268,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="/lecture-notes/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -297,7 +315,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
+    <a href="../.." title="Flexible Robotics" class="md-nav__button md-logo" aria-label="Flexible Robotics" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -326,7 +344,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -368,7 +386,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/assignments/" class="md-nav__link ">
+            <a href="../../assignments/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -399,7 +417,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/assignments/00-incoming-survey/" class="md-nav__link">
+      <a href="../../assignments/00-incoming-survey/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -438,7 +456,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/assignments/01-assignment-01/" class="md-nav__link ">
+            <a href="../../assignments/01-assignment-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -524,7 +542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course-info/01-syllabus/" class="md-nav__link">
+      <a href="../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -544,7 +562,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course-info/02-submission-best-practices/" class="md-nav__link">
+      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -564,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course-info/03-parts-list/" class="md-nav__link">
+      <a href="../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -584,7 +602,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/course-info/04-previous-course-versions/" class="md-nav__link">
+      <a href="../../course-info/04-previous-course-versions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +648,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/handouts/" class="md-nav__link ">
+            <a href="../../handouts/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -662,6 +680,8 @@
       
   
   
+    
+  
   
     
     
@@ -676,18 +696,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/lecture-notes/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -703,7 +723,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5">
             <span class="md-nav__icon md-icon"></span>
             Lecture notes
@@ -737,7 +757,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/lecture-notes/lecture-01/" class="md-nav__link ">
+            <a href="../lecture-01/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -770,6 +790,8 @@
                 
   
   
+    
+  
   
     
     
@@ -780,18 +802,18 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="/lecture-notes/lecture-02/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -803,7 +825,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_5_3">
             <span class="md-nav__icon md-icon"></span>
             Lecture 02
@@ -845,6 +867,161 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#kinematics" class="md-nav__link">
+    Kinematics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#keywords" class="md-nav__link">
+    Keywords
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-we-talking-about-foldable-mechanisms" class="md-nav__link">
+    Why are we talking about foldable mechanisms?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kinematics_1" class="md-nav__link">
+    Kinematics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#not-to-be-confused-with" class="md-nav__link">
+    Not to be confused with
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#kinetics" class="md-nav__link">
+    Kinetics
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanisms" class="md-nav__link">
+    Mechanisms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mechanisms_1" class="md-nav__link">
+    Mechanisms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage" class="md-nav__link">
+    Linkage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serial-mechanisms" class="md-nav__link">
+    Serial Mechanisms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parallel-mechanisms" class="md-nav__link">
+    Parallel Mechanisms
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#link" class="md-nav__link">
+    Link
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joints" class="md-nav__link">
+    Joints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-complex-joints" class="md-nav__link">
+    More Complex Joints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joints_1" class="md-nav__link">
+    Joints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#biological-joint-types" class="md-nav__link">
+    Biological Joint Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linkage-inspiration" class="md-nav__link">
+    Linkage Inspiration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#degrees-of-freedom" class="md-nav__link">
+    Degrees of Freedom
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simple-example" class="md-nav__link">
+    Simple example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#body-example" class="md-nav__link">
+    Body Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#extra-vocab" class="md-nav__link">
+    Extra Vocab
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -855,8 +1032,136 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+  
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/lecture-notes/lecture-02/index.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+  <h1>Lecture 2 Notes</h1>
+
+<h2 id="kinematics">Kinematics</h2>
+<h2 id="keywords">Keywords</h2>
+<ul>
+<li>Machine</li>
+<li>Mechanism</li>
+<li>Linkage</li>
+<li>Link</li>
+<li>Joint</li>
+<li>Degrees of Freedom</li>
+<li>System</li>
+<li>Cross-sectional moment of inertia</li>
+<li>Proximal / distal</li>
+<li>End-effector</li>
+<li>Flexure</li>
+</ul>
+<h2 id="why-are-we-talking-about-foldable-mechanisms">Why are we talking about foldable mechanisms?</h2>
+<ul>
+<li>Robots are mechanisms, or machines.</li>
+<li>Serial vs. Parallel</li>
+<li>Composed of links and joints</li>
+</ul>
+<h2 id="kinematics_1">Kinematics</h2>
+<blockquote>
+<p>branch of physics and a subdivision of classical mechanics concerned with the geometrically possible motion of a body or system of bodies without consideration of the forces involved (i.e., causes and effects of the motions).</p>
+</blockquote>
+<p>Britannica, The Editors of Encyclopaedia. "kinematics". Encyclopedia Britannica, Invalid Date, <a href="https://www.britannica.com/science/kinematics">https://www.britannica.com/science/kinematics</a>. Accessed 24 January 2022.</p>
+<h2 id="not-to-be-confused-with">Not to be confused with</h2>
+<h2 id="kinetics">Kinetics</h2>
+<blockquote>
+<p>branch of classical mechanics that concerns the effect of forces and torques on the motion of bodies having mass. Authors using the term kinetics apply the nearly synonymous name dynamics (q.v.) to the classical mechanics of moving bodies.</p>
+</blockquote>
+<p>Britannica, The Editors of Encyclopaedia. "kinetics". Encyclopedia Britannica, Invalid Date, <a href="https://www.britannica.com/science/kinetics">https://www.britannica.com/science/kinetics</a>. Accessed 24 January 2022.</p>
+<h2 id="mechanisms">Mechanisms</h2>
+<h2 id="mechanisms_1">Mechanisms</h2>
+<ul>
+<li>A system of parts working together in a machine; a piece of machinery.</li>
+<li><a href="https://en.wikipedia.org/wiki/Mechanism_(engineering)">https://en.wikipedia.org/wiki/Mechanism_(engineering)</a></li>
+<li><a href="https://languages.oup.com/google-dictionary-en/">https://languages.oup.com/google-dictionary-en/</a></li>
+</ul>
+<h2 id="linkage">Linkage</h2>
+<ul>
+<li>A type of mechanism</li>
+<li>Refers to a system of rigid bodies connected by joints or links</li>
+<li>Allow relative motion between them.</li>
+<li>Used to transmit and control motion or force in mechanical systems.</li>
+</ul>
+<p>&lt;https://en.wikipedia.org/wiki/Linkage_(mechanical)&gt;</p>
+<h2 id="serial-mechanisms">Serial Mechanisms</h2>
+<ul>
+<li>A serial mechanism, serial chain or serial linkage</li>
+<li>a mechanical system in which components or links are arranged in a linear sequence,<ul>
+<li>Each component is connected to the one before and after it.</li>
+<li>The output motion or force is transmitted through each link in a sequential manner from the input to the final output.</li>
+</ul>
+</li>
+<li>Motion or force is transmitted through a series of interconnected links or elements, typically connected by joints or hinges.</li>
+<li>Each link is responsible for transmitting or transforming the input motion or force to the next link in the chain, until it reaches the final output.</li>
+</ul>
+<h2 id="parallel-mechanisms">Parallel Mechanisms</h2>
+<ul>
+<li>A mechanical system consisting of multiple interconnected links that are</li>
+<li>Connected in a way that allows them to move simultaneously and independently of each other.</li>
+<li>Links are arranged in a parallel configuration, meaning they share a common base and have multiple patways to one or more end-effectors.</li>
+<li>Example: Delta robot. A Delta robot<ul>
+<li>consists of three parallel arms connected to a base</li>
+<li>connected also to a distal common platform (end-effector).</li>
+<li>Each arm has multiple joints that allow it to move in various directions.</li>
+</ul>
+</li>
+</ul>
+<h2 id="link">Link</h2>
+<blockquote>
+<p>An intermediate rod or piece for transmitting force or motion; especially, a short connecting rod with a hole or pin at each end.</p>
+</blockquote>
+<h2 id="joints">Joints</h2>
+<ul>
+<li>The connections between rigid bodies, which facilitate motion</li>
+<li>Many different kinds of joints with different degrees of freedom</li>
+<li>Folded devices use systems of joints</li>
+</ul>
+<p>Flores, Paulo &amp; Lankarani, Hamid. (2016). Contact Force Models for Multibody Dynamics.</p>
+<h2 id="more-complex-joints">More Complex Joints</h2>
+<p><a class="glightbox" href="img0012.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="img0012.png" /></a></p>
+<p>Chase, Kenneth &amp; Magleby, Spencer &amp; Glancy, Charles. (2000). A Comprehensive System for Computer-Aided Tolerance Analysis of 2-D and 3-D Mechanical Assemblies. 10.1007/978-1-4615-5797-5_23.</p>
+<h2 id="joints_1">Joints</h2>
+<p><a href="https://24.media.tumblr.com/tumblr_mck6ejg15N1r0v3zro3_1280.jpg">https://24.media.tumblr.com/tumblr_mck6ejg15N1r0v3zro3_1280.jpg</a></p>
+<h2 id="biological-joint-types">Biological Joint Types</h2>
+<p><a class="glightbox" href="img0025.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="5.5in" src="img0025.png" /></a></p>
+<h2 id="linkage-inspiration">Linkage Inspiration</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pDU4CQWXaNY?si=XoDEye_N6hIqQqtZ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="degrees-of-freedom">Degrees of Freedom</h2>
+<ul>
+<li>Refer to the number of independent ways an object or system can move.</li>
+<li>“The number of independent parameters that define its configuration or state”</li>
+<li>Represents the different directions or types of motion that an object is capable of.</li>
+</ul>
+<p><a href="https://en.wikipedia.org/wiki/Degrees_of_freedom_(mechanics)">https://en.wikipedia.org/wiki/Degrees_of_freedom_(mechanics)</a></p>
+<h2 id="simple-example">Simple example</h2>
+<p>The position of a single railcar (engine) moving along a track.  </p>
+<p>. . .</p>
+<p><strong>How many degrees of freedom does it have?</strong></p>
+<h2 id="body-example">Body Example</h2>
+<p>A rigid body in space has 6 degrees of freedom.  </p>
+<p>. . .</p>
+<p><strong>Can you list them?</strong></p>
+<h2 id="extra-vocab">Extra Vocab</h2>
+<ul>
+<li>end-effector</li>
+<li>proximal / distal</li>
+</ul>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -873,6 +1178,28 @@
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../lecture-01/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Lecture 1 Notes" rel="prev">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Lecture 1 Notes
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">
@@ -895,17 +1222,17 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit", "navigation.footer"], "search": "/assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.a264c092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.4e0fa4ba.min.js"></script>
+      <script src="../../assets/javascripts/bundle.4e0fa4ba.min.js"></script>
       
-        <script src="/javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="/.static/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
       
     
-  </body>
+  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
 </html>
