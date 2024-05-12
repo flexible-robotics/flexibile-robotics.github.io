@@ -1549,13 +1549,14 @@
 </ol>
 <h3 id="part-2-templates">Part 2: Templates</h3>
 <blockquote>
-<p>The purpose of this exercise is to learn how to re-run simulations repeatedly with different model parameters.  First, study the concept of string formatting in Python.  </p>
+<p>The purpose of this exercise is to learn how to re-run simulations repeatedly with different model parameters.  You will be using this approach to find match the values in your simulation to <a href="hw3p2-data.yml">this dataset</a>.  </p>
+</blockquote>
+<p>If you have not yet, refresh your knowledge of string formatting in Python.  </p>
 <ul>
 <li><a href="https://docs.python.org/3/library/stdtypes.html#str.format">https://docs.python.org/3/library/stdtypes.html#str.format</a></li>
 <li><a href="https://docs.python.org/3/library/string.html#formatstrings">https://docs.python.org/3/library/string.html#formatstrings</a></li>
 </ul>
-</blockquote>
-<p>Then, using the double pendulum code <a href="../lecture-notes/lecture-11/#double-pendulum-example">shared in lecture 11</a> as a starting point,</p>
+<p>Then, using the double pendulum code shared in the dynamics 1 handout as a starting point,</p>
 <ol>
 <li>Ensure the following parameters are set:<ol>
 <li>Mass of each body is 1</li>
@@ -1564,14 +1565,17 @@
 <li>Run the code and plot the joint positions over three seconds.</li>
 </ol>
 </li>
-<li>Now, modify the xml to act as a template variable, so that all the damper and spring values in the model can be replaced by two variables, b and k, respectively.</li>
+<li>Now, modify the xml to act as a template variable, so that all the damper and spring values in the model can be replaced by two variables, b and k, respectively.<ol>
 <li>Generate the xml variable from the template variable using the python <code>format()</code> function, with k=10 and b=1.  Re-run the simulation and confirm that the output matches your original results.</li>
+</ol>
+</li>
+<li>Load the <a href="hw3p2-data.yml">dataset</a> and check the initial values of <code>q</code>  and <code>w</code>.  Set the initial values of your simulation to match the dataset.  </li>
 <li>Move the code required to define and run a single simulation into a function that takes two parameters: b and k.  It should output two variables: t and q, your time vector and your joint vector.</li>
-<li>Calculate the sum of squared error between the joint position vector <code>q</code> and <a href="hw3p2-data.yml">this dataset</a> over each time step from t=0s to 3s.</li>
+<li>Calculate the sum of squared error between the joint position vector <code>q</code> and the value for q found in the <a href="hw3p2-data.yml">dataset</a> over each time step from t=0s to 3s.</li>
 <li>
 <p>Create a <code>for</code> loop that iterates over</p>
 <div class="arithmatex">\[(k_i,b_j), \text{ } k_i=10,20,30,\ldots,100, \text{ }b_j=1,\ldots,10\]</div>
-<p>and repeatedly finds the error for each <span class="arithmatex">\((k_i,b_j)\)</span> pair.</p>
+<p>and finds the total error over the whole simulation run per <span class="arithmatex">\((k_i,b_j)\)</span> pair.</p>
 </li>
 <li>
 <p>Plot the error as a function of <span class="arithmatex">\(k_i\)</span> and <span class="arithmatex">\(b_j\)</span>, and identify the values of <span class="arithmatex">\(b_j\)</span> and <span class="arithmatex">\(k_i\)</span> that result in the smallest error.</p>
