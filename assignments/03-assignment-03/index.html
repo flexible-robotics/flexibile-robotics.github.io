@@ -864,6 +864,10 @@
       
         
       
+        
+      
+        
+      
     
     
     <li class="md-nav__item md-nav__item--nested">
@@ -1334,6 +1338,114 @@
 
               
             
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../lecture-notes/lecture-15-16/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 15 16
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_10">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 15 16
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../lecture-notes/lecture-17/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Lecture 17
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_11">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture 17
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1683,7 +1795,7 @@
 <li>Ensure the following parameters are set:<ol>
 <li>Mass of each body is 1</li>
 <li>Timestep is set to .001</li>
-<li>Stiffness and damping are defined for each joint to be 10 and 1, respectively.</li>
+<li>Stiffness and damping (parameters <code>k</code> and <code>b</code>) are defined for each joint to be 10 and 1, respectively.</li>
 <li>Run the code and plot the joint positions over three seconds.</li>
 </ol>
 </li>
@@ -1697,10 +1809,10 @@
 <li>
 <p>Create a <code>for</code> loop that iterates over</p>
 <div class="arithmatex">\[(k_i,b_j), \text{ } k_i=10,20,30,\ldots,100, \text{ }b_j=1,\ldots,10\]</div>
-<p>and finds the total error over the whole simulation run per <span class="arithmatex">\((k_i,b_j)\)</span> pair.</p>
+<p>and finds the total error over the whole simulation run per stiffness and damping <span class="arithmatex">\((k_i,b_j)\)</span> pair.</p>
 </li>
 <li>
-<p>Plot the error as a function of <span class="arithmatex">\(k_i\)</span> and <span class="arithmatex">\(b_j\)</span>, and identify the values of <span class="arithmatex">\(b_j\)</span> and <span class="arithmatex">\(k_i\)</span> that result in the smallest error.</p>
+<p>Plot the error as a function of <span class="arithmatex">\(k_i\)</span> and <span class="arithmatex">\(b_j\)</span>, and identify the values of <span class="arithmatex">\(k_i\)</span> and  <span class="arithmatex">\(b_j\)</span> that result in the smallest error.</p>
 </li>
 <li>What have we just done by hand?  What steps would you have to do to automate this better using built-in functions already provided in Python or its packages?</li>
 </ol>
