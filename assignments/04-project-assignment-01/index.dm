@@ -14,7 +14,7 @@ Describe the characterization exercise you undertook -- either the motor charact
 
 1. Write up the steps you took in class to collect data.
 1. Discuss all the shortcuts and deficiencies of your experimental setup, and things you could do to improve or simplify or streamline the data collection process.
-    1. What tools could serve you better in holding materials, providing more stable and repeatible setups?
+    1. What tools could serve you better in holding materials, providing more stable and repeatable setups?
     1. What techniques could create higher video quality?
     1. How might you reduce or factor in the distortion caused by lenses?  What kind of calibration would you perform?
     1. Would different sensing technologies could replace or augment the approach taken?
