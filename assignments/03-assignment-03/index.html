@@ -2317,6 +2317,7 @@
 <p>Finally, revert <code>axisangle="0 1 0 -80"</code> to <code>axisangle="0 1 0 0"</code> for bodies <code>"B"</code> thru <code>"Ap"</code>.  After the line that performs a <code>resetData()</code>, insert the following line:</p>
 <pre><code>data.qpos = numpy.array([-math.pi*80/180,-math.pi*80/180,-math.pi*80/180,-math.pi*80/180])
 </code></pre>
+<p>Describe what happens</p>
 </li>
 <li>
 <p>Play with the <code>relpose</code> and <code>anchor</code> terms.  What happens when you use:</p>
@@ -2353,7 +2354,7 @@
 </li>
 <li>Load the <a href="hw3p2-data.yml">dataset</a> and check the initial values of <code>q</code>  and <code>w</code>.  Set the initial values of your simulation to match the dataset.  </li>
 <li>Move the code required to define and run a single simulation into a function that takes two parameters: b and k.  It should output two variables: t and q, your time vector and your joint vector.</li>
-<li>Calculate the sum of squared error between the joint position vector <code>q</code> and the value for q found in the <a href="hw3p2-data.yml">dataset</a> over each time step from t=0s to 3s.</li>
+<li>Calculate the mean squared error between the joint position vector <code>q</code> and the value for q found in the <a href="hw3p2-data.yml">dataset</a> over each time step from t=0s to 3s.</li>
 <li>
 <p>Create a <code>for</code> loop that iterates over</p>
 <div class="arithmatex">\[(k_i,b_j), \text{ } k_i=10,20,30,\ldots,100, \text{ }b_j=1,\ldots,10\]</div>
