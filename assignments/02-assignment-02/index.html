@@ -2421,9 +2421,14 @@ Say you have two vectors in 3D space, $\vec{a}$ and $\vec{b}$.
 <ol>
 <li>How many degrees of freedom does the mechanism have? Please justify your answer.</li>
 <li>Define and label a reference frame for each rigid body.</li>
-<li>Draw and label the unit vectors <span class="arithmatex">\(\hat{r}_i\)</span> indicating each joint's direction.</li>
 <li>
-<p>Write down the unit quaternions(<span class="arithmatex">\(r_1\)</span>-<span class="arithmatex">\(r_n\)</span>) that describe the half-angle rotations about each joint.  Use variables <span class="arithmatex">\(\alpha_i\)</span> to describe the magnitude of the rotation about each <span class="arithmatex">\(\vec{v}_i\)</span>, respectively.</p>
+<p>Draw and label the vectors <span class="arithmatex">\(\vec{r}_{XY}\)</span> indicating each joint's direction from frame <span class="arithmatex">\(X\)</span> to frame <span class="arithmatex">\(Y\)</span>.</p>
+<blockquote>
+<p>initially this problem said <span class="arithmatex">\(\hat{r}_{i}\)</span>; either notation is accepted.</p>
+</blockquote>
+</li>
+<li>
+<p>Write down the unit quaternions <span class="arithmatex">\(r_{XY}\)</span> that describe the half-angle rotations about each joint from <span class="arithmatex">\(X\)</span> to <span class="arithmatex">\(Y\)</span>.  Use variables <span class="arithmatex">\(\alpha_i\)</span> to describe the magnitude of the rotation about each <span class="arithmatex">\(\vec{r}_i\)</span>, respectively.</p>
 <blockquote>
 <p>Don't forget to ensure that your quaternion meets the constraints required for unit quaternions.</p>
 </blockquote>
@@ -2431,7 +2436,7 @@ Say you have two vectors in 3D space, $\vec{a}$ and $\vec{b}$.
 <li>
 <p>Find two <em>independent</em> vectors representing point <span class="arithmatex">\(\vec{f}\)</span> -- in terms of joints that contribute to its position -- from the base frame to <span class="arithmatex">\(\vec{f}\)</span>.</p>
 </li>
-<li>Express those two vectors as pure quaternions.</li>
+<li>Express those two vectors as pure quaternions, in the base frame.</li>
 <li>Define <span class="arithmatex">\(m\)</span> constraint equations</li>
 <li>Calculate the total degrees of freedom as a function of: (number of joints) - (number of constraints).  Does this match your intuition from earlier?  Why or why not?</li>
 <li><strong><em>Optional and Ungraded</em></strong>: Implement the steps required to plot this device in matplotlib in a  physically-consistent configuration with non-zero joint angles.</li>
